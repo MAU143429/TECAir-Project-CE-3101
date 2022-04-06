@@ -1,1 +1,71 @@
-<p>register works!</p>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!---Referencia al archivo css que contiene el estilo--->
+    <link rel="stylesheet" href="register.component.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<!---Componentes que conforman la seccion de registro--->
+<body>
+  <div class="container">
+    <div class="title">Registro</div>
+    <div class="content">
+      <!---Formulario donde se reciben los inputs del usuario--->
+      <form>
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Nombre</span>
+            <input type="text" placeholder="Ingrese su nombre" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Primer Apellido</span>
+            <input type="text" placeholder="Ingrese su primer apellido" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Segundo Apellido</span>
+            <input type="text" placeholder="Ingrese su segundo apellido" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Teléfono</span>
+            <input type="number" placeholder="Ingrese su número de teléfono" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Correo</span>
+            <input type="email"  placeholder="Ingrese su correo" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Contraseña</span>
+            <input type="password" placeholder="Ingrese una contraseña" required>
+          </div>
+        </div>
+
+        <div class="form-check my-check">
+            <input #inputCheck class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+            <label class="form-check-label" for="flexCheckDefault">
+              Eres estudiante?
+            </label>
+        </div>
+
+        <div class="user-details">
+            <div class="input-box">
+              <span class="details">Universidad</span>
+              <input type="text" id= "collageName" placeholder="Ingrese su universidad" [disabled]="!inputCheck.checked">
+            </div>
+            <div class="input-box">
+              <span class="details">Carné</span>
+              <input type="number" id= "idNumber"placeholder="Ingrese su carné" [disabled]="!inputCheck.checked">
+            </div>
+        </div>
+        
+
+
+        <div class="button">
+          <input type="submit" value="Registrarse"  routerLink="/">
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
