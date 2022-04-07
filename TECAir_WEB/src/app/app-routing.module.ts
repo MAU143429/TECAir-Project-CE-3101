@@ -28,7 +28,7 @@ const routes: Routes = [
   {path: 'userSearchFlights', component: SearchUserComponent},
   {path: 'employeeSearchFlights', component: SearchEmployeeComponent},
   {path: 'userBooking', component: BookingUserComponent},
-  {path: 'employeeBooking', component: BookingEmployeeComponent},
+  {path: 'EmployeeBooking', component: BookingEmployeeComponent},
   {path: 'create-promotions', component: PromotionsComponent},
   {path: 'flights', component: FlightsComponent}
 
