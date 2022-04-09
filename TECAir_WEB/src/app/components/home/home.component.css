@@ -11,7 +11,7 @@ body{
   align-items: center;
   padding: 10px;
   background: linear-gradient(135deg, #c97b4e, #d66320 , #b92d2d);
-  background-image: url("src\assets\images\home.jpeg");
+  background-image: url("src\assets\images\home.png");
   background-position: center center;
   background-attachment: fixed;
   background-size:cover;
@@ -20,9 +20,9 @@ body{
 }
 
 header video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  position:absolute;
+  top: 50px;
+  left: 50px;
   min-width: 100%;
   min-height: 100%;
   width: auto;
