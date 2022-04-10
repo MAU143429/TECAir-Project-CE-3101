@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+body{
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: linear-gradient(135deg, #c97b4e, #d66320 , #b92d2d);
+  background-image: url("src\assets\images\employee.jpg");
+  background-position: center center;
+  background-attachment: fixed;
+  background-size:cover;
+  z-index: -10;
+}
