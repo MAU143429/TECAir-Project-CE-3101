@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32328.378
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TECAir_API", "TECAir_API.csproj", "{134A6764-591A-4ACA-B564-BBF5484B2EFD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{134A6764-591A-4ACA-B564-BBF5484B2EFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{134A6764-591A-4ACA-B564-BBF5484B2EFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{134A6764-591A-4ACA-B564-BBF5484B2EFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{134A6764-591A-4ACA-B564-BBF5484B2EFD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {35B6D59A-81C0-45E5-BAB9-EA4FA4D31820}
+	EndGlobalSection
+EndGlobal
