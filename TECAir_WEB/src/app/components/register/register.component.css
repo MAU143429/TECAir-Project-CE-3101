@@ -13,7 +13,7 @@ body{
   align-items: center;
   padding: 10px;
   background: linear-gradient(135deg, #c97b4e, #d66320 , #b92d2d);
-  background-image: url("src\assets\images\register.jpg");
+  background-image: url("src\assets\images\user.jpg");
   background-position: center center;
   background-attachment: fixed;
   background-size: cover; 
@@ -64,7 +64,7 @@ form .input-box span.details{
 .user-details .input-box input{
   height: 45px;
   width: 100%;
-  outline: none;
+    
   font-size: 16px;
   border-radius: 5px;
   padding-left: 15px;

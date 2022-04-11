@@ -8,9 +8,132 @@
      
    </head>
 <body>
+    <!---Navbar--->
     <app-enavbar></app-enavbar>
 
+    <!---Contenedor principal--->
 
+      <div class="flightszone">
+
+        <!---Seccion crear vuelos--->
+        <h4 class="maintitle">Crear Vuelos</h4>
+        <div class="section1">
+          <div class="container">
+            <div class="content">
+              <form>
+                <div class="flight-details">
+                  <div class="input-box">
+                    <span class="details">Aeropuerto de salida</span>
+                    <input type="text" placeholder="Ingrese el origen del vuelo" required>
+                  </div>
+                  <div class="input-box">
+                    <span class="details"> Aeropuerto de llegada</span>
+                    <input type="text" placeholder="Ingrese el destino del vuelo" required>
+                  </div>
+                  <div class="input-box">
+                    <span class="details">Modelo del avion</span>
+                    <input type="text" placeholder="Ingrese el nombre del avion" required>
+                  </div>
+                  <div class="input-box">
+                    <span class="details">Hora de salida</span>
+                    <button class="btn btn-outline-secondary calendar" (click)="t.toggle()" type="button"></button>
+                    <input placeholder="Seleccione la hora de salida"
+                    name="takeoff" [(ngModel)]="takeoff" ngbDatepicker #t="ngbDatepicker">
+                  </div>
+  
+                  <div class="input-box">
+                    <span class="details">Hora de llegada</span>
+                    <button class="btn btn-outline-secondary calendar" (click)="t.toggle()" type="button"></button>
+                    <input placeholder="Seleccione la hora aproximada de llegada"
+                    name="takeoff" [(ngModel)]="takeoff" ngbDatepicker #t="ngbDatepicker">
+                  </div>
+
+                  <div class="input-box">
+                    <span class="details">Fecha del vuelo</span>
+                    <button class="btn btn-outline-secondary calendar" (click)="t.toggle()" type="button"></button>
+                    <input placeholder="Seleccione la fecha del vuelo"
+                    name="takeoff" [(ngModel)]="takeoff" ngbDatepicker #t="ngbDatepicker">
+                  </div>
+
+                  <div class="input-box2 input-box">
+                    <span class="details">Puerta de abordaje</span>
+                    <input type="text" placeholder="Indique la puerta de abordaje" required>
+                  </div>
+
+                  <div class="input-box3 input-box">
+                    <span class="details">Coste del tiquete</span>
+                    <input type="text" placeholder="Ingrese la tarifa del boleto" required>
+                  </div>
+                </div>
+
+                <div class="create-btn">
+                  <input type="submit" value="Registrar Vuelo" routerLink="/flights" (click)="open(content)">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!---Seccion Apertura de Vuelos--->
+
+        <div class="container">
+          <div class="row">
+
+            <div class="col-sm">
+              <h4 class="maintitle">Apertura de vuelos</h4>
+              <div class="content">
+                <form>
+                  <div class="open-flight">
+                    <div class="input-box">
+                      <span class="details">Ingrese el número de transacción que desea agregar  </span>
+                      <input type="text" placeholder="Ingrese el número de transacción" required>
+                    </div>
+                    <div class="open-close-btn">
+                      <input type="submit" value="Buscar Tiquete">
+                    </div>
+                  </div>
+                </form>
+              </div>
+
+
+            </div>
+
+
+            <div class="col-sm">
+
+              <h4 class="maintitle">Cierre de vuelos</h4>
+              <div class="col-sm">
+                
+              <div class="content">
+                <form>
+                  <div class="close-flight">
+                    <div class="input-box">
+                      <span class="details">Ingrese el número de vuelo que desea cerrar </span>
+                      <input type="text" placeholder="Ingrese el número de vuelo" required>
+                    </div>
+                    <div class="open-close-btn">
+                      <input type="submit" value="Buscar Vuelo">
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 </body>
+<ng-template #content let-modal>
+  <div class="popup">
+    <button class="close cbtn" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+</ng-template>
 </html>
+
+
+
+
+
+
+
 

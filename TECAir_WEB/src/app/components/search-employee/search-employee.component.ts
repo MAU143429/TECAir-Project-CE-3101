@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-search-employee',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-employee.component.css']
 })
 export class SearchEmployeeComponent implements OnInit {
+
+  takeoff: NgbDateStruct | undefined;
+  landing: NgbDateStruct | undefined;
 
   constructor() { }
 

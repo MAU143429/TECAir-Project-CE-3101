@@ -11,7 +11,7 @@ body{
   align-items: center;
   padding: 10px;
   background: linear-gradient(135deg, #c97b4e, #d66320 , #b92d2d);
-  background-image: url("src\assets\images\home.jpeg");
+  background-image: url("src\assets\images\homeuser.png");
   background-position: center center;
   background-attachment: fixed;
   background-size:cover;
@@ -19,34 +19,13 @@ body{
 
 }
 
-.social
-{
-  position: absolute;
-  z-index: 10;
-  bottom: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.social li
-{
-  list-style: none;
-}
-.social li a
-{
-  display: inline-block;
-  margin-right: 20px;
-  filter: invert(1);
-  transform: scale(0.5);
-  transition: 0.5s;
-}
-.social li a:hover
-{
-  transform: scale(0.5) translateY(-15px);
+.carusel{
+  width: 35%;
+  margin-left: 4%;
+  margin-top: 26%;
+  
 }
 
-@media(max-width: 459px){
-  .container .content{
-    flex-direction: column;
-  }
-}
+
+
+

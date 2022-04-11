@@ -1,5 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxMatTimepickerModule } from 'ngx-mat-timepicker';
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatInputModule } from '@angular/material/input';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +25,8 @@ import { SearchUserComponent } from './components/search-user/search-user.compon
 import { SearchEmployeeComponent } from './components/search-employee/search-employee.component';
 import { BookingUserComponent } from './components/booking-user/booking-user.component';
 import { BookingEmployeeComponent } from './components/booking-employee/booking-employee.component';
+import { BillingComponent } from './components/billing/billing.component';
+import { TicketComponent } from './components/ticket/ticket.component';
 
 @NgModule({
   declarations: [
@@ -36,13 +45,23 @@ import { BookingEmployeeComponent } from './components/booking-employee/booking-
     SearchUserComponent,
     SearchEmployeeComponent,
     BookingUserComponent,
-    BookingEmployeeComponent
+    BookingEmployeeComponent,
+    BillingComponent,
+    TicketComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    NgbModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    NgxMatTimepickerModule
+
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {
+}
