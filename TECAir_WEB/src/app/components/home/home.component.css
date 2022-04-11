@@ -19,6 +19,24 @@ body{
 
 }
 
+
+.btnformat {
+  width: 20%;
+  height: 60%;
+  margin-right: 20%; 
+  border-radius: 25px;
+  background-color: #837b77;
+  color: white;
+  margin-top: 10%;
+  font-size: 30px;
+}
+
+.btns{
+  width: 60%;
+  margin-left: 30%;
+  margin-top: 28%;
+}
+
 .social
 {
   position: absolute;

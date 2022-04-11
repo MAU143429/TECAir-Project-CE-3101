@@ -13,6 +13,8 @@ import { SearchUserComponent } from './components/search-user/search-user.compon
 import { SearchEmployeeComponent } from './components/search-employee/search-employee.component';
 import { BookingUserComponent } from './components/booking-user/booking-user.component';
 import { BookingEmployeeComponent} from './components/booking-employee/booking-employee.component';
+import { BillingComponent } from './components/billing/billing.component';
+import { TicketComponent } from './components/ticket/ticket.component';
 
 
 
@@ -28,9 +30,11 @@ const routes: Routes = [
   {path: 'userSearchFlights', component: SearchUserComponent},
   {path: 'employeeSearchFlights', component: SearchEmployeeComponent},
   {path: 'userBooking', component: BookingUserComponent},
-  {path: 'EmployeeBooking', component: BookingEmployeeComponent},
+  {path: 'employeeBooking', component: BookingEmployeeComponent},
   {path: 'create-promotions', component: PromotionsComponent},
-  {path: 'flights', component: FlightsComponent}
+  {path: 'flights', component: FlightsComponent},
+  {path: 'billing', component: BillingComponent},
+  {path: 'ticket', component: TicketComponent}
 
 
 ];

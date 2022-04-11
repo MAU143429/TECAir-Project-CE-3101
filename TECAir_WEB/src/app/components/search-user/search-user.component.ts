@@ -9,7 +9,6 @@ import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 export class SearchUserComponent implements OnInit {
 
   takeoff: NgbDateStruct | undefined;
-  landing: NgbDateStruct | undefined;
   constructor() { }
 
   ngOnInit(): void {

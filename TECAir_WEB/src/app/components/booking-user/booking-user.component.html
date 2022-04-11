@@ -3,12 +3,77 @@
   <head>
     <meta charset="UTF-8">
     <!---Referencia al archivo css que contiene el estilo--->
-    <link rel="stylesheet" href= "booking-user.component.css">
+    <link rel="stylesheet" href="booking-user.component.css">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      
    </head>
 <body>
-  <app-unavbar></app-unavbar>
-    
+
+    <app-unavbar></app-unavbar>
+
+      <div class="bookingzone">
+
+        <h4 class="maintitle">Reservaciones pendientes</h4>
+        <div class="section1">
+          <div class="bookings">
+            <div class="row">
+              <div id="htmlData">
+                <h5>Reservaciones guardadas</h5>
+                <table class="table table-bordered mt-4 mytable" >
+                  <tr class="table-primary mytable">
+                    <th>Número de Vuelo</th>
+                    <th>Origen</th>
+                    <th>Destino</th>
+                    <th>Fecha</th>
+                    <th>Hora de salida</th>
+                    <th>Finalizar Compra</th>
+                  </tr>
+                <tr *ngFor="let data of bookingdata">
+                  <th>{{data.no_vuelo}}</th>
+                    <td>{{data.origen}}</td>
+                    <td>{{data.destino}}</td>
+                    <td>{{data.fecha}}</td>
+                    <td>{{data.h_salida}}</td>
+                    <td><button class="bookingbtn" routerLink="/billing">Pagar</button>></td>
+                </tr>
+                </table>
+              </div>
+            </div>
+          </div> 
+        </div>
+
+
+        <h4 class="maintitle">Tiquetes adquiridos</h4>
+        <div class="section2">
+          <div class="tickets">
+            <div class="row">
+              <div id="htmlData">
+                <h5>Tiquetes comprados</h5>
+                <table class="table table-bordered mt-4 mytable">
+                  <tr class="table-primary mytable">
+                    <th>Número de Vuelo</th>
+                    <th>Número de transacción</th>
+                    <th>Fecha</th>
+                    <th>Hora de salida</th>
+                    <th>Detalles</th>
+                  </tr>
+                  <tr *ngFor="let data of ticketsdata">
+                    <th>{{data.no_vuelo}}</th>
+                    <td>{{data.no_transaccion}}</td>
+                    <td>{{data.fecha}}</td>
+                    <td>{{data.h_salida}}</td>
+                    <td><button class="ticketbtn" routerLink="/ticket">Ver detalles</button>></td>
+
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div> 
+        </div>
+
+
+      </div>
+
+
 </body>
 </html>
