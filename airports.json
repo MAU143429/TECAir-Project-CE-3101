@@ -1,0 +1,89 @@
+[
+    {
+        "nombre": "Juan Santamaria Intl",
+        "ciudad": "San José",
+        "pais": "Costa Rica",
+        "codigo": "SJO"
+    },
+    {
+        "nombre": "Tocumen Intl",
+        "ciudad": "Ciudad de Panamá",
+        "pais": "Panamá",
+        "codigo": "PTY"
+    },
+    {
+        "nombre": "Licenciado Benito Juarez Intl",
+        "ciudad": "Ciudad de México",
+        "pais": "México",
+        "codigo": "MEX"
+    },
+    {
+        "nombre" : "Boeing 737",
+        "codigo" : "737-300"
+    },
+    {
+        "nombre" : "Boeing 737",
+        "codigo" : "737-300"
+    },
+    {
+        "nombre" : "Boeing 737",
+        "codigo" : "737-300"
+    },
+    {
+        "nombre" : "Boeing 737",
+        "codigo" : "737-300"
+    },
+    {
+        "nombre" : "Boeing 737",
+        "codigo" : "737-300"
+    },
+    {
+        "nombre" : "Boeing 737",
+        "codigo" : "737-300"
+    },
+    {
+        "nombre" : "Boeing 737",
+        "codigo" : "737-300"
+    },
+    {
+        "nombre" : "Boeing 737",
+        "codigo" : "737-300"
+    },
+    {
+        "nombre" : "Boeing 737",
+        "codigo" : "737-300"
+    },
+    {
+        "nombre" : "Boeing 737",
+        "codigo" : "737-300"
+    },
+    {
+        "nombre" : "Boeing 737",
+        "codigo" : "737-300"
+    },
+    {
+        "nombre" : "Boeing 737",
+        "codigo" : "737-300"
+    },
+    {
+        "nombre" : "Boeing 737",
+        "codigo" : "737-300"
+    },
+    {
+        "nombre" : "Boeing 737",
+        "codigo" : "737-300"
+    },
+    {
+        "nombre" : "Boeing 737",
+        "codigo" : "737-300"
+    },
+    {
+        "nombre" : "Boeing 737",
+        "codigo" : "737-300"
+    },
+    {
+        "nombre" : "Boeing 737",
+        "codigo" : "737-300"
+    }
+
+]

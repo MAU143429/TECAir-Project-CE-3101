@@ -25,3 +25,7 @@ VALUES(2017000000, 'Tecnologico de Costa Rica', 2486520);
 
 INSERT INTO Estudiante(carne, universidad, id_usuario)
 VALUES(2019000000, 'Tecnologico de Costa Rica', 1897025);
+
+-- Insertar vuelos
+INSERT INTO Vuelo(no_vuelo, origen, destino, prt_abordaje, h_salida, h_llegada, v_dia, v_mes, v_ano, coste_vuelo, matricula)
+VALUES(13568999, 'San José', 'Ciudad de México', 'G7', '11:50', '16:10', '30', '04', '2022', 1400,'321-997');
