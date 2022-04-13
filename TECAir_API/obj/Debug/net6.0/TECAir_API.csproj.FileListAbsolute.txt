@@ -25,3 +25,30 @@ C:\Users\yendr\OneDrive\Documentos\Bases de Datos\TECAir-CE-3101\TECAir_API\obj\
 C:\Users\yendr\OneDrive\Documentos\Bases de Datos\TECAir-CE-3101\TECAir_API\obj\Debug\net6.0\TECAir_API.pdb
 C:\Users\yendr\OneDrive\Documentos\Bases de Datos\TECAir-CE-3101\TECAir_API\obj\Debug\net6.0\TECAir_API.genruntimeconfig.cache
 C:\Users\yendr\OneDrive\Documentos\Bases de Datos\TECAir-CE-3101\TECAir_API\obj\Debug\net6.0\ref\TECAir_API.dll
+C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\appsettings.json
+C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\TECAir_API.exe
+C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\TECAir_API.deps.json
+C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\TECAir_API.runtimeconfig.json
+C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\TECAir_API.dll
+C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\TECAir_API.pdb
+C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\obj\Debug\net6.0\TECAir_API.csproj.AssemblyReference.cache
+C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\obj\Debug\net6.0\TECAir_API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\obj\Debug\net6.0\TECAir_API.AssemblyInfoInputs.cache
+C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\obj\Debug\net6.0\TECAir_API.AssemblyInfo.cs
+C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\obj\Debug\net6.0\TECAir_API.csproj.CoreCompileInputs.cache
+C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\obj\Debug\net6.0\TECAir_API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\obj\Debug\net6.0\TECAir_API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\obj\Debug\net6.0\scopedcss\bundle\TECAir_API.styles.css
+C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\obj\Debug\net6.0\TECAir_API.csproj.CopyComplete
+C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\obj\Debug\net6.0\TECAir_API.dll
+C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\obj\Debug\net6.0\refint\TECAir_API.dll
+C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\obj\Debug\net6.0\TECAir_API.pdb
+C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\obj\Debug\net6.0\TECAir_API.genruntimeconfig.cache
+C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\obj\Debug\net6.0\ref\TECAir_API.dll
