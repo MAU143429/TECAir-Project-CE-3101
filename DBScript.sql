@@ -22,7 +22,7 @@ CREATE TABLE public.estudiante (
 -- Tabla Trabajador
 
 CREATE TABLE public.trabajador (
-    id_trabajador numeric NOT NULL,
+    id_trabajador character varying(20) NOT NULL,
     t_contrasena character varying(20) NOT NULL
 );
 
@@ -50,10 +50,12 @@ CREATE TABLE public.vuelo (
     matricula character varying(20) NOT NULL
 );
 
--- Tabla vuelo_escala
+-- Tabla escala
 
-CREATE TABLE public.vuelo_escala (
-    escala character varying(256) NOT NULL,
+CREATE TABLE public.escala (
+    no_escala numeric NOT NULL,
+    escala character varying(60) NOT NULL,
+    orden numeric NOT NULL,
     no_vuelo numeric NOT NULL
 );
 
@@ -85,7 +87,7 @@ CREATE TABLE public.reservacion (
     cancelado boolean NOT NULL,
     no_vuelo numeric NOT NULL,
     id_usuario numeric,
-    id_trabajador numeric
+    id_trabajador character varying(20) NOT NULL
 );
 
 -- Tabla tiquete
@@ -120,7 +122,8 @@ CREATE TABLE public.maleta (
     no_maleta numeric NOT NULL,
     color character varying(20) NOT NULL,
     peso numeric NOT NULL,
-    dni numeric NOT NULL
+    dni numeric NOT NULL,
+    no_vuelo numeric NOT NULL
 );
 
 -- ALTER TABLE
@@ -155,9 +158,6 @@ ALTER TABLE ONLY public.trabajador
 ALTER TABLE ONLY public.usuario
     ADD CONSTRAINT usuario_pkey PRIMARY KEY (id_usuario);
 
-ALTER TABLE ONLY public.vuelo_escala
-    ADD CONSTRAINT vuelo_escala_pkey PRIMARY KEY (escala);
-
 ALTER TABLE ONLY public.vuelo
     ADD CONSTRAINT vuelo_pkey PRIMARY KEY (no_vuelo);
 
@@ -169,10 +169,11 @@ ALTER TABLE ONLY public.tiquete
 ALTER TABLE ONLY public.maleta
     ADD CONSTRAINT dni FOREIGN KEY (dni) REFERENCES public.pasajero(dni);
 
+ALTER TABLE ONLY public.maleta
+    ADD CONSTRAINT no_vuelo FOREIGN KEY (no_vuelo) REFERENCES public.vuelo(no_vuelo) NOT VALID;
 
 ALTER TABLE ONLY public.reservacion
-    ADD CONSTRAINT id_trabajador FOREIGN KEY (id_trabajador) REFERENCES public.trabajador(id_trabajador);
-
+    ADD CONSTRAINT id_trabajador FOREIGN KEY (id_trabajador) REFERENCES public.trabajador(id_trabajador) NOT VALID;
 
 ALTER TABLE ONLY public.estudiante
     ADD CONSTRAINT id_usuario FOREIGN KEY (id_usuario) REFERENCES public.usuario(id_usuario);
@@ -198,8 +199,10 @@ ALTER TABLE ONLY public.tiquete
 ALTER TABLE ONLY public.pasajero
     ADD CONSTRAINT no_transaccion FOREIGN KEY (no_transaccion) REFERENCES public.tiquete(no_transaccion);
 
+ALTER TABLE ONLY public.escala
+    ADD CONSTRAINT escala_pkey PRIMARY KEY (no_escala);
 
-ALTER TABLE ONLY public.vuelo_escala
+ALTER TABLE ONLY public.escala
     ADD CONSTRAINT no_vuelo FOREIGN KEY (no_vuelo) REFERENCES public.vuelo(no_vuelo);
 
 
