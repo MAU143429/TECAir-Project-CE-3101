@@ -8,46 +8,49 @@
      
    </head>
 <body>
-    <app-unavbar></app-unavbar>
-    <div class="carusel">
-      <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="https://picsum.photos/id/700/900/500" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
-              <p>Some representative placeholder content for the first slide.</p>
-            </div>
+  <app-unavbar></app-unavbar>
+    <div class = "carusel">
+      <owl-carousel-o [options]="customOptions">
+        <ng-template carouselSlide>
+          
+          <div class="card">
+            
+            <img class="resource" src="https://images.costarica.org/wp-content/uploads/2017/04/Caribbean-Coast-View2.jpg">
+
+            <span class="places">San Jose - Ciudad de Mexico</span>
+            <span class="details">Salida: 19 Apr 2022</span>
+            <span class="details">30% Off</span>
+            <span class="prices">USD $350*</span>
+            <button class="bookingbtn"> ¡Reservar ya!</button>
+
+
+
           </div>
-          <div class="carousel-item">
-            <img src="https://picsum.photos/id/1011/900/500" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Second slide label</h5>
-              <p>Some representative placeholder content for the second slide.</p>
-            </div>
+          
+        </ng-template>  
+        <ng-template carouselSlide>
+          <div class="card">
+            <img class="resource" src="https://media.tacdn.com/media/attractions-content--1x-1/0b/2b/fc/2a.jpg">
+
+            <span class="places">San Jose - Rio de Janeiro</span>
+            <span class="details">Salida: 30 May 2022</span>
+            <span class="details">10% Off</span>
+            <span class="prices">USD $700*</span>
+            <button class="bookingbtn"> ¡Reservar ya!</button>
           </div>
-          <div class="carousel-item">
-            <img src="https://picsum.photos/id/984/900/500" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Third slide label</h5>
-              <p>Some representative placeholder content for the third slide.</p>
-            </div>
+        </ng-template>  
+        <ng-template carouselSlide>
+          <div class="card">
+            <img class="resource" src="https://cdn2.civitatis.com/egipto/el-cairo/el-cairo.jpg">
+
+            <span class="places">San Jose - El Cairo</span>
+            <span class="details">Salida: 25 Apr 2022</span>
+            <span class="details">20% Off</span>
+            <span class="prices">USD $1250*</span>
+            <button class="bookingbtn"> ¡Reservar ya!</button>
           </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
+        </ng-template>  
+      </owl-carousel-o>
     </div>
 </body>
 </html>

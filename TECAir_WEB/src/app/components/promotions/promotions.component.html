@@ -6,9 +6,96 @@
     <link rel="stylesheet" href= "promotions.component.css">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      
-   </head>
-<body>
-  <app-enavbar></app-enavbar>
+  </head>
+    <body>
+        <!---Navbar--->
+        <app-enavbar></app-enavbar>
     
-</body>
+        <!---Contenedor principal--->
+    
+          <div class="promotionszone">
+    
+            <!---Seccion crear promociones--->
+            <h3 class="maintitle">Crear Promociones</h3>
+            <div class="section1">
+              <div class="container">
+                <div class="content">
+                  <form>
+                    <div class="promotions-details">
+                      <div class="input-box">
+                        <span class="details">Numero de Vuelo</span>
+                        <input type="text" placeholder="Ingrese el numero de vuelo" required>
+                      </div>
+                      <div class="input-box">
+                        <span class="details"> Porcentaje de descuento</span>
+                        <input type="number" placeholder="Ingrese el porcentaje a descontar" required>
+                      </div>
+                      <div class="input-box">
+                        <span class="details">Periodo del descuento (dias)</span>
+                        <input type="number" placeholder="Ingrese el periodo de duracion de la promocion" required>
+                      </div>
+                      <div class="input-box">
+                        <span class="details">Fecha de inicio</span>
+                        <input type="date" placeholder="Seleccione la fecha de inicio de la promocion" required>
+                      </div>
+                    
+                      <div class="input-box2">
+                        <span class="details">URL de imagen</span>
+                        <input type="text" placeholder="Indique una url de imagen para su promocion" required>
+                      </div>
+                
+                    </div>
+                    <div class="button">
+                      <input type="submit" value="Crear Promocion" routerLink="/homeemployee">
+                    </div>
+                  </form> 
+                </div>
+              </div>
+            </div>
+
+            <div class = "carusel">
+              <owl-carousel-o [options]="customOptions">
+                <ng-template carouselSlide>
+                  
+                  <div class="card">
+                    
+                    <img class="resource" src="https://images.costarica.org/wp-content/uploads/2017/04/Caribbean-Coast-View2.jpg">
+        
+                    <span class="places">San Jose - Ciudad de Mexico</span>
+                    <span class="details-info">Salida: 19 Apr 2022</span>
+                    <span class="details-info">30% Off</span>
+                    <span class="prices">USD $350*</span>
+                    <button class="bookingbtn"> ¡Reservar ya!</button>
+      
+                  </div>
+                  
+                </ng-template>  
+                <ng-template carouselSlide>
+                  <div class="card">
+                    <img class="resource" src="https://media.tacdn.com/media/attractions-content--1x-1/0b/2b/fc/2a.jpg">
+        
+                    <span class="places">San Jose - Rio de Janeiro</span>
+                    <span class="details-info">Salida: 30 May 2022</span>
+                    <span class="details-info">10% Off</span>
+                    <span class="prices">USD $700*</span>
+                    <button class="bookingbtn"> ¡Reservar ya!</button>
+                  </div>
+                </ng-template>  
+                <ng-template carouselSlide>
+                  <div class="card">
+                    <img class="resource" src="https://cdn2.civitatis.com/egipto/el-cairo/el-cairo.jpg">
+        
+                    <span class="places">San Jose - El Cairo</span>
+                    <span class="details-info">Salida: 25 Apr 2022</span>
+                    <span class="details-info">20% Off</span>
+                    <span class="prices">USD $1250*</span>
+                    <button class="bookingbtn"> ¡Reservar ya!</button>
+                  </div>
+                </ng-template>  
+              </owl-carousel-o>
+            </div>
+          </div>
+          
+  </body>
 </html>
+ 

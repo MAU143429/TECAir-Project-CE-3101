@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxMatTimepickerModule } from 'ngx-mat-timepicker';
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -27,6 +28,8 @@ import { BookingUserComponent } from './components/booking-user/booking-user.com
 import { BookingEmployeeComponent } from './components/booking-employee/booking-employee.component';
 import { BillingComponent } from './components/billing/billing.component';
 import { TicketComponent } from './components/ticket/ticket.component';
+import { BillingEmployeeComponent } from './components/billing-employee/billing-employee.component';
+import { TicketEmployeeComponent } from './components/ticket-employee/ticket-employee.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +50,10 @@ import { TicketComponent } from './components/ticket/ticket.component';
     BookingUserComponent,
     BookingEmployeeComponent,
     BillingComponent,
-    TicketComponent
+    TicketComponent,
+    BillingEmployeeComponent,
+    TicketEmployeeComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -57,7 +63,8 @@ import { TicketComponent } from './components/ticket/ticket.component';
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
-    NgxMatTimepickerModule
+    NgxMatTimepickerModule,
+    CarouselModule
 
   ],
   providers: [],

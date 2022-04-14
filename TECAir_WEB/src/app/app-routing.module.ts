@@ -15,6 +15,8 @@ import { BookingUserComponent } from './components/booking-user/booking-user.com
 import { BookingEmployeeComponent} from './components/booking-employee/booking-employee.component';
 import { BillingComponent } from './components/billing/billing.component';
 import { TicketComponent } from './components/ticket/ticket.component';
+import { BillingEmployeeComponent } from './components/billing-employee/billing-employee.component';
+import { TicketEmployeeComponent } from './components/ticket-employee/ticket-employee.component';
 
 
 
@@ -34,7 +36,9 @@ const routes: Routes = [
   {path: 'create-promotions', component: PromotionsComponent},
   {path: 'flights', component: FlightsComponent},
   {path: 'billing', component: BillingComponent},
-  {path: 'ticket', component: TicketComponent}
+  {path: 'billingEmployee', component: BillingEmployeeComponent},
+  {path: 'ticket', component: TicketComponent},
+  {path: 'ticketEmployee', component: TicketEmployeeComponent}
 
 
 ];

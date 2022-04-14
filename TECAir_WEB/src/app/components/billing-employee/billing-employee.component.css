@@ -15,6 +15,7 @@ body{
   background-attachment: fixed;
   background-size:cover;
   z-index: -10;
+
 } 
 
 .bookingzone{
@@ -183,4 +184,3 @@ form .button input{
 form .button input:hover{
  background: linear-gradient(-135deg, #e7bb40, #e46c1c, #b12828);
  }
-

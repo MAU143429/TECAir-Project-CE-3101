@@ -36,23 +36,17 @@
                   </div>
                   <div class="input-box">
                     <span class="details">Hora de salida</span>
-                    <button class="btn btn-outline-secondary calendar" (click)="t.toggle()" type="button"></button>
-                    <input placeholder="Seleccione la hora de salida"
-                    name="takeoff" [(ngModel)]="takeoff" ngbDatepicker #t="ngbDatepicker">
+                    <input type="time" placeholder="Seleccione la hora de salida" required >
                   </div>
   
                   <div class="input-box">
                     <span class="details">Hora de llegada</span>
-                    <button class="btn btn-outline-secondary calendar" (click)="t.toggle()" type="button"></button>
-                    <input placeholder="Seleccione la hora aproximada de llegada"
-                    name="takeoff" [(ngModel)]="takeoff" ngbDatepicker #t="ngbDatepicker">
+                    <input type="time" placeholder="Seleccione la hora aproximada de llegada" required>
                   </div>
 
                   <div class="input-box">
                     <span class="details">Fecha del vuelo</span>
-                    <button class="btn btn-outline-secondary calendar" (click)="t.toggle()" type="button"></button>
-                    <input placeholder="Seleccione la fecha del vuelo"
-                    name="takeoff" [(ngModel)]="takeoff" ngbDatepicker #t="ngbDatepicker">
+                    <input type="date" placeholder="Seleccione la fecha del vuelo" required>
                   </div>
 
                   <div class="input-box2 input-box">
@@ -62,11 +56,11 @@
 
                   <div class="input-box3 input-box">
                     <span class="details">Coste del tiquete</span>
-                    <input type="text" placeholder="Ingrese la tarifa del boleto" required>
+                    <input type="number" placeholder="Ingrese la tarifa del boleto" required>
                   </div>
                 </div>
 
-                <div class="create-btn">
+                <div class="button">
                   <input type="submit" value="Registrar Vuelo" routerLink="/flights" (click)="open(content)">
                 </div>
               </form>
@@ -74,11 +68,12 @@
           </div>
         </div>
 
-        <!---Seccion Apertura de Vuelos--->
+        <!---Seccion Apertura y Cierre de Vuelos--->
 
         <div class="container">
           <div class="row">
 
+            <!---Seccion Apertura de Vuelos--->
             <div class="col-sm">
               <h4 class="maintitle">Apertura de vuelos</h4>
               <div class="content">
@@ -95,10 +90,37 @@
                 </form>
               </div>
 
+              <div class="passanger-details">
+                <div class="row">
+                  <div id="htmlData">
+                    <table class="table table-bordered mt-4 mytable">
+                      <tr class="table-primary mytable passanger-table">
+                        <th>Número de Vuelo</th>
+                        <th>Nombre del pasajero</th>
+                        <th>Origen</th>
+                        <th>Destino</th>
+                        <th>Abordara</th>
+                        <th>Detalles</th>
+                        
+                      </tr>
+                      <tr *ngFor="let data of passangerdata">
+                        <th>{{data.no_vuelo}}</th>
+                        <td>{{data.p_nombre}}</td>
+                        <td>{{data.origen}}</td>
+                        <td>{{data.destino}}</td>
+                        <td>{{data.abordaje}}</td>
+                        <td><button class="actionsbtn">Confirmar Abordaje</button></td>
+    
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div> 
+
 
             </div>
 
-
+            <!---Seccion Cierre de Vuelos--->
             <div class="col-sm">
 
               <h4 class="maintitle">Cierre de vuelos</h4>
@@ -117,6 +139,38 @@
                   </div>
                 </form>
               </div>
+
+              <div class="close-details">
+                <div class="row">
+                  <div id="htmlData">
+                    <table class="table table-bordered mt-4 mytable">
+                      <tr class="table-primary mytable">
+                        <th>Número de Vuelo</th>
+                        <th>Origen</th>
+                        <th>Destino</th>
+                        <th>Hora de salida</th>
+                        <th>Detalles</th>
+                        
+                      </tr>
+                      <tr *ngFor="let data of flightdata">
+                        <th>{{data.no_vuelo}}</th>
+                        <td>{{data.origen}}</td>
+                        <td>{{data.destino}}</td>
+                        <td>{{data.h_salida}}</td>
+                        <td><button class="actionsbtn">Cerrar Vuelo</button></td>
+    
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div> 
+
+
+
+
+
+
+
             </div>
           </div>
         </div>
