@@ -24,18 +24,21 @@ namespace TECAir_API.Controllers
 
         // GET api/<UsuarioController>/5
         [HttpGet("{id}")]
-        public Usuario Get(int id)
+        public List<Usuario> Get(int id)
         {
             usuarios.Add(new Usuario(1, "Victor", "Castrillo", "Munoz", "victor.castrillo.99@estudiantec.cr", "2017110244", 83592900));
             usuarios.Add(new Usuario(2, "Andrés", "Monge", "Salas", "andres.monge.00@estudiantec.cr", "2018403365", 88390462));
             usuarios.Add(new Usuario(3, "Valeria", "Herrera", "López", "valeria.herrera.98@estudiantec.cr", "2016992042", 86708269));
+            List<Usuario> resultado = new List<Usuario>();
 
             for (int i = 0; i < usuarios.Count; i++)
             {
                 if (usuarios[i].id_usuario == id)
-                    return usuarios[i];
+                {
+                    resultado.Add(usuarios[i]);
+                }                    
             }
-            return new Usuario();
+            return resultado;
         }
 
         // POST api/<UsuarioController>

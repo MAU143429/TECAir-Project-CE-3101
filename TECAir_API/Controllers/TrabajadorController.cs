@@ -15,25 +15,26 @@ namespace TECAir_API.Controllers
         [HttpGet]
         public List<Trabajador> Get()
         {
-            trabajadores.Add(new Trabajador(1, "admin1"));
-            trabajadores.Add(new Trabajador(2, "admin2"));
+            trabajadores.Add(new Trabajador("admin", "admin"));
+            trabajadores.Add(new Trabajador("mrivera", "mrivera"));
 
             return trabajadores;
         }
 
         // GET api/<TrabajadorController>/5
         [HttpGet("{id}")]
-        public Trabajador Get(int id)
+        public List<Trabajador> Get(string id)
         {
-            trabajadores.Add(new Trabajador(1, "admin1"));
-            trabajadores.Add(new Trabajador(2, "admin2"));
+            trabajadores.Add(new Trabajador("admin", "admin"));
+            trabajadores.Add(new Trabajador("mrivera", "mrivera"));
+            List<Trabajador> resultado = new List<Trabajador>();
 
             for (int i = 0; i < trabajadores.Count; i++)
             {
                 if (trabajadores[i].id_trabajador == id)
-                    return trabajadores[i];
+                    resultado.Add(trabajadores[i]);
             }
-            return new Trabajador();
+            return resultado;
         }
 
         // POST api/<TrabajadorController>
