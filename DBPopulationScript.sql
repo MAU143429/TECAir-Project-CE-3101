@@ -59,12 +59,34 @@ INSERT INTO Vuelo(no_vuelo, origen, destino, prt_abordaje, h_salida, h_llegada, 
 VALUES(13568999, 'San José', 'Ciudad de México', 'G7', '11:50', '16:10', '30', '04', '2022', 1400,'737-100');
 
 INSERT INTO Vuelo(no_vuelo, origen, destino, prt_abordaje, h_salida, h_llegada, v_dia, v_mes, v_ano, coste_vuelo, matricula)
-VALUES(298519, 'San José', 'Bogotá', 'G1', '14:45', '16:00', '05', '05', '2022', 213,'737-800');
+VALUES(298519, 'San José', 'Bogotá', 'G1', '14:45', '16:00', '05', '05', '2022', 213,'318-256');
 
 INSERT INTO Vuelo(no_vuelo, origen, destino, prt_abordaje, h_salida, h_llegada, v_dia, v_mes, v_ano, coste_vuelo, matricula)
-VALUES(568999, 'San José', 'Ciudad de México', 'G2', '11:50', '16:10', '30', '04', '2022', 213,'737-100');
+VALUES(568999, 'San José', 'Rio de Janeiro', 'G9', '16:55', '06:15', '10', '08', '2022', 222,'737-800');
 
 INSERT INTO Vuelo(no_vuelo, origen, destino, prt_abordaje, h_salida, h_llegada, v_dia, v_mes, v_ano, coste_vuelo, matricula)
-VALUES(98521479, 'San José', 'Ciudad de México', 'G10', '11:50', '16:10', '30', '04', '2022', 1400,'737-100');
+VALUES(98521479, 'San José', 'Medellin', 'G5', '08:42', '01:01', '12', '07', '2022', 274,'737-100');
 
--- Insertar 
+INSERT INTO Vuelo(no_vuelo, origen, destino, prt_abordaje, h_salida, h_llegada, v_dia, v_mes, v_ano, coste_vuelo, matricula)
+VALUES(98521479, 'San José', 'Cairo', 'G19', '13:40', '18:40', '23', '11', '2022', 1687,'350-1000');
+
+INSERT INTO Vuelo(no_vuelo, origen, destino, prt_abordaje, h_salida, h_llegada, v_dia, v_mes, v_ano, coste_vuelo, matricula)
+VALUES(98521479, 'San José', 'Los Ángeles', 'G19', '01:00', '06:05', '01', '07', '2022', 714,'737-800');
+
+INSERT INTO Vuelo(no_vuelo, origen, destino, prt_abordaje, h_salida, h_llegada, v_dia, v_mes, v_ano, coste_vuelo, matricula)
+VALUES(98521479, 'Sao Paulo', 'New York', 'G19', '07:00', '21:23', '11', '11', '2022', 952,'319-444');
+
+INSERT INTO Vuelo(no_vuelo, origen, destino, prt_abordaje, h_salida, h_llegada, v_dia, v_mes, v_ano, coste_vuelo, matricula)
+VALUES(98521479, 'Madrid', 'Praga', 'G3', '15:15', '17:23', '08', '06', '2022', 150,'737-300');
+
+INSERT INTO Vuelo(no_vuelo, origen, destino, prt_abordaje, h_salida, h_llegada, v_dia, v_mes, v_ano, coste_vuelo, matricula)
+VALUES(98521479, 'Londres', 'Las Vegas', 'G15', '11:00', '15:20', '05', '07', '2022', 894,'319-444');
+
+INSERT INTO Vuelo(no_vuelo, origen, destino, prt_abordaje, h_salida, h_llegada, v_dia, v_mes, v_ano, coste_vuelo, matricula)
+VALUES(98521479, 'Bruselas', 'Lisboa', 'G17', '16:00', '17:50', '13', '09', '2022', 99,'717-200');
+
+-- Insertar Promocion
+-- Insertar Reservacion: 5 (castri)
+-- Insertar Tiquete: 3 (yen)
+-- Insertar Pasajero: 3 (yen)
+-- Insertar Maleta: 6, 1 pasajero 1, 1 pasajero 2, 1 pasajero 3 (castri)

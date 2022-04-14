@@ -18,60 +18,88 @@
         "codigo": "MEX"
     },
     {
-        "nombre" : "Boeing 737",
-        "codigo" : "737-300"
+        "nombre": "Eldorado Intl",
+        "ciudad": "Bogota",
+        "pais": "Colombia",
+        "codigo": "BOG"
     },
     {
-        "nombre" : "Boeing 737",
-        "codigo" : "737-300"
+        "nombre": "Galeao Antonio Carlos Jobim",
+        "ciudad": "Rio De Janeiro",
+        "pais": "Brazil",
+        "codigo": "GIG"
     },
     {
-        "nombre" : "Boeing 737",
-        "codigo" : "737-300"
+        "name": "Jose Maria Cordova",
+        "city": "Rio Negro",
+        "country": "Colombia",
+        "iata_code": "MDE"
     },
     {
-        "nombre" : "Boeing 737",
-        "codigo" : "737-300"
+        "name": "Cairo Intl",
+        "city": "Cairo",
+        "country": "Egypt",
+        "iata_code": "CAI"
     },
     {
-        "nombre" : "Boeing 737",
-        "codigo" : "737-300"
+        "name": "Los Angeles Intl",
+        "city": "Los Angeles",
+        "country": "United States",
+        "iata_code": "LAX"
     },
     {
-        "nombre" : "Boeing 737",
-        "codigo" : "737-300"
+        "name": "Congonhas",
+        "city": "Sao Paulo",
+        "country": "Brazil",
+        "iata_code": "CGH"
     },
     {
-        "nombre" : "Boeing 737",
-        "codigo" : "737-300"
+        "name": "John F Kennedy Intl",
+        "city": "New York",
+        "country": "United States",
+        "iata_code": "JFK"
     },
     {
-        "nombre" : "Boeing 737",
-        "codigo" : "737-300"
+        "name": "Barajas",
+        "city": "Madrid",
+        "country": "Spain",
+        "iata_code": "MAD"
     },
     {
-        "nombre" : "Boeing 737",
-        "codigo" : "737-300"
+        "name": "Ruzyne",
+        "city": "Prague",
+        "country": "Czech Republic",
+        "iata_code": "PRG"
     },
     {
-        "nombre" : "Boeing 737",
-        "codigo" : "737-300"
+        "name": "Franz Josef Strauss",
+        "city": "Munich",
+        "country": "Germany",
+        "iata_code": "MUC"
     },
     {
-        "nombre" : "Boeing 737",
-        "codigo" : "737-300"
+        "name": "Gatwick",
+        "city": "London",
+        "country": "United Kingdom",
+        "iata_code": "LGW"
     },
     {
-        "nombre" : "Boeing 737",
-        "codigo" : "737-300"
+        "name": "Mc Carran Intl",
+        "city": "Las Vegas",
+        "country": "United States",
+        "iata_code": "LAS"
     },
     {
-        "nombre" : "Boeing 737",
-        "codigo" : "737-300"
+        "name": "Lisboa",
+        "city": "Lisbon",
+        "country": "Portugal",
+        "iata_code": "LIS"
     },
     {
-        "nombre" : "Boeing 737",
-        "codigo" : "737-300"
+        "name": "Brussels Natl",
+        "city": "Brussels",
+        "country": "Belgium",
+        "iata_code": "BRU"
     },
     {
         "nombre" : "Boeing 737",
