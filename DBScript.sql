@@ -47,7 +47,7 @@ CREATE TABLE public.vuelo (
     v_mes character varying(10) NOT NULL,
     v_ano character varying(10) NOT NULL,
     coste_vuelo numeric NOT NULL,
-    " matricula" character varying(20) NOT NULL
+    matricula character varying(20) NOT NULL
 );
 
 -- Tabla vuelo_escala
@@ -183,7 +183,7 @@ ALTER TABLE ONLY public.reservacion
 
 
 ALTER TABLE ONLY public.vuelo
-    ADD CONSTRAINT matricula FOREIGN KEY (" matricula") REFERENCES public.avion(matricula);
+    ADD CONSTRAINT matricula FOREIGN KEY (matricula) REFERENCES public.avion(matricula);
 
 
 
