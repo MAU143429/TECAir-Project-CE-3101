@@ -16,10 +16,59 @@
           <span class="info"> Conserve este tiquete hasta abordar el avion, de lo contrario no podrá acceder.</span>
           <div class="bg-ticket">
 
-              <div class="ticket-content">
+                <div class="ticket-content">
+                  <div class="container">
+                    <div class="row" >
+                        <div class="col1 col-sm">
+                            <br>  
+                            <br>
+                            <br>
+                            <span class="info">Nombre del pasajero:</span><br><span class="info">{{ticketinfo[0].p_nombre}} {{ticketinfo[0].p_apellido1}}</span>
+                            <br>
+                            <br>
+                            <span class="info" >Origen: {{ticketinfo[0].ciudad_origen}}</span>
+                            <br>
+                            <span class="info" >Destino: {{ticketinfo[0].ciudad_destino}}</span>
+                            <br>
+                            <br>
+                            <span class="info" >Puerta:</span><br><span class="info" >{{ticketinfo[0].ptr_abordaje}} </span>
+                            <br>
+                            <br>
+                        </div>
+                      
+                        <div class="col2 col-sm">
+                          <span></span>
+                          <br>  
+                          <br>
+                          <span class="info">No.Vuelo:</span><span class="info">{{ticketinfo[0].no_vuelo}}</span>
+                          <br>
+                          <span class="info" >Asiento:</span><span class="info">{{ticketinfo[0].asiento}}</span>
+                          <br>
+                          <span class="info" >Fecha:</span><span class="info" >{{ticketinfo[0].fecha}}</span>
+                          <br>
+                          <span class="info" > Hora:</span><span class="info" >{{ticketinfo[0].h_salida}} </span>
+                          <br>
+                          <br>
+                        </div>
 
-
+                        <div class="col3 col-sm">
+                          <span></span>
+                          <br>  
+                          <br>
+                          <span class="info">Escalas:</span><span class="info">{{ticketinfo[0].cant_escalas}}</span>
+                          <br>
+                          <span class="info" >Duracion:</span><span class="info">{{ticketinfo[0].duracion}}</span>
+                          <br>
+                          <span class="info" >Aeropuerto de llegada:</span><span class="info" >{{ticketinfo[0].destino}}</span>
+                          <br>
+                          <span class="info" > Modelo de Avion:</span><span class="info">{{ticketinfo[0].avion}} </span>
+                          <br>
+                          <br>
+                        </div>
+                  </div>
+                </div>
               </div>
+
           </div>
             
         </div>
