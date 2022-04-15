@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\victo\\Desktop\\TECAir-CE-3101\\TECAir_API\\TECAir_API.csproj": {}
+    "C:\\Users\\yendr\\Documents\\2022\\Bases de Datos\\TECAir-CE-3101\\TECAir_API\\TECAir_API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\victo\\Desktop\\TECAir-CE-3101\\TECAir_API\\TECAir_API.csproj": {
+    "C:\\Users\\yendr\\Documents\\2022\\Bases de Datos\\TECAir-CE-3101\\TECAir_API\\TECAir_API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\victo\\Desktop\\TECAir-CE-3101\\TECAir_API\\TECAir_API.csproj",
+        "projectUniqueName": "C:\\Users\\yendr\\Documents\\2022\\Bases de Datos\\TECAir-CE-3101\\TECAir_API\\TECAir_API.csproj",
         "projectName": "TECAir_API",
-        "projectPath": "C:\\Users\\victo\\Desktop\\TECAir-CE-3101\\TECAir_API\\TECAir_API.csproj",
-        "packagesPath": "C:\\Users\\victo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\victo\\Desktop\\TECAir-CE-3101\\TECAir_API\\obj\\",
+        "projectPath": "C:\\Users\\yendr\\Documents\\2022\\Bases de Datos\\TECAir-CE-3101\\TECAir_API\\TECAir_API.csproj",
+        "packagesPath": "C:\\Users\\yendr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\yendr\\Documents\\2022\\Bases de Datos\\TECAir-CE-3101\\TECAir_API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\victo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\yendr\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,6 +40,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.4, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
