@@ -16,7 +16,7 @@ export class FlightsComponent implements OnInit {
       "p_nombre" : "Juan Santamaria",
       "origen" : "SJO Costa Rica Aeropuerto Internacional Juan Santamaria",
       "destino": "MXN Mexico Aeropuerto Benito Juarez",
-      "abordaje": "No",
+      "abordaje": "Si",
     }
   ]
 

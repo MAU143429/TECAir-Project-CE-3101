@@ -13,7 +13,7 @@ h5{
 } 
 
 .info{
-   font-size: 20px;
+   font-size: 16px;
    font-weight: 700;
    margin-left: 31%;
    
@@ -37,4 +37,18 @@ h5{
 
 .btnformat:hover{
     background: linear-gradient(-135deg, #e7bb40, #e46c1c, #b12828);
+}
+
+.col1{
+   width: 500px;
+
+}
+
+.col2{
+   width: 200px;
+   
+}
+.col3{
+   width: 200px;
+   
 }
