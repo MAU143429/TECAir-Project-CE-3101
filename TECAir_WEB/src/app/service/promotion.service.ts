@@ -17,6 +17,6 @@ export class PromotionService {
    *  Este post permite enviar la informacion de una promocion para que esta sea registrada.
    */
   addPromotion(promotion:any):Observable<any>{
-    return this.httpclient.post(this.url+'/AddPromotion', promotion) 
+    return this.httpclient.post(this.url+'/Promocion/Add', promotion) 
   }
 }
