@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UZN7/NdMOfBG4dumIyCbnsQI+UemlJRrl0xQFb8Hl/KSnr25OmYbSpnry4/6jwmNa/dpXqBGfuJFjAa4Yb5F0w==",
+  "dgSpecHash": "JcVfYPbNYqv3aelnfksfe7sOB83RYyvCX3dI/oaJoHuJ+yesVzeA+KGwPR/fg+0YqI2Hi7MKQVjR88fRaU1eGQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\yendr\\OneDrive\\Documentos\\Bases de Datos\\TECAir-CE-3101\\TECAir_API\\TECAir_API.csproj",
+  "projectFilePath": "C:\\Users\\yendr\\Documents\\2022\\Bases de Datos\\TECAir-CE-3101\\TECAir_API\\TECAir_API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\yendr\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\yendr\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
