@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!---Referencia al archivo css que contiene el estilo--->
+    <link rel="stylesheet" href="payment-employee.component.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+   </head>
+    <body>
+        <div class="container">
+            <div class="row">
+            <div id="htmlData" >
+                <br>
+                <img class="source" src = "https://media.discordapp.net/attachments/880202330178469899/964291744592195634/tecairbanner.png">
+                <br>
+                <br>
+                <br>
+                <span class="title">¡TU COMPRA SE COMPLETÓ CON ÉXITO!</span>
+                <br>
+                <br>
+                <span class="details" style="margin-left: 40%;">Número de transacción:</span>
+                <br>
+                <span class="details" style="margin-left: 44%;">{{ticketinfo[0].no_transaccion}}</span>
+                <br>
+                <br>
+                <span class="instructions">Esta página no es válida como tiquete para abordar el avion, solamente es un comprobante
+                    <br>  para recordar el número de transacción e instrucciones para el retiro del boleto en el aeropuerto. </span>
+                <br>
+                <br>
+                
+            
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm">
+                            <span class="info">Detalles de tu compra:</span>
+                            <br>  
+                            <br>
+                            <span class="info">Lugares:</span><span class="info" style="margin-left: 22%;">{{ticketinfo[0].ciudad_origen}} - {{ticketinfo[0].ciudad_destino}}</span>
+                            <br>
+                            <span class="info" >Hora y Fecha:</span><span class="info" style="margin-left: 14.2%;">{{ticketinfo[0].fecha}} - {{ticketinfo[0].h_salida}}</span>
+                            <br>
+                            <span class="info" >Aeropuerto de salida:</span><span class="info" style="margin-left: 2%;">{{ticketinfo[0].origen}}</span>
+                            <br>
+                            <span class="info" > Abordaje en puerta:</span><span class="info" style="margin-left: 4%;">{{ticketinfo[0].ptr_abordaje}} </span>
+                            <br>
+                            <br>
+                        </div>
+                      
+                          <div class="col-sm">
+                            <span></span>
+                            <br>  
+                            <br>
+                            <span class="info">Escalas:</span><span class="info" style="margin-left: 24%;">{{ticketinfo[0].cant_escalas}}</span>
+                            <br>
+                            <span class="info" >Duracion:</span><span class="info" style="margin-left: 21%;">{{ticketinfo[0].duracion}}</span>
+                            <br>
+                            <span class="info" >Aeropuerto de llegada:</span><span class="info" style="margin-left: 1%;">{{ticketinfo[0].destino}}</span>
+                            <br>
+                            <span class="info" > Modelo de Avion:</span><span class="info" style="margin-left: 9%;">{{ticketinfo[0].avion}} </span>
+                            <br>
+                            <br>
+                         </div>
+                  </div>
+                </div>
+                <span class="mtext">El usuario debe guardar el número de transacción para realizar el canje del pase de abordar al llegar al aeropuerto. </span>
+                         
+            </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <button class="btn btnformat" routerLink="/employeeBooking" >Regresar</button>
+                </div>
+                <div class="col-sm">
+                    <button class="btn col col-lg-4 btn-block ml-4 btnformat" (click)="downloadGeneralReport()">Download PDF</button>
+                </div>
+            </div>
+        </div> 
+</body>
+</html>
+
+ 

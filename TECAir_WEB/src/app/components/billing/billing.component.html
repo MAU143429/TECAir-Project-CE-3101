@@ -10,10 +10,33 @@
 <body>
       <div class="bookingzone">
 
-        <h3 class="maintitle">Detalles del viaje</h3>
+        <h4 class="maintitle">Detalles del viaje</h4>
 
         <div class = "container2">
-            <h5>Aqui van los detalles del vuelo</h5>
+          <div class="row">
+              <div class="col-sm">
+                  <span class="info">Lugares:</span><span class="info" style="margin-left: 245%;">{{reservationdata[0].ciudad_origen}} - {{reservationdata[0].ciudad_destino}}</span>
+                  <br>
+                  <span class="info" >Hora y Fecha:</span><span class="info" style="margin-left: 15.5%;">{{reservationdata[0].fecha}} - {{reservationdata[0].h_salida}}</span>
+                  <br>
+                  <span class="info" >Aeropuerto de salida:</span><span class="info" >{{reservationdata[0].origen}}</span>
+                  <br>
+                  <span class="info" > Abordaje en puerta:</span><span class="info" style="margin-left: 4%;">{{reservationdata[0].ptr_abordaje}} </span>
+                  <br>
+                  <br>
+              </div>
+            
+                <div class="col-sm">
+                  <span class="info">Escalas:</span><span class="info" style="margin-left: 31%;">{{reservationdata[0].cant_escalas}}</span>
+                  <br>
+                  <span class="info" >Duracion:</span><span class="info" style="margin-left: 28%;">{{reservationdata[0].duracion}}</span>
+                  <br>
+                  <span class="info" >Aeropuerto de llegada:</span><span class="info" style="margin-left: 2%;">{{reservationdata[0].destino}}</span>
+                  <br>
+                  <span class="info" > Modelo de Avion:</span><span class="info" style="margin-left: 13.5%;">{{reservationdata[0].avion}} </span>
+                </div>
+          
+          </div>
         </div>
 
         <div class="container">
@@ -58,16 +81,27 @@
                 </div>
                 <div class="input-box">
                   <span class="details">Fecha de vencimiento</span>
-                  <input type="date" placeholder="Ingrese la feche de vencimiento de la tarjeta" required>
+                  <input type="month" placeholder="Ingrese la feche de vencimiento de la tarjeta" required>
                 </div>
                 <div class="input-box">
                   <span class="details">Número CVC</span>
                   <input type="number" placeholder="Ingrese el CVC presente detrás de la tarjeta" required>
                 </div>
 
-                <div class="button">
-                  <input type="submit" value="Pagar Vuelo"  routerLink="/userBooking">
-                </div>
+                
+                <div class="container">
+                  <br>
+                  <br>
+                  <div class="row">
+                      <div class="col-sm">
+                          <button class="btn btnformat" routerLink="/userBooking" >Regresar</button>
+                      </div>
+                      <div class="col-sm">
+                          <button class="btn btnformat" style= "margin-left: 22%;" routerLink="/userBooking" >Pagar Vuelo</button>
+                      </div>
+                  </div>
+              </div> 
+
             </div>
             </form>
           </div>

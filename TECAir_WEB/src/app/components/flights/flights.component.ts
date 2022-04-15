@@ -18,7 +18,7 @@ export class FlightsComponent implements OnInit {
       "destino": "MXN Mexico Aeropuerto Benito Juarez",
       "abordaje": "No",
     }
-]
+  ]
 
     flightdata = [
     {
@@ -27,15 +27,10 @@ export class FlightsComponent implements OnInit {
       "destino": "MXN Mexico Aeropuerto Benito Juarez",
       "h_salida": "2:00 AM",
     }
-]
+  ]
 
-
-
-  
-  time: any;
-  takeoff: NgbDateStruct | undefined;
+  btnstatus = "Confirmar Abordaje"
   closeResult = '';
-
   constructor(private modalService: NgbModal) { }
 
   open(content:any) {
@@ -57,7 +52,14 @@ export class FlightsComponent implements OnInit {
   }
  
   ngOnInit(): void { 
+    if ( this.passangerdata[0].abordaje == "No") {
+      this.btnstatus = "Confirmar abordaje"
+    }else {
+      this.btnstatus = "Cancelar abordaje";
+    }
   }
+
+  
 
 }
  

@@ -123,7 +123,7 @@ form input{
 .popup{
   width: 500px;
   height: 252px;
-  background-image: url("src\assets\images\popup.png");
+  background-image: url("src\assets\images\searchpopup.png");
   background-size:cover;
   background-position: center;
 }
@@ -167,7 +167,7 @@ form .button input:hover{
 .carusel{
   width: 90%;
   margin-left: 5%;
- 
+
   
 }
 
@@ -176,8 +176,6 @@ form .button input:hover{
   width: 100%;
   background-color: white;
 }
-
-
 
 .resource{
   width: 250px;
@@ -193,7 +191,7 @@ form .button input:hover{
 
 }
 
-.details-info{
+.details{
   margin-left: 2%;
   font-size: 15px;
   font-weight: 500;
@@ -201,20 +199,27 @@ form .button input:hover{
 
 .prices{
   color: #d66320;
-  margin-left: 65%;
+  margin-left: 55%;
   font-size: 28px;
   font-weight: 500;
 }
 
 .bookingbtn{
-  width: 50%;
   height: 30%;
+  width: 60%;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #e7bb40, #e46c1c, #b12828);
   margin-bottom: 1%;
   margin-top: 1%;
   margin-left: 23%;
-  border-radius: 5px;
-  color: white;
-  background-color: #0060a9;
-  font-size: 28px;
-  font-weight: 500;
 }
+.bookingbtn:hover{
+  background: linear-gradient(-135deg, #e7bb40, #e46c1c, #b12828);
+  }

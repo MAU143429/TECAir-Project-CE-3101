@@ -11,46 +11,104 @@
   <app-unavbar></app-unavbar>
     <div class = "carusel">
       <owl-carousel-o [options]="customOptions">
-        <ng-template carouselSlide>
-          
-          <div class="card">
-            
-            <img class="resource" src="https://images.costarica.org/wp-content/uploads/2017/04/Caribbean-Coast-View2.jpg">
 
-            <span class="places">San Jose - Ciudad de Mexico</span>
-            <span class="details">Salida: 19 Apr 2022</span>
-            <span class="details">30% Off</span>
-            <span class="prices">USD $350*</span>
-            <button class="bookingbtn"> ¡Reservar ya!</button>
-
-
-
-          </div>
-          
-        </ng-template>  
         <ng-template carouselSlide>
           <div class="card">
-            <img class="resource" src="https://media.tacdn.com/media/attractions-content--1x-1/0b/2b/fc/2a.jpg">
-
-            <span class="places">San Jose - Rio de Janeiro</span>
-            <span class="details">Salida: 30 May 2022</span>
-            <span class="details">10% Off</span>
-            <span class="prices">USD $700*</span>
-            <button class="bookingbtn"> ¡Reservar ya!</button>
+            <img class="resource" src={{promotionsdata[0].url}}>
+            <span class="places">{{promotionsdata[0].lugares}}</span>
+            <span class="details">Salida:{{promotionsdata[0].fecha}}</span>
+            <span class="details">{{promotionsdata[0].porcentaje}}% Off</span>
+            <span class="prices">USD${{promotionsdata[0].precio}}*</span>
+            <button class="bookingbtn" type="submit" (click)="open(content)"> ¡Reservar ya!</button>
           </div>
         </ng-template>  
+
         <ng-template carouselSlide>
           <div class="card">
-            <img class="resource" src="https://cdn2.civitatis.com/egipto/el-cairo/el-cairo.jpg">
-
-            <span class="places">San Jose - El Cairo</span>
-            <span class="details">Salida: 25 Apr 2022</span>
-            <span class="details">20% Off</span>
-            <span class="prices">USD $1250*</span>
-            <button class="bookingbtn"> ¡Reservar ya!</button>
+            <img class="resource" src={{promotionsdata[1].url}}>
+            <span class="places">{{promotionsdata[1].lugares}}</span>
+            <span class="details">Salida:{{promotionsdata[1].fecha}}</span>
+            <span class="details">{{promotionsdata[1].porcentaje}}% Off</span>
+            <span class="prices">USD${{promotionsdata[1].precio}}*</span>
+            <button class="bookingbtn" type="submit" (click)="open(content)"> ¡Reservar ya!</button>
           </div>
         </ng-template>  
+
+        <ng-template carouselSlide>
+          <div class="card">
+            <img class="resource" src={{promotionsdata[2].url}}>
+            <span class="places">{{promotionsdata[2].lugares}}</span>
+            <span class="details">Salida:{{promotionsdata[2].fecha}}</span>
+            <span class="details">{{promotionsdata[2].porcentaje}}% Off</span>
+            <span class="prices">USD${{promotionsdata[2].precio}}*</span>
+            <button class="bookingbtn" type="submit" (click)="open(content)"> ¡Reservar ya!</button>
+          </div>
+        </ng-template>  
+
+        <ng-template carouselSlide>
+          <div class="card">
+            <img class="resource" src={{promotionsdata[3].url}}>
+            <span class="places">{{promotionsdata[3].lugares}}</span>
+            <span class="details">Salida:{{promotionsdata[3].fecha}}</span>
+            <span class="details">{{promotionsdata[3].porcentaje}}% Off</span>
+            <span class="prices">USD${{promotionsdata[3].precio}}*</span>
+            <button class="bookingbtn" type="submit" (click)="open(content)"> ¡Reservar ya!</button>
+          </div>
+        </ng-template>  
+
+        <ng-template carouselSlide>
+          <div class="card">
+            <img class="resource" src={{promotionsdata[4].url}}>
+            <span class="places">{{promotionsdata[4].lugares}}</span>
+            <span class="details">Salida:{{promotionsdata[4].fecha}}</span>
+            <span class="details">{{promotionsdata[4].porcentaje}}% Off</span>
+            <span class="prices">USD${{promotionsdata[4].precio}}*</span>
+            <button class="bookingbtn" type="submit" (click)="open(content)"> ¡Reservar ya!</button>
+          </div>
+        </ng-template>  
+
+        <ng-template carouselSlide>
+          <div class="card">
+            <img class="resource" src={{promotionsdata[5].url}}>
+            <span class="places">{{promotionsdata[5].lugares}}</span>
+            <span class="details">Salida:{{promotionsdata[5].fecha}}</span>
+            <span class="details">{{promotionsdata[5].porcentaje}}% Off</span>
+            <span class="prices">USD${{promotionsdata[5].precio}}*</span>
+            <button class="bookingbtn" type="submit" (click)="open(content)"> ¡Reservar ya!</button>
+          </div>
+        </ng-template>
+
+        <ng-template carouselSlide>
+          <div class="card">
+            <img class="resource" src={{promotionsdata[6].url}}>
+            <span class="places">{{promotionsdata[6].lugares}}</span>
+            <span class="details">Salida:{{promotionsdata[6].fecha}}</span>
+            <span class="details">{{promotionsdata[6].porcentaje}}% Off</span>
+            <span class="prices">USD${{promotionsdata[6].precio}}*</span>
+            <button class="bookingbtn" type="submit" (click)="open(content)"> ¡Reservar ya!</button>
+          </div>
+        </ng-template>  
+
+        <ng-template carouselSlide>
+          <div class="card">
+            <img class="resource" src={{promotionsdata[7].url}}>
+            <span class="places">{{promotionsdata[7].lugares}}</span>
+            <span class="details">Salida:{{promotionsdata[7].fecha}}</span>
+            <span class="details">{{promotionsdata[7].porcentaje}}% Off</span>
+            <span class="prices">USD${{promotionsdata[7].precio}}*</span>
+            <button class="bookingbtn" type="submit" (click)="open(content)"> ¡Reservar ya!</button>
+
+          </div>
+        </ng-template>
+
       </owl-carousel-o>
     </div>
 </body>
+
+<ng-template #content let-modal>
+  <div class="popup">
+    <button class="close cbtn" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+</ng-template>
+
 </html>

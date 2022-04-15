@@ -27,9 +27,11 @@ import { SearchEmployeeComponent } from './components/search-employee/search-emp
 import { BookingUserComponent } from './components/booking-user/booking-user.component';
 import { BookingEmployeeComponent } from './components/booking-employee/booking-employee.component';
 import { BillingComponent } from './components/billing/billing.component';
-import { TicketComponent } from './components/ticket/ticket.component';
 import { BillingEmployeeComponent } from './components/billing-employee/billing-employee.component';
-import { TicketEmployeeComponent } from './components/ticket-employee/ticket-employee.component';
+import { BaggageCheckComponent } from './components/baggage-check/baggage-check.component';
+import { PaymentUserComponent } from './components/payment-user/payment-user.component';
+import { PaymentEmployeeComponent } from './components/payment-employee/payment-employee.component';
+import { TicketViewComponent } from './components/ticket-view/ticket-view.component';
 
 @NgModule({
   declarations: [
@@ -50,9 +52,11 @@ import { TicketEmployeeComponent } from './components/ticket-employee/ticket-emp
     BookingUserComponent,
     BookingEmployeeComponent,
     BillingComponent,
-    TicketComponent,
     BillingEmployeeComponent,
-    TicketEmployeeComponent
+    BaggageCheckComponent,
+    PaymentUserComponent,
+    PaymentEmployeeComponent,
+    TicketViewComponent
     
   ],
   imports: [

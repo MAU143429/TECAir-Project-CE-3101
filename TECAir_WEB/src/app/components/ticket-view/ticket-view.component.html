@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!---Referencia al archivo css que contiene el estilo--->
+    <link rel="stylesheet" href="ticket-view.component.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     
+   </head>
+  <body>
+      
+      <div class="ticket">
+        <div id="htmlData" >
+          <h5>TIQUETE DE ABORDAJE</h5>
+          <br>
+          <span class="info"> Conserve este tiquete hasta abordar el avion, de lo contrario no podrá acceder.</span>
+          <div class="bg-ticket">
+
+              <div class="ticket-content">
+
+
+              </div>
+          </div>
+            
+        </div>
+
+        <div class="container">
+          <div class="row">
+              <div class="col-sm">
+                  <button class="btn btnformat" routerLink="/flights" >Regresar</button>
+              </div>
+              <div class="col-sm">
+                  <button class="btn col col-lg-4 btn-block ml-4 btnformat" (click)="downloadTicket()">Download PDF</button>
+              </div>
+          </div>
+        </div> 
+
+
+     </div>
+
+  </body>
+</html>

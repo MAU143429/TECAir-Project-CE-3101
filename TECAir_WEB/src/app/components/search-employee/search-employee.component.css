@@ -32,7 +32,7 @@ body{
 }
 
 .icons{
-  margin-left: 15%;
+  margin-left: 15%; 
 }
 .results{
   
@@ -89,4 +89,36 @@ body{
   border: transparent;
   margin: 1%;
   text-align: center;
+}
+.mytable{
+  color: white;
+
+}
+
+.bookingbtn{
+  color: white;
+  border: none;
+  background: none;
+  
+}
+
+.popup{
+  width: 500px;
+  height: 252px;
+  background-image: url("src\assets\images\searchpopup.png");
+  background-size:cover;
+  background-position: center;
+}
+
+
+.cbtn{
+  width: 20px;
+  height: 20px;
+  margin-left: 93%;
+  margin-top: 2%;
+  background-color: transparent;
+  background-image: url("https://cdn-icons-png.flaticon.com/512/109/109602.png") ;
+  background-size: cover;
+  border: none;
+
 }

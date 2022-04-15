@@ -163,14 +163,9 @@ form .user-details .input-box{
   }
 }
 
-form .button{
-  height: 45px;
-  margin: 35px 0
-}
-form .button input{
-  height: 100%;
-  width: 100%;
-  border-radius: 5px;
+.btnformat{
+  width: 35%;
+  border-radius: 25px;
   border: none;
   color: #fff;
   font-size: 18px;
@@ -179,8 +174,17 @@ form .button input{
   cursor: pointer;
   transition: all 0.3s ease;
   background: linear-gradient(135deg, #e7bb40, #e46c1c, #b12828);
-  margin-left: 360%;
+  
+  
 }
-form .button input:hover{
- background: linear-gradient(-135deg, #e7bb40, #e46c1c, #b12828);
- }
+
+.btnformat:hover{
+   background: linear-gradient(-135deg, #e7bb40, #e46c1c, #b12828);
+}
+
+ .info{
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  
+}
