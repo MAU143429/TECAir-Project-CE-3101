@@ -112,8 +112,7 @@ CREATE TABLE public.pasajero (
     p_apellido1 character varying(20) NOT NULL,
     p_apellido2 character varying(20) NOT NULL,
     cant_maletas numeric NOT NULL,
-    chequeado boolean NOT NULL DEFAULT false,
-    no_transaccion numeric NOT NULL
+    chequeado boolean NOT NULL DEFAULT false
 );
 
 
@@ -193,10 +192,6 @@ ALTER TABLE ONLY public.tiquete
 
 ALTER TABLE ONLY public.tiquete
     ADD CONSTRAINT no_reservacion FOREIGN KEY (no_reservacion) REFERENCES public.reservacion(no_reservacion);
-
-
-ALTER TABLE ONLY public.pasajero
-    ADD CONSTRAINT no_transaccion FOREIGN KEY (no_transaccion) REFERENCES public.tiquete(no_transaccion);
 
 ALTER TABLE ONLY public.escala
     ADD CONSTRAINT escala_pkey PRIMARY KEY (no_escala);
