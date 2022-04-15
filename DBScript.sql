@@ -100,8 +100,7 @@ CREATE TABLE public.tiquete (
     t_ano character varying(20) NOT NULL,
     abordaje boolean NOT NULL DEFAULT false,
     no_reservacion numeric NOT NULL,
-    no_asiento numeric NOT NULL,
-    dni numeric NOT NULL
+    no_asiento numeric NOT NULL
 );
 
 -- Tabla pasajero
@@ -112,7 +111,8 @@ CREATE TABLE public.pasajero (
     p_apellido1 character varying(20) NOT NULL,
     p_apellido2 character varying(20) NOT NULL,
     cant_maletas numeric NOT NULL,
-    chequeado boolean NOT NULL DEFAULT false
+    chequeado boolean NOT NULL DEFAULT false,
+    no_transaccion numeric NOT NULL
 );
 
 
@@ -161,11 +161,6 @@ ALTER TABLE ONLY public.usuario
 ALTER TABLE ONLY public.vuelo
     ADD CONSTRAINT vuelo_pkey PRIMARY KEY (no_vuelo);
 
-
-ALTER TABLE ONLY public.tiquete
-    ADD CONSTRAINT dni FOREIGN KEY (dni) REFERENCES public.pasajero(dni) NOT VALID;
-
-
 ALTER TABLE ONLY public.maleta
     ADD CONSTRAINT dni FOREIGN KEY (dni) REFERENCES public.pasajero(dni);
 
@@ -192,6 +187,9 @@ ALTER TABLE ONLY public.tiquete
 
 ALTER TABLE ONLY public.tiquete
     ADD CONSTRAINT no_reservacion FOREIGN KEY (no_reservacion) REFERENCES public.reservacion(no_reservacion);
+
+ALTER TABLE ONLY public.pasajero
+    ADD CONSTRAINT no_transaccion FOREIGN KEY (no_transaccion) REFERENCES public.tiquete(no_transaccion);    
 
 ALTER TABLE ONLY public.escala
     ADD CONSTRAINT escala_pkey PRIMARY KEY (no_escala);

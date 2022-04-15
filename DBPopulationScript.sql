@@ -140,31 +140,31 @@ VALUES(22568, true, 568999, 2486520, NULL);
 INSERT INTO reservacion(no_reservacion, cancelado, no_vuelo, id_usuario, id_trabajador)
 VALUES(23563, true, 798562, 1897025, NULL);
 
--- Insertar Pasajero
-INSERT INTO pasajero(dni, p_nombre, p_apellido1, p_apellido2, cant_maletas, chequeado)
-VALUES(116558830, 'Ingrid', 'Ruiz', 'Madrigal', 2, DEFAULT);
-
-INSERT INTO pasajero(dni, p_nombre, p_apellido1, p_apellido2, cant_maletas, chequeado)
-VALUES(117486602, 'Gabriel', 'Vargas', 'Lopez', 1, DEFAULT);
-
-INSERT INTO pasajero(dni, p_nombre, p_apellido1, p_apellido2, cant_maletas, chequeado)
-VALUES(105690475, 'Mauricio', 'Calderon', 'Chavarria', 2, DEFAULT);
-
-INSERT INTO pasajero(dni, p_nombre, p_apellido1, p_apellido2, cant_maletas, chequeado)
-VALUES(102350478, 'Jose', 'Campos', 'Gutierrez', 1, DEFAULT);
-
 -- Insertar Tiquete
-INSERT INTO tiquete(no_transaccion, t_dia, t_mes, t_ano, abordaje, no_reservacion, no_asiento, dni)
-VALUES(278788, 20, 11, 2021, false, 32584, 5, 116558830);
+INSERT INTO tiquete(no_transaccion, t_dia, t_mes, t_ano, abordaje, no_reservacion, no_asiento)
+VALUES(278788, 20, 11, 2021, false, 32584, 5);
 
-INSERT INTO tiquete(no_transaccion, t_dia, t_mes, t_ano, abordaje, no_reservacion, no_asiento, dni)
-VALUES(758866, 22, 01, 2022, false, 22568, 10, 117486602);
+INSERT INTO tiquete(no_transaccion, t_dia, t_mes, t_ano, abordaje, no_reservacion, no_asiento)
+VALUES(758866, 22, 01, 2022, false, 22568, 10);
 
-INSERT INTO tiquete(no_transaccion, t_dia, t_mes, t_ano, abordaje, no_reservacion, no_asiento, dni)
-VALUES(325568, 10, 02, 2022, false, 23563, 25, 105690475);
+INSERT INTO tiquete(no_transaccion, t_dia, t_mes, t_ano, abordaje, no_reservacion, no_asiento)
+VALUES(325568, 10, 02, 2022, false, 23563, 25);
 
-INSERT INTO tiquete(no_transaccion, t_dia, t_mes, t_ano, abordaje, no_reservacion, no_asiento, dni)
-VALUES(201458, 25, 12, 2021, false, 17759, 7, 102350478);
+INSERT INTO tiquete(no_transaccion, t_dia, t_mes, t_ano, abordaje, no_reservacion, no_asiento)
+VALUES(201458, 25, 12, 2021, false, 17759, 7);
+
+-- Insertar Pasajero
+INSERT INTO pasajero(dni, p_nombre, p_apellido1, p_apellido2, cant_maletas, chequeado, no_transaccion)
+VALUES(116558830, 'Ingrid', 'Ruiz', 'Madrigal', 2, DEFAULT, 278788);
+
+INSERT INTO pasajero(dni, p_nombre, p_apellido1, p_apellido2, cant_maletas, chequeado, no_transaccion)
+VALUES(117486602, 'Gabriel', 'Vargas', 'Lopez', 1, DEFAULT, 758866);
+
+INSERT INTO pasajero(dni, p_nombre, p_apellido1, p_apellido2, cant_maletas, chequeado, no_transaccion)
+VALUES(105690475, 'Mauricio', 'Calderon', 'Chavarria', 2, DEFAULT, 325568);
+
+INSERT INTO pasajero(dni, p_nombre, p_apellido1, p_apellido2, cant_maletas, chequeado, no_transaccion)
+VALUES(102350478, 'Jose', 'Campos', 'Gutierrez', 1, DEFAULT, 201458);
 
 -- Insertar Maleta
 INSERT INTO maleta(no_maleta, color, peso, dni, no_vuelo)
