@@ -213,11 +213,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\yendr\\OneDrive\\Documentos\\Bases de Datos\\TECAir-CE-3101\\TECAir_API\\TECAir_API.csproj",
+      "projectUniqueName": "C:\\Users\\yendr\\Documents\\2022\\Bases de Datos\\TECAir-CE-3101\\TECAir_API\\TECAir_API.csproj",
       "projectName": "TECAir_API",
-      "projectPath": "C:\\Users\\yendr\\OneDrive\\Documentos\\Bases de Datos\\TECAir-CE-3101\\TECAir_API\\TECAir_API.csproj",
+      "projectPath": "C:\\Users\\yendr\\Documents\\2022\\Bases de Datos\\TECAir-CE-3101\\TECAir_API\\TECAir_API.csproj",
       "packagesPath": "C:\\Users\\yendr\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\yendr\\OneDrive\\Documentos\\Bases de Datos\\TECAir-CE-3101\\TECAir_API\\obj\\",
+      "outputPath": "C:\\Users\\yendr\\Documents\\2022\\Bases de Datos\\TECAir-CE-3101\\TECAir_API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\yendr\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -269,7 +269,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.2.21505.57\\RuntimeIdentifierGraph.json"
       }
     }
   }
