@@ -2,13 +2,161 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <!---Referencia al archivo css que contiene el estilo--->
+    <!---Referencia al archivo css que contiene el estilo---> 
     <link rel="stylesheet" href= "promotions.component.css">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      
-   </head>
-<body>
-  <app-enavbar></app-enavbar>
+  </head>
+    <body>
+        <!---Navbar--->
+        <app-enavbar></app-enavbar>
     
-</body>
+        <!---Contenedor principal--->
+    
+          <div class="promotionszone">
+    
+            <!---Seccion crear promociones--->
+            <h3 class="maintitle">Crear Promociones</h3>
+            <div class="section1">
+              <div class="container">
+                <div class="content">
+                  <form>
+                    <div class="promotions-details">
+                      <div class="input-box">
+                        <span class="details">Numero de Vuelo</span>
+                        <input type="text" placeholder="Ingrese el numero de vuelo" required>
+                      </div>
+                      <div class="input-box">
+                        <span class="details"> Porcentaje de descuento</span>
+                        <input type="number" placeholder="Ingrese el porcentaje a descontar" required>
+                      </div>
+                      <div class="input-box">
+                        <span class="details">Periodo del descuento (dias)</span>
+                        <input type="number" placeholder="Ingrese el periodo de duracion de la promocion" required>
+                      </div>
+                      <div class="input-box">
+                        <span class="details">Fecha de inicio</span>
+                        <input type="date" placeholder="Seleccione la fecha de inicio de la promocion" required>
+                      </div>
+                    
+                      <div class="input-box2">
+                        <span class="details">URL de imagen</span>
+                        <input type="text" placeholder="Indique una url de imagen para su promocion" required>
+                      </div>
+                
+                    </div>
+                    <div class="button">
+                      <input type="submit" value="Crear Promocion" routerLink="/homeemployee">
+                    </div>
+                  </form> 
+                </div>
+              </div>
+            </div>
+      
+            <div class = "carusel">
+              <owl-carousel-o [options]="customOptions">
+        
+                <ng-template carouselSlide>
+                  <div class="card">
+                    <img class="resource" src={{promotionsdata[0].url}}>
+                    <span class="places">{{promotionsdata[0].lugares}}</span>
+                    <span class="details">Salida:{{promotionsdata[0].fecha}}</span>
+                    <span class="details">{{promotionsdata[0].porcentaje}}% Off</span>
+                    <span class="prices">USD${{promotionsdata[0].precio}}*</span>
+                    <button class="bookingbtn" type="submit" (click)="open(content)"> ¡Reservar ya!</button>
+                  </div>
+                </ng-template>  
+        
+                <ng-template carouselSlide>
+                  <div class="card">
+                    <img class="resource" src={{promotionsdata[1].url}}>
+                    <span class="places">{{promotionsdata[1].lugares}}</span>
+                    <span class="details">Salida:{{promotionsdata[1].fecha}}</span>
+                    <span class="details">{{promotionsdata[1].porcentaje}}% Off</span>
+                    <span class="prices">USD${{promotionsdata[1].precio}}*</span>
+                    <button class="bookingbtn" type="submit" (click)="open(content)"> ¡Reservar ya!</button>
+                  </div>
+                </ng-template>  
+        
+                <ng-template carouselSlide>
+                  <div class="card">
+                    <img class="resource" src={{promotionsdata[2].url}}>
+                    <span class="places">{{promotionsdata[2].lugares}}</span>
+                    <span class="details">Salida:{{promotionsdata[2].fecha}}</span>
+                    <span class="details">{{promotionsdata[2].porcentaje}}% Off</span>
+                    <span class="prices">USD${{promotionsdata[2].precio}}*</span>
+                    <button class="bookingbtn" type="submit" (click)="open(content)"> ¡Reservar ya!</button>
+                  </div>
+                </ng-template>  
+        
+                <ng-template carouselSlide>
+                  <div class="card">
+                    <img class="resource" src={{promotionsdata[3].url}}>
+                    <span class="places">{{promotionsdata[3].lugares}}</span>
+                    <span class="details">Salida:{{promotionsdata[3].fecha}}</span>
+                    <span class="details">{{promotionsdata[3].porcentaje}}% Off</span>
+                    <span class="prices">USD${{promotionsdata[3].precio}}*</span>
+                    <button class="bookingbtn" type="submit" (click)="open(content)"> ¡Reservar ya!</button>
+                  </div>
+                </ng-template>  
+        
+                <ng-template carouselSlide>
+                  <div class="card">
+                    <img class="resource" src={{promotionsdata[4].url}}>
+                    <span class="places">{{promotionsdata[4].lugares}}</span>
+                    <span class="details">Salida:{{promotionsdata[4].fecha}}</span>
+                    <span class="details">{{promotionsdata[4].porcentaje}}% Off</span>
+                    <span class="prices">USD${{promotionsdata[4].precio}}*</span>
+                    <button class="bookingbtn" type="submit" (click)="open(content)"> ¡Reservar ya!</button>
+                  </div>
+                </ng-template>  
+        
+                <ng-template carouselSlide>
+                  <div class="card">
+                    <img class="resource" src={{promotionsdata[5].url}}>
+                    <span class="places">{{promotionsdata[5].lugares}}</span>
+                    <span class="details">Salida:{{promotionsdata[5].fecha}}</span>
+                    <span class="details">{{promotionsdata[5].porcentaje}}% Off</span>
+                    <span class="prices">USD${{promotionsdata[5].precio}}*</span>
+                    <button class="bookingbtn" type="submit" (click)="open(content)"> ¡Reservar ya!</button>
+                  </div>
+                </ng-template>
+        
+                <ng-template carouselSlide>
+                  <div class="card">
+                    <img class="resource" src={{promotionsdata[6].url}}>
+                    <span class="places">{{promotionsdata[6].lugares}}</span>
+                    <span class="details">Salida:{{promotionsdata[6].fecha}}</span>
+                    <span class="details">{{promotionsdata[6].porcentaje}}% Off</span>
+                    <span class="prices">USD${{promotionsdata[6].precio}}*</span>
+                    <button class="bookingbtn" type="submit" (click)="open(content)"> ¡Reservar ya!</button>
+                  </div>
+                </ng-template>  
+        
+                <ng-template carouselSlide>
+                  <div class="card">
+                    <img class="resource" src={{promotionsdata[7].url}}>
+                    <span class="places">{{promotionsdata[7].lugares}}</span>
+                    <span class="details">Salida:{{promotionsdata[7].fecha}}</span>
+                    <span class="details">{{promotionsdata[7].porcentaje}}% Off</span>
+                    <span class="prices">USD${{promotionsdata[7].precio}}*</span>
+                    <button class="bookingbtn" type="submit" (click)="open(content)"> ¡Reservar ya!</button>
+        
+                  </div>
+                </ng-template>
+        
+              </owl-carousel-o>
+            </div>
+          </div>
+          
+          
+  </body>
+
+  <ng-template #content let-modal>
+    <div class="popup">
+      <button class="close cbtn" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+  </ng-template>
+
 </html>
+ 

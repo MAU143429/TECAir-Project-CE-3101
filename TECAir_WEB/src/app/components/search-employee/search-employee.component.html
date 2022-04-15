@@ -4,52 +4,63 @@
     <meta charset="UTF-8">
     <!---Referencia al archivo css que contiene el estilo--->
     <link rel="stylesheet" href="search-employee.component.css">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
      
    </head>
 <body>
     <app-enavbar></app-enavbar>
       <div class="searchbar">
-        <input class="myinput" placeholder="Aeropuerto de salida">
+        <div class="icons">
+          <input class="myinput" placeholder="Aeropuerto de salida">
 
-        <img class="myimage">
+          <img class="myimage">
 
-        <input class="myinput" placeholder="Aeropuerto de llegada">
-        
-        <input class="myinput" placeholder="Seleccione la fecha de salida"
-                name="takeoff" [(ngModel)]="takeoff" ngbDatepicker #t="ngbDatepicker">
-        <button class="btn btn-outline-secondary calendar" (click)="t.toggle()" type="button"></button>
+          <input class="myinput" placeholder="Aeropuerto de llegada">
+          
+          <input class="myinput" type="date" placeholder="Seleccione la fecha del vuelo" required>
+           
 
-        <input class="myinput" placeholder="Seleccione la fecha de llegada"
-                name="landing" [(ngModel)]="landing" ngbDatepicker #a="ngbDatepicker">
-        <button class="btn btn-outline-secondary calendar" (click)="a.toggle()" type="button"></button>
-
-        <button class="btn1" type="button" ></button>
+          <button class="btn1" type="button" ></button>
+        </div>
       </div>
 
       <div class="results">
         <div class="row">
           <div id="htmlData">
-            <h2>Resultado de búsqueda vuelos disponibles</h2>
-            <table class="table table-bordered mt-4">
+            <h4>Resultado de búsqueda vuelos disponibles</h4>
+            <table class="table table-bordered mt-4 mytable">
               <tr class="table-primary">
                 <th>Número de Vuelo</th>
                 <th>Origen</th>
                 <th>Destino</th>
-                <th>Tipo de vuelo</th>
                 <th>Escalas</th>
-                <th>Fecha de ida</th>
-                <th>Fecha de vuelta</th>
-                <th>Hora de salida</th>
+                <th>Fecha</th> 
                 <th>Hora de salida</th>
                 <th>Hora de llegada</th>
+                <th>Precio</th>
                 <th>Reservar</th>
+              </tr>
+              <tr *ngFor="let data of searchdata">
+                <th>{{data.no_vuelo}}</th>
+                  <td>{{data.origen}}</td>
+                  <td>{{data.destino}}</td>
+                  <td>{{data.cant_escalas}}</td>
+                  <td>{{data.fecha}}</td>
+                  <td>{{data.h_salida}}</td>
+                  <td>{{data.h_llegada}}</td>
+                  <td>{{data.precio}}</td>
+                  <td><button class = "bookingbtn" type="submit" routerLink="/employeeSearchFlights" (click)="open(content)" >Reservar Ahora!</button></td>
               </tr>
             </table>
           </div>
         </div>
-      </div>
-
+      </div> 
 
 </body>
 </html>
+
+<ng-template #content let-modal>
+  <div class="popup">
+    <button class="close cbtn" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+</ng-template>

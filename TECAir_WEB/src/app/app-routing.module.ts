@@ -14,8 +14,10 @@ import { SearchEmployeeComponent } from './components/search-employee/search-emp
 import { BookingUserComponent } from './components/booking-user/booking-user.component';
 import { BookingEmployeeComponent} from './components/booking-employee/booking-employee.component';
 import { BillingComponent } from './components/billing/billing.component';
-import { TicketComponent } from './components/ticket/ticket.component';
-
+import { BillingEmployeeComponent } from './components/billing-employee/billing-employee.component';
+import { PaymentUserComponent } from './components/payment-user/payment-user.component';
+import { PaymentEmployeeComponent } from './components/payment-employee/payment-employee.component';
+import { TicketViewComponent } from './components/ticket-view/ticket-view.component';
 
 
 const routes: Routes = [
@@ -34,7 +36,11 @@ const routes: Routes = [
   {path: 'create-promotions', component: PromotionsComponent},
   {path: 'flights', component: FlightsComponent},
   {path: 'billing', component: BillingComponent},
-  {path: 'ticket', component: TicketComponent}
+  {path: 'billingEmployee', component: BillingEmployeeComponent},
+  {path: 'ticketView', component: TicketViewComponent},
+  {path: 'billingEmployee', component: BillingEmployeeComponent},
+  {path: 'paymentUser', component: PaymentUserComponent},
+  {path: 'paymentEmployee', component: PaymentEmployeeComponent}
 
 
 ];

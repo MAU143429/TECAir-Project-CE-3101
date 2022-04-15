@@ -10,10 +10,72 @@ body{
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background: linear-gradient(135deg, #c97b4e, #d66320 , #b92d2d);
   background-image: url("src\assets\images\employee.jpg");
   background-position: center center;
   background-attachment: fixed;
   background-size:cover;
   z-index: -10;
+} 
+
+.bookingzone{
+
+  width: 90%;
+  height: 90%;
+  margin-left: 5%;
+  background-color: rgba(27, 27, 27, 0.60);
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+  padding-top: 1%;
+
 }
+
+.section1{
+  width: 80%;
+  height: 38%;
+  margin-left: 8%;
+
+}
+
+.section2{
+  width: 80%;
+  height: 38%;
+  margin-left: 8%;
+  
+}
+
+.maintitle{
+  color: white;
+  margin-bottom: 1%;
+  margin-left: 1%;
+}
+
+.bookings {
+  color: white;
+  text-align: center;
+
+
+}
+
+.tickets{
+  color: white;
+  text-align: center; 
+
+}
+
+.mytable{
+  color: white;
+
+}
+
+.bookingbtn{
+  color: white;
+}
+
+.ticketbtn{
+  color: white;
+  
+}
+
+
+
+

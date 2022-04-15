@@ -38,7 +38,7 @@ body{
   justify-content: center;
 
 
-}
+} 
 
 .ticket-input{
   width: 10%;
@@ -79,6 +79,7 @@ body{
 .maintitle{
   color: white;
   text-align: center;
+  margin-top: 0%;
   
 }
 
@@ -174,17 +175,30 @@ form .flight-details .input-box3{
   border: none;
 
 }
-form .create-btn{
+
+
+form .button{
+  margin: 35px 0
+}
+form .button input{
   width: 20%;
   margin-left: 40%;
-  background: linear-gradient(-135deg, #b12828,#e7bb40,#e46c1c);
-  
- 
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #e7bb40, #e46c1c, #b12828);
 }
 
-form .create-btn input:hover{
+form .button input:hover{
   background: linear-gradient(-135deg, #e7bb40, #e46c1c, #b12828);
-  }
+}
+
+
 
 .open-flight .input-box input{
   text-align: center;
@@ -212,17 +226,42 @@ form .input-box span.details{
   margin-bottom: 5px;
 }
 
-.open-close-btn{
+form .open-close-btn input{
   margin-left: 32%;
   margin-top: 3%;
   width: 35%;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #e7bb40, #e46c1c, #b12828);
 
 }
 
 form .open-close-btn input:hover{
   background: linear-gradient(-135deg, #e7bb40, #e46c1c, #b12828);
-  }
+}
 
+.mytable{
+  color: white;
+  text-align: center;
+  margin-left: 10%;
+  width: 82%;
+}
+
+.passanger-details{
+  color: white;
+  text-align: center;
+
+}
+
+.actionsbtn{
+  color: white;
+}
 
 
 

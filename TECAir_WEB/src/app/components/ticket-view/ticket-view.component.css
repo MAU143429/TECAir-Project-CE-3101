@@ -1,0 +1,40 @@
+.bg-ticket{
+    width: 900px;
+    height: 400px;
+    background-image: url("https://media.discordapp.net/attachments/880202330178469899/964398547749457950/ticket.png");
+    border-radius: 25px;
+    margin-left: 27%;
+    margin-top: 2%;
+
+ }
+
+h5{
+   text-align: center;
+} 
+
+.info{
+   font-size: 20px;
+   font-weight: 700;
+   margin-left: 31%;
+   
+}
+
+.btnformat{
+   width: 25%;
+   border-radius: 25px;
+   border: none;
+   color: #fff;
+   font-size: 18px; 
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   background: linear-gradient(135deg, #e7bb40, #e46c1c, #b12828);
+   margin-left: 38%; 
+   margin-top: 2%;
+   
+}
+
+.btnformat:hover{
+    background: linear-gradient(-135deg, #e7bb40, #e46c1c, #b12828);
+}

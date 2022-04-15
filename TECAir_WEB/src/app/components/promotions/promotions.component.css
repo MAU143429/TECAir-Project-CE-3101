@@ -15,5 +15,211 @@ body{
   background-position: center center;
   background-attachment: fixed;
   background-size:cover;
-  z-index: -10;
+  z-index: -10; 
+} 
+
+.promotionszone{
+  width: 90%;
+  height: 90%;
+  margin-left: 5%;
+  background-color: rgba(27, 27, 27, 0.60);
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+
 }
+
+.section1{
+  margin-top: 1%;
+}
+
+.maintitle{
+  text-align: center;
+  color: white;
+  margin-bottom: 1%;
+  margin-left: 1%;
+  margin-top: 0%;
+}
+
+.container{
+  max-width: 1500px;
+  width: 100%;
+  padding: 25px 30px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  position: relative;
+  margin-left: 5.5%;
+  margin-top: -3%;
+}
+
+.details{
+  color: white;
+  text-align: center;
+}
+.content form .promotions-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+
+form .promotions-details .input-box2{
+  margin-bottom: 15px;
+  width: calc(60% - 20px);
+  margin-left: 17%;
+}
+
+form .promotions-details .input-box{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+
+.promotions-details .input-box input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+.promotions-details .input-box input:focus,
+.promotions-details .input-box input:valid{
+  border-color: #d86625;
+}
+
+form input{
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  color: black ;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn{
+  background-image: url("https://cdn-icons-png.flaticon.com/128/3652/3652191.png");
+  background-size: cover;
+  width: 20px;
+  height: 15px;
+  margin: 1%;
+
+}
+
+@media(max-width: 584px){
+  .container{
+   max-width: 100%;
+ }
+
+}
+
+.popup{
+  width: 500px;
+  height: 252px;
+  background-image: url("src\assets\images\searchpopup.png");
+  background-size:cover;
+  background-position: center;
+}
+
+
+.cbtn{
+  width: 20px;
+  height: 20px;
+  margin-left: 93%;
+  margin-top: 2%;
+  background-color: transparent;
+  background-image: url("https://cdn-icons-png.flaticon.com/512/109/109602.png") ;
+  background-size: cover;
+  border: none;
+
+}
+
+form .button{
+  height: 45px;
+  margin: 35px 0
+}
+form .button input{
+  height: 100%;
+  width: 40%;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 30%;
+  background: linear-gradient(135deg, #e7bb40, #e46c1c, #b12828);
+}
+
+form .button input:hover{
+  background: linear-gradient(-135deg, #e7bb40, #e46c1c, #b12828);
+  }
+
+.carusel{
+  width: 90%;
+  margin-left: 5%;
+
+  
+}
+
+.card{
+  height: 100%;
+  width: 100%;
+  background-color: white;
+}
+
+.resource{
+  width: 250px;
+  height: 150px;
+  background-position: center;
+  background-size: auto;
+}
+
+.places{
+  margin-left: 2%;
+  font-size: 25px;
+  font-weight: 500;
+
+}
+
+.details{
+  margin-left: 2%;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.prices{
+  color: #d66320;
+  margin-left: 55%;
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.bookingbtn{
+  height: 30%;
+  width: 60%;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #e7bb40, #e46c1c, #b12828);
+  margin-bottom: 1%;
+  margin-top: 1%;
+  margin-left: 23%;
+}
+.bookingbtn:hover{
+  background: linear-gradient(-135deg, #e7bb40, #e46c1c, #b12828);
+  }

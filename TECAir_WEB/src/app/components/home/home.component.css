@@ -31,11 +31,58 @@ body{
   font-size: 30px;
 }
 
+.user{
+  width: 150px;
+  height: 150px;
+  background-image: url("src\assets\images\usericon2.png");
+  background-size: cover;
+  background-color: transparent;
+  border: none;
+  margin-left: 7%;
+
+}
+
+.employee{
+  width: 150px;
+  height: 150px;
+  background-image: url("src\assets\images\employeeicon.png");
+  background-size: cover;
+  background-color: transparent;
+  border: none;
+  margin-left: 15%;
+}
+
+.btnformat2 {
+  width: 20%;
+  height: 60%;
+  margin-right: 20%; 
+  border-radius: 25px;
+  background-color: #837b77;
+  color: white;
+  margin-top: 10%;
+  font-size: 30px;
+}
+
 .btns{
   width: 60%;
-  margin-left: 30%;
+  margin-left: 32%;
   margin-top: 28%;
 }
+
+.title1{
+  color: white;
+  margin-left: 12%;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.title2{
+  color: white;
+  margin-left: 17.5%;
+  font-size: 20px;
+  font-weight: 600;
+}
+
 
 .social
 {

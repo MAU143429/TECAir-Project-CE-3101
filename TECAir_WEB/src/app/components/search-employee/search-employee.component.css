@@ -21,23 +21,26 @@ body{
 
 .searchbar{
   
-  width: 85%;
+  width: 90%;
   height: 11%;
-  margin-left: 7%;
-  background-color: rgba(27, 27, 27, 0.295);
+  margin-left: 5%;
+  background-color: rgba(27, 27, 27, 0.60);
   border-radius: 5px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.15);
   padding-top: 1%;
   
 }
 
+.icons{
+  margin-left: 15%; 
+}
 .results{
   
-  width: 85%;
+  width: 90%;
   height: 80%;
-  margin-left: 7%;
+  margin-left: 5%;
   margin-top: 1%;
-  background-color: rgba(27, 27, 27, 0.295);
+  background-color: rgba(27, 27, 27, 0.60);
   border-radius: 5px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.15);
   text-align: center;
@@ -55,7 +58,7 @@ body{
   background-size: cover;
   width: 40px;
   height: 40px;
-  margin: 0.3%;
+  margin: 1%;
 
 }
 
@@ -84,6 +87,38 @@ body{
   height: 50px;
   border-radius: 5px;
   border: transparent;
-  margin: 0.5%;
+  margin: 1%;
   text-align: center;
+}
+.mytable{
+  color: white;
+
+}
+
+.bookingbtn{
+  color: white;
+  border: none;
+  background: none;
+  
+}
+
+.popup{
+  width: 500px;
+  height: 252px;
+  background-image: url("src\assets\images\searchpopup.png");
+  background-size:cover;
+  background-position: center;
+}
+
+
+.cbtn{
+  width: 20px;
+  height: 20px;
+  margin-left: 93%;
+  margin-top: 2%;
+  background-color: transparent;
+  background-image: url("https://cdn-icons-png.flaticon.com/512/109/109602.png") ;
+  background-size: cover;
+  border: none;
+
 }

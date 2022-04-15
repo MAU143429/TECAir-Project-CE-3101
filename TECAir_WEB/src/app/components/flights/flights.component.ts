@@ -9,11 +9,28 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./flights.component.css']
 })
 export class FlightsComponent implements OnInit {
-  
-  time: any;
-  takeoff: NgbDateStruct | undefined;
-  closeResult = '';
 
+  passangerdata = [
+    {
+      "no_vuelo" : "XMF-675",
+      "p_nombre" : "Juan Santamaria",
+      "origen" : "SJO Costa Rica Aeropuerto Internacional Juan Santamaria",
+      "destino": "MXN Mexico Aeropuerto Benito Juarez",
+      "abordaje": "No",
+    }
+  ]
+
+    flightdata = [
+    {
+      "no_vuelo" : "MGFR-737",
+      "origen" : "SJO Costa Rica Aeropuerto Internacional Juan Santamaria",
+      "destino": "MXN Mexico Aeropuerto Benito Juarez",
+      "h_salida": "2:00 AM",
+    }
+  ]
+
+  btnstatus = "Confirmar Abordaje"
+  closeResult = '';
   constructor(private modalService: NgbModal) { }
 
   open(content:any) {
@@ -33,8 +50,16 @@ export class FlightsComponent implements OnInit {
       return  `with: ${reason}`;
     }
   }
-
+ 
   ngOnInit(): void { 
+    if ( this.passangerdata[0].abordaje == "No") {
+      this.btnstatus = "Confirmar abordaje"
+    }else {
+      this.btnstatus = "Cancelar abordaje";
+    }
   }
 
+  
+
 }
+ 

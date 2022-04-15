@@ -2,4 +2,10 @@
     border: 0;
     border-radius: 0;
     background-color: transparent;
+    font-weight: 500;
+    font-size: 18px;
   }
+
+.icon{
+  background-image: url("https://cdn-icons-png.flaticon.com/512/1085/1085493.png");
+}

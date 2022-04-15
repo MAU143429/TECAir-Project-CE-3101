@@ -6,11 +6,108 @@
     <link rel="stylesheet" href= "baggage.component.css">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      
-   </head>
-<body>
-  <app-enavbar></app-enavbar>
-    <div class="container">
+  </head>
+    <body>
+        <!---Navbar--->
+        <app-enavbar></app-enavbar>
+    
+        <!---Contenedor principal--->
+    
+        <div class="checkin-zone">
+        
+            <!---Seccion chequeo de pasajeros--->
+            <h3 class="maintitle">Chequeo de Pasajeros</h3>
+            <div class="container">
+              <div class="row">
+                <div class="col-sm">
 
-    </div>
-</body>
+                  <div class="section1">
+                    <div class="container">
+                      <div class="content">
+                        <form>
+                          <div class="baggage-details">
+                            <div class="input-box">
+                              <span class="details">Número de Transacción</span>
+                              <input type="number" placeholder="Ingrese el número de transacción del tiquete" required>
+                            </div>
+                          </div>
+                          <div class="button">
+                            <input type="submit" value="Buscar Pasajero">
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                    
+              
+                </div>
+    
+                
+                <div class="col-sm">
+
+                  <div class="check-details">
+                    <div class="row">
+                      <div id="htmlData">
+                        <table class="table table-bordered mt-4 mytable">
+                          <tr class="table-primary mytable">
+                            <th>Número de Transacción</th>
+                            <th>Número de vuelo</th>
+                            <th>Pasajero</th>
+                            <th>Hora de salida</th>
+                            <th>Chequeo</th>
+                            
+                          </tr>
+                          <tr *ngFor="let data of checkdata">
+                            <th>{{data.no_transaccion}}</th>
+                            <td>{{data.no_vuelo}}</td>
+                            <td>{{data.p_nombre}}</td>
+                            <td>{{data.h_salida}}</td>
+                            <td><button class="actionsbtn">Chequear pasajero</button></td>
+        
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                  </div> 
+    
+                </div>
+              </div>
+            </div> 
+
+
+
+            <h3 class="maintitle">Asignacion de maletas</h3>
+
+            <div class="container">
+              <div class="content">
+                <form action="#">
+                  <div class="baggage-details">
+                    <div class="input-box2">
+                      <span class="details">Nombre del pasajero</span>
+                      <input type="text" placeholder="Ingrese el nombre del pasajero" required>
+                    </div>
+                    <div class="input-box2">
+                      <span class="details">Peso (kg)</span>
+                      <input type="number" placeholder="Ingrese el peso de la maleta" required>
+                    </div>
+                    <div class="input-box2">
+                      <span class="details">Color de la maleta</span>
+                      <input type="text" placeholder="Ingrese el color de la maleta" required>
+                    </div>
+                  </div>       
+                  <div class="button  ">
+                    <input style="margin-left: 35%;" type="submit" value="Registrar Maleta">
+                  </div>
+                  <p><span> <a style="color: aqua; margin-left: 41%;">Generar reporte de facturacion de maletas aquí</a></span></p>
+      
+                </form>
+              </div>
+              
+            </div>
+
+
+          
+        </div>  
+  </body>
 </html>
+ 
