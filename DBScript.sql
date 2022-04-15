@@ -47,7 +47,8 @@ CREATE TABLE public.vuelo (
     v_mes character varying(10) NOT NULL,
     v_ano character varying(10) NOT NULL,
     coste_vuelo numeric NOT NULL,
-    matricula character varying(20) NOT NULL
+    matricula character varying(20) NOT NULL,
+    cerrado boolean NOT NULL DEFAULT false
 );
 
 -- Tabla escala
@@ -87,7 +88,7 @@ CREATE TABLE public.reservacion (
     cancelado boolean NOT NULL,
     no_vuelo numeric NOT NULL,
     id_usuario numeric,
-    id_trabajador character varying(20) NOT NULL
+    id_trabajador character varying(20)
 );
 
 -- Tabla tiquete
@@ -97,7 +98,7 @@ CREATE TABLE public.tiquete (
     t_dia character varying(20) NOT NULL,
     t_mes character varying(20) NOT NULL,
     t_ano character varying(20) NOT NULL,
-    abordaje boolean NOT NULL,
+    abordaje boolean NOT NULL DEFAULT false,
     no_reservacion numeric NOT NULL,
     no_asiento numeric NOT NULL,
     dni numeric NOT NULL
@@ -111,7 +112,7 @@ CREATE TABLE public.pasajero (
     p_apellido1 character varying(20) NOT NULL,
     p_apellido2 character varying(20) NOT NULL,
     cant_maletas numeric NOT NULL,
-    chequeado boolean NOT NULL,
+    chequeado boolean NOT NULL DEFAULT false,
     no_transaccion numeric NOT NULL
 );
 
@@ -185,8 +186,6 @@ ALTER TABLE ONLY public.reservacion
 
 ALTER TABLE ONLY public.vuelo
     ADD CONSTRAINT matricula FOREIGN KEY (matricula) REFERENCES public.avion(matricula);
-
-
 
 ALTER TABLE ONLY public.tiquete
     ADD CONSTRAINT no_asiento FOREIGN KEY (no_asiento) REFERENCES public.asiento(no_asiento);

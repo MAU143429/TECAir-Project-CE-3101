@@ -30,88 +30,94 @@
         "codigo": "GIG"
     },
     {
-        "name": "Jose Maria Cordova",
-        "city": "Rio Negro",
-        "country": "Colombia",
-        "iata_code": "MDE"
+        "nombre": "Jose Maria Cordova",
+        "ciudad": "Rio Negro",
+        "pais": "Colombia",
+        "codigo": "MDE"
     },
     {
-        "name": "Cairo Intl",
-        "city": "Cairo",
-        "country": "Egypt",
-        "iata_code": "CAI"
+        "nombre": "Cairo Intl",
+        "ciudad": "Cairo",
+        "pais": "Egypt",
+        "codigo": "CAI"
     },
     {
-        "name": "Los Angeles Intl",
-        "city": "Los Angeles",
-        "country": "United States",
-        "iata_code": "LAX"
+        "nombre": "Los Angeles Intl",
+        "ciudad": "Los Angeles",
+        "pais": "United States",
+        "codigo": "LAX"
     },
     {
-        "name": "Congonhas",
-        "city": "Sao Paulo",
-        "country": "Brazil",
-        "iata_code": "CGH"
+        "nombre": "Congonhas",
+        "ciudad": "Sao Paulo",
+        "pais": "Brazil",
+        "codigo": "CGH"
     },
     {
-        "name": "John F Kennedy Intl",
-        "city": "New York",
-        "country": "United States",
-        "iata_code": "JFK"
+        "nombre": "John F Kennedy Intl",
+        "ciudad": "New York",
+        "pais": "United States",
+        "codigo": "JFK"
     },
     {
-        "name": "Barajas",
-        "city": "Madrid",
-        "country": "Spain",
-        "iata_code": "MAD"
+        "nombre": "Barajas",
+        "ciudad": "Madrid",
+        "pais": "Spain",
+        "codigo": "MAD"
     },
     {
-        "name": "Ruzyne",
-        "city": "Prague",
-        "country": "Czech Republic",
-        "iata_code": "PRG"
+        "nombre": "Ruzyne",
+        "ciudad": "Prague",
+        "pais": "Czech Republic",
+        "codigo": "PRG"
     },
     {
-        "name": "Franz Josef Strauss",
-        "city": "Munich",
-        "country": "Germany",
-        "iata_code": "MUC"
+        "nombre": "Franz Josef Strauss",
+        "ciudad": "Munich",
+        "pais": "Germany",
+        "codigo": "MUC"
     },
     {
-        "name": "Gatwick",
-        "city": "London",
-        "country": "United Kingdom",
-        "iata_code": "LGW"
+        "nombre": "Gatwick",
+        "ciudad": "London",
+        "pais": "United Kingdom",
+        "codigo": "LGW"
     },
     {
-        "name": "Mc Carran Intl",
-        "city": "Las Vegas",
-        "country": "United States",
-        "iata_code": "LAS"
+        "nombre": "Mc Carran Intl",
+        "ciudad": "Las Vegas",
+        "pais": "United States",
+        "codigo": "LAS"
     },
     {
-        "name": "Lisboa",
-        "city": "Lisbon",
-        "country": "Portugal",
-        "iata_code": "LIS"
+        "nombre": "Lisboa",
+        "ciudad": "Lisbon",
+        "pais": "Portugal",
+        "codigo": "LIS"
     },
     {
-        "name": "Brussels Natl",
-        "city": "Brussels",
-        "country": "Belgium",
-        "iata_code": "BRU"
+        "nombre": "Brussels Natl",
+        "ciudad": "Brussels",
+        "pais": "Belgium",
+        "codigo": "BRU"
     },
     {
-        "nombre" : "Boeing 737",
-        "codigo" : "737-300"
+        "nombre": "Miami Intl",
+        "ciudad": "Miami",
+        "pais": "United States",
+        "codigo": "MIA"
     },
     {
-        "nombre" : "Boeing 737",
-        "codigo" : "737-300"
+        "nombre": "Keflavik International Airport",
+        "ciudad": "Keflavik",
+        "pais": "Iceland",
+        "codigo": "KEF"
     },
     {
-        "nombre" : "Boeing 737",
-        "codigo" : "737-300"
+        "nombre": "Charles De Gaulle",
+        "ciudad": "Paris",
+        "pais": "France",
+        "codigo": "CDG"
     }
 
 ]
