@@ -7,6 +7,7 @@ import { NgxMatTimepickerModule } from 'ngx-mat-timepicker';
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { HttpClientModule} from '@angular/common/http';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -56,7 +57,7 @@ import { TicketViewComponent } from './components/ticket-view/ticket-view.compon
     BaggageCheckComponent,
     PaymentUserComponent,
     PaymentEmployeeComponent,
-    TicketViewComponent
+    TicketViewComponent,
     
   ],
   imports: [
@@ -68,6 +69,7 @@ import { TicketViewComponent } from './components/ticket-view/ticket-view.compon
     MatFormFieldModule,
     MatInputModule,
     NgxMatTimepickerModule,
+    HttpClientModule,
     CarouselModule
 
   ],
