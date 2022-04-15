@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { Router } from '@angular/router';
+import { Promotion } from 'src/app/model/promotion';
+import { PromotionService } from 'src/app/service/promotion.service';
+
 
 
 @Component({ 
@@ -10,6 +13,8 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   styleUrls: ['./promotions.component.css']
 })
 export class PromotionsComponent implements OnInit {
+
+  newPromotion:Promotion = new Promotion
 
   promotionsdata = [
     
@@ -28,7 +33,7 @@ export class PromotionsComponent implements OnInit {
       "fecha" : "30-05-2022",
       "porcentaje": "10",
       "precio": "700",
-    },
+    }, 
     {
       "no_vuelo" : "#99999999",
       "url" : "https://cdn2.civitatis.com/egipto/el-cairo/el-cairo.jpg",
@@ -82,7 +87,7 @@ export class PromotionsComponent implements OnInit {
   
   closeResult = '';
 
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal, private service:PromotionService, private router:Router) { }
 
   open(content:any) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
@@ -131,6 +136,11 @@ export class PromotionsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  // Metodo para agregar un nuevo usuario desde la seccion de registro
+  addNewPromotion(newPromotion:Promotion){
+    this.service.addPromotion(newPromotion).subscribe(promotion=> console.log(promotion));
   }
 
 } 

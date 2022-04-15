@@ -24,29 +24,29 @@
                     <div class="promotions-details">
                       <div class="input-box">
                         <span class="details">Numero de Vuelo</span>
-                        <input type="text" placeholder="Ingrese el numero de vuelo" required>
+                        <input type="text"  [(ngModel)]="newPromotion.no_vuelo" [ngModelOptions]="{standalone: true}" placeholder="Ingrese el numero de vuelo" required>
                       </div>
                       <div class="input-box">
                         <span class="details"> Porcentaje de descuento</span>
-                        <input type="number" placeholder="Ingrese el porcentaje a descontar" required>
+                        <input type="number" [(ngModel)]="newPromotion.porcentaje" [ngModelOptions]="{standalone: true}" placeholder="Ingrese el porcentaje a descontar" required>
                       </div>
                       <div class="input-box">
                         <span class="details">Periodo del descuento (dias)</span>
-                        <input type="number" placeholder="Ingrese el periodo de duracion de la promocion" required>
+                        <input type="number" [(ngModel)]="newPromotion.periodo" [ngModelOptions]="{standalone: true}" placeholder="Ingrese el periodo de duracion de la promocion" required>
                       </div>
                       <div class="input-box">
                         <span class="details">Fecha de inicio</span>
-                        <input type="date" placeholder="Seleccione la fecha de inicio de la promocion" required>
+                        <input type="date" [(ngModel)]="newPromotion.fecha" [ngModelOptions]="{standalone: true}" placeholder="Seleccione la fecha de inicio de la promocion" required>
                       </div>
                     
                       <div class="input-box2">
                         <span class="details">URL de imagen</span>
-                        <input type="text" placeholder="Indique una url de imagen para su promocion" required>
+                        <input type="text" [(ngModel)]="newPromotion.url" [ngModelOptions]="{standalone: true}" placeholder="Indique una url de imagen para su promocion" required>
                       </div>
                 
                     </div>
                     <div class="button">
-                      <input type="submit" value="Crear Promocion" routerLink="/homeemployee">
+                      <input type="submit" value="Crear Promocion" routerLink="/homeemployee" (click)="addNewPromotion(newPromotion)" >
                     </div>
                   </form> 
                 </div>
