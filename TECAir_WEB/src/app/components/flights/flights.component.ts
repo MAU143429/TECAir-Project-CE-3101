@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
+import { Flight } from 'src/app/model/flight';
+import { OpenFlight } from 'src/app/model/open-flight';
+import { CloseFlight } from 'src/app/model/close-flight';
+import { FlightsService } from 'src/app/service/flights.service';
 
 
 @Component({
@@ -9,6 +13,11 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./flights.component.css']
 })
 export class FlightsComponent implements OnInit {
+
+  newFlight:Flight = new Flight
+  newOpenFlight:OpenFlight = new OpenFlight
+  newCloseFlight:CloseFlight = new CloseFlight
+
 
   passangerdata = [
     {
@@ -31,7 +40,7 @@ export class FlightsComponent implements OnInit {
 
   btnstatus = "Confirmar Abordaje"
   closeResult = '';
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal, private service:FlightsService, private router:Router) { }
 
   open(content:any) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
@@ -57,6 +66,21 @@ export class FlightsComponent implements OnInit {
     }else {
       this.btnstatus = "Cancelar abordaje";
     }
+  }
+
+  // Metodo para agregar un nuevo vuelo
+  addNewFlight(newFlight:Flight){
+    this.service.addFlight(newFlight).subscribe(flight=> console.log(flight));
+  }
+
+  // Metodo para consultar la apertura de un vuelo
+  newAddOpenFlight(newOpenFlight:OpenFlight){
+    this.service.addFlight(newOpenFlight).subscribe(open=> console.log(open));
+  }
+
+    // Metodo para consultar el cierre de un vuelo
+    newAddCloseFlight(newCloseFlight:CloseFlight){
+    this.service.addFlight(newCloseFlight).subscribe(close=> console.log(close));
   }
 
   

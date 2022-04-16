@@ -24,56 +24,56 @@
                 <div class="flight-details">
                   <div class="input-box">
                     <span class="details">Aeropuerto de salida</span>
-                    <input type="text" placeholder="Ingrese el origen del vuelo" required>
+                    <input type="text" [(ngModel)]="newFlight.origen" [ngModelOptions]="{standalone: true} " placeholder="Ingrese el origen del vuelo" required>
                   </div>
                   <div class="input-box">
                     <span class="details"> Aeropuerto de llegada</span>
-                    <input type="text" placeholder="Ingrese el destino del vuelo" required>
+                    <input type="text" [(ngModel)]="newFlight.destino" [ngModelOptions]="{standalone: true}" placeholder="Ingrese el destino del vuelo" required>
                   </div>
                   <div class="input-box">
                     <span class="details">Modelo del avion</span>
-                    <input type="text" placeholder="Ingrese el nombre del avion" required>
+                    <input type="text"  [(ngModel)]="newFlight.avion" [ngModelOptions]="{standalone: true}" placeholder="Ingrese el nombre del avion" required>
                   </div>
                   <div class="input-box">
                     <span class="details">Hora de salida</span>
-                    <input type="time" placeholder="Seleccione la hora de salida" required >
+                    <input type="time" [(ngModel)]="newFlight.h_salida" [ngModelOptions]="{standalone: true}" placeholder="Seleccione la hora de salida" required >
                   </div>
   
                   <div class="input-box">
                     <span class="details">Hora de llegada</span>
-                    <input type="time" placeholder="Seleccione la hora aproximada de llegada" required>
+                    <input type="time" [(ngModel)]="newFlight.h_llegada" [ngModelOptions]="{standalone: true}"  placeholder="Seleccione la hora aproximada de llegada" required>
                   </div>
 
                   <div class="input-box">
                     <span class="details">Fecha del vuelo</span>
-                    <input type="date" placeholder="Seleccione la fecha del vuelo" required>
+                    <input type="date" [(ngModel)]="newFlight.fecha" [ngModelOptions]="{standalone: true}"  placeholder="Seleccione la fecha del vuelo" required>
                   </div>
 
                   <div class="input-box">
                     <span class="details">Escala 1</span>
-                    <input type="text" placeholder="Ingrese la escala aquí" >
+                    <input type="text" [(ngModel)]="newFlight.escala1" [ngModelOptions]="{standalone: true}" placeholder="Ingrese la escala aquí" >
                   </div>
-                  <div class="input-box">
+                  <div class="input-box"> 
                     <span class="details"> Escala 2</span>
-                    <input type="text" placeholder="Ingrese la escala aquí" >
+                    <input type="text" [(ngModel)]="newFlight.escala2" [ngModelOptions]="{standalone: true}"  placeholder="Ingrese la escala aquí" >
                   </div>
                   <div class="input-box">
                     <span class="details">Escala 3</span>
-                    <input type="text" placeholder="Ingrese la escala aquí" >
+                    <input type="text" [(ngModel)]="newFlight.escala3" [ngModelOptions]="{standalone: true}"  placeholder="Ingrese la escala aquí" >
                   </div>
 
                   <div class="input-box2 input-box">
                     <span class="details">Puerta de abordaje</span>
-                    <input type="text" placeholder="Indique la puerta de abordaje" required>
+                    <input type="text" [(ngModel)]="newFlight.prt_abordaje" [ngModelOptions]="{standalone: true}" placeholder="Indique la puerta de abordaje" required>
                   </div>
 
                   <div class="input-box3 input-box">
                     <span class="details">Coste del tiquete</span>
-                    <input type="number" placeholder="Ingrese la tarifa del boleto" required>
+                    <input type="number" [(ngModel)]="newFlight.coste_vuelo" [ngModelOptions]="{standalone: true}"  placeholder="Ingrese la tarifa del boleto" required>
                   </div>
                 </div>
                 <div class="button">
-                  <input type="submit" value="Registrar Vuelo" routerLink="/flights" (click)="open(content)">
+                  <input type="submit" value="Registrar Vuelo" routerLink="/flights" (click)="open(content); addNewFlight(newFlight)">
                 </div>
               </form>
             </div>
@@ -93,10 +93,10 @@
                   <div class="open-flight">
                     <div class="input-box">
                       <span class="details">Ingrese el número de transacción que desea agregar  </span>
-                      <input type="text" placeholder="Ingrese el número de transacción" required>
+                      <input type="text" [(ngModel)]="newOpenFlight.no_transaccion" [ngModelOptions]="{standalone: true}"  placeholder="Ingrese el número de transacción" required>
                     </div>
                     <div class="open-close-btn">
-                      <input type="submit" value="Buscar Tiquete">
+                      <input type="submit" (click)="newAddOpenFlight(newOpenFlight)"  value="Buscar Tiquete">
                     </div>
                   </div>
                 </form>
@@ -143,10 +143,10 @@
                   <div class="close-flight">
                     <div class="input-box">
                       <span class="details">Ingrese el número de vuelo que desea cerrar </span>
-                      <input type="text" placeholder="Ingrese el número de vuelo" required>
+                      <input type="text" [(ngModel)]="newCloseFlight.no_vuelo" [ngModelOptions]="{standalone: true}"  placeholder="Ingrese el número de vuelo" required>
                     </div>
                     <div class="open-close-btn">
-                      <input type="submit" value="Buscar Vuelo">
+                      <input type="submit" (click)="newAddCloseFlight(newCloseFlight)"  value="Buscar Vuelo">
                     </div>
                   </div>
                 </form>
