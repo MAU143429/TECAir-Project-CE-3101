@@ -16,27 +16,27 @@
         <div class="user-details">
           <div class="input-box">
             <span class="details">Nombre</span>
-            <input type="text" placeholder="Ingrese su nombre" required>
+            <input type="text" [(ngModel)]="newRegister.u_nombre" [ngModelOptions]="{standalone: true}"  placeholder="Ingrese su nombre" required>
           </div>
           <div class="input-box">
             <span class="details">Primer Apellido</span>
-            <input type="text" placeholder="Ingrese su primer apellido" required>
+            <input type="text" [(ngModel)]="newRegister.u_apellido1" [ngModelOptions]="{standalone: true}"  placeholder="Ingrese su primer apellido" required>
           </div>
           <div class="input-box">
             <span class="details">Segundo Apellido</span>
-            <input type="text" placeholder="Ingrese su segundo apellido" required>
+            <input type="text" [(ngModel)]="newRegister.u_apellido2" [ngModelOptions]="{standalone: true}"  placeholder="Ingrese su segundo apellido" required>
           </div>
           <div class="input-box">
             <span class="details">Teléfono</span>
-            <input type="number" placeholder="Ingrese su número de teléfono" required>
+            <input type="number" [(ngModel)]="newRegister.telefono" [ngModelOptions]="{standalone: true}"  placeholder="Ingrese su número de teléfono" required>
           </div>
           <div class="input-box">
             <span class="details">Correo</span>
-            <input type="email"  placeholder="Ingrese su correo" required>
+            <input type="email"  [(ngModel)]="newRegister.correo" [ngModelOptions]="{standalone: true}"  placeholder="Ingrese su correo" required>
           </div>
           <div class="input-box">
             <span class="details">Contraseña</span>
-            <input type="password" placeholder="Ingrese una contraseña" required>
+            <input type="password" [(ngModel)]="newRegister.contrasena" [ngModelOptions]="{standalone: true}"  placeholder="Ingrese una contraseña" required>
           </div>
         </div>
 
@@ -50,18 +50,18 @@
         <div class="user-details">
             <div class="input-box">
               <span class="details">Universidad</span>
-              <input type="text" id= "collageName" placeholder="Ingrese su universidad" [disabled]="!inputCheck.checked">
+              <input type="text" id= "collageName" [(ngModel)]="newRegister.universidad" [ngModelOptions]="{standalone: true}"  placeholder="Ingrese su universidad" [disabled]="!inputCheck.checked">
             </div>
             <div class="input-box">
               <span class="details">Carné</span>
-              <input type="number" id= "idNumber"placeholder="Ingrese su carné" [disabled]="!inputCheck.checked">
+              <input type="number" id= "idNumber" [(ngModel)]="newRegister.carne" [ngModelOptions]="{standalone: true}" placeholder="Ingrese su carné" [disabled]="!inputCheck.checked">
             </div>
         </div>
         
 
 
         <div class="button">
-          <input type="submit" value="Registrarse"  routerLink="/loginuser">
+          <input type="submit" value="Registrarse"  (click)="addNewRegister(newRegister)"  routerLink="/loginuser">
         </div>
       </form>
     </div>

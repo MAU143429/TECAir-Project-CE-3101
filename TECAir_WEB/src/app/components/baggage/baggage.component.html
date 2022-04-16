@@ -28,11 +28,11 @@
                           <div class="baggage-details">
                             <div class="input-box">
                               <span class="details">Número de Transacción</span>
-                              <input type="number" placeholder="Ingrese el número de transacción del tiquete" required>
+                              <input type="number" [(ngModel)]="newCheckin.no_transaccion" [ngModelOptions]="{standalone: true}"  placeholder="Ingrese el número de transacción del tiquete" required>
                             </div>
                           </div>
                           <div class="button">
-                            <input type="submit" value="Buscar Pasajero">
+                            <input type="submit" (click)="addNewCheckIn(newCheckin)"  value="Buscar Pasajero">
                           </div>
                         </form>
                       </div>
@@ -82,24 +82,24 @@
                 <form action="#">
                   <div class="baggage-details">
                     <div class="input-box2">
-                      <span class="details">Nombre del pasajero</span>
-                      <input type="text" placeholder="Ingrese el nombre del pasajero" required>
+                      <span class="details">Cedula/Pasaporte</span>
+                      <input type="text" [(ngModel)]="newBaggage.dni" [ngModelOptions]="{standalone: true}"  placeholder="Ingrese el numero de cedula o pasaporte asociado al pasajero" required>
                     </div>
                     <div class="input-box2">
                       <span class="details">Número de Vuelo</span>
-                      <input type="text" placeholder="Ingrese el número de vuelo" required>
+                      <input type="text" [(ngModel)]="newBaggage.no_vuelo" [ngModelOptions]="{standalone: true}" placeholder="Ingrese el número de vuelo" required>
                     </div>
                     <div class="input-box2">
                       <span class="details">Peso (kg)</span>
-                      <input type="number" placeholder="Ingrese el peso de la maleta" required>
+                      <input type="number" [(ngModel)]="newBaggage.peso" [ngModelOptions]="{standalone: true}" placeholder="Ingrese el peso de la maleta" required>
                     </div>
                     <div class="input-box2">
                       <span class="details">Color de la maleta</span>
-                      <input type="text" placeholder="Ingrese el color de la maleta" required>
+                      <input type="text" [(ngModel)]="newBaggage.color" [ngModelOptions]="{standalone: true}"  placeholder="Ingrese el color de la maleta" required>
                     </div>
                   </div>       
                   <div class="button  ">
-                    <input style="margin-left: 35%;" type="submit" value="Registrar Maleta">
+                    <input style="margin-left: 35%;" (click)="addNewBaggage(newBaggage)"  type="submit" value="Registrar Maleta">
                   </div>
                   <p><span> <a style="color: aqua; margin-left: 41%;">Generar reporte de facturacion de maletas aquí</a></span></p>
       
