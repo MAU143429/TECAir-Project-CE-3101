@@ -17,7 +17,7 @@ export class BillingComponent implements OnInit {
 
   reservationdata= [
     {
-      "no_vuelo" : "#9999999",
+      "no_vuelo" : 9999999,
       "origen" : "Aeropuerto Internacional Juan Santamaria",
       "destino": "Aeropuerto Benito Juarez",
       "ciudad_origen" : "San Jose",
@@ -28,7 +28,8 @@ export class BillingComponent implements OnInit {
       "h_salida": "1:50 PM",
       "h_llegada": "10:50 PM",
       "duracion" : "8 h 31 mins",
-      "cant_escalas" : "2"
+      "cant_escalas" : "2",
+      "no_reservacion" : 22222
     },
 
 ]

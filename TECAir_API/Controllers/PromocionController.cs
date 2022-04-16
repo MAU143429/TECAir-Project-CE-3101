@@ -9,6 +9,12 @@ namespace TECAir_API.Controllers
     [ApiController]
     public class PromocionController : ControllerBase
     {
+        // Lista de promociones
+        List<Promocion> promociones = new List<Promocion> 
+        {
+            new Promocion(1, 10, 20, "url1", "22/04/2022")
+        };
+
         // GET: api/<PromocionController>
         [HttpGet]
         public IEnumerable<string> Get()
@@ -23,12 +29,18 @@ namespace TECAir_API.Controllers
             return "value";
         }
 
-        // POST api/<PromocionController>
+        /// <summary>
+        /// Metodo Post para agregar nuevas promociones desde la Web
+        /// </summary>
+        /// <param name="nuevaPromocion"> Objeto promocion que proviene de Web con los atributos del modelo Promocion.cs</param>
+        /// <returns> Una lista de promociones creadas </returns>
+        // POST api/Promocion/Add
         [HttpPost("Add")]
-        public Promocion Post(Promocion promocion)
+        public List<Promocion> Post(Promocion nuevaPromocion)
         {
-            Console.WriteLine(promocion);
-            return promocion;
+            int id = promociones.Last().no_promocion + 1;
+            promociones.Add(nuevaPromocion);
+            return promociones;
         }
 
         // PUT api/<PromocionController>/5

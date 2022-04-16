@@ -16,9 +16,8 @@
         {
         }
 
-        public Promocion(int promocion, int vuelo, int porcentaje, int periodo, string url, string fecha)//string dia, string mes, string ano)
+        public Promocion(int vuelo, int porcentaje, int periodo, string url, string fecha)//string dia, string mes, string ano)
         {
-            this.no_promocion = promocion;
             this.no_vuelo = vuelo;
             this.porcentaje = porcentaje;
             this.periodo = periodo;
