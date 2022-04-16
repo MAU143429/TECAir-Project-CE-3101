@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { TicketPayment } from 'src/app/model/ticket-payment';
+import { BookingsService } from 'src/app/service/bookings.service';
+
 
 @Component({
   selector: 'app-billing-employee',
@@ -6,6 +10,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./billing-employee.component.css']
 })
 export class BillingEmployeeComponent implements OnInit {
+
+  newTicketPayment:TicketPayment = new TicketPayment
 
   reservationdata= [
     {
@@ -25,9 +31,14 @@ export class BillingEmployeeComponent implements OnInit {
 
 ]
 
-  constructor() { }
+  constructor(private service:BookingsService, private router:Router) { }
 
   ngOnInit(): void {
+  }
+  
+  // Metodo para agregar un nuevo tiquete luego de que este fuera cancelado.
+  addNewTicketPayment(newTicketPayment:TicketPayment){
+    this.service.addTicketPayment(newTicketPayment).subscribe(ticket=> console.log(ticket));
   }
 
 }

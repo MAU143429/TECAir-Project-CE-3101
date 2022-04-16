@@ -8,7 +8,7 @@
      
    </head>
 <body>
-      <div class="bookingzone">
+      <div class="bookingzone"> 
 
         <h4 class="maintitle">Detalles del viaje</h4>
 
@@ -45,19 +45,19 @@
               <div class="user-details">
                 <div class="input-box">
                   <span class="details">Nombre</span>
-                  <input type="text" placeholder="Ingrese su nombre" required>
+                  <input type="text" [(ngModel)]="newTicketPayment.p_nombre" [ngModelOptions]="{standalone: true}" placeholder="Ingrese su nombre" required>
                 </div>
                 <div class="input-box">
                   <span class="details">Primer Apellido</span>
-                  <input type="text" placeholder="Ingrese su primer apellido" required>
+                  <input type="text" [(ngModel)]="newTicketPayment.p_apellido1" [ngModelOptions]="{standalone: true}" placeholder="Ingrese su primer apellido" required>
                 </div>
                 <div class="input-box">
                   <span class="details">Segundo Apellido</span>
-                  <input type="text" placeholder="Ingrese su segundo apellido" required>
+                  <input type="text" [(ngModel)]="newTicketPayment.p_apellido2" [ngModelOptions]="{standalone: true}" placeholder="Ingrese su segundo apellido" required>
                 </div>
                 <div class="input-box">
                   <span class="details">Cedula o pasaporte</span>
-                  <input type="number" placeholder="Ingrese su número de cedula o pasaporte" required>
+                  <input type="number" [(ngModel)]="newTicketPayment.dni" [ngModelOptions]="{standalone: true}" placeholder="Ingrese su número de cedula o pasaporte" required>
                 </div>
             </div>
             </form>
@@ -95,7 +95,7 @@
                           <button class="btn btnformat" routerLink="/employeeBooking" >Regresar</button>
                       </div>
                       <div class="col-sm">
-                          <button class="btn btnformat" style= "margin-left: 22%;" routerLink="/employeeBooking" >Pagar Vuelo</button>
+                          <button class="btn btnformat" style= "margin-left: 22%;" (click)="addNewTicketPayment(newTicketPayment)"  routerLink="/employeeBooking" >Pagar Vuelo</button>
                       </div>
                   </div>
               </div> 
@@ -107,10 +107,4 @@
 
 
 </body>
-
-<ng-template #content let-modal>
-  <div class="popup">
-    <button class="close cbtn" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
-  </div>
-</ng-template>
 </html>

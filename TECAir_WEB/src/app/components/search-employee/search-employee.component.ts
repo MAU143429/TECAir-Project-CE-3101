@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
+import { Search } from 'src/app/model/search';
+import { SearchflightsService } from 'src/app/service/searchflights.service';
 
 @Component({
   selector: 'app-search-employee',
@@ -9,7 +11,8 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 })
 export class SearchEmployeeComponent implements OnInit {
 
-  
+  newSearch:Search = new Search
+
   searchdata= [
     {
       "no_vuelo" : "XMF-675",
@@ -25,7 +28,7 @@ export class SearchEmployeeComponent implements OnInit {
 
   closeResult = '';
 
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal , private service:SearchflightsService, private router:Router) { }
 
   open(content:any) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
@@ -47,4 +50,9 @@ export class SearchEmployeeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // Metodo para crear una nueva busqueda de vuelos
+  createNewSearch(newSearch:Search){
+    this.service.newSearch(newSearch).subscribe(search=> console.log(search));
+  }
+  
 }
