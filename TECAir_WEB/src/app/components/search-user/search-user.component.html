@@ -9,18 +9,18 @@
    </head>
 <body>
     <app-unavbar></app-unavbar>
-      <div class="searchbar">
+      <div class="searchbar"> 
         <div class="icons">
-          <input class="myinput" placeholder="Aeropuerto de salida">
+          <input class="myinput" [(ngModel)]="newSearch.origen" [ngModelOptions]="{standalone: true}"  placeholder="Aeropuerto de salida">
 
           <img class="myimage">
 
-          <input class="myinput" placeholder="Aeropuerto de llegada">
+          <input class="myinput" [(ngModel)]="newSearch.destino" [ngModelOptions]="{standalone: true}" placeholder="Aeropuerto de llegada">
           
-          <input type="date" class="myinput" placeholder="Seleccione la fecha del vuelo">
+          <input type="date" class="myinput" [(ngModel)]="newSearch.fecha" [ngModelOptions]="{standalone: true}" placeholder="Seleccione la fecha del vuelo">
           
 
-          <button class="btn1" type="button" ></button>
+          <button class="btn1" (click)="createNewSearch(newSearch)" type="button" ></button>
         </div>
       </div>
       <div class="results">

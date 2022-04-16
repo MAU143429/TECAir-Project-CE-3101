@@ -79,9 +79,10 @@ body{
 .myimage{
   width: 40px;
   height: 40px;
-  background-image: url("https://cdn-icons.flaticon.com/png/512/4511/premium/4511819.png?token=exp=1649373356~hmac=5abde2288b339db33537b2fb58b1d3e2");
+  background-image: url("https://cdn-icons-png.flaticon.com/512/60/60660.png");
   background-size: cover;
   margin: 0.5%;
+  border: none;
   
 }
 

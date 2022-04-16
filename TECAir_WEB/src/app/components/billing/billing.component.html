@@ -15,7 +15,7 @@
         <div class = "container2">
           <div class="row">
               <div class="col-sm">
-                  <span class="info">Lugares:</span><span class="info" style="margin-left: 245%;">{{reservationdata[0].ciudad_origen}} - {{reservationdata[0].ciudad_destino}}</span>
+                  <span class="info">Lugares:</span><span class="info" style="margin-left: 24.6%;">{{reservationdata[0].ciudad_origen}} - {{reservationdata[0].ciudad_destino}}</span>
                   <br>
                   <span class="info" >Hora y Fecha:</span><span class="info" style="margin-left: 15.5%;">{{reservationdata[0].fecha}} - {{reservationdata[0].h_salida}}</span>
                   <br>
@@ -46,19 +46,19 @@
               <div class="user-details">
                 <div class="input-box">
                   <span class="details">Nombre</span>
-                  <input type="text" placeholder="Ingrese su nombre" required>
+                  <input type="text" [(ngModel)]="newTicketPayment.p_nombre" [ngModelOptions]="{standalone: true}"  placeholder="Ingrese su nombre" required>
                 </div>
                 <div class="input-box">
                   <span class="details">Primer Apellido</span>
-                  <input type="text" placeholder="Ingrese su primer apellido" required>
+                  <input type="text" [(ngModel)]="newTicketPayment.p_apellido1" [ngModelOptions]="{standalone: true}"  placeholder="Ingrese su primer apellido" required>
                 </div>
                 <div class="input-box">
                   <span class="details">Segundo Apellido</span>
-                  <input type="text" placeholder="Ingrese su segundo apellido" required>
+                  <input type="text" [(ngModel)]="newTicketPayment.p_apellido2" [ngModelOptions]="{standalone: true}"  placeholder="Ingrese su segundo apellido" required>
                 </div>
                 <div class="input-box">
                   <span class="details">Cedula o pasaporte</span>
-                  <input type="number" placeholder="Ingrese su número de cedula o pasaporte" required>
+                  <input type="number" [(ngModel)]="newTicketPayment.dni" [ngModelOptions]="{standalone: true}"  placeholder="Ingrese su número de cedula o pasaporte" required>
                 </div>
             </div>
             </form>
@@ -97,7 +97,7 @@
                           <button class="btn btnformat" routerLink="/userBooking" >Regresar</button>
                       </div>
                       <div class="col-sm">
-                          <button class="btn btnformat" style= "margin-left: 22%;" routerLink="/userBooking" >Pagar Vuelo</button>
+                          <button class="btn btnformat" style= "margin-left: 22%;" routerLink="/userBooking" (click)="addNewTicketPayment(newTicketPayment)" >Pagar Vuelo</button>
                       </div>
                   </div>
               </div> 

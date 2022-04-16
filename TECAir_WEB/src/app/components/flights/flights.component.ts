@@ -14,8 +14,8 @@ export class FlightsComponent implements OnInit {
     {
       "no_vuelo" : "XMF-675",
       "p_nombre" : "Juan Santamaria",
-      "origen" : "SJO Costa Rica Aeropuerto Internacional Juan Santamaria",
-      "destino": "MXN Mexico Aeropuerto Benito Juarez",
+      "origen" : "San Jose, Costa Rica",
+      "destino": "Ciudad de Mexico, Mexico",
       "abordaje": "Si",
     }
   ]
@@ -23,8 +23,8 @@ export class FlightsComponent implements OnInit {
     flightdata = [
     {
       "no_vuelo" : "MGFR-737",
-      "origen" : "SJO Costa Rica Aeropuerto Internacional Juan Santamaria",
-      "destino": "MXN Mexico Aeropuerto Benito Juarez",
+      "origen" : "San Jose, Costa Rica",
+      "destino": "Ciudad de Mexico, Mexico",
       "h_salida": "2:00 AM",
     }
   ]

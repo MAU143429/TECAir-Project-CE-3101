@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
+import { TicketPayment } from 'src/app/model/ticket-payment';
+import { BookingsService } from 'src/app/service/bookings.service';
 
 
 @Component({
@@ -9,6 +12,7 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 })
 export class BillingComponent implements OnInit {
 
+  newTicketPayment:TicketPayment = new TicketPayment
   closeResult = '';
 
   reservationdata= [
@@ -29,7 +33,7 @@ export class BillingComponent implements OnInit {
 
 ]
 
-constructor(private modalService: NgbModal) { }
+constructor(private modalService: NgbModal,private service:BookingsService, private router:Router) { }
 
 open(content:any) {
   this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
@@ -50,6 +54,11 @@ private getDismissReason(reason: any): string {
 }
 
   ngOnInit(): void {
+  }
+
+  // Metodo para agregar un nuevo tiquete luego de que este fuera cancelado.
+  addNewTicketPayment(newTicketPayment:TicketPayment){
+    this.service.addTicketPayment(newTicketPayment).subscribe(ticket=> console.log(ticket));
   }
 
 }
