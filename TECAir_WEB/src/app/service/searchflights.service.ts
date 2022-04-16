@@ -17,7 +17,7 @@ export class SearchflightsService {
    *  Este post permite enviar la informacion para realizar una busqueda de un vuelo.
    */
   newSearch(search:any):Observable<any>{
-    return this.httpclient.post(this.url+'/Search/New', search) 
+    return this.httpclient.post(this.url+'/Busqueda/New', search) 
   }
 }
  
