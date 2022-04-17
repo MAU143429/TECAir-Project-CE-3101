@@ -1,0 +1,123 @@
+[
+    {
+        "nombre": "Juan Santamaria Intl",
+        "ciudad": "San José",
+        "pais": "Costa Rica",
+        "codigo": "SJO"
+    },
+    {
+        "nombre": "Tocumen Intl",
+        "ciudad": "Ciudad de Panamá",
+        "pais": "Panamá",
+        "codigo": "PTY"
+    },
+    {
+        "nombre": "Licenciado Benito Juarez Intl",
+        "ciudad": "Ciudad de México",
+        "pais": "México",
+        "codigo": "MEX"
+    },
+    {
+        "nombre": "Eldorado Intl",
+        "ciudad": "Bogota",
+        "pais": "Colombia",
+        "codigo": "BOG"
+    },
+    {
+        "nombre": "Galeao Antonio Carlos Jobim",
+        "ciudad": "Rio De Janeiro",
+        "pais": "Brazil",
+        "codigo": "GIG"
+    },
+    {
+        "nombre": "Jose Maria Cordova",
+        "ciudad": "Rio Negro",
+        "pais": "Colombia",
+        "codigo": "MDE"
+    },
+    {
+        "nombre": "Cairo Intl",
+        "ciudad": "Cairo",
+        "pais": "Egypt",
+        "codigo": "CAI"
+    },
+    {
+        "nombre": "Los Angeles Intl",
+        "ciudad": "Los Angeles",
+        "pais": "United States",
+        "codigo": "LAX"
+    },
+    {
+        "nombre": "Congonhas",
+        "ciudad": "Sao Paulo",
+        "pais": "Brazil",
+        "codigo": "CGH"
+    },
+    {
+        "nombre": "John F Kennedy Intl",
+        "ciudad": "New York",
+        "pais": "United States",
+        "codigo": "JFK"
+    },
+    {
+        "nombre": "Barajas",
+        "ciudad": "Madrid",
+        "pais": "Spain",
+        "codigo": "MAD"
+    },
+    {
+        "nombre": "Ruzyne",
+        "ciudad": "Prague",
+        "pais": "Czech Republic",
+        "codigo": "PRG"
+    },
+    {
+        "nombre": "Franz Josef Strauss",
+        "ciudad": "Munich",
+        "pais": "Germany",
+        "codigo": "MUC"
+    },
+    {
+        "nombre": "Gatwick",
+        "ciudad": "London",
+        "pais": "United Kingdom",
+        "codigo": "LGW"
+    },
+    {
+        "nombre": "Mc Carran Intl",
+        "ciudad": "Las Vegas",
+        "pais": "United States",
+        "codigo": "LAS"
+    },
+    {
+        "nombre": "Lisboa",
+        "ciudad": "Lisbon",
+        "pais": "Portugal",
+        "codigo": "LIS"
+    },
+    {
+        "nombre": "Brussels Natl",
+        "ciudad": "Brussels",
+        "pais": "Belgium",
+        "codigo": "BRU"
+    },
+    {
+        "nombre": "Miami Intl",
+        "ciudad": "Miami",
+        "pais": "United States",
+        "codigo": "MIA"
+    },
+    {
+        "nombre": "Keflavik International Airport",
+        "ciudad": "Keflavik",
+        "pais": "Iceland",
+        "codigo": "KEF"
+    },
+    {
+        "nombre": "Charles De Gaulle",
+        "ciudad": "Paris",
+        "pais": "France",
+        "codigo": "CDG"
+    }
+
+]

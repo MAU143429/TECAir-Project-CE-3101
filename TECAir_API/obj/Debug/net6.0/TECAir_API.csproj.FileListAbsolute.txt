@@ -97,3 +97,11 @@ C:\Users\yendr\Documents\2022\Bases de Datos\TECAir-CE-3101\TECAir_API\bin\Debug
 C:\Users\yendr\Documents\2022\Bases de Datos\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\System.Collections.Immutable.dll
 C:\Users\yendr\Documents\2022\Bases de Datos\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
 C:\Users\yendr\Documents\2022\Bases de Datos\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\Assets\airports.json
+C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\Humanizer.dll
+C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\Newtonsoft.Json.dll
