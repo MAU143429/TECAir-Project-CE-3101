@@ -98,6 +98,7 @@ C:\Users\yendr\Documents\2022\Bases de Datos\TECAir-CE-3101\TECAir_API\bin\Debug
 C:\Users\yendr\Documents\2022\Bases de Datos\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
 C:\Users\yendr\Documents\2022\Bases de Datos\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\System.Runtime.CompilerServices.Unsafe.dll
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\Assets\airports.json
 C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\Humanizer.dll
 C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
@@ -107,6 +108,8 @@ C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\Microsoft.Enti
 C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
 C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\Newtonsoft.Json.dll
 =======
+=======
+>>>>>>> Stashed changes
 C:\Users\mau14\Escritorio\TECAir\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\mau14\Escritorio\TECAir\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\appsettings.json
 C:\Users\mau14\Escritorio\TECAir\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\TECAir_API.exe
@@ -140,4 +143,7 @@ C:\Users\mau14\Escritorio\TECAir\TECAir-CE-3101\TECAir_API\obj\Debug\net6.0\refi
 C:\Users\mau14\Escritorio\TECAir\TECAir-CE-3101\TECAir_API\obj\Debug\net6.0\TECAir_API.pdb
 C:\Users\mau14\Escritorio\TECAir\TECAir-CE-3101\TECAir_API\obj\Debug\net6.0\TECAir_API.genruntimeconfig.cache
 C:\Users\mau14\Escritorio\TECAir\TECAir-CE-3101\TECAir_API\obj\Debug\net6.0\ref\TECAir_API.dll
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
