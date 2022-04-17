@@ -9,15 +9,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
-    private static final String TAG = "MainActivity";
+    private static final String TAG = "LoginActivity";
     private String user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
 
         EditText username = (EditText) findViewById(R.id.user);
         EditText password = (EditText) findViewById(R.id.password);
@@ -31,15 +31,16 @@ public class MainActivity extends AppCompatActivity {
                     user = username.getText().toString();
                     login();
                 } else {
-                    Toast.makeText(MainActivity.this, "Fallo de inicio de sesión", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Fallo de inicio de sesión", Toast.LENGTH_SHORT).show();
                 }
             }
         });
     }
 
     public void login() {
-        Intent intent = new Intent(this, Home.class);
+        Intent intent = new Intent(this, SearchTicketActivity.class);
         intent.putExtra("user", user);
         startActivity(intent);
     }
+
 }

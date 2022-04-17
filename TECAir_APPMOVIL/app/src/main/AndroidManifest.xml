@@ -10,10 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TECAir">
         <activity
-            android:name=".Home"
+            android:name=".PassengerActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".BookTicketActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SearchTicketActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

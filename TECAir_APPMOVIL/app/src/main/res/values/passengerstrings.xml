@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="name">Nombre</string>
+    <string name="lastname">Apellidos</string>
+    <string name="phone">Teléfono</string>
+    <string name="email">E-mail</string>
+    <string name="data">Ingrese sus datos</string>
+    <string name="student">Es estudiante?</string>
+    <string name="college">Universidad</string>
+    <string name="studentid">Carnet</string>
+</resources>
