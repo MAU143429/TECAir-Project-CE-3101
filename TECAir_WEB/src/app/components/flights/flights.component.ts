@@ -75,12 +75,12 @@ export class FlightsComponent implements OnInit {
 
   // Metodo para consultar la apertura de un vuelo
   newAddOpenFlight(newOpenFlight:OpenFlight){
-    this.service.addFlight(newOpenFlight).subscribe(open=> console.log(open));
+    this.service.newOpen(newOpenFlight).subscribe(open=> console.log(open));
   }
 
     // Metodo para consultar el cierre de un vuelo
     newAddCloseFlight(newCloseFlight:CloseFlight){
-    this.service.addFlight(newCloseFlight).subscribe(close=> console.log(close));
+    this.service.newClose(newCloseFlight).subscribe(close=> console.log(close));
   }
 
   

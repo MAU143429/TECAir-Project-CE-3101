@@ -19,21 +19,21 @@ export class FlightsService {
    *  Este post permite enviar la informacion para registrar un vuelo nuevo.
    */
     addFlight(flight:any):Observable<any>{
-      return this.httpclient.post(this.url+'/Vuelos/Add', flight) 
+      return this.httpclient.post(this.url+'/Vuelo/Add', flight) 
     }
 
     /** POST PARA CONSULTA APERTURA DE VUELO
    *  Este post permite enviar la informacion para consultar un apertura de vuelo por usuario.
    */
      newOpen(openFlight:any):Observable<any>{
-      return this.httpclient.post(this.url+'/Vuelos/Abiertos', openFlight) 
+      return this.httpclient.post(this.url+'/VueloAbierto', openFlight) 
     }
 
     /** POST PARA CONSULTA CIERRE DE VUELO
    *  Este post permite enviar la informacion para el cierre de un vuelo.
    */
      newClose(closeFlight:any):Observable<any>{
-      return this.httpclient.post(this.url+'/Vuelos/Cerrados', closeFlight) 
+      return this.httpclient.post(this.url+'/VueloCerrado', closeFlight) 
     }
 
 }
