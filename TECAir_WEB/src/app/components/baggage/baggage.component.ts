@@ -26,8 +26,7 @@ export class BaggageComponent implements OnInit {
 
   constructor(private service:BaggageService, private router:Router) { }
  
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   // Metodo para agregar una nueva maleta
   addNewBaggage(newBaggage:Baggage){

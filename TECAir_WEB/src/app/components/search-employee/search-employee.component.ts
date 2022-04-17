@@ -1,8 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
+import {Observable} from 'rxjs';
 import { Search } from 'src/app/model/search';
+import { Airport } from 'src/app/interface/airport';
 import { SearchflightsService } from 'src/app/service/searchflights.service';
+import { startWith, debounceTime, distinctUntilChanged, switchMap, map } from 'rxjs/operators';
+import {FormControl} from '@angular/forms';
+
+
 
 @Component({
   selector: 'app-search-employee',
@@ -12,6 +18,11 @@ import { SearchflightsService } from 'src/app/service/searchflights.service';
 export class SearchEmployeeComponent implements OnInit {
 
   newSearch:Search = new Search
+  Airports: Airport[] | undefined;
+
+  myControl = new FormControl();
+  options = [];
+  filteredOptions: any;
 
   searchdata= [
     {
@@ -28,7 +39,28 @@ export class SearchEmployeeComponent implements OnInit {
 
   closeResult = '';
 
-  constructor(private modalService: NgbModal , private service:SearchflightsService, private router:Router) { }
+  constructor(private modalService: NgbModal , private service:SearchflightsService, private router:Router) { 
+
+    this.filteredOptions = this.myControl.valueChanges.pipe(
+      startWith(''),
+      debounceTime(400),
+      distinctUntilChanged(),
+      switchMap(val => {
+            return this.filter(val || '')
+       }) 
+    )
+
+  }
+
+  filter(val: string): any {
+ 
+    return this.service.getAirports()
+     .pipe(
+       map(response => response.filter(option => { 
+         return option.nombre.toLowerCase().indexOf(val.toLowerCase()) === 0
+       }))
+     )
+   }  
 
   open(content:any) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
@@ -48,6 +80,8 @@ export class SearchEmployeeComponent implements OnInit {
     }
   }
   ngOnInit(): void {
+
+    this.service.getAirports().subscribe( data => (this.Airports = data));
   }
 
   // Metodo para crear una nueva busqueda de vuelos

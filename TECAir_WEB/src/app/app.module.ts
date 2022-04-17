@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule } from '@angular/forms';
+import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxMatTimepickerModule } from 'ngx-mat-timepicker';
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { HttpClientModule} from '@angular/common/http';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -33,6 +34,7 @@ import { BaggageCheckComponent } from './components/baggage-check/baggage-check.
 import { PaymentUserComponent } from './components/payment-user/payment-user.component';
 import { PaymentEmployeeComponent } from './components/payment-employee/payment-employee.component';
 import { TicketViewComponent } from './components/ticket-view/ticket-view.component';
+import { FlightSummaryComponent } from './components/flight-summary/flight-summary.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +60,8 @@ import { TicketViewComponent } from './components/ticket-view/ticket-view.compon
     PaymentUserComponent,
     PaymentEmployeeComponent,
     TicketViewComponent,
+    FlightSummaryComponent,
+
     
   ],
   imports: [
@@ -70,7 +74,9 @@ import { TicketViewComponent } from './components/ticket-view/ticket-view.compon
     MatInputModule,
     NgxMatTimepickerModule,
     HttpClientModule,
-    CarouselModule
+    CarouselModule,
+    MatAutocompleteModule,
+    ReactiveFormsModule,
 
   ],
   providers: [],

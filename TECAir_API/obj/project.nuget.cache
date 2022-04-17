@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< Updated upstream
   "dgSpecHash": "aSmXxwv2ufwqfqL7f2jUXc5cBXP4WqpQ8/MmCZmAOQckS9GbtemHvdtpaYpceZYbAPItNf26c7LnOGIE06X1OA==",
+=======
+  "dgSpecHash": "lIEYpTF7oLaX+9MgnvshdyWEbRGecnD8pdGbxgzpdtcDqujp1q+ZwM6TdmNrjtZKv+DxHRYsJG5WX8QZsx4rlw==",
+>>>>>>> Stashed changes
   "success": true,
   "projectFilePath": "C:\\Users\\mau14\\Escritorio\\TECAir\\TECAir-CE-3101\\TECAir_API\\TECAir_API.csproj",
   "expectedPackageFiles": [
@@ -21,7 +25,10 @@
     "C:\\Users\\mau14\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
     "C:\\Users\\mau14\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\mau14\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+<<<<<<< Updated upstream
     "C:\\Users\\mau14\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+=======
+>>>>>>> Stashed changes
     "C:\\Users\\mau14\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
     "C:\\Users\\mau14\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
     "C:\\Users\\mau14\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",

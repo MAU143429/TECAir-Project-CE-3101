@@ -97,6 +97,7 @@ C:\Users\yendr\Documents\2022\Bases de Datos\TECAir-CE-3101\TECAir_API\bin\Debug
 C:\Users\yendr\Documents\2022\Bases de Datos\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\System.Collections.Immutable.dll
 C:\Users\yendr\Documents\2022\Bases de Datos\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
 C:\Users\yendr\Documents\2022\Bases de Datos\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\System.Runtime.CompilerServices.Unsafe.dll
+<<<<<<< Updated upstream
 C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\Assets\airports.json
 C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\Humanizer.dll
 C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
@@ -105,3 +106,38 @@ C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\Microsoft.Enti
 C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
 C:\Users\victo\Desktop\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\Newtonsoft.Json.dll
+=======
+C:\Users\mau14\Escritorio\TECAir\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\mau14\Escritorio\TECAir\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\appsettings.json
+C:\Users\mau14\Escritorio\TECAir\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\TECAir_API.exe
+C:\Users\mau14\Escritorio\TECAir\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\TECAir_API.deps.json
+C:\Users\mau14\Escritorio\TECAir\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\TECAir_API.runtimeconfig.json
+C:\Users\mau14\Escritorio\TECAir\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\TECAir_API.dll
+C:\Users\mau14\Escritorio\TECAir\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\TECAir_API.pdb
+C:\Users\mau14\Escritorio\TECAir\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\Humanizer.dll
+C:\Users\mau14\Escritorio\TECAir\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\mau14\Escritorio\TECAir\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\mau14\Escritorio\TECAir\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\mau14\Escritorio\TECAir\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\mau14\Escritorio\TECAir\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\mau14\Escritorio\TECAir\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\mau14\Escritorio\TECAir\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\mau14\Escritorio\TECAir\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\mau14\Escritorio\TECAir\TECAir-CE-3101\TECAir_API\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\mau14\Escritorio\TECAir\TECAir-CE-3101\TECAir_API\obj\Debug\net6.0\TECAir_API.csproj.AssemblyReference.cache
+C:\Users\mau14\Escritorio\TECAir\TECAir-CE-3101\TECAir_API\obj\Debug\net6.0\TECAir_API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mau14\Escritorio\TECAir\TECAir-CE-3101\TECAir_API\obj\Debug\net6.0\TECAir_API.AssemblyInfoInputs.cache
+C:\Users\mau14\Escritorio\TECAir\TECAir-CE-3101\TECAir_API\obj\Debug\net6.0\TECAir_API.AssemblyInfo.cs
+C:\Users\mau14\Escritorio\TECAir\TECAir-CE-3101\TECAir_API\obj\Debug\net6.0\TECAir_API.csproj.CoreCompileInputs.cache
+C:\Users\mau14\Escritorio\TECAir\TECAir-CE-3101\TECAir_API\obj\Debug\net6.0\TECAir_API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\mau14\Escritorio\TECAir\TECAir-CE-3101\TECAir_API\obj\Debug\net6.0\TECAir_API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\mau14\Escritorio\TECAir\TECAir-CE-3101\TECAir_API\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\mau14\Escritorio\TECAir\TECAir-CE-3101\TECAir_API\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\mau14\Escritorio\TECAir\TECAir-CE-3101\TECAir_API\obj\Debug\net6.0\scopedcss\bundle\TECAir_API.styles.css
+C:\Users\mau14\Escritorio\TECAir\TECAir-CE-3101\TECAir_API\obj\Debug\net6.0\TECAir_API.csproj.CopyComplete
+C:\Users\mau14\Escritorio\TECAir\TECAir-CE-3101\TECAir_API\obj\Debug\net6.0\TECAir_API.dll
+C:\Users\mau14\Escritorio\TECAir\TECAir-CE-3101\TECAir_API\obj\Debug\net6.0\refint\TECAir_API.dll
+C:\Users\mau14\Escritorio\TECAir\TECAir-CE-3101\TECAir_API\obj\Debug\net6.0\TECAir_API.pdb
+C:\Users\mau14\Escritorio\TECAir\TECAir-CE-3101\TECAir_API\obj\Debug\net6.0\TECAir_API.genruntimeconfig.cache
+C:\Users\mau14\Escritorio\TECAir\TECAir-CE-3101\TECAir_API\obj\Debug\net6.0\ref\TECAir_API.dll
+>>>>>>> Stashed changes

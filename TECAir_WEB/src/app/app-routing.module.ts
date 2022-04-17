@@ -18,6 +18,8 @@ import { BillingEmployeeComponent } from './components/billing-employee/billing-
 import { PaymentUserComponent } from './components/payment-user/payment-user.component';
 import { PaymentEmployeeComponent } from './components/payment-employee/payment-employee.component';
 import { TicketViewComponent } from './components/ticket-view/ticket-view.component';
+import { BaggageCheckComponent } from './components/baggage-check/baggage-check.component';
+import { FlightSummaryComponent } from './components/flight-summary/flight-summary.component';
 
 
 const routes: Routes = [
@@ -38,9 +40,10 @@ const routes: Routes = [
   {path: 'billing', component: BillingComponent},
   {path: 'billingEmployee', component: BillingEmployeeComponent},
   {path: 'ticketView', component: TicketViewComponent},
-  {path: 'billingEmployee', component: BillingEmployeeComponent},
   {path: 'paymentUser', component: PaymentUserComponent},
-  {path: 'paymentEmployee', component: PaymentEmployeeComponent}
+  {path: 'paymentEmployee', component: PaymentEmployeeComponent},
+  {path: 'baggageCheck', component: BaggageCheckComponent},
+  {path: 'flightSummary', component: FlightSummaryComponent}
 
 
 ];

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!---Referencia al archivo css que contiene el estilo--->
+    <link rel="stylesheet" href="flight-summary.component.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     
+   </head>
+
+    <body>
+        <div class="container">
+            <div id="htmlData">
+                <div class="row">
+            
+                <h3>Reporte de Pasajeros Abordo</h3>
+                <table class="table table-bordered mt-4">
+                <tr class="table-primary">
+                    <th>Número de transacción</th>
+                    <th>Nombre del pasajero</th>
+                    <th>Cedula/Pasaporte</th>
+                    <th>Cantidad de maletas</th>
+                </tr>
+                <tr *ngFor="let data of passangerData">
+                    <th>{{data.no_transaccion}}</th>
+                    <td>{{data.p_nombre}} {{data.p_apellido1}} {{data.p_apellido2}}</td>
+                    <td>{{data.dni}}</td>
+                    <td>{{data.cant_maletas}}</td>
+                </tr>
+                </table>
+            
+            </div>
+            <div class="row">
+                <h3>Reporte de Maletas Abordo</h3>
+                <table class="table table-bordered mt-4">
+                <tr class="table-primary">
+                    <th>Número de Maleta</th>
+                    <th>Dueño</th>
+                    <th>Peso</th>
+                    <th>Color</th>
+                </tr>
+                <tr *ngFor="let data of baggageData">
+                    <th>{{data.no_maleta}}</th>
+                    <td>{{data.dni}}</td>
+                    <td>{{data.peso}}</td>
+                    <td>{{data.color}}</td>
+                </tr>
+                </table>
+                </div>
+        </div>
+        </div>
+        
+
+        <div class="container">
+            <div class="row"> 
+                <div class="col-sm">
+                    <button class="btn btnformat" routerLink="/flights" >Regresar</button>
+                </div>
+                <div class="col-sm">
+                    <button class="btn col col-lg-4 btn-block ml-4 btnformat" (click)="downloadGeneralReport()">Download PDF</button>
+                </div>
+            </div>
+        </div> 
+
+
+    </body>
+</html>

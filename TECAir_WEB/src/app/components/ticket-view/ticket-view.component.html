@@ -13,7 +13,7 @@
         <div id="htmlData" >
           <h5>TIQUETE DE ABORDAJE</h5>
           <br>
-          <span class="info"> Conserve este tiquete hasta abordar el avion, de lo contrario no podrá acceder.</span>
+          <span class="info" style="margin-left: 35%;"> Conserve este tiquete hasta abordar el avion, de lo contrario no podrá acceder.</span>
           <div class="bg-ticket">
 
                 <div class="ticket-content">
@@ -23,48 +23,65 @@
                             <br>  
                             <br>
                             <br>
-                            <span class="info">Nombre del pasajero:</span><br><span class="info">{{ticketinfo[0].p_nombre}} {{ticketinfo[0].p_apellido1}}</span>
                             <br>
                             <br>
-                            <span class="info" >Origen: {{ticketinfo[0].ciudad_origen}}</span>
-                            <br>
-                            <span class="info" >Destino: {{ticketinfo[0].ciudad_destino}}</span>
+                            <span class="info" style="margin-left: 15%;">Nombre del pasajero:</span><br><span class="info" style="margin-left: 17%;" >{{ticketinfo[0].p_nombre}} {{ticketinfo[0].p_apellido1}} {{ticketinfo[0].p_apellido2}}</span>
                             <br>
                             <br>
-                            <span class="info" >Puerta:</span><br><span class="info" >{{ticketinfo[0].ptr_abordaje}} </span>
+                            <span class="info" style="margin-left: 15%;" >Origen: {{ticketinfo[0].ciudad_origen}}</span>
+                            <br>
+                            <span class="info" style="margin-left: 15%;" >Destino: {{ticketinfo[0].ciudad_destino}}</span>
+                            <br>
+                            <br>
+                            <span class="info2" style="margin-left: 35%;" >Puerta</span><br><span class="info2" style="margin-left: 38.5%;" >{{ticketinfo[0].ptr_abordaje}} </span>
                             <br>
                             <br>
                         </div>
                       
                         <div class="col-sm">
                           <div class="row">
-                            <span></span>
-                            <br>  
-                            <br>
-                            <span class="info">No.Vuelo:</span><span class="info">{{ticketinfo[0].no_vuelo}}</span>
-                            <br>
-                            <span class="info" >Asiento:</span><span class="info">{{ticketinfo[0].asiento}}</span>
-                            <br>
-                            <span class="info" >Fecha:</span><span class="info" >{{ticketinfo[0].fecha}}</span>
-                            <br>
-                            <span class="info" > Hora:</span><span class="info" >{{ticketinfo[0].h_salida}} </span>
-                            <br>
-                            <br>
-                          </div>
 
-                          <div class="row">
-                            <span></span>
-                            <br>  
-                            <br>
-                            <span class="info">Escalas:</span><span class="info">{{ticketinfo[0].cant_escalas}}</span>
-                            <br>
-                            <span class="info" >Duracion:</span><span class="info">{{ticketinfo[0].duracion}}</span>
-                            <br>
-                            <span class="info" >Aeropuerto de llegada:</span><span class="info" >{{ticketinfo[0].destino}}</span>
-                            <br>
-                            <span class="info" > Modelo de Avion:</span><span class="info">{{ticketinfo[0].avion}} </span>
-                            <br>
-                            <br>
+                            <div class="col-sm">
+                              <span></span>
+                              <br>  
+                              <br>
+                              <br>
+                              <br>
+                              <br>
+                              <span class="info">No.Vuelo:</span><span class="info">{{ticketinfo[0].no_vuelo}}</span>
+                              <br>
+                              <br>
+                              <span class="info" >Asiento:</span><span class="info">{{ticketinfo[0].asiento}}</span>
+                              <br>
+                              <br>
+                              <span class="info" >Fecha:</span><span class="info" >{{ticketinfo[0].fecha}}</span>
+                              <br>
+                              <br>
+                              <span class="info2" style="margin-left: 30%;" > Hora </span><br><span class="info2" style="margin-left: 22%;" >{{ticketinfo[0].h_salida}} </span>
+                              <br>
+                              <br>
+                            </div>
+                          
+
+                            <div class="col-sm">
+                              <span></span>
+                              <br>  
+                              <br>
+                              <br>  
+                              <br>
+                              <span class="info" >Nombre del pasajero:</span><br><span class="info" >{{ticketinfo[0].p_nombre}} {{ticketinfo[0].p_apellido1}} {{ticketinfo[0].p_apellido2}}</span>
+                              <br>
+                              <br>
+                              <span class="info" >Origen:{{ticketinfo[0].ciudad_origen}}</span>
+                              <br>
+                              <span class="info" >Destino:{{ticketinfo[0].ciudad_destino}}</span>
+                              <br>
+                              <br>
+                              <span class="info" >Asiento</span> <span class="info"  style="margin-left: 25%;" >Fecha</span><br><span class="info" style="margin-left: 5%;" >{{ticketinfo[0].asiento}} </span><span class="info" style="margin-left: 20%;" >{{ticketinfo[0].fecha}} </span>
+                              <br>
+                              <span class="info2" >Puerta</span> <span class="info2"  style="margin-left: 25%;" >Hora</span><br><span class="info2" style="margin-left: 5%;" >{{ticketinfo[0].ptr_abordaje}} </span><span class="info2" style="margin-left: 25%;" >{{ticketinfo[0].h_salida}} </span>
+                            </div>
+
                           </div>
                           
                         </div> 
@@ -73,20 +90,43 @@
               </div>
 
           </div>
+          <span class="info" style="margin-left: 28%;"> Este tiquete es válido unicamente para el pasajero registrado en el mismo, no se permiten cambios de ningun tipo.</span>
+          <span class="info" style="margin-left: 49%;"> © TECAir 2022</span>
+          
             
         </div>
 
-        <div class="container">
-          <div class="row">
-              <div class="col-sm">
-                  <button class="btn btnformat" routerLink="/flights" >Regresar</button>
-              </div>
-              <div class="col-sm">
-                  <button class="btn col col-lg-4 btn-block ml-4 btnformat" (click)="downloadTicket()">Download PDF</button>
-              </div>
-          </div>
-        </div> 
+        <div class="container2">
+          <div class="title" style="margin-left: -17%;" >Enviar Tiquete al Correo Electronico</div>
+          <div class="content">
+            <form>
+              <div class="user-details">
+                <div class="input-box">
+                  <span class="details" style="margin-left: 22%;" >Correo Electronico</span>
+                  <input type="text" style="margin-left: 47%;" placeholder="Ingrese el correo electronico a donde desea enviar el tiquete" required>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <div class="container">
+                  <div class="row"> 
+                      <div class="col-sm">
+                          <button class="btn btnformat" routerLink="/flights" >Regresar</button>
+                      </div>
+                      <div class="col-sm">
+                        <button class="btn btnformat" >Enviar Email</button>
+                      </div>
+                      <div class="col-sm">
+                          <button class="btn col col-lg-4 btn-block ml-4 btnformat" (click)="downloadTicket()">Download PDF</button>
+                      </div>
+                  </div>
+                </div> 
 
+            </div>
+            </form>
+          </div>
+        </div>
 
      </div>
 
