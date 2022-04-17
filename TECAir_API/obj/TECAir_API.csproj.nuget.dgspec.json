@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\victo\\Desktop\\TECAir-CE-3101\\TECAir_API\\TECAir_API.csproj": {}
+    "C:\\Users\\mau14\\Escritorio\\TECAir\\TECAir-CE-3101\\TECAir_API\\TECAir_API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\victo\\Desktop\\TECAir-CE-3101\\TECAir_API\\TECAir_API.csproj": {
+    "C:\\Users\\mau14\\Escritorio\\TECAir\\TECAir-CE-3101\\TECAir_API\\TECAir_API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\victo\\Desktop\\TECAir-CE-3101\\TECAir_API\\TECAir_API.csproj",
+        "projectUniqueName": "C:\\Users\\mau14\\Escritorio\\TECAir\\TECAir-CE-3101\\TECAir_API\\TECAir_API.csproj",
         "projectName": "TECAir_API",
-        "projectPath": "C:\\Users\\victo\\Desktop\\TECAir-CE-3101\\TECAir_API\\TECAir_API.csproj",
-        "packagesPath": "C:\\Users\\victo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\victo\\Desktop\\TECAir-CE-3101\\TECAir_API\\obj\\",
+        "projectPath": "C:\\Users\\mau14\\Escritorio\\TECAir\\TECAir-CE-3101\\TECAir_API\\TECAir_API.csproj",
+        "packagesPath": "C:\\Users\\mau14\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mau14\\Escritorio\\TECAir\\TECAir-CE-3101\\TECAir_API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\victo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mau14\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
