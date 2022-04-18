@@ -41,6 +41,25 @@ namespace TECAir_API.Controllers
             return resultado;
         }
 
+        [HttpGet("{correo}/{contrasena}")]
+        public List<bool> Get(string correo, string contrasena)
+        {
+            usuarios.Add(new Usuario(1, "Victor", "Castrillo", "Munoz", "victor.castrillo.99@estudiantec.cr", "2017110244", 83592900));
+            usuarios.Add(new Usuario(2, "Andrés", "Monge", "Salas", "andres.monge.00@estudiantec.cr", "2018403365", 88390462));
+            usuarios.Add(new Usuario(3, "Valeria", "Herrera", "López", "valeria.herrera.98@estudiantec.cr", "2016992042", 86708269));
+            List<bool> resultado = new List<bool>();
+
+            for (int i = 0; i < usuarios.Count; i++)
+            {
+                if (usuarios[i].correo == correo && usuarios[i].u_contrasena == contrasena)
+                {
+                    resultado.Add(true);
+                    break;
+                }
+            }
+            return resultado;
+        }
+
         // POST api/<UsuarioController>
         [HttpPost]
         public List<Usuario> Post([FromBody] Usuario value)
