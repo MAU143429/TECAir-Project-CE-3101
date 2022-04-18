@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { LoginInterface } from '../interface/login-interface'
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -18,12 +19,16 @@ export class CredentialsService {
     addRegister(register:any):Observable<any>{
     return this.httpclient.post(this.url+'/Usuario/Add', register) 
   }
-
-   /** POST PARA CREAR PROMOCION
-   *  Este post permite enviar la informacion para iniciar sesion.
+  
+  /**
+   * Este metodo nos permite enviar las credenciales del usuario/empleado para que sean verificadas
+   * y se permita el inicio de sesion.
+   * @param login 
+   * @returns 
    */
-    newLogin(login:any):Observable<any>{
-    return this.httpclient.post(this.url+'/Usuario/New', login) 
+  getLogin(login:any):Observable<LoginInterface[]>{
+    //Se realiza la solicitud GET en un endpoint GetVuelos para obtener la informacion de los aeropuertos disponibles
+    return this.httpclient.get<LoginInterface[]>(this.url+'/Usuario/'+ login.correo + "/" + login.contrasena)
   }
 }
  

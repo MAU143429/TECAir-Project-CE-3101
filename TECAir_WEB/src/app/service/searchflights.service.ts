@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Search } from '../model/search';
 import { Airport } from '../interface/airport'
+import { Searchresults } from '../interface/searchresults'
 
 
 @Injectable({
@@ -23,8 +24,14 @@ export class SearchflightsService {
 
   //GET
   getAirports():Observable<Airport[]>{
-    //Se realiza la solicitud GET en un endpoint GetVuelos para obtener la informacion de los aeropuertos disponibles
+    //Se realiza la solicitud GET en un endpoint Aeropuerto para obtener la informacion de los aeropuertos disponibles
     return this.httpclient.get<Airport[]>(this.url+'/Aeropuerto')
+  }
+
+  //GET
+  getSearch(search:any):Observable<Searchresults[]>{
+    //Se realiza la solicitud GET en un endpoint GetVuelos para obtener la informacion de los aeropuertos disponibles
+    return this.httpclient.get<Searchresults[]>(this.url+'/VueloWEB/'+ search.origen + "/" + search.destino + "/" + search.fecha)
   }
 }
  

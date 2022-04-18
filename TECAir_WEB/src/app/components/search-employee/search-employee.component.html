@@ -11,20 +11,27 @@
     <app-enavbar></app-enavbar>
       <div class="searchbar">
         <div class="icons">
-          <input class="myinput" [(ngModel)]="newSearch.origen" placeholder="Aeropuerto de salida" [formControl]="myControl" matInput [matAutocomplete]="auto">
+          <input class="myinput" [(ngModel)]="newSearch.origen"  [formControl]="myControl" matInput [matAutocomplete]="auto" placeholder="Aeropuerto de salida">
           
           <mat-autocomplete #auto="matAutocomplete">
-            <mat-option
+            <mat-option class="options"
                 *ngFor="let option of filteredOptions | async"
-                [value]="option.name">
-              {{option.name}}
+                [value]="option.nombre">
+              {{option.nombre}} , {{option.pais}}       
            </mat-option>
           </mat-autocomplete>
 
-          <img class="myimage">
+          <img class="myimage"> 
 
-          <input class="myinput" [(ngModel)]="newSearch.destino" [ngModelOptions]="{standalone: true}" placeholder="Aeropuerto de llegada">
+          <input class="myinput" [(ngModel)]="newSearch.destino" [formControl]="myControl" matInput [matAutocomplete]="auto" placeholder="Aeropuerto de llegada">
           
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option class="options"
+                *ngFor="let option of filteredOptions | async"
+                [value]="option.nombre">
+              {{option.nombre}} , {{option.pais}}       
+           </mat-option>
+          </mat-autocomplete>
           <input type="date" class="myinput" [(ngModel)]="newSearch.fecha" [ngModelOptions]="{standalone: true}" placeholder="Seleccione la fecha del vuelo">
           
           <button class="btn1" (click)="createNewSearch(newSearch)" type="button" ></button>
