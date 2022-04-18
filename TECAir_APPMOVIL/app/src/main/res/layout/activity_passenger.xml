@@ -88,42 +88,43 @@
             android:layout_width="match_parent"
             android:layout_height="27dp" />
 
-        <Switch
-            android:id="@+id/switch1"
+        <CheckBox
+            android:id="@+id/studentCheckBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/student" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="27dp" />
+            android:checked="false"
+            android:fontFamily="@font/poppins"
+            android:text="@string/student"
+            android:textColor="@color/blue" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName6"
+            android:id="@+id/uniEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/college"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:visibility="invisible" />
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="27dp" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName7"
+            android:id="@+id/idUniEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/studentid"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:visibility="invisible" />
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="27dp" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/cartbtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/bookticket" />
