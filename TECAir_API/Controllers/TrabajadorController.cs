@@ -37,6 +37,31 @@ namespace TECAir_API.Controllers
             return resultado;
         }
 
+        [HttpGet("{id}/{contrasena}")]
+        public List<bool> Get(string id, string contrasena)
+        {
+            trabajadores.Add(new Trabajador("admin", "admin"));
+            trabajadores.Add(new Trabajador("mrivera", "mrivera"));
+            List<bool> resultado = new List<bool>();
+
+            for (int i = 0; i < trabajadores.Count; i++)
+            {
+                if (trabajadores[i].id_trabajador == id && trabajadores[i].t_contrasena == contrasena)
+                {
+                    Singleton singleton = Singleton.Instance();
+                    singleton.usuario = id;
+                    resultado.Add(true);
+                    break;
+                }
+            }
+            if (resultado.Count == 0)
+            {
+                resultado.Add(false);
+            }
+
+            return resultado;
+        }
+
         // POST api/<TrabajadorController>
         [HttpPost]
         public List<Trabajador> Post([FromBody] Trabajador value)

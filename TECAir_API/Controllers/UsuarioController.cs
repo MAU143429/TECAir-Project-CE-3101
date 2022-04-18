@@ -53,10 +53,17 @@ namespace TECAir_API.Controllers
             {
                 if (usuarios[i].correo == correo && usuarios[i].u_contrasena == contrasena)
                 {
+                    Singleton singleton = Singleton.Instance();
+                    singleton.usuario = correo;
                     resultado.Add(true);
                     break;
                 }
             }
+            if (resultado.Count == 0)
+            {
+                resultado.Add(false);
+            }
+
             return resultado;
         }
 
