@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="name">Nombre</string>
-    <string name="lastname">Apellidos</string>
+    <string name="lastname1">Primer Apellido</string>
+    <string name="lastname2">Segundo Apellido</string>
     <string name="phone">Teléfono</string>
     <string name="email">E-mail</string>
     <string name="data">Ingrese sus datos</string>
     <string name="student">Eres estudiante?</string>
     <string name="college">Universidad</string>
     <string name="studentid">Carnet</string>
+    <string name="passengerid">Cédula/Pasaporte</string>
 </resources>

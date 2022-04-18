@@ -3,5 +3,7 @@
     <string name="app_name">TECAir</string>
     <string name="username">"Usuario"</string>
     <string name="password">"Contraseña"</string>
+    <string name="question">"¿No tienes una cuenta? "</string>
+    <string name="register">"Registrarse"</string>
     <string name="login">"Iniciar Sesión"</string>
 </resources>

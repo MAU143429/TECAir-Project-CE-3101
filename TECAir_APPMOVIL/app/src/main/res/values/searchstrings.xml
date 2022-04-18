@@ -3,6 +3,5 @@
     <string name="booktitle">"Reserve su vuelo"</string>
     <string name="from">Origen</string>
     <string name="to">Destino</string>
-    <string name="passengers">Pasajeros:</string>
     <string name="searchbutton">Buscar</string>
 </resources>

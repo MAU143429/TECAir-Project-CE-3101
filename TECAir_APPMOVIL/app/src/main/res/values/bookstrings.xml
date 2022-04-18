@@ -2,5 +2,4 @@
 <resources>
     <string name="choose">Elija un vuelo</string>
     <string name="book">Reservar</string>
-    <string name="bookticket">Agregar al carrito</string>
 </resources>
