@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TECAir_API.Models;
+using TECAir_API.Models.WEB;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -42,12 +43,12 @@ namespace TECAir_API.Controllers
         }
 
         [HttpGet("{correo}/{contrasena}")]
-        public List<bool> Get(string correo, string contrasena)
+        public List<Login> Get(string correo, string contrasena)
         {
             usuarios.Add(new Usuario(1, "Victor", "Castrillo", "Munoz", "victor.castrillo.99@estudiantec.cr", "2017110244", 83592900));
             usuarios.Add(new Usuario(2, "Andrés", "Monge", "Salas", "andres.monge.00@estudiantec.cr", "2018403365", 88390462));
             usuarios.Add(new Usuario(3, "Valeria", "Herrera", "López", "valeria.herrera.98@estudiantec.cr", "2016992042", 86708269));
-            List<bool> resultado = new List<bool>();
+            List<Login> resultado = new List<Login>();
 
             for (int i = 0; i < usuarios.Count; i++)
             {
@@ -55,13 +56,13 @@ namespace TECAir_API.Controllers
                 {
                     Singleton singleton = Singleton.Instance();
                     singleton.usuario = correo;
-                    resultado.Add(true);
+                    resultado.Add(new Login(true));
                     break;
                 }
             }
             if (resultado.Count == 0)
             {
-                resultado.Add(false);
+                resultado.Add(new Login(false));
             }
 
             return resultado;
