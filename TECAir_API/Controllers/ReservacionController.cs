@@ -14,7 +14,7 @@ namespace TECAir_API.Controllers
 
         // POST api/<ReservaciónController>
         [HttpPost("Add")]
-        public List<Reservacion> Post([FromBody] ReservacionWEB value)
+        public List<Reservacion> Post(ReservacionWEB value)
         {
             if (Singleton.Instance().usua_trab)
             {
