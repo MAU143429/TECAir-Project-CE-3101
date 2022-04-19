@@ -56,6 +56,7 @@ namespace TECAir_API.Controllers
                 {
                     Singleton singleton = Singleton.Instance();
                     singleton.usuario = correo;
+                    singleton.usua_trab = true;
                     resultado.Add(new Login(true));
                     break;
                 }
