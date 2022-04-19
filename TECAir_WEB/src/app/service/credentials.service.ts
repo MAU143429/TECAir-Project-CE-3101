@@ -21,14 +21,25 @@ export class CredentialsService {
   }
   
   /**
-   * Este metodo nos permite enviar las credenciales del usuario/empleado para que sean verificadas
+   * Este metodo nos permite enviar las credenciales del usuario para que sean verificadas
    * y se permita el inicio de sesion.
    * @param login 
    * @returns 
    */
-  getLogin(login:any):Observable<LoginInterface[]>{
+  getLoginUser(login:any):Observable<LoginInterface[]>{
     //Se realiza la solicitud GET en un endpoint GetVuelos para obtener la informacion de los aeropuertos disponibles
     return this.httpclient.get<LoginInterface[]>(this.url+'/Usuario/'+ login.correo + "/" + login.contrasena)
   }
+
+    /**
+   * Este metodo nos permite enviar las credenciales del empleado para que sean verificadas
+   * y se permita el inicio de sesion.
+   * @param login 
+   * @returns 
+   */
+     getLoginEmployee(login:any):Observable<LoginInterface[]>{
+      //Se realiza la solicitud GET en un endpoint GetVuelos para obtener la informacion de los aeropuertos disponibles
+      return this.httpclient.get<LoginInterface[]>(this.url+'/Trabajador/'+ login.correo + "/" + login.contrasena)
+    }
 }
  

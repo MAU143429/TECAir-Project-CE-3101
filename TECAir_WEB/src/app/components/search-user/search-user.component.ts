@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
 import { Search } from 'src/app/model/search';
+import { BookingFlight } from 'src/app/model/booking-flight';
 import { Searchresults } from 'src/app/interface/searchresults';
 import { Airport } from 'src/app/interface/airport';
 import { SearchflightsService } from 'src/app/service/searchflights.service';
@@ -17,6 +18,7 @@ import {FormControl} from '@angular/forms';
 export class SearchUserComponent implements OnInit {
 
   newSearch:Search = new Search
+  newBooking:BookingFlight = new BookingFlight
   Airports: Airport[] | undefined;
   searchdata:Searchresults[] | undefined;
 
@@ -74,9 +76,14 @@ export class SearchUserComponent implements OnInit {
     this.service.getAirports().subscribe( data => (this.Airports = data));
 
   } 
-  
+
   // Metodo para crear una nueva busqueda de vuelos
   createNewSearch(newSearch:Search){
     this.service.getSearch(newSearch).subscribe(search=> (this.searchdata = search));
+  }
+
+  // Metodo para crear una nueva busqueda de vuelos
+  createBooking(newBooking:BookingFlight){
+    this.service.newBooking(newBooking);
   }
 }
