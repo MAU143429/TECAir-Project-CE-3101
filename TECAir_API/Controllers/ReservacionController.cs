@@ -14,7 +14,7 @@ namespace TECAir_API.Controllers
 
         // POST api/<ReservaciónController>
         [HttpPost]
-        public void Post([FromBody] ReservacionWEB value)
+        public List<Reservacion> Post([FromBody] ReservacionWEB value)
         {
             if (Singleton.Instance().usua_trab)
             {
@@ -24,6 +24,7 @@ namespace TECAir_API.Controllers
             {
                 reservaciones.Add(new Reservacion(1, value.no_vuelo, "", Singleton.Instance().usuario, false));
             }
+            return reservaciones;
         }
     }
 }
