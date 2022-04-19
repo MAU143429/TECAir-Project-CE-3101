@@ -1,5 +1,6 @@
-using Microsoft.EntityFrameworkCore;
-using TECAir_API.Data;
+global using Microsoft.EntityFrameworkCore;
+global using Npgsql;
+using TECAir_API;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -8,7 +9,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<DataContext>(
+//configuracion del context en el programa
+builder.Services.AddDbContext<TECAirContext>(
     o => o.UseNpgsql(builder.Configuration.GetConnectionString("TECAir")));
 var app = builder.Build();
 

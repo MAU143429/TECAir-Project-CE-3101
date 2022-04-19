@@ -4,7 +4,7 @@ using TECAir_API.Models;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace TECAir_API.Controllers
-{
+{/*
     [Route("api/[controller]")]
     [ApiController]
     public class PromocionController : ControllerBase
@@ -54,5 +54,5 @@ namespace TECAir_API.Controllers
         public void Delete(int id)
         {
         }
-    }
+    }*/
 }
