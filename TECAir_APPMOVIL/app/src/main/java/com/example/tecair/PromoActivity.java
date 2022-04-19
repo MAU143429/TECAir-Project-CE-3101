@@ -1,21 +1,21 @@
 package com.example.tecair;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class BookTicketActivity extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class PromoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_book_ticket);
+        setContentView(R.layout.activity_promo);
 
-        Button bookingbtn = (Button) findViewById(R.id.promobtn);
-        bookingbtn.setOnClickListener(new View.OnClickListener() {
+        Button promobtn = (Button) findViewById(R.id.promobtn);
+        promobtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 bookTicket();

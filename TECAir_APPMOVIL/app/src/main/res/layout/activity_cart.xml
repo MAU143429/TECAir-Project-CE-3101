@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BookTicketActivity">
+    tools:context=".CartActivity">
 
     <FrameLayout
         android:id="@+id/frameLayout"
@@ -13,16 +13,15 @@
         android:paddingLeft="35dp"
         android:paddingTop="35dp"
         android:paddingBottom="35dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp">
 
         <TextView
             android:id="@+id/welcome_home3"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:fontFamily="@font/poppins"
-            android:text="@string/choose"
+            android:text="@string/cart"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColor="@color/blue"
             android:textSize="20sp"
@@ -38,11 +37,8 @@
         android:layout_height="523dp"
         android:paddingLeft="35dp"
         android:paddingRight="35dp"
-        app:layout_constraintBottom_toTopOf="@+id/promobtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout"
-        app:layout_constraintVertical_bias="0.0">
+        tools:layout_editor_absoluteX="-1dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -54,16 +50,5 @@
                 android:layout_height="match_parent" />
         </LinearLayout>
     </ScrollView>
-
-    <Button
-        android:id="@+id/promobtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:text="@string/book"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

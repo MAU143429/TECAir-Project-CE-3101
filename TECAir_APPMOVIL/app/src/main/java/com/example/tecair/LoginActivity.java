@@ -51,7 +51,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void login() {
-        Intent intent = new Intent(this, SearchTicketActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
         intent.putExtra("user", user);
         startActivity(intent);
     }

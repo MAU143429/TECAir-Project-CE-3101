@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TECAir">
         <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".PassengerActivity"
             android:exported="false" />
         <activity
@@ -20,6 +23,12 @@
             android:exported="false" />
         <activity
             android:name=".RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PromoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CartActivity"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
