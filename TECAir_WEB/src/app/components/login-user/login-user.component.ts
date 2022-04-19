@@ -13,7 +13,7 @@ export class LoginUserComponent implements OnInit {
 
   newLogin :Login = new Login
   status:LoginInterface[] | any;
-  direction:string = "/homeuser";
+
 
   constructor(private service:CredentialsService, private router:Router) { }
 
@@ -23,12 +23,19 @@ export class LoginUserComponent implements OnInit {
 
   }
 
+  async delay(ms: number) {
+    await new Promise<void>(resolve => setTimeout(()=>resolve(), ms)).then(()=>console.log("fired"));
+  }
+
   // Metodo para consultar un nuevo inicio de sesion en web
   addNewLogin(newLogin:Login){
-    this.service.getLogin(newLogin).subscribe(data => (this.status = data));
-    if (!this.status[0].status){
-      this.direction = "loginuser"
-    }
+    this.service.getLoginUser(newLogin).subscribe(data => (this.status = data));
+    this.delay(500).then(()=>{
+      console.log(this.status[0].status)
+      if (this.status[0].status){
+        this.router.navigate(['/homeuser']);
+      }
+    });
   }
 }
  

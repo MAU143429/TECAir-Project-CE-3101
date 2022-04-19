@@ -15,11 +15,11 @@ export class SearchflightsService {
 
   constructor(private httpclient:HttpClient) { }
 
-  /** POST PARA REALIZAR BUSQUEDA
+  /** POST PARA REALIZAR Reserva
    *  Este post permite enviar la informacion para realizar una busqueda de un vuelo.
    */
-  newSearch(search:any):Observable<any>{
-    return this.httpclient.post(this.url+'/Busqueda/New', search) 
+  newBooking(booking:any):Observable<any>{
+    return this.httpclient.post(this.url+'/Busqueda/New', booking) 
   }
 
   //GET
