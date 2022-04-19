@@ -4,6 +4,7 @@
     {
         private static Singleton instance;
         public string usuario;
+        public bool usua_trab;
 
         public Singleton()
         {}
