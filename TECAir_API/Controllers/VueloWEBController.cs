@@ -15,10 +15,10 @@ namespace TECAir_API.Controllers
         [HttpGet("{origen}/{destino}/{fecha}")]
         public List<VueloWEB> Get(string origen, string destino, string fecha)
         {
-            vuelos.Add(new VueloWEB("vuelo1", "origen1", "destino1", "salida1", "llegada1", "fecha1", "escalas1", "precio1"));
-            vuelos.Add(new VueloWEB("vuelo2", "origen2", "destino2", "salida2", "llegada2", "fecha2", "escalas2", "precio2"));
-            vuelos.Add(new VueloWEB("vuelo3", "origen3", "destino3", "salida3", "llegada3", "fecha3", "escalas3", "precio3"));
-            vuelos.Add(new VueloWEB("vuelo4", "origen2", "destino2", "salida4", "llegada4", "fecha2", "escalas4", "precio4"));
+            vuelos.Add(new VueloWEB(1, "origen1", "destino1", "salida1", "llegada1", "2022-04-17", "escalas1", "precio1"));
+            vuelos.Add(new VueloWEB(2, "origen2", "destino2", "salida2", "llegada2", "2022-04-17", "escalas2", "precio2"));
+            vuelos.Add(new VueloWEB(3, "origen3", "destino3", "salida3", "llegada3", "2022-04-17", "escalas3", "precio3"));
+            vuelos.Add(new VueloWEB(4, "origen2", "destino2", "salida4", "llegada4", "2022-04-17", "escalas4", "precio4"));
 
             List<VueloWEB> resultado = new List<VueloWEB>();
             for (int i = 0; i < vuelos.Count; i++)

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TECAir_API.Models;
+using TECAir_API.Models.WEB;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -34,6 +35,32 @@ namespace TECAir_API.Controllers
                 if (trabajadores[i].id_trabajador == id)
                     resultado.Add(trabajadores[i]);
             }
+            return resultado;
+        }
+
+        [HttpGet("{id}/{contrasena}")]
+        public List<Login> Get(string id, string contrasena)
+        {
+            trabajadores.Add(new Trabajador("admin", "admin"));
+            trabajadores.Add(new Trabajador("mrivera", "mrivera"));
+            List<Login> resultado = new List<Login>();
+
+            for (int i = 0; i < trabajadores.Count; i++)
+            {
+                if (trabajadores[i].id_trabajador == id && trabajadores[i].t_contrasena == contrasena)
+                {
+                    Singleton singleton = Singleton.Instance();
+                    singleton.usuario = id;
+                    singleton.usua_trab = false;
+                    resultado.Add(new Login(true));
+                    break;
+                }
+            }
+            if (resultado.Count == 0)
+            {
+                resultado.Add(new Login(false));
+            }
+
             return resultado;
         }
 

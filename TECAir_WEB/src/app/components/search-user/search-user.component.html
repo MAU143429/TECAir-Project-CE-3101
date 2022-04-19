@@ -11,12 +11,26 @@
     <app-unavbar></app-unavbar> 
       <div class="searchbar"> 
         <div class="icons">
-          <input class="myinput" [(ngModel)]="newSearch.origen" [ngModelOptions]="{standalone: true}"  placeholder="Aeropuerto de salida">
-
+          <input class="myinput" [(ngModel)]="newSearch.origen"  [formControl]="myControl" matInput [matAutocomplete]="auto" placeholder="Aeropuerto de salida">
+          
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option class="options"
+                *ngFor="let option of filteredOptions | async"
+                [value]="option.nombre">
+              {{option.nombre}} , {{option.pais}}       
+           </mat-option>
+          </mat-autocomplete>
           <img class="myimage">
 
-          <input class="myinput" [(ngModel)]="newSearch.destino" [ngModelOptions]="{standalone: true}" placeholder="Aeropuerto de llegada">
+          <input class="myinput" [(ngModel)]="newSearch.destino" [formControl]="myControl" matInput [matAutocomplete]="auto" placeholder="Aeropuerto de llegada">
           
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option class="options"
+                *ngFor="let option of filteredOptions | async"
+                [value]="option.nombre">
+              {{option.nombre}} , {{option.pais}}       
+           </mat-option>
+          </mat-autocomplete>
           <input type="date" class="myinput" [(ngModel)]="newSearch.fecha" [ngModelOptions]="{standalone: true}" placeholder="Seleccione la fecha del vuelo">
           
 
@@ -30,7 +44,7 @@
             <table class="table table-bordered mt-4 mytable">
               <tr class="table-primary">
                 <th>Número de Vuelo</th>
-                <th>Origen</th>
+                <th>Origen</th> 
                 <th>Destino</th>
                 <th>Escalas</th>
                 <th>Fecha</th> 
@@ -48,7 +62,7 @@
                   <td>{{data.h_salida}}</td>
                   <td>{{data.h_llegada}}</td>
                   <td>{{data.precio}}</td>
-                  <td><button class = "bookingbtn" type="submit" routerLink="/userSearchFlights" (click)="open(content)" >Reservar Ahora!</button></td>
+                  <td><button class = "bookingbtn" [(ngModel)]="newBooking.no_vuelo" [ngModelOptions]="{standalone: true}" type="submit" routerLink="/userSearchFlights" (click)="open(content)" >Reservar Ahora!</button></td>
               </tr>
             </table>
           </div>

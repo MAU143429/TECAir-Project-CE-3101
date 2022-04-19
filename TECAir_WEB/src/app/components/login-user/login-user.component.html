@@ -6,7 +6,7 @@
         <!---Seccion donde se reciben los inputs del usuario--->
         <input type="email" id="email" [(ngModel)]="newLogin.correo" [ngModelOptions]="{standalone: true}" placeholder="Ingrese el email" >
         <input type="password" id="pass" [(ngModel)]="newLogin.contrasena" [ngModelOptions]="{standalone: true}"  placeholder="Ingrese la contraseña">
-        <a><button type="submit" routerLink="/homeuser">Ingresar</button></a>
+        <a><button type="submit" (click)="addNewLogin(newLogin)">Ingresar</button></a>
         <p><span style="color: white;">Si no tienes cuenta registrate </span> <span> <a routerLink="/register" style="color: aqua;">aquí</a></span></p>
       </section>
     </div>

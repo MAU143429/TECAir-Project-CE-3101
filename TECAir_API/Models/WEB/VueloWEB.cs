@@ -2,7 +2,7 @@
 {
     public class VueloWEB
     {
-        public string no_vuelo { get; set; }
+        public int no_vuelo { get; set; }
         public string origen { get; set; }
         public string destino { get; set; }
         public string cant_escalas { get; set; }
@@ -15,7 +15,7 @@
         {
         }
 
-        public VueloWEB(string vuelo, string origen, string destino, string salida, string llegada, string fecha, string escalas, string precio)
+        public VueloWEB(int vuelo, string origen, string destino, string salida, string llegada, string fecha, string escalas, string precio)
         {
             this.no_vuelo = vuelo;
             this.origen = origen;
