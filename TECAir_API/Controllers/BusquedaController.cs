@@ -10,9 +10,9 @@ namespace TECAir_API.Controllers
     public class BusquedaController : ControllerBase
     {
         // Lista de promociones
-        List<Busqueda> busquedas = new List<Busqueda>
+        List<BusquedaWeb> busquedas = new List<BusquedaWeb>
         {
-            new Busqueda("SJO", "MXN", "12/04/26")
+            new BusquedaWeb("SJO", "MXN", "12/04/26")
         };
         // GET: api/<BusquedaController>
         [HttpGet]
@@ -35,7 +35,7 @@ namespace TECAir_API.Controllers
         /// <returns>busquedas realizadas</returns>
         // POST api/<BusquedaController>
         [HttpPost("New")]
-        public List<Busqueda> Post(Busqueda nuevaBusqueda)
+        public List<BusquedaWeb> Post(BusquedaWeb nuevaBusqueda)
         {
             busquedas.Add(nuevaBusqueda);
             return busquedas;

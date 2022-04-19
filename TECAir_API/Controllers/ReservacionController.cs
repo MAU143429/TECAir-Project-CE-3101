@@ -10,19 +10,19 @@ namespace TECAir_API.Controllers
     [ApiController]
     public class ReservacionController : ControllerBase
     {
-        public List<Reservacion> reservaciones = new List<Reservacion>();
+        public List<ReservacionWeb> reservaciones = new List<ReservacionWeb>();
 
         // POST api/<ReservaciónController>
         [HttpPost("Add")]
-        public List<Reservacion> Post(ReservacionWEB value)
+        public List<ReservacionWeb> Post(ReservacionWEB value)
         {
             if (Singleton.Instance().usua_trab)
             {
-                reservaciones.Add(new Reservacion(1, value.no_vuelo, Singleton.Instance().usuario, "", false));
+                reservaciones.Add(new ReservacionWeb(1, value.no_vuelo, Singleton.Instance().usuario, "", false));
             }
             else
             {
-                reservaciones.Add(new Reservacion(1, value.no_vuelo, "", Singleton.Instance().usuario, false));
+                reservaciones.Add(new ReservacionWeb(1, value.no_vuelo, "", Singleton.Instance().usuario, false));
             }
             return reservaciones;
         }

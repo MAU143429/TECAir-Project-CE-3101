@@ -1,6 +1,6 @@
 ﻿namespace TECAir_API.Models
 {
-    public class Tiquete
+    public class TiqueteWeb
     {
         public int no_transaccion { get; set; }
         public int no_reservacion { get; set; }
@@ -11,11 +11,11 @@
         public string t_ano { get; set; }
         public bool abordaje { get; set; }
 
-        public Tiquete()
+        public TiqueteWeb()
         {
         }
 
-        public Tiquete(int transaccion, int reservacion, int asiento, int dni, string dia, string mes, string ano, bool abordaje)
+        public TiqueteWeb(int transaccion, int reservacion, int asiento, int dni, string dia, string mes, string ano, bool abordaje)
         {
             this.no_transaccion = transaccion;
             this.no_reservacion = reservacion;

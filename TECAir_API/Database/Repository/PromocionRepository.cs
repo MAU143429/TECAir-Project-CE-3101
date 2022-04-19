@@ -21,7 +21,7 @@ namespace TECAir_API.Database.Repository
             return new NpgsqlConnection(_connectionString.ConnectionString);
         }
         
-        public async Task<bool> ingresarPromocion(Promocion promocion)
+        public async Task<bool> ingresarPromocion(PromocionWeb promocion)
         {
             var db = dbConnection();
 

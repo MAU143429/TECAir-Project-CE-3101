@@ -7,10 +7,10 @@ namespace TECAir_API
     {
         public Vuelo()
         {
-            Asientos = new HashSet<Asiento>();
+            Asientos = new HashSet<AsientoWeb>();
             Escalas = new HashSet<Escala>();
             Maleta = new HashSet<Maletum>();
-            Promocions = new HashSet<Promocion>();
+            Promocions = new HashSet<PromocionWeb>();
             Reservacions = new HashSet<Reservacion>();
         }
 
@@ -28,10 +28,10 @@ namespace TECAir_API
         public bool Cerrado { get; set; }
 
         public virtual Avion MatriculaNavigation { get; set; } = null!;
-        public virtual ICollection<Asiento> Asientos { get; set; }
+        public virtual ICollection<AsientoWeb> Asientos { get; set; }
         public virtual ICollection<Escala> Escalas { get; set; }
         public virtual ICollection<Maletum> Maleta { get; set; }
-        public virtual ICollection<Promocion> Promocions { get; set; }
+        public virtual ICollection<PromocionWeb> Promocions { get; set; }
         public virtual ICollection<Reservacion> Reservacions { get; set; }
     }
 }

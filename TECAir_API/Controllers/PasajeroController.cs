@@ -3,15 +3,15 @@ using TECAir_API.Models;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace TECAir_API.Controllers
-{/*
+{
     [Route("api/[controller]")]
     [ApiController]
     public class PasajeroController : ControllerBase
     {
         // Lista de pasajeros
-        List<Pasajero> pasajeros = new List<Pasajero>
+        List<PasajeroWeb> pasajeros = new List<PasajeroWeb>
         {
-            new Pasajero( 111, "Yendry", "Badilla", "Gutierrez", 123456)
+            new PasajeroWeb( 111, "Yendry", "Badilla", "Gutierrez", 123456)
         };
         // GET: api/<PasajeroController>
         [HttpGet]
@@ -29,7 +29,7 @@ namespace TECAir_API.Controllers
 
         // POST api/<PasajeroController>
         [HttpPost("Add")]
-        public List<Pasajero> Post(Pasajero nuevoPasajero)
+        public List<PasajeroWeb> Post(PasajeroWeb nuevoPasajero)
         {
             pasajeros.Add(nuevoPasajero);
             return pasajeros;
@@ -46,5 +46,5 @@ namespace TECAir_API.Controllers
         public void Delete(int id)
         {
         }
-    }*/
+    }
 }

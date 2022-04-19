@@ -1,6 +1,6 @@
 ﻿namespace TECAir_API.Models
 {
-    public class Pasajero
+    public class PasajeroWeb
     {
         public int dni { get; set; }
         public string p_nombre { get; set; }
@@ -8,11 +8,11 @@
         public string p_apellido2 { get; set; }
         public int no_reservacion { get; set; }
 
-        public Pasajero()
+        public PasajeroWeb()
         {
         }
 
-        public Pasajero(int dni, string nombre, string apellido1, string apellido2, int reservacion)
+        public PasajeroWeb(int dni, string nombre, string apellido1, string apellido2, int reservacion)
         {
             this.dni = dni;
             this.p_nombre = nombre;

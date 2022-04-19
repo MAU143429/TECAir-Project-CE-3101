@@ -4,15 +4,15 @@ using TECAir_API.Models;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace TECAir_API.Controllers
-{/*
+{
     [Route("api/[controller]")]
     [ApiController]
     public class PromocionController : ControllerBase
     {
         // Lista de promociones
-        List<Promocion> promociones = new List<Promocion> 
+        List<PromocionWeb> promociones = new List<PromocionWeb> 
         {
-            new Promocion(1, 10, 20, "url1", "22/04/2022")
+            new PromocionWeb(1, 10, 20, "url1", "22/04/2022")
         };
 
         // GET: api/<PromocionController>
@@ -36,7 +36,7 @@ namespace TECAir_API.Controllers
         /// <returns> Una lista de promociones creadas </returns>
         // POST api/Promocion/Add
         [HttpPost("Add")]
-        public List<Promocion> Post(Promocion nuevaPromocion)
+        public List<PromocionWeb> Post(PromocionWeb nuevaPromocion)
         {
             int id = promociones.Last().no_promocion + 1;
             promociones.Add(nuevaPromocion);
@@ -54,5 +54,5 @@ namespace TECAir_API.Controllers
         public void Delete(int id)
         {
         }
-    }*/
+    }
 }

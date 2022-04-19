@@ -9,7 +9,7 @@ namespace TECAir_API.Models
     public class TiqueteController : ControllerBase
     {
         // Lista de informacion de tiquetes comprados
-        List<Tiquete> tiquetes= new List<Tiquete>
+        List<TiqueteWeb> tiquetes= new List<TiqueteWeb>
         {
             //new Tiquete(1, 10, 20, "url1", "22/04/2022")
         };

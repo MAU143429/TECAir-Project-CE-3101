@@ -16,13 +16,13 @@ namespace TECAir_API
         {
         }
 
-        public virtual DbSet<Asiento> Asientos { get; set; } = null!;
+        public virtual DbSet<AsientoWeb> Asientos { get; set; } = null!;
         public virtual DbSet<Avion> Avions { get; set; } = null!;
         public virtual DbSet<Escala> Escalas { get; set; } = null!;
         public virtual DbSet<Estudiante> Estudiantes { get; set; } = null!;
         public virtual DbSet<Maletum> Maleta { get; set; } = null!;
         public virtual DbSet<Pasajero> Pasajeros { get; set; } = null!;
-        public virtual DbSet<Promocion> Promocions { get; set; } = null!;
+        public virtual DbSet<PromocionWeb> Promocions { get; set; } = null!;
         public virtual DbSet<Reservacion> Reservacions { get; set; } = null!;
         public virtual DbSet<Tiquete> Tiquetes { get; set; } = null!;
         public virtual DbSet<Trabajador> Trabajadors { get; set; } = null!;
@@ -40,7 +40,7 @@ namespace TECAir_API
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Asiento>(entity =>
+            modelBuilder.Entity<AsientoWeb>(entity =>
             {
                 entity.HasKey(e => e.NoAsiento)
                     .HasName("asiento_pkey");
@@ -192,7 +192,7 @@ namespace TECAir_API
                     .HasConstraintName("no_transaccion");
             });
 
-            modelBuilder.Entity<Promocion>(entity =>
+            modelBuilder.Entity<PromocionWeb>(entity =>
             {
                 entity.HasKey(e => e.NoPromocion)
                     .HasName("promocion_pkey");

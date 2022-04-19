@@ -10,17 +10,17 @@ namespace TECAir_API.Controllers
     [ApiController]
     public class AeropuertoController : ControllerBase
     {
-        List<Aeropuerto> aeropuertoList = new List<Aeropuerto>();
+        List<AeropuertoWeb> aeropuertoList = new List<AeropuertoWeb>();
 
         // GET: api/<AeropuertoController>
         [HttpGet]
-        public List<Aeropuerto> Get()
+        public List<AeropuertoWeb> Get()
         {
-            List<Aeropuerto> aeropuertos;
+            List<AeropuertoWeb> aeropuertos;
             using (StreamReader r = new StreamReader("Assets/airports.json"))
             {
                 string json = r.ReadToEnd();
-                aeropuertos = JsonConvert.DeserializeObject<List<Aeropuerto>>(json);
+                aeropuertos = JsonConvert.DeserializeObject<List<AeropuertoWeb>>(json);
             }
             return aeropuertos;
         }

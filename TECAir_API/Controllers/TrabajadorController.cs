@@ -5,30 +5,30 @@ using TECAir_API.Models.WEB;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace TECAir_API.Controllers
-{/*
+{
     [Route("api/[controller]")]
     [ApiController]
     public class TrabajadorController : ControllerBase
     {
-        List<Trabajador> trabajadores = new List<Trabajador>();
+        List<TrabajadorWeb> trabajadores = new List<TrabajadorWeb>();
 
         // GET: api/<TrabajadorController>
         [HttpGet]
-        public List<Trabajador> Get()
+        public List<TrabajadorWeb> Get()
         {
-            trabajadores.Add(new Trabajador("admin", "admin"));
-            trabajadores.Add(new Trabajador("mrivera", "mrivera"));
+            trabajadores.Add(new TrabajadorWeb("admin", "admin"));
+            trabajadores.Add(new TrabajadorWeb("mrivera", "mrivera"));
 
             return trabajadores;
         }
 
         // GET api/<TrabajadorController>/5
         [HttpGet("{id}")]
-        public List<Trabajador> Get(string id)
+        public List<TrabajadorWeb> Get(string id)
         {
-            trabajadores.Add(new Trabajador("admin", "admin"));
-            trabajadores.Add(new Trabajador("mrivera", "mrivera"));
-            List<Trabajador> resultado = new List<Trabajador>();
+            trabajadores.Add(new TrabajadorWeb("admin", "admin"));
+            trabajadores.Add(new TrabajadorWeb("mrivera", "mrivera"));
+            List<TrabajadorWeb> resultado = new List<TrabajadorWeb>();
 
             for (int i = 0; i < trabajadores.Count; i++)
             {
@@ -41,8 +41,8 @@ namespace TECAir_API.Controllers
         [HttpGet("{id}/{contrasena}")]
         public List<Login> Get(string id, string contrasena)
         {
-            trabajadores.Add(new Trabajador("admin", "admin"));
-            trabajadores.Add(new Trabajador("mrivera", "mrivera"));
+            trabajadores.Add(new TrabajadorWeb("admin", "admin"));
+            trabajadores.Add(new TrabajadorWeb("mrivera", "mrivera"));
             List<Login> resultado = new List<Login>();
 
             for (int i = 0; i < trabajadores.Count; i++)
@@ -66,10 +66,10 @@ namespace TECAir_API.Controllers
 
         // POST api/<TrabajadorController>
         [HttpPost]
-        public List<Trabajador> Post([FromBody] Trabajador value)
+        public List<TrabajadorWeb> Post([FromBody] TrabajadorWeb value)
         {
             trabajadores.Add(value);
             return trabajadores;
         }
-    }*/
+    }
 }

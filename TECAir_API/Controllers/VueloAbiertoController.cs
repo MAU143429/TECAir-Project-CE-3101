@@ -9,9 +9,9 @@ namespace TECAir_API.Controllers
     public class VueloAbiertoController : ControllerBase
     {
         // Lista de vuelos abiertos
-        List<VueloAbierto> vuelosAbiertos = new List<VueloAbierto>
+        List<VueloAbiertoWeb> vuelosAbiertos = new List<VueloAbiertoWeb>
         {
-            new VueloAbierto(222123)
+            new VueloAbiertoWeb(222123)
         };
         // GET: api/<VueloAbiertoController>
         [HttpGet]
@@ -33,7 +33,7 @@ namespace TECAir_API.Controllers
         /// <returns></returns>
         // POST api/<VueloAbiertoController>
         [HttpPost]
-        public List<VueloAbierto> Post(VueloAbierto nuevoVuelo)
+        public List<VueloAbiertoWeb> Post(VueloAbiertoWeb nuevoVuelo)
         {
             vuelosAbiertos.Add(nuevoVuelo);
             return vuelosAbiertos;

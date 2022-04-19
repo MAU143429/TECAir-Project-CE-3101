@@ -1,6 +1,6 @@
 ﻿namespace TECAir_API.Models
 {
-    public class Vuelo
+    public class VueloWeb
     {
         public int no_vuelo { get; set; }
         public int matricula { get; set; }
@@ -14,11 +14,11 @@
         public string v_ano { get; set; }
         public int coste_vuelo { get; set; }
 
-        public Vuelo()
+        public VueloWeb()
         {
         }
 
-        public Vuelo(int vuelo, int matricula, string origen, string destino, int prt_abordaje, string salida, string llegada, string dia, string mes, string ano, int coste)
+        public VueloWeb(int vuelo, int matricula, string origen, string destino, int prt_abordaje, string salida, string llegada, string dia, string mes, string ano, int coste)
         {
             this.no_vuelo = vuelo;
             this.matricula = matricula;
