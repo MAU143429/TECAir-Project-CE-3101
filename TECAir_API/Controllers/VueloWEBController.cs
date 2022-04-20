@@ -19,35 +19,10 @@ namespace TECAir_API.Controllers
             _vueloRepository = vueloRepository;
         }
 
-
-
-        List<VueloWEB> vuelos = new List<VueloWEB>();
-
-        // GET: api/<VueloWEBController>
-        [HttpGet("{origen}/{destino}/{fecha}")]
-        public List<VueloWEB> Get(string origen, string destino, string fecha)
-        {
-            vuelos.Add(new VueloWEB(1, "origen1", "destino1", "salida1", "llegada1", "2022-04-17", "escalas1", "precio1"));
-            vuelos.Add(new VueloWEB(2, "origen2", "destino2", "salida2", "llegada2", "2022-04-17", "escalas2", "precio2"));
-            vuelos.Add(new VueloWEB(3, "origen3", "destino3", "salida3", "llegada3", "2022-04-17", "escalas3", "precio3"));
-            vuelos.Add(new VueloWEB(4, "origen2", "destino2", "salida4", "llegada4", "2022-04-17", "escalas4", "precio4"));
-
-            List<VueloWEB> resultado = new List<VueloWEB>();
-            for (int i = 0; i < vuelos.Count; i++)
-            {
-                if (vuelos[i].origen == origen && vuelos[i].destino == destino && vuelos[i].fecha == fecha)
-                {
-                    resultado.Add(vuelos[i]);
-                }
-            }
-            return resultado;
-        }
-
-
         [HttpPost("Add")]
         public async Task<IActionResult> crearVuelo(VueloWeb nuevoVuelo)
         {
-            Vuelo vuelo = new Vuelo (nuevoVuelo.no_vuelo, nuevoVuelo.origen, nuevoVuelo.destino,nuevoVuelo.prt_abordaje.ToString(),nuevoVuelo.h_salida,nuevoVuelo.h_llegada,nuevoVuelo.v_dia, nuevoVuelo.v_mes,nuevoVuelo.v_ano,nuevoVuelo.coste_vuelo,"737-300", false); 
+            Vuelo vuelo = new Vuelo(1, nuevoVuelo.origen, nuevoVuelo.destino, nuevoVuelo.prt_abordaje, nuevoVuelo.h_salida, nuevoVuelo.h_salida, nuevoVuelo.getDia(), nuevoVuelo.getMes(), nuevoVuelo.getAno(), nuevoVuelo.coste_vuelo, nuevoVuelo.modelo_av, false); 
             if (vuelo == null)
                 return BadRequest();
             if (!ModelState.IsValid)
