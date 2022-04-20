@@ -17,7 +17,6 @@ export class BookingsService {
    *  esto para que quede registrada.
    */
      addTicketPayment(ticket:any):Observable<any>{
-      ticket.no_reservacion = 123458
       return this.httpclient.post(this.url+'/Pasajero/Add', ticket) 
     }
 }

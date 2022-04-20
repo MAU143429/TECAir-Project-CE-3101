@@ -31,7 +31,6 @@ export class LoginUserComponent implements OnInit {
   addNewLogin(newLogin:Login){
     this.service.getLoginUser(newLogin).subscribe(data => (this.status = data));
     this.delay(500).then(()=>{
-      console.log(this.status[0].status)
       if (this.status[0].status){
         this.router.navigate(['/homeuser']);
       }

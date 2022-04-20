@@ -21,11 +21,9 @@ export class SearchUserComponent implements OnInit {
   newBooking:BookingFlight = new BookingFlight
   Airports: Airport[] | undefined;
   searchdata:Searchresults[] | undefined;
-
   myControl = new FormControl();
   options = [];
   filteredOptions: any;
-
   closeResult = '';
 
   constructor(private modalService: NgbModal , private service:SearchflightsService, private router:Router) { 
@@ -41,6 +39,11 @@ export class SearchUserComponent implements OnInit {
 
   }
 
+  /**
+   * Este metodo crea un filtro para las recomendaciones de autocompletado
+   * @param val el valor escrito por el usuario
+   * @returns las mejores opciones que coincidan con los escrito por el usuario.
+   */
   filter(val: string): any {
  
     return this.service.getAirports()
@@ -53,6 +56,10 @@ export class SearchUserComponent implements OnInit {
      )
    }  
 
+  /**
+   * Este metodo permite la creacion de un pop up
+   * @param content es el template que contiene el contenido del popup
+   */ 
   open(content:any) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
@@ -61,6 +68,11 @@ export class SearchUserComponent implements OnInit {
     });
   }
   
+    /**
+   * Metodo que permite crear las acciones del boton exit del popup
+   * @param reason 
+   * @returns 
+   */
   private getDismissReason(reason: any): string {
     if (reason === ModalDismissReasons.ESC) {
       return 'by pressing ESC';
@@ -77,13 +89,22 @@ export class SearchUserComponent implements OnInit {
 
   } 
 
-  // Metodo para crear una nueva busqueda de vuelos
+  /** 
+   * Este metodo permite realizar la peticion del service que permite realizar la busqueda
+   * @param newSearch es el objeto que posee los datos con las caracteristicas de busqueda
+   */
   createNewSearch(newSearch:Search){
     this.service.getSearch(newSearch).subscribe(search=> (this.searchdata = search));
   }
 
-  // Metodo para crear una nueva busqueda de vuelos
-  createBooking(newBooking:BookingFlight){
+    /** 
+   * Este metodo permite realizar el set de los valores para el objeto que se
+   * enviara con el numero de vuelo para realizar la reserva
+   * @param newBooking es el objeto que almacenara el numero de vuelo a reservar
+   * @param data posee los datos del vuelo que se desea reservar 
+   */
+  createBooking(newBooking:BookingFlight, data:any){
+    newBooking.no_vuelo = data.no_vuelo
     this.service.newBooking(newBooking);
   }
 }
