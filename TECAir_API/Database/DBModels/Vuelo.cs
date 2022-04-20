@@ -14,6 +14,22 @@ namespace TECAir_API
             Reservacions = new HashSet<Reservacion>();
         }
 
+        public Vuelo(decimal noVuelo, string origen, string destino, string prtAbordaje, string hSalida, string hLlegada, string vDia, string vMes, string vAno, decimal costeVuelo, string matricula, bool cerrado)
+        {
+            NoVuelo = noVuelo;
+            Origen = origen;
+            Destino = destino;
+            PrtAbordaje = prtAbordaje;
+            HSalida = hSalida;
+            HLlegada = hLlegada;
+            VDia = vDia;
+            VMes = vMes;
+            VAno = vAno;
+            CosteVuelo = costeVuelo;
+            Matricula = matricula;
+            Cerrado = cerrado;
+        }
+
         public decimal NoVuelo { get; set; }
         public string Origen { get; set; } = null!;
         public string Destino { get; set; } = null!;
