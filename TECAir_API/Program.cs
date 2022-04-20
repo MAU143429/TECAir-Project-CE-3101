@@ -30,6 +30,7 @@ var postgreSQLConnectionConfiguration = new PostgreSQLConfiguration(builder.Conf
 builder.Services.AddSingleton(postgreSQLConnectionConfiguration);
 builder.Services.AddScoped<IPromocion, PromocionRepository>();
 builder.Services.AddScoped <IVuelo,VueloRepository> ();
+builder.Services.AddScoped<IMaletum, MaletumRepository>();
 //configuracion del context en el programa
 builder.Services.AddDbContext<TECAirContext>(
     o => o.UseNpgsql(builder.Configuration.GetConnectionString("TECAir")));

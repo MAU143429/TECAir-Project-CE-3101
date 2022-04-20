@@ -17,9 +17,12 @@ export class FlightsService {
 
    /** POST PARA CREAR VUELO
    *  Este post permite enviar la informacion para registrar un vuelo nuevo.
+   * @param flight ingresa un objeto de tipo vuelo con la informacion necesaria para el registro.
+   * @returns Retorna la aprobacion del post, si fue guardado con exito
    */
     addFlight(flight:any):Observable<any>{
-      return this.httpclient.post(this.url+'/Vuelo/Add', flight) 
+      console.log(flight)
+      return this.httpclient.post(this.url+'/VueloWEB/Add', flight) 
     }
 
     /** POST PARA CONSULTA APERTURA DE VUELO

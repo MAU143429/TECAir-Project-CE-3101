@@ -18,26 +18,6 @@ namespace TECAir_API.Controllers
         }
 
 
-        // Lista de promociones
-        List<PromocionWeb> promociones = new List<PromocionWeb> 
-        {
-            new PromocionWeb(1, 10, 20, "url1", "22/04/2022")
-        };
-
-        // GET: api/<PromocionController>
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET api/<PromocionController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
         /// <summary>
         /// Metodo Post para agregar nuevas promociones desde la Web
         /// </summary>
@@ -47,7 +27,7 @@ namespace TECAir_API.Controllers
         [HttpPost("Add")]
         public async Task<IActionResult> crearPromocion(PromocionWeb nuevaPromocion)
         {
-            Promocion promocion = new Promocion(nuevaPromocion.no_promocion, nuevaPromocion.porcentaje, nuevaPromocion.periodo, nuevaPromocion.url, nuevaPromocion.fecha.Substring(0,2), nuevaPromocion.fecha.Substring(0,2), nuevaPromocion.fecha.Substring(0,4), nuevaPromocion.no_vuelo); // 2022-04-17
+            Promocion promocion = new Promocion(99999, nuevaPromocion.porcentaje, nuevaPromocion.periodo, nuevaPromocion.url, nuevaPromocion.getDia(), nuevaPromocion.getMes(), nuevaPromocion.getAno(), nuevaPromocion.no_vuelo);
             if (promocion == null)
 
                 return BadRequest();
@@ -59,18 +39,5 @@ namespace TECAir_API.Controllers
             return Created("created", created);
         }
 
-
-
-        // PUT api/<PromocionController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<PromocionController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }

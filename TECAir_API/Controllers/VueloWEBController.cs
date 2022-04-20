@@ -22,7 +22,7 @@ namespace TECAir_API.Controllers
         [HttpPost("Add")]
         public async Task<IActionResult> crearVuelo(VueloWeb nuevoVuelo)
         {
-            Vuelo vuelo = new Vuelo(1, nuevoVuelo.origen, nuevoVuelo.destino, nuevoVuelo.prt_abordaje, nuevoVuelo.h_salida, nuevoVuelo.h_salida, nuevoVuelo.getDia(), nuevoVuelo.getMes(), nuevoVuelo.getAno(), nuevoVuelo.coste_vuelo, nuevoVuelo.modelo_av, false); 
+            Vuelo vuelo = new Vuelo(2222222, nuevoVuelo.origen, nuevoVuelo.destino, nuevoVuelo.prt_abordaje, nuevoVuelo.h_salida, nuevoVuelo.h_llegada, nuevoVuelo.getDia(), nuevoVuelo.getMes(), nuevoVuelo.getAno(), nuevoVuelo.coste_vuelo, nuevoVuelo.modelo_av, false); 
             if (vuelo == null)
                 return BadRequest();
             if (!ModelState.IsValid)

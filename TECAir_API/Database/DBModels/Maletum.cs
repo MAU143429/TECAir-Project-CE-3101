@@ -13,5 +13,14 @@ namespace TECAir_API
 
         public virtual Pasajero DniNavigation { get; set; } = null!;
         public virtual Vuelo NoVueloNavigation { get; set; } = null!;
+
+        public Maletum(decimal noMaleta, string color, decimal peso, decimal dni, decimal noVuelo)
+        {
+            NoMaleta = noMaleta;
+            Color = color;
+            Peso = peso;
+            Dni = dni;
+            NoVuelo = noVuelo;
+        }
     }
 }

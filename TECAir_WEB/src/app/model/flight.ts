@@ -1,13 +1,14 @@
 export class Flight {
+    modelo_av:string = ''
     origen:string = ''
     destino:string = ''
-    avion:string = ''
+    prt_abordaje:string = ''
     h_salida:string = ''
     h_llegada:string = ''
-    fecha:string = ''
+    v_fecha:string = ''
+    coste_vuelo:number = 0
     escala1:string = ''
     escala2:string = ''
     escala3:string = ''
-    prt_abordaje:string = ''
-    coste_vuelo:string = ''
+
 }
