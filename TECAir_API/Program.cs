@@ -15,6 +15,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TECAir_API.Database.Interface;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,6 +29,7 @@ builder.Services.AddSwaggerGen();
 var postgreSQLConnectionConfiguration = new PostgreSQLConfiguration(builder.Configuration.GetConnectionString("PostgreSQLConnection"));
 builder.Services.AddSingleton(postgreSQLConnectionConfiguration);
 builder.Services.AddScoped<IPromocion, PromocionRepository>();
+builder.Services.AddScoped <IVuelo,VueloRepository> ();
 //configuracion del context en el programa
 builder.Services.AddDbContext<TECAirContext>(
     o => o.UseNpgsql(builder.Configuration.GetConnectionString("TECAir")));
