@@ -18,7 +18,7 @@ namespace TECAir_API
         public decimal NoReservacion { get; set; }
         public decimal NoAsiento { get; set; }
 
-        public virtual AsientoWeb NoAsientoNavigation { get; set; } = null!;
+        public virtual Asiento NoAsientoNavigation { get; set; } = null!;
         public virtual Reservacion NoReservacionNavigation { get; set; } = null!;
         public virtual ICollection<Pasajero> Pasajeros { get; set; }
     }

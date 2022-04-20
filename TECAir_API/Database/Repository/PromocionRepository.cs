@@ -21,13 +21,13 @@ namespace TECAir_API.Database.Repository
             return new NpgsqlConnection(_connectionString.ConnectionString);
         }
         
-        public async Task<bool> ingresarPromocion(PromocionWeb promocion)
+        public async Task<bool> ingresarPromocion(Promocion promocion)
         {
             var db = dbConnection();
 
-            var sql = @"                  
-                        INSERT INTO promocion(no_promocion, porcentaje, periodo, url, p_dia, p_mes, p_ano, no_vuelo)
-                        VALUES(@no_promocion, @porcentaje, @periodo, @url, @p_dia, @p_mes, @p_ano, @no_vuelo);
+            var sql = @"
+                        INSERT INTO promocion (no_promocion, porcentaje, periodo, url, p_dia, p_mes, p_ano, no_vuelo)
+                        VALUES (@nopromocion,@porcentaje, @periodo, @url, @pDia, @pMes, @pAno, @noVuelo);
                         ";
 
             var result = await db.ExecuteAsync(sql, new

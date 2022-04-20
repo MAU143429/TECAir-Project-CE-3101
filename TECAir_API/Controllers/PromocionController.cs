@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TECAir_API.Models;
+using TECAir_API.Database;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -9,6 +10,14 @@ namespace TECAir_API.Controllers
     [ApiController]
     public class PromocionController : ControllerBase
     {
+        private readonly IPromocion _promocionRepository;
+
+        public PromocionController(IPromocion promocionRepository)
+        {
+            _promocionRepository = promocionRepository;
+        }
+
+
         // Lista de promociones
         List<PromocionWeb> promociones = new List<PromocionWeb> 
         {
@@ -36,12 +45,21 @@ namespace TECAir_API.Controllers
         /// <returns> Una lista de promociones creadas </returns>
         // POST api/Promocion/Add
         [HttpPost("Add")]
-        public List<PromocionWeb> Post(PromocionWeb nuevaPromocion)
+        public async Task<IActionResult> crearPromocion(PromocionWeb nuevaPromocion)
         {
-            int id = promociones.Last().no_promocion + 1;
-            promociones.Add(nuevaPromocion);
-            return promociones;
+            Promocion promocion = new Promocion(nuevaPromocion.no_promocion, nuevaPromocion.porcentaje, nuevaPromocion.periodo, nuevaPromocion.url, nuevaPromocion.fecha.Substring(0,2), nuevaPromocion.fecha.Substring(0,2), nuevaPromocion.fecha.Substring(0,4), nuevaPromocion.no_vuelo); // 2022-04-17
+            if (promocion == null)
+
+                return BadRequest();
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var created = await _promocionRepository.ingresarPromocion(promocion);
+
+            return Created("created", created);
         }
+
+
 
         // PUT api/<PromocionController>/5
         [HttpPut("{id}")]

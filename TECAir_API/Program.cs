@@ -1,6 +1,21 @@
 global using Microsoft.EntityFrameworkCore;
 global using Npgsql;
 using TECAir_API;
+using TECAir_API.Models;
+using TECAir_API.Database;
+using TECAir_API.Database.Repository;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -10,10 +25,16 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+var postgreSQLConnectionConfiguration = new PostgreSQLConfiguration(builder.Configuration.GetConnectionString("PostgreSQLConnection"));
+builder.Services.AddSingleton(postgreSQLConnectionConfiguration);
+builder.Services.AddScoped<IPromocion, PromocionRepository>();
 //configuracion del context en el programa
 builder.Services.AddDbContext<TECAirContext>(
     o => o.UseNpgsql(builder.Configuration.GetConnectionString("TECAir")));
 var app = builder.Build();
+
+
+//builder.Services.AddScoped<,>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
