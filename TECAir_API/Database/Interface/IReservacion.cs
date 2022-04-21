@@ -5,5 +5,6 @@ namespace TECAir_API.Database.Interface
     public interface IReservacion
     {
         Task<ReservacionOutput> GetReservacionId(decimal idUsuario);
+        Task<ReservacionOutput> GetReservacionId(string idTrabajador);
     }
 }

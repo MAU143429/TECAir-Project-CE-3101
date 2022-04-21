@@ -18,6 +18,7 @@ namespace TECAir_API.Controllers
         {
             _vueloRepository = vueloRepository;
         }
+
         // POST api//Add
         /// <summary>
         /// Metodo Post para crear y agregar un vuelo nuevo a la base de datos desde web
@@ -38,5 +39,11 @@ namespace TECAir_API.Controllers
             return Created("created", created);
         }
 
+        public int GenNoVuelo()
+        {
+            int vuelo = 0;
+
+            return vuelo;
+        }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using TECAir_API.Database.Interface;
 using TECAir_API.Models;
+using TECAir_API.Models.WEB;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace TECAir_API.Models
@@ -8,41 +10,36 @@ namespace TECAir_API.Models
     [ApiController]
     public class TiqueteController : ControllerBase
     {
-        // Lista de informacion de tiquetes comprados
-        List<TiqueteWeb> tiquetes= new List<TiqueteWeb>
+        private readonly ITiquete tiqueteRepository;
+        public List<TiqueteWeb> tiquetes = new List<TiqueteWeb>();
+
+        public TiqueteController(ITiquete tiqueteRepository)
         {
-            //new Tiquete(1, 10, 20, "url1", "22/04/2022")
-        };
-        // GET: api/<TiqueteController>
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
+            this.tiqueteRepository = tiqueteRepository;
         }
 
-        // GET api/<TiqueteController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        // GET api/Tiquete/Get
+        /// <summary>
+        /// Metodo get para obtener los datos del tiquete, buscado por el id de usuario o id de trabajador
+        /// </summary>
+        /// <param name="id"> id de usuario o de trabajador para busqueda en la tabla</param>
+        /// <returns>reservacion con todos los datos necesarios para mostrar en la Web</returns>
+        [HttpGet("Get/{id}")]
+        public async Task<IActionResult> GetReservacionById(int id)
         {
-            return "value";
+            return Ok(await tiqueteRepository.GetReservacionId(id));
         }
 
-        // POST api/<TiqueteController>
-        [HttpPost]
-        public void Post([FromBody] string value)
+        // GET api/Reservacion/Get
+        /// <summary>
+        /// Metodo get para obtener los datos del tiquete, buscado por el id de usuario o id de trabajador
+        /// </summary>
+        /// <param name="id"> id de usuario o de trabajador para busqueda en la tabla</param>
+        /// <returns>reservacion con todos los datos necesarios para mostrar en la Web</returns>
+        [HttpGet("GetTrab/{id}")]
+        public async Task<IActionResult> GetReservacionById(string id)
         {
-        }
-
-        // PUT api/<TiqueteController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<TiqueteController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            return Ok(await tiqueteRepository.GetReservacionId(id));
         }
     }
 }

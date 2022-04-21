@@ -16,6 +16,7 @@ namespace TECAir_API.Controllers
             _vueloRepository = vueloRepository;
         }
 
+        // api/Avion/ListaAvion
         [HttpGet("ListaAvion")]
         public async Task<IActionResult> ListaAvion()
         {

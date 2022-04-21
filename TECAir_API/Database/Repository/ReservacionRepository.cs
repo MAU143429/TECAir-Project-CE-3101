@@ -34,5 +34,21 @@ namespace TECAir_API.Database.Repository
                IdUsuario = idUsuario
             });
         }
+
+        public async Task<ReservacionOutput> GetReservacionId(string idTrabajador)
+        {
+            var db = dbConnection();
+
+            var sql = @"
+                        SELECT reservacion.no_vuelo, no_reservacion, origen, destino, h_salida, v_dia, v_mes, v_ano 
+                        FROM public.reservacion JOIN public.vuelo ON reservacion.no_vuelo = vuelo.no_vuelo
+                        WHERE id_trabajador = @idtrabajador AND cancelado = false
+                        ";
+
+            return await db.QueryFirstOrDefaultAsync<ReservacionOutput>(sql, new
+            {
+                IdTrabajador = idTrabajador
+            });
+        }
     }
 }

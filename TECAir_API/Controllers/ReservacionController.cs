@@ -33,6 +33,7 @@ namespace TECAir_API.Controllers
             }
             return reservaciones;
         }
+
         // GET api/Reservacion/Get
         /// <summary>
         /// Metodo get para obtener los datos de la reservacion, buscado por el id de usuario o id de trabajador
@@ -41,6 +42,18 @@ namespace TECAir_API.Controllers
         /// <returns>reservacion con todos los datos necesarios para mostrar en la Web</returns>
         [HttpGet("Get/{id}")]
         public async Task<IActionResult> GetReservacionById(int id)
+        {
+            return Ok(await reservacionRepository.GetReservacionId(id));
+        }
+
+        // GET api/Reservacion/Get
+        /// <summary>
+        /// Metodo get para obtener los datos de la reservacion, buscado por el id de usuario o id de trabajador
+        /// </summary>
+        /// <param name="id"> id de usuario o de trabajador para busqueda en la tabla</param>
+        /// <returns>reservacion con todos los datos necesarios para mostrar en la Web</returns>
+        [HttpGet("GetTrab/{id}")]
+        public async Task<IActionResult> GetReservacionById(string id)
         {
             return Ok(await reservacionRepository.GetReservacionId(id));
         }
