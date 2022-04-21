@@ -20,11 +20,13 @@
                     <th>Nombre del pasajero</th>
                     <th>Cedula/Pasaporte</th>
                     <th>Cantidad de maletas</th>
+                    <th>Coste total de maletas</th>
                 </tr>
                 <tr *ngFor="let data of passangerData">
                     <th>{{data.no_transaccion}}</th>
                     <td>{{data.p_nombre}} {{data.p_apellido1}} {{data.p_apellido2}}</td>
                     <td>{{data.dni}}</td>
+                    <td>{{data.cant_maletas}}</td>
                     <td>{{data.cant_maletas}}</td>
                 </tr>
                 </table>

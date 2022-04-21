@@ -123,6 +123,16 @@ VALUES(6, 35, 25, 'url', 22, 04, 2022, 75803);
 INSERT INTO promocion(no_promocion, porcentaje, periodo, url, p_dia, p_mes, p_ano, no_vuelo)
 VALUES(7, 20, 25, 'url', 22, 04, 2022, 8215896);
 
+-- Insertar Trabajadores
+INSERT INTO trabajador(id_trabajador, t_contrasena)
+VALUES('admin','admin');
+
+INSERT INTO trabajador(id_trabajador, t_contrasena)
+VALUES('admin2','admin2');
+
+INSERT INTO trabajador(id_trabajador, t_contrasena)
+VALUES('admin3','admin3');
+
 -- Insertar Reservacion:
 
 INSERT INTO reservacion(no_reservacion, cancelado, no_vuelo, id_usuario, id_trabajador)
@@ -140,6 +150,15 @@ VALUES(22568, true, 568999, 2486520, NULL);
 INSERT INTO reservacion(no_reservacion, cancelado, no_vuelo, id_usuario, id_trabajador)
 VALUES(23563, true, 798562, 1897025, NULL);
 
+INSERT INTO reservacion(no_reservacion, cancelado, no_vuelo, id_usuario, id_trabajador)
+VALUES(34344, true, 798562, NULL, 'admin');
+
+INSERT INTO reservacion(no_reservacion, cancelado, no_vuelo, id_usuario, id_trabajador)
+VALUES(65657, true, 798562, NULL, 'admin2');
+
+INSERT INTO reservacion(no_reservacion, cancelado, no_vuelo, id_usuario, id_trabajador)
+VALUES(67787, false, 798562, NULL, 'admin3');
+
 -- Insertar Tiquete
 INSERT INTO tiquete(no_transaccion, t_dia, t_mes, t_ano, abordaje, no_reservacion, no_asiento)
 VALUES(278788, 20, 11, 2021, false, 32584, 5);
@@ -152,6 +171,12 @@ VALUES(325568, 10, 02, 2022, false, 23563, 25);
 
 INSERT INTO tiquete(no_transaccion, t_dia, t_mes, t_ano, abordaje, no_reservacion, no_asiento)
 VALUES(201458, 25, 12, 2021, false, 17759, 7);
+
+INSERT INTO tiquete(no_transaccion, t_dia, t_mes, t_ano, abordaje, no_reservacion, no_asiento)
+VALUES(45456, 25, 12, 2021, false, 67787, 7);
+
+INSERT INTO tiquete(no_transaccion, t_dia, t_mes, t_ano, abordaje, no_reservacion, no_asiento)
+VALUES(678677, 25, 12, 2021, false, 65657, 7);
 
 -- Insertar Pasajero
 INSERT INTO pasajero(dni, p_nombre, p_apellido1, p_apellido2, cant_maletas, chequeado, no_transaccion)
