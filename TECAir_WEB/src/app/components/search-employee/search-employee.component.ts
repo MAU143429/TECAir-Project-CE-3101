@@ -22,7 +22,6 @@ export class SearchEmployeeComponent implements OnInit {
   newBooking:BookingFlight = new BookingFlight
   Airports: Airport[] | undefined;
   searchdata:Searchresults[] | undefined;
-
   myControl = new FormControl();
   options = [];
   filteredOptions: any;

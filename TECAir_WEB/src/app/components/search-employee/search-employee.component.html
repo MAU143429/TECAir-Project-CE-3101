@@ -14,7 +14,7 @@
           <input class="myinput" [(ngModel)]="newSearch.origen"  [formControl]="myControl" matInput [matAutocomplete]="auto" placeholder="Aeropuerto de salida">
           
           <mat-autocomplete #auto="matAutocomplete">
-            <mat-option class="options" aria-placeholder="Aeropuerto de salida"
+            <mat-option class="options"  
                 *ngFor="let option of filteredOptions | async"
                 [value]="option.nombre">
               {{option.nombre}} , {{option.pais}}       
