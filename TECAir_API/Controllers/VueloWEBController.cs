@@ -18,7 +18,12 @@ namespace TECAir_API.Controllers
         {
             _vueloRepository = vueloRepository;
         }
-
+        // POST api//Add
+        /// <summary>
+        /// Metodo Post para crear y agregar un vuelo nuevo a la base de datos desde web
+        /// </summary>
+        /// <param name="nuevoVuelo"> objeto de tipo VueloWeb que almacena los valores necesarios para crear un Vuelo</param>
+        /// <returns>Estado de creado en la base</returns>
         [HttpPost("Add")]
         public async Task<IActionResult> crearVuelo(VueloWeb nuevoVuelo)
         {
