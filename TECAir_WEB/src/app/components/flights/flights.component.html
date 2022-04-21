@@ -24,7 +24,7 @@
                 <div class="flight-details">
                   <div class="input-box">
                     <span class="details">Aeropuerto de salida</span>
-                    <input type="text" [(ngModel)]="newFlight.origen" [formControl]="myControl" matInput [matAutocomplete]="auto" placeholder="Ingrese el origen del vuelo" required>
+                    <input type="text" [(ngModel)]="newFlight.origen" [formControl]="myControl" matInput2 [matAutocomplete]="auto" placeholder="Ingrese el origen del vuelo" required>
                     <mat-autocomplete #auto="matAutocomplete">
                       <mat-option class="options"  
                           *ngFor="let option of filteredOptions | async"
@@ -35,7 +35,7 @@
                   </div>
                   <div class="input-box">
                     <span class="details"> Aeropuerto de llegada</span>
-                    <input type="text" [(ngModel)]="newFlight.destino" [formControl]="myControl" matInput [matAutocomplete]="auto" placeholder="Ingrese el destino del vuelo" required>
+                    <input type="text" [(ngModel)]="newFlight.destino" [formControl]="myControl" matInput2 [matAutocomplete]="auto" placeholder="Ingrese el destino del vuelo" required>
                     <mat-autocomplete #auto="matAutocomplete">
                       <mat-option class="options"  
                           *ngFor="let option of filteredOptions | async"
@@ -46,10 +46,10 @@
                   </div>
                   <div class="input-box">
                     <span class="details">Matricula del avion</span>
-                    <input type="text"  [(ngModel)]="newFlight.modelo_av" [formControl]="myControlModel" matInput [matAutocomplete]="auto" placeholder="Ingrese la Matricula del Avion" required>
-                    <mat-autocomplete #auto="matAutocomplete">
+                    <input type="text"  [(ngModel)]="newFlight.modelo_av" [formControl]="myControlModel" [matAutocomplete]="autoModel"  placeholder="Ingrese la Matricula del Avion" required>
+                    <mat-autocomplete #autoModel="matAutocomplete">
                       <mat-option class="options"  
-                          *ngFor="let option of filteredOptions2 | async"
+                          *ngFor="let option of filtered2 | async"
                           [value]="option.matricula">
                         {{option.av_nombre}} matricula numero {{option.matricula}}       
                      </mat-option>
@@ -72,7 +72,7 @@
 
                   <div class="input-box">
                     <span class="details">Escala 1</span>
-                    <input type="text" [(ngModel)]="newFlight.escala1" [formControl]="myControl" matInput [matAutocomplete]="auto" placeholder="Ingrese la esacala aqui" required>
+                    <input type="text" [(ngModel)]="newFlight.escala1" [formControl]="myControl" matInput2 [matAutocomplete]="auto" placeholder="Ingrese la esacala aqui" required>
                     <mat-autocomplete #auto="matAutocomplete">
                       <mat-option class="options"  
                           *ngFor="let option of filteredOptions | async"
@@ -83,7 +83,7 @@
                   </div>
                   <div class="input-box"> 
                     <span class="details"> Escala 2</span>
-                    <input type="text" [(ngModel)]="newFlight.escala2" [formControl]="myControl" matInput [matAutocomplete]="auto" placeholder="Ingrese la esacala aqui" required>
+                    <input type="text" [(ngModel)]="newFlight.escala2" [formControl]="myControl" matInput2 [matAutocomplete]="auto" placeholder="Ingrese la esacala aqui" required>
                     <mat-autocomplete #auto="matAutocomplete">
                       <mat-option class="options"  
                           *ngFor="let option of filteredOptions | async"
@@ -94,7 +94,7 @@
                   </div>
                   <div class="input-box">
                     <span class="details">Escala 3</span>
-                    <input type="text" [(ngModel)]="newFlight.escala3" [formControl]="myControl" matInput [matAutocomplete]="auto" placeholder="Ingrese la esacala aqui" required>
+                    <input type="text" [(ngModel)]="newFlight.escala3" [formControl]="myControl" matInput2 [matAutocomplete]="auto" placeholder="Ingrese la esacala aqui" required>
                     <mat-autocomplete #auto="matAutocomplete">
                       <mat-option class="options"  
                           *ngFor="let option of filteredOptions | async"

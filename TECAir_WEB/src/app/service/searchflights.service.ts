@@ -22,9 +22,7 @@ export class SearchflightsService {
    * @param booking contiene el numero de vuelo que se desea reservar
    * @returns retorna la lista de reservas
    */
-  newBooking(booking:any):Observable<any>{
-    console.log("Haciendo el post")
-    console.log(booking)
+  newBooking(booking:any):Observable<any>{  
     return this.httpclient.post(this.url+'/Reservacion/Add', booking) 
   }
 

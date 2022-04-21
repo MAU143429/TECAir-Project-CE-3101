@@ -5,11 +5,9 @@ import { Flight } from 'src/app/model/flight';
 import { OpenFlight } from 'src/app/model/open-flight';
 import { CloseFlight } from 'src/app/model/close-flight';
 import { FlightsService } from 'src/app/service/flights.service';
-import { Airport } from 'src/app/interface/airport';
 import { SearchflightsService } from 'src/app/service/searchflights.service';
 import { startWith, debounceTime, distinctUntilChanged, switchMap, map } from 'rxjs/operators';
 import {FormControl} from '@angular/forms';
-import { Models } from 'src/app/interface/models';
 
 @Component({
   selector: 'app-flights',
@@ -23,16 +21,13 @@ export class FlightsComponent implements OnInit {
    * Creacion de variables a utilizar tanto para almacenar datos de recomendacion como de consulta
    */
   
-  options = [];
-  options2 = [];
+
   closeResult = '';
   filteredOptions: any;
-  filteredOptions2: any;
+  filtered2: any;
   btnstatus = "Confirmar Abordaje"
   myControl = new FormControl();
   myControlModel = new FormControl();
-  Models: Models[] | undefined;
-  Airports: Airport[] | undefined;
   newFlight:Flight = new Flight
   newOpenFlight:OpenFlight = new OpenFlight
   newCloseFlight:CloseFlight = new CloseFlight
@@ -76,13 +71,13 @@ export class FlightsComponent implements OnInit {
        }) 
     )
 
-    // Nos permite filtrar informacion de los modelos de avions
-    this.filteredOptions2 = this.myControlModel.valueChanges.pipe(
+    // Nos permite filtrar informacion de los modelos de aviones
+    this.filtered2 = this.myControlModel.valueChanges.pipe(
       startWith(''),
       debounceTime(400),
       distinctUntilChanged(), 
-      switchMap(val => {
-            return this.filter2(val || '')
+      switchMap(val2 => {
+            return this.filter2(val2 || '')
        }) 
     )
 
@@ -94,7 +89,7 @@ export class FlightsComponent implements OnInit {
   * @returns Las recomendaciones que mas se acercan a lo escrito por el user 
   */
   filter(val: string): any {
-
+    console.log(this.service2.getAirports())
   return this.service2.getAirports()
     .pipe(
       map(response => response.filter(option => { 
@@ -107,15 +102,15 @@ export class FlightsComponent implements OnInit {
 
   /**
   * Este metodo nos permite realizar las recomendaciones de Modelos de Avion en base a lo escrito por parte usuario y lo que se consulta con el GET al API
-  * @param val El valor ingresado en el input por el usuario
+  * @param val2 El valor ingresado en el input por el usuario
   * @returns Las recomendaciones que mas se acercan a lo escrito por el user 
   */
-  filter2(val: string): any {
-
+  filter2(val2: string): any {
+    console.log(this.service2.getModels())
   return this.service2.getModels()
     .pipe(
-      map(response => response.filter(option => { 
-        return option.av_nombre.toLowerCase().indexOf(val.toLowerCase()) === 0 
+      map(response2 => response2.filter(option2 => { 
+        return option2.av_nombre.toLowerCase().indexOf(val2.toLowerCase()) === 0 
       }))
     )
   }  
@@ -148,11 +143,6 @@ export class FlightsComponent implements OnInit {
   }
  
   ngOnInit(): void { 
-
-    // Consulta de valores al API
-    this.service2.getAirports().subscribe( data => (this.Airports = data));
-    this.service2.getModels().subscribe( data2 => (this.Models = data2));
-
     // Cambia el valor del boton en base al status del pasajero en el vuelo
     if ( this.passangerdata[0].abordaje == "No") {
       this.btnstatus = "Confirmar abordaje"
