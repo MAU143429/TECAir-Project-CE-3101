@@ -16,16 +16,16 @@ import {FormControl} from '@angular/forms';
   styleUrls: ['./search-user.component.css']
 })
 export class SearchUserComponent implements OnInit {
-
-  newSearch:Search = new Search
-  newBooking:BookingFlight = new BookingFlight
+  
+  options = [];
+  closeResult = '';
+  filteredOptions: any;
+  myControl = new FormControl();
   Airports: Airport[] | undefined;
   searchdata:Searchresults[] | undefined;
-  myControl = new FormControl();
-  options = [];
-  filteredOptions: any;
-  closeResult = '';
-
+  newSearch:Search = new Search
+  newBooking:BookingFlight = new BookingFlight
+  
   constructor(private modalService: NgbModal , private service:SearchflightsService, private router:Router) { 
     
     this.filteredOptions = this.myControl.valueChanges.pipe(
