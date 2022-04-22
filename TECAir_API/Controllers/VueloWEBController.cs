@@ -3,6 +3,7 @@ using TECAir_API.Models.WEB;
 using TECAir_API.Database;
 using TECAir_API.Database.Interface;
 using TECAir_API.Models;
+using TECAir_API.Models.Automation;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -13,10 +14,12 @@ namespace TECAir_API.Controllers
     public class VueloWEBController : ControllerBase
     {
         private readonly IVuelo _vueloRepository;
+        private readonly IAutomation _automationRepository;
 
-        public VueloWEBController(IVuelo vueloRepository)
+        public VueloWEBController(IVuelo vueloRepository, IAutomation automationRepository)
         {
             _vueloRepository = vueloRepository;
+            _automationRepository = automationRepository;
         }
 
         // POST api//Add
@@ -28,7 +31,8 @@ namespace TECAir_API.Controllers
         [HttpPost("Add")]
         public async Task<IActionResult> crearVuelo(VueloWeb nuevoVuelo)
         {
-            Vuelo vuelo = new Vuelo(2222222, nuevoVuelo.origen, nuevoVuelo.destino, nuevoVuelo.prt_abordaje, nuevoVuelo.h_salida, nuevoVuelo.h_llegada, nuevoVuelo.getDia(), nuevoVuelo.getMes(), nuevoVuelo.getAno(), nuevoVuelo.coste_vuelo, nuevoVuelo.modelo_av, false); 
+            VuelosTotales vuelos = await _automationRepository.GetTotalVuelos();
+            Vuelo vuelo = new Vuelo(vuelos.total_vuelos + 1, nuevoVuelo.origen, nuevoVuelo.destino, nuevoVuelo.prt_abordaje, nuevoVuelo.h_salida, nuevoVuelo.h_llegada, nuevoVuelo.getDia(), nuevoVuelo.getMes(), nuevoVuelo.getAno(), nuevoVuelo.coste_vuelo, nuevoVuelo.modelo_av, false); 
             if (vuelo == null)
                 return BadRequest();
             if (!ModelState.IsValid)
