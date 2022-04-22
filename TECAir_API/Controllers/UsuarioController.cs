@@ -24,10 +24,9 @@ namespace TECAir_API.Controllers
         {
 
             //Bug del correo (corrector)
-            List<string> listaC = correo.Split("%40").ToList();
-            correo = listaC[0] + "@" + listaC[1];
+            string nCorreo = correo.Replace("%40", "@");
                 
-            return Ok( await _automationRepository.LoginUser(correo, contrasena));
+            return Ok( await _automationRepository.LoginUser(nCorreo, contrasena));
         }
     }
 }
