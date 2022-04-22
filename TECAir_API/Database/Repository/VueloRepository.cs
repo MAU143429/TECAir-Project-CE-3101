@@ -114,7 +114,6 @@ namespace TECAir_API.Database.Repository
             return resultado>0;
         }
 
-
         public async Task<IEnumerable<BusquedaOutput>> GetVuelos(string origen, string destino, string v_dia, string v_mes, string v_ano)
         {
             var db = dbConnection();
@@ -135,8 +134,6 @@ namespace TECAir_API.Database.Repository
 
             }) ;
         }
-
-
 
     }
 }
