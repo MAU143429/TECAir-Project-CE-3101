@@ -33,7 +33,7 @@ namespace TECAir_API.Controllers
                     break;
                 }  
             }
-            correo = listaC.ToString();
+            correo = String.Join("", listaC);
                 
             return Ok( await _automationRepository.LoginUser(correo, contrasena));
         }
