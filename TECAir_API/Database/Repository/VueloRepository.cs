@@ -87,7 +87,7 @@ namespace TECAir_API.Database.Repository
         }
 
 
-        public async Task<BusquedaOutput> GetVuelos(string origen, string destino, string v_dia, string v_mes, string v_ano)
+        public async Task<IEnumerable<BusquedaOutput>> GetVuelos(string origen, string destino, string v_dia, string v_mes, string v_ano)
         {
             var db = dbConnection();
 
@@ -97,7 +97,7 @@ namespace TECAir_API.Database.Repository
                         WHERE origen = @origen AND destino = @destino AND v_dia = @v_dia AND v_mes = @v_mes AND v_ano = @v_ano
                         ";
 
-            return await db.QueryFirstOrDefaultAsync<BusquedaOutput>(sql, new
+            return await db.QueryFirstOrDefaultAsync<IEnumerable<BusquedaOutput>>(sql, new
             {
                 origen = origen,
                 destino = destino,
