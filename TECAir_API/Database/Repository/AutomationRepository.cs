@@ -101,7 +101,6 @@ namespace TECAir_API.Database.Repository
             var total = Enumerable.Count(test);
             CantEscalas escalas = new CantEscalas(total);
             return escalas;
-
         }
 
     }

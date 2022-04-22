@@ -6,7 +6,6 @@
         public string no_vuelo { get; set; }
         public string origen { get; set; }
         public string destino { get; set; }
-        public string cant_escalas { get; set; }
         public string v_dia { get; set; }
         public string v_mes { get; set; }
         public string v_ano { get; set; }
@@ -14,12 +13,11 @@
         public string h_llegada { get; set; }
         public string coste_vuelo { get; set; }
 
-        public BusquedaOutput(string no_vuelo, string origen, string destino, string cant_escalas, string v_dia, string v_mes, string v_ano, string h_salida, string h_llegada, string coste_vuelo)
+        public BusquedaOutput(string no_vuelo, string origen, string destino, string v_dia, string v_mes, string v_ano, string h_salida, string h_llegada, string coste_vuelo)
         {
             this.no_vuelo = no_vuelo;
             this.origen = origen;
             this.destino = destino;
-            this.cant_escalas = cant_escalas;
             this.v_dia = v_dia;
             this.v_mes = v_mes;
             this.v_ano = v_ano;
