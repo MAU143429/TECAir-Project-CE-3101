@@ -67,6 +67,11 @@ namespace TECAir_API.Database.Repository
                 NoVuelo = no_vuelo
             });
         }
+        /// <summary>
+        /// Metodo Get
+        /// </summary>
+        /// <param name="no_transaccion"></param>
+        /// <returns></returns>
         public async Task<VueloAbiertoOutput> GetInfoVueloAbierto(int no_transaccion)
         {
             var db = dbConnection();
@@ -84,6 +89,29 @@ namespace TECAir_API.Database.Repository
             {
                 NoTransaccion = no_transaccion
             });
+        }
+        /// <summary>
+        /// Encargada de actualizar el estado de abordaje en la tabla tiquete
+        /// </summary>
+        /// <param name="tiquete"> objeto de tipo tiquete del que se toma el numero de transaccion</param>
+        /// <returns></returns>
+        public async Task<bool> UpdateEstadoAbordaje(TiqueteWeb tiquete)
+        {
+            var db = dbConnection();
+
+            var sql = @"
+                        UPDATE public.tiquete
+                        SET abordaje = true
+                        WHERE abordaje = @abordaje AND no_transaccion = @notransaccion    
+                        ";
+            
+            var resultado = await db.ExecuteAsync(sql, new 
+            { 
+                NoTransaccion = tiquete.no_transaccion,
+                Abordaje = false
+            });
+            
+            return resultado>0;
         }
 
 
