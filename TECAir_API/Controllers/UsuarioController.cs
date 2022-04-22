@@ -21,6 +21,17 @@ namespace TECAir_API.Controllers
         [HttpGet("{correo}/{contrasena}")]
         public async Task<List<Login>> GetAsync(string correo, string contrasena)
         {
+            List<string> listaC = correo.Split("%40").ToList();
+            for (int i = listaC.Count; i >= 0; i--)
+            {
+                if (listaC[i] == "%40")
+                {
+                    listaC[i] = "@";
+                    break;
+                }  
+            }
+            correo = listaC.ToString();
+
             Login login = await _automationRepository.LoginUser(correo, contrasena);
 
             Singleton singleton = Singleton.Instance();
