@@ -23,6 +23,7 @@ export class SearchflightsService {
    * @returns retorna la lista de reservas
    */
   newBooking(booking:any):Observable<any>{  
+    console.log(booking)
     return this.httpclient.post(this.url+'/Reservacion/Add', booking) 
   }
 
@@ -50,7 +51,7 @@ export class SearchflightsService {
   * @returns la lista vuelos que cumplan con las caracteristicas requeridas
   */
   getSearch(search:any):Observable<Searchresults[]>{
-    //Se realiza la solicitud GET en un endpoint GetVuelos para obtener la informacion de los aeropuertos disponibles
+     //Se realiza la solicitud GET en un endpoint GetVuelos para obtener la informacion de los aeropuertos disponibles
     return this.httpclient.get<Searchresults[]>(this.url+'/VueloWEB/'+ search.origen + "/" + search.destino + "/" + search.fecha)
   }
 }

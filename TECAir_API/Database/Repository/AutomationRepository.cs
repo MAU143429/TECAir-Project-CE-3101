@@ -104,7 +104,7 @@ namespace TECAir_API.Database.Repository
             return escalas;
         }
 
-        public async Task<Login> LoginUser(string correo, string contrasena)
+        public async Task<Contrasena> LoginUser(string correo, string contrasena)
         {
             var db = dbConnection();
 
@@ -114,15 +114,15 @@ namespace TECAir_API.Database.Repository
                         WHERE correo = @correo
                         ";
 
-             Contrasena temp = db.QueryFirstOrDefault<Contrasena>(sql, new 
+            var temp = await db.QueryFirstOrDefaultAsync<Contrasena>(sql, new 
             {
                 correo = correo
             });
+            Contrasena temp2 = temp;
 
-            if (temp.contrasena == contrasena)
-                return new Login(true);
-            else
-                return new Login(false);
+            return temp2;
+
+         
         }
 
     }

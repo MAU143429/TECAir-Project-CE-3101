@@ -49,7 +49,7 @@ namespace TECAir_API.Controllers
         public async Task<IActionResult> GetVuelos(string origen, string destino, string fecha)
         {
             VueloBusquedaWeb nuevaBusqueda = new VueloBusquedaWeb(origen, destino, fecha);
-            return Ok(await _vueloRepository.GetVuelos(nuevaBusqueda.origen,nuevaBusqueda.destino,nuevaBusqueda.getDia(),nuevaBusqueda.getMes(),nuevaBusqueda.getAno()));
+            return Ok(await _vueloRepository.GetVuelos(nuevaBusqueda.origen, nuevaBusqueda.destino, nuevaBusqueda.getDia(), nuevaBusqueda.getMes(), nuevaBusqueda.getAno()));
         }
     }
 }

@@ -124,7 +124,7 @@ namespace TECAir_API.Database.Repository
                         WHERE origen = @origen AND destino = @destino AND v_dia = @v_dia AND v_mes = @v_mes AND v_ano = @v_ano
                         ";
 
-            return await db.QueryFirstOrDefaultAsync<IEnumerable<BusquedaOutput>>(sql, new
+            return await db.QueryAsync<BusquedaOutput>(sql, new
             {
                 origen = origen,
                 destino = destino,

@@ -2,9 +2,11 @@ export interface Searchresults {
     no_vuelo:string;
     origen:string;
     destino:string;
-    cant_escalas:string;
-    fecha:string;
+    v_dia:string;
+    v_mes:string;
+    v_ano:string;
     h_salida:string;
     h_llegada:string;
-    precio:string;
+    coste_vuelo:string;
 }
+

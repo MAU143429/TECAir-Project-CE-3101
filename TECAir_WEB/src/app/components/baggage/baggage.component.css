@@ -46,7 +46,7 @@ body{
 .container{
   max-width: 1500px;
   width: 100%;
-  padding: 20px 20px;
+  
   border-radius: 5px;
   font-size: 16px;
   font-weight: 500;
@@ -79,7 +79,7 @@ form .baggage-details .input-box{
 form .baggage-details .input-box2{
   margin-bottom: 15px;
   width: calc(60% - 20px);
-  margin-left: 17%;
+  margin-left: 12%;
 }
 
 .baggage-details .input-box2 input{
@@ -90,7 +90,7 @@ form .baggage-details .input-box2{
   border-radius: 5px;
   padding-left: 15px;
   border: 1px solid #ccc;
-  border-bottom-width: 2px;
+  
   transition: all 0.3s ease;
 }
 

@@ -40,3 +40,7 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+TECAir_API/obj/project.nuget.cache
+TECAir_API/obj/project.nuget.cache
+TECAir_API/obj/Debug/net6.0/TECAir_API.csproj.FileListAbsolute.txt
+*.txt
