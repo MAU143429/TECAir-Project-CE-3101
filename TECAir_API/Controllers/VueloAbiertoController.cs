@@ -46,15 +46,13 @@ namespace TECAir_API.Controllers
         }
 
         // PUT api/<VueloAbiertoController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut("updateAbordaje")]
+        public async Task<IActionResult> UpdateAbordaje([FromBody] TiqueteWeb tiquete)
         {
+            await _vueloRepository.UpdateEstadoAbordaje(tiquete);
+            return NoContent();
+
         }
 
-        // DELETE api/<VueloAbiertoController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }

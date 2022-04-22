@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "/zmWYxeZd1EpfmG99kJA8JKQub/s2BTkUlNfYCFWdhzHpJSnh7fFMeLyJaB2pqW6gW2v91bFe8UqOEwbO5ZlvQ==",
+  "dgSpecHash": "meIB7+ZIt61TJVdLPBrgLABlD2tTesFKeSXpbWvRPkaxF1cvi9HtCnuQ2Q/y2V/FF3y1YYCCOHekEtCXZtId1g==",
   "success": true,
   "projectFilePath": "C:\\Users\\yendr\\Documents\\2022\\Bases de Datos\\TECAir-CE-3101\\TECAir_API\\TECAir_API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\yendr\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\yendr\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\yendr\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.4\\microsoft.entityframeworkcore.6.0.4.nupkg.sha512",
     "C:\\Users\\yendr\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.4\\microsoft.entityframeworkcore.abstractions.6.0.4.nupkg.sha512",
@@ -22,6 +23,7 @@
     "C:\\Users\\yendr\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
     "C:\\Users\\yendr\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\yendr\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\yendr\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\yendr\\.nuget\\packages\\npgsql\\6.0.3\\npgsql.6.0.3.nupkg.sha512",
     "C:\\Users\\yendr\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\6.0.3\\npgsql.entityframeworkcore.postgresql.6.0.3.nupkg.sha512",
     "C:\\Users\\yendr\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",

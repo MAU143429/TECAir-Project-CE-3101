@@ -10,5 +10,6 @@ namespace TECAir_API.Database.Interface
       Task<VueloAbiertoOutput> GetInfoVueloAbierto(int no_transaccion);
 
       Task<IEnumerable<BusquedaOutput>> GetVuelos(string origen, string destino, string v_dia, string v_mes, string v_ano);
+      Task<bool> UpdateEstadoAbordaje(TiqueteWeb tiquete);
     }
 }
