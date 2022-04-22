@@ -154,3 +154,10 @@ form .user-details .input-box{
     flex-direction: column;
   }
 }
+
+.info{
+  margin-left: -35%; 
+  color: black;
+  font-size: 20px;
+  font-weight: 500;
+}

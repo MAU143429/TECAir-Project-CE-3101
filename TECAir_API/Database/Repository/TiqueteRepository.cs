@@ -1,9 +1,10 @@
 ﻿using Dapper;
+using TECAir_API.Database.Interface;
 using TECAir_API.Models.WebOutput;
 
 namespace TECAir_API.Database.Repository
 {
-    public class TiqueteRepository
+    public class TiqueteRepository : ITiquete
     {
         private PostgreSQLConfiguration _connectionString;
 

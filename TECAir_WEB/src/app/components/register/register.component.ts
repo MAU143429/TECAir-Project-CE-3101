@@ -12,15 +12,15 @@ import { CredentialsService } from 'src/app/service/credentials.service';
 export class RegisterComponent implements OnInit {
 
   newRegister:Register = new Register
+  
 
-  checkboxStatus: any;
 
   constructor(private service:CredentialsService, private router:Router) {}
   ngOnInit(): void {
     
     
   }
-
+  
   // Metodo para agregar un nuevo usuario desde la seccion de registro
   addNewRegister(newRegister:Register){
     this.service.addRegister(newRegister).subscribe(register=> console.log(register));

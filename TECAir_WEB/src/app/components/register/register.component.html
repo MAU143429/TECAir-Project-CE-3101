@@ -7,7 +7,7 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
 <!---Componentes que conforman la seccion de registro--->
-<body>
+<body> 
   <div class="container">
     <div class="title">Registro</div>
     <div class="content">
@@ -15,46 +15,45 @@
       <form>
         <div class="user-details">
           <div class="input-box">
-            <span class="details">Nombre</span>
+            <span class="details">Nombre <span style="color: rgb(245, 59, 59);">*</span> </span>
             <input type="text" [(ngModel)]="newRegister.u_nombre" [ngModelOptions]="{standalone: true}"  placeholder="Ingrese su nombre" required>
           </div>
           <div class="input-box">
-            <span class="details">Primer Apellido</span>
+            <span class="details">Primer Apellido <span style="color: rgb(245, 59, 59);">*</span> </span>
             <input type="text" [(ngModel)]="newRegister.u_apellido1" [ngModelOptions]="{standalone: true}"  placeholder="Ingrese su primer apellido" required>
           </div>
           <div class="input-box">
-            <span class="details">Segundo Apellido</span>
+            <span class="details">Segundo Apellido <span style="color: rgb(245, 59, 59);">*</span> </span>
             <input type="text" [(ngModel)]="newRegister.u_apellido2" [ngModelOptions]="{standalone: true}"  placeholder="Ingrese su segundo apellido" required>
           </div>
           <div class="input-box">
-            <span class="details">Teléfono</span>
+            <span class="details">Teléfono <span style="color: rgb(245, 59, 59);">*</span> </span>
             <input type="number" [(ngModel)]="newRegister.telefono" [ngModelOptions]="{standalone: true}"  placeholder="Ingrese su número de teléfono" required>
           </div>
           <div class="input-box">
-            <span class="details">Correo</span>
+            <span class="details">Correo <span style="color: rgb(245, 59, 59);">*</span></span>
             <input type="email"  [(ngModel)]="newRegister.correo" [ngModelOptions]="{standalone: true}"  placeholder="Ingrese su correo" required>
           </div>
           <div class="input-box">
-            <span class="details">Contraseña</span>
+            <span class="details">Contraseña <span style="color: rgb(245, 59, 59);">*</span> </span>
             <input type="password" [(ngModel)]="newRegister.contrasena" [ngModelOptions]="{standalone: true}"  placeholder="Ingrese una contraseña" required>
           </div>
         </div>
 
-        <div class="form-check my-check">
-            <input #inputCheck class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-            <label class="form-check-label" for="flexCheckDefault">
-              Eres estudiante?
+        <div class="form-check my-check" >
+            <label class="form-check-label info" for="flexCheckDefault" >
+              ¡Si eres estudiante ingresa estos datos!
             </label>
         </div>
 
         <div class="user-details">
             <div class="input-box">
               <span class="details">Universidad</span>
-              <input type="text" id= "collageName" [(ngModel)]="newRegister.universidad" [ngModelOptions]="{standalone: true}"  placeholder="Ingrese su universidad" [disabled]="!inputCheck.checked">
+              <input type="text" id= "collageName"  [(ngModel)]="newRegister.universidad" [ngModelOptions]="{standalone: true}"  placeholder="Ingrese su universidad" >
             </div>
             <div class="input-box">
               <span class="details">Carné</span>
-              <input type="number" id= "idNumber" [(ngModel)]="newRegister.carne" [ngModelOptions]="{standalone: true}" placeholder="Ingrese su carné" [disabled]="!inputCheck.checked">
+              <input type="number" id= "idNumber"  [(ngModel)]="newRegister.carne" [ngModelOptions]="{standalone: true}" placeholder="Ingrese su carné" >
             </div>
         </div>
         

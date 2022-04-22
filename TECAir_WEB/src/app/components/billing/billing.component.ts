@@ -13,7 +13,7 @@ import { BookingsService } from 'src/app/service/bookings.service';
 export class BillingComponent implements OnInit {
 
   newTicketPayment:TicketPayment = new TicketPayment
-  closeResult = '';
+  closeResult = ''; 
 
   reservationdata= [
     {
@@ -27,7 +27,6 @@ export class BillingComponent implements OnInit {
       "fecha": "22/04/2022",
       "h_salida": "1:50 PM",
       "h_llegada": "10:50 PM",
-      "duracion" : "8 h 31 mins",
       "cant_escalas" : "2",
       "no_reservacion" : 22222
     },

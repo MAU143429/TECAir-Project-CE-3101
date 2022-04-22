@@ -30,7 +30,6 @@ import { BookingUserComponent } from './components/booking-user/booking-user.com
 import { BookingEmployeeComponent } from './components/booking-employee/booking-employee.component';
 import { BillingComponent } from './components/billing/billing.component';
 import { BillingEmployeeComponent } from './components/billing-employee/billing-employee.component';
-import { BaggageCheckComponent } from './components/baggage-check/baggage-check.component';
 import { PaymentUserComponent } from './components/payment-user/payment-user.component';
 import { PaymentEmployeeComponent } from './components/payment-employee/payment-employee.component';
 import { TicketViewComponent } from './components/ticket-view/ticket-view.component';
@@ -56,7 +55,6 @@ import { FlightSummaryComponent } from './components/flight-summary/flight-summa
     BookingEmployeeComponent,
     BillingComponent,
     BillingEmployeeComponent,
-    BaggageCheckComponent,
     PaymentUserComponent,
     PaymentEmployeeComponent,
     TicketViewComponent,

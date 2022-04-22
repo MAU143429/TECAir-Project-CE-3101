@@ -11,7 +11,7 @@
     <app-enavbar></app-enavbar>
       <div class="searchbar">
         <div class="icons">
-          <input class="myinput" [(ngModel)]="newSearch.origen"  [formControl]="myControl" matInput [matAutocomplete]="auto" placeholder="Aeropuerto de salida">
+          <input class="myinput" [(ngModel)]="newSearch.origen"  [formControl]="myControl" matInput2 [matAutocomplete]="auto" placeholder="Aeropuerto de salida">
           
           <mat-autocomplete #auto="matAutocomplete">
             <mat-option class="options"  
@@ -23,7 +23,7 @@
 
           <img class="myimage"> 
 
-          <input class="myinput" [(ngModel)]="newSearch.destino" [formControl]="myControl" matInput [matAutocomplete]="auto" placeholder="Aeropuerto de llegada">
+          <input class="myinput" [(ngModel)]="newSearch.destino" [formControl]="myControl" matInput2 [matAutocomplete]="auto" placeholder="Aeropuerto de llegada">
           
           <mat-autocomplete #auto="matAutocomplete">
             <mat-option class="options"

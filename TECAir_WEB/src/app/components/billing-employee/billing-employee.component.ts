@@ -25,7 +25,6 @@ export class BillingEmployeeComponent implements OnInit {
       "fecha": "22/04/2022",
       "h_salida": "1:50 PM",
       "h_llegada": "10:50 PM",
-      "duracion" : "8 h 31 mins",
       "cant_escalas" : "2"
     },
 

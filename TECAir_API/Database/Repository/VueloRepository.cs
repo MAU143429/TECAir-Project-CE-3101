@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TECAir_API.Database.Interface;
+using TECAir_API.Models;
 using TECAir_API.Models.WebOutput;
 
 namespace TECAir_API.Database.Repository
@@ -84,6 +85,30 @@ namespace TECAir_API.Database.Repository
                 NoTransaccion = no_transaccion
             });
         }
+
+
+        public async Task<BusquedaOutput> GetVuelos(string origen, string destino, string v_dia, string v_mes, string v_ano)
+        {
+            var db = dbConnection();
+
+            var sql = @"
+                        SELECT vuelo.no_vuelo,h_salida,h_llegada,coste_vuelo,v_dia,v_mes,v_ano,coste_vuelo,origen,destino
+                        FROM public.vuelo
+                        WHERE origen = @origen AND destino = @destino AND v_dia = @v_dia AND v_mes = @v_mes AND v_ano = @v_ano
+                        ";
+
+            return await db.QueryFirstOrDefaultAsync<BusquedaOutput>(sql, new
+            {
+                origen = origen,
+                destino = destino,
+                v_dia = v_dia,
+                v_mes = v_mes,
+                v_ano = v_ano
+
+            }) ;
+        }
+
+
 
     }
 }
