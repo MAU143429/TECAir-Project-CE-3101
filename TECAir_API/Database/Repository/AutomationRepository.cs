@@ -124,7 +124,7 @@ namespace TECAir_API.Database.Repository
             Singleton singleton = Singleton.Instance();
             singleton.usuario = correo;
 
-            if (temp.contrasena == contrasena)
+            if (temp2.contrasena == contrasena)
             {
                 resultlogin.status = true;
                 singleton.usua_trab = true;
