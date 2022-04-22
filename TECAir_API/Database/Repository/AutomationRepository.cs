@@ -134,16 +134,17 @@ namespace TECAir_API.Database.Repository
                         WHERE correo = @correo
                         ";
 
-            var temp = await db.QueryFirstAsync<Contrasena>(sql, new 
+            var temp = await db.QueryFirstOrDefaultAsync<Contrasena>(sql, new 
             {
                 Correo = correo
             });
+            
             Contrasena temp2 = temp;
             Login resultlogin = new Login();
             Singleton singleton = Singleton.Instance();
             singleton.usuario = correo;
 
-            if (temp2.contrasena == contrasena)
+            if (temp.u_contrasena == contrasena)
             {
                 resultlogin.status = true;
                 singleton.usua_trab = true;

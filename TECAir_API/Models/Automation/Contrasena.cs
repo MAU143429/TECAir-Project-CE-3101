@@ -2,7 +2,7 @@
 {
     public class Contrasena
     {
-        public string contrasena { get; set; }
+        public string u_contrasena { get; set; }
 
         public Contrasena ()
         {
@@ -11,7 +11,7 @@
 
         public Contrasena (string contrasena)
         {
-            this.contrasena = contrasena;
+            this.u_contrasena = contrasena;
         }
 
     }
