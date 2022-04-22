@@ -90,6 +90,23 @@ namespace TECAir_API.Database.Repository
             return tiquetesTotales;
 
         }
+
+        public async Task<UsuariosTotales> GetTotalUsuarios()
+        {
+            var db = dbConnection();
+
+            var sql = @"
+                        SELECT *
+                        FROM public.usuario
+                        ";
+            var test = await db.QueryAsync<Tiquete>(sql, new { });
+            var total = Enumerable.Count(test);
+            UsuariosTotales usuariosTotales = new UsuariosTotales(total);
+            return usuariosTotales;
+
+        }
+
+
         public async Task<CantEscalas> GetEscalas(int no_vuelo)
         {
             var db = dbConnection();
@@ -105,6 +122,8 @@ namespace TECAir_API.Database.Repository
             return escalas;
         }
 
+
+
         public async Task<IEnumerable<Login>> LoginUser(string correo, string contrasena)
         {
             var db = dbConnection();
@@ -117,7 +136,7 @@ namespace TECAir_API.Database.Repository
 
             var temp = await db.QueryFirstAsync<Contrasena>(sql, new 
             {
-                correo = correo
+                Correo = correo
             });
             Contrasena temp2 = temp;
             Login resultlogin = new Login();

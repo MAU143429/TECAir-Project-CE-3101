@@ -6,6 +6,6 @@ export class Register {
     u_apellido2:string = ''
     telefono:number = 0
     carne:number = 0
-    universidad:string = ''
+    universidad:string = 'null'
 }
  

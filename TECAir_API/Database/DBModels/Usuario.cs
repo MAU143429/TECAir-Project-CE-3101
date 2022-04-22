@@ -22,5 +22,16 @@ namespace TECAir_API
         public virtual ICollection<Estudiante> Estudiantes { get; set; }
         public virtual ICollection<Reservacion> Reservacions { get; set; }
 
+        public Usuario(decimal idUsuario, string uNombre, string uApellido1, string uApellido2, string correo, string uContrasena, decimal telefono)
+        {
+            IdUsuario = idUsuario;
+            UNombre = uNombre;
+            UApellido1 = uApellido1;
+            UApellido2 = uApellido2;
+            Correo = correo;
+            UContrasena = uContrasena;
+            Telefono = telefono;
+        
+        }
     }
 }

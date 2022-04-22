@@ -10,5 +10,12 @@ namespace TECAir_API
         public decimal IdUsuario { get; set; }
 
         public virtual Usuario IdUsuarioNavigation { get; set; } = null!;
+
+        public Estudiante(decimal carne, string universidad, decimal idUsuario)
+        {
+            Carne = carne;
+            Universidad = universidad;
+            IdUsuario = idUsuario;
+        }
     }
 }
