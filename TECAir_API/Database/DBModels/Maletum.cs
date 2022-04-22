@@ -11,6 +11,10 @@ namespace TECAir_API
         public decimal Dni { get; set; }
         public decimal NoVuelo { get; set; }
 
+        public Maletum()
+        {
+        }
+
         public virtual Pasajero DniNavigation { get; set; } = null!;
         public virtual Vuelo NoVueloNavigation { get; set; } = null!;
 

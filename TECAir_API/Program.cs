@@ -32,11 +32,9 @@ builder.Services.AddScoped<IPromocion, PromocionRepository>();
 builder.Services.AddScoped <IVuelo,VueloRepository> ();
 builder.Services.AddScoped<IMaletum, MaletumRepository>();
 builder.Services.AddScoped<IReservacion, ReservacionRepository>();
-<<<<<<< HEAD
 builder.Services.AddScoped<ITiquete, TiqueteRepository>();
-=======
 builder.Services.AddScoped<IAvion, AvionRepository>();
->>>>>>> main
+builder.Services.AddScoped<IAutomation, AutomationRepository>();
 //configuracion del context en el programa
 builder.Services.AddDbContext<TECAirContext>(
     o => o.UseNpgsql(builder.Configuration.GetConnectionString("TECAir")));

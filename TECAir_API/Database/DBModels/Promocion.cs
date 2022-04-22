@@ -18,6 +18,10 @@ namespace TECAir_API
 
         public virtual Vuelo NoVueloNavigation { get; set; } = null!;
 
+        public Promocion()
+        {
+        }
+
         public Promocion(decimal noPromocion, decimal porcentaje, decimal periodo, string url, string pDia, string pMes, string pAno, decimal noVuelo)
         {
             NoPromocion = noPromocion;
