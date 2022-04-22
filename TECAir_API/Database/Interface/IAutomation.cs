@@ -1,4 +1,5 @@
 ﻿using TECAir_API.Models.Automation;
+using TECAir_API.Models.WEB;
 
 namespace TECAir_API.Database.Interface
 {
@@ -10,5 +11,6 @@ namespace TECAir_API.Database.Interface
         Task<MaletasTotales> GetTotalMaletas();
         Task<TiquetesTotales> GetTotalTiquetes();
         Task<CantEscalas> GetEscalas(int no_vuelo);
+        Task<Login> LoginUser(string correo, string contrasena);
     }
 }

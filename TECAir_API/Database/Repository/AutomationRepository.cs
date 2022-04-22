@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Linq;
 using TECAir_API.Database.Interface;
 using TECAir_API.Models.Automation;
+using TECAir_API.Models.WEB;
 
 namespace TECAir_API.Database.Repository
 {
@@ -101,6 +102,27 @@ namespace TECAir_API.Database.Repository
             var total = Enumerable.Count(test);
             CantEscalas escalas = new CantEscalas(total);
             return escalas;
+        }
+
+        public async Task<Login> LoginUser(string correo, string contrasena)
+        {
+            var db = dbConnection();
+
+            var sql = @"
+                        SELECT  u_contrasena
+                        FROM public.usuario 
+                        WHERE correo = @correo
+                        ";
+
+             Contrasena temp = db.QueryFirstOrDefault<Contrasena>(sql, new 
+            {
+                correo = correo
+            });
+
+            if (temp.contrasena == contrasena)
+                return new Login(true);
+            else
+                return new Login(false);
         }
 
     }

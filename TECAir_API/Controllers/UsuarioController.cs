@@ -1,80 +1,33 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using TECAir_API.Database.Interface;
 using TECAir_API.Models;
 using TECAir_API.Models.WEB;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace TECAir_API.Controllers
-{/*
+{
     [Route("api/[controller]")]
     [ApiController]
     public class UsuarioController : ControllerBase
     {
-        List<Usuario> usuarios = new List<Usuario>();
+        private readonly IAutomation _automationRepository;
 
-        // GET: api/<UsuarioController>
-        [HttpGet]
-        public List<Usuario> Get()
+        public UsuarioController (IAutomation automationRepository)
         {
-            usuarios.Add(new Usuario(1, "Victor", "Castrillo", "Munoz", "victor.castrillo.99@estudiantec.cr", "2017110244", 83592900));
-            usuarios.Add(new Usuario(2, "Andrés", "Monge", "Salas", "andres.monge.00@estudiantec.cr", "2018403365", 88390462));
-            usuarios.Add(new Usuario(3, "Valeria", "Herrera", "López", "valeria.herrera.98@estudiantec.cr", "2016992042", 86708269));
-
-            return usuarios;
-        }
-
-        // GET api/<UsuarioController>/5
-        [HttpGet("{id}")]
-        public List<Usuario> Get(int id)
-        {
-            usuarios.Add(new Usuario(1, "Victor", "Castrillo", "Munoz", "victor.castrillo.99@estudiantec.cr", "2017110244", 83592900));
-            usuarios.Add(new Usuario(2, "Andrés", "Monge", "Salas", "andres.monge.00@estudiantec.cr", "2018403365", 88390462));
-            usuarios.Add(new Usuario(3, "Valeria", "Herrera", "López", "valeria.herrera.98@estudiantec.cr", "2016992042", 86708269));
-            List<Usuario> resultado = new List<Usuario>();
-
-            for (int i = 0; i < usuarios.Count; i++)
-            {
-                if (usuarios[i].id_usuario == id)
-                {
-                    resultado.Add(usuarios[i]);
-                }                    
-            }
-            return resultado;
+            _automationRepository = automationRepository;
         }
 
         [HttpGet("{correo}/{contrasena}")]
-        public List<Login> Get(string correo, string contrasena)
+        public async Task<List<Login>> GetAsync(string correo, string contrasena)
         {
-            usuarios.Add(new Usuario(1, "Victor", "Castrillo", "Munoz", "victor.castrillo.99@estudiantec.cr", "2017110244", 83592900));
-            usuarios.Add(new Usuario(2, "Andrés", "Monge", "Salas", "andres.monge.00@estudiantec.cr", "2018403365", 88390462));
-            usuarios.Add(new Usuario(3, "Valeria", "Herrera", "López", "valeria.herrera.98@estudiantec.cr", "2016992042", 86708269));
-            List<Login> resultado = new List<Login>();
+            Login login = await _automationRepository.LoginUser(correo, contrasena);
 
-            for (int i = 0; i < usuarios.Count; i++)
-            {
-                if (usuarios[i].correo == correo && usuarios[i].u_contrasena == contrasena)
-                {
-                    Singleton singleton = Singleton.Instance();
-                    singleton.usuario = correo;
-                    singleton.usua_trab = true;
-                    resultado.Add(new Login(true));
-                    break;
-                }
-            }
-            if (resultado.Count == 0)
-            {
-                resultado.Add(new Login(false));
-            }
+            Singleton singleton = Singleton.Instance();
+            singleton.usuario = correo;
+            singleton.usua_trab = true;
 
-            return resultado;
+            return new List<Login>() { login };
         }
-
-        // POST api/<UsuarioController>
-        [HttpPost]
-        public List<Usuario> Post([FromBody] Usuario value)
-        {
-            usuarios.Add(value);
-            return usuarios;
-        }
-    }*/
+    }
 }
