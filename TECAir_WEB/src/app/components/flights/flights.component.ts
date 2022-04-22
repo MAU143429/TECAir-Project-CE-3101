@@ -4,9 +4,11 @@ import { Router } from '@angular/router';
 import { Flight } from 'src/app/model/flight';
 import { OpenFlight } from 'src/app/model/open-flight';
 import { CloseFlight } from 'src/app/model/close-flight';
+import { UpdateFlight } from 'src/app/model/update-flight';
 import { FlightsService } from 'src/app/service/flights.service';
 import { SearchflightsService } from 'src/app/service/searchflights.service';
 import { startWith, debounceTime, distinctUntilChanged, switchMap, map } from 'rxjs/operators';
+import { Passangerdata } from 'src/app/interface/passangerdata';
 import {FormControl} from '@angular/forms';
 
 @Component({
@@ -28,20 +30,13 @@ export class FlightsComponent implements OnInit {
   btnstatus = "Confirmar Abordaje"
   myControl = new FormControl();
   myControlModel = new FormControl();
+  passangerdata:Passangerdata[] | undefined;
   newFlight:Flight = new Flight
   newOpenFlight:OpenFlight = new OpenFlight
   newCloseFlight:CloseFlight = new CloseFlight
+  newUpdateFlight:UpdateFlight = new UpdateFlight
   
 
-  passangerdata = [
-    {
-      "no_vuelo" : "XMF-675",
-      "p_nombre" : "Juan Santamaria",
-      "origen" : "San Jose, Costa Rica",
-      "destino": "Ciudad de Mexico, Mexico",
-      "abordaje": "Si",
-    }
-  ]
 
     flightdata = [
     {
@@ -143,12 +138,13 @@ export class FlightsComponent implements OnInit {
   }
  
   ngOnInit(): void { 
-    // Cambia el valor del boton en base al status del pasajero en el vuelo
+    /**
+     / Cambia el valor del boton en base al status del pasajero en el vuelo
     if ( this.passangerdata[0].abordaje == "No") {
       this.btnstatus = "Confirmar abordaje"
     }else {
       this.btnstatus = "Cancelar abordaje";
-    }
+    }*/
   }
 
   /**
@@ -165,7 +161,8 @@ export class FlightsComponent implements OnInit {
    * @param newOpenFlight Datos para consulta de un vuelo abierto
    */
   newAddOpenFlight(newOpenFlight:OpenFlight){
-    this.service.newOpen(newOpenFlight).subscribe(open=> console.log(open));
+    this.service.newOpen(newOpenFlight).subscribe(open=> (this.passangerdata = open));
+    
   }
 
   /**
@@ -176,6 +173,15 @@ export class FlightsComponent implements OnInit {
   newAddCloseFlight(newCloseFlight:CloseFlight){
   this.service.newClose(newCloseFlight).subscribe(close=> console.log(close));
   }
+
+  /**
+   * Este metodo realiza el update para el abordaje de un pasajero
+   * @param newCloseFlight Datos para consulta de un vuelo cerrado
+   */
+   newAddUpdateFlight(newUpdateFlight:UpdateFlight, data:any){
+    newUpdateFlight.no_transaccion = data.no_transaccion
+    this.service.updateOpen(newUpdateFlight).subscribe(close=> console.log(close));
+    }
 
   
 

@@ -11,12 +11,12 @@ namespace TECAir_API.Controllers
     [ApiController]
     public class ReservacionController : ControllerBase
     {
-        private readonly IReservacion reservacionRepository;
+        private readonly IReservacion _reservacionRepository;
         private readonly IAutomation _automationRepository;
 
         public ReservacionController(IReservacion reservacionRepository, IAutomation automationRepository)
         {
-            reservacionRepository = reservacionRepository;
+            _reservacionRepository = reservacionRepository;
             _automationRepository = automationRepository;
         }
 
@@ -26,22 +26,11 @@ namespace TECAir_API.Controllers
         /// </summary>
         /// <param name="id"> id de usuario o de trabajador para busqueda en la tabla</param>
         /// <returns>reservacion con todos los datos necesarios para mostrar en la Web</returns>
-        [HttpGet("Get/{id}")]
-        public async Task<IActionResult> GetReservacionById(int id)
+        [HttpGet("Get")]
+        public async Task<IActionResult> GetReservacionById()
         {
-            return Ok(await reservacionRepository.GetReservacionId(id));
+            return Ok(await _reservacionRepository.GetReservacionId());
         }
 
-        // GET api/Reservacion/Get
-        /// <summary>
-        /// Metodo get para obtener los datos de la reservacion, buscado por el id de usuario o id de trabajador
-        /// </summary>
-        /// <param name="id"> id de usuario o de trabajador para busqueda en la tabla</param>
-        /// <returns>reservacion con todos los datos necesarios para mostrar en la Web</returns>
-        [HttpGet("GetTrab/{id}")]
-        public async Task<IActionResult> GetReservacionById(string id)
-        {
-            return Ok(await reservacionRepository.GetReservacionId(id));
-        }
     }
 }

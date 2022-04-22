@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using Newtonsoft.Json.Linq;
 using TECAir_API.Database.Interface;
+using TECAir_API.Models;
 using TECAir_API.Models.Automation;
 using TECAir_API.Models.WEB;
 
@@ -104,7 +105,7 @@ namespace TECAir_API.Database.Repository
             return escalas;
         }
 
-        public async Task<Contrasena> LoginUser(string correo, string contrasena)
+        public async Task<IEnumerable<Login>> LoginUser(string correo, string contrasena)
         {
             var db = dbConnection();
 
@@ -114,13 +115,26 @@ namespace TECAir_API.Database.Repository
                         WHERE correo = @correo
                         ";
 
-            var temp = await db.QueryFirstOrDefaultAsync<Contrasena>(sql, new 
+            var temp = await db.QueryFirstAsync<Contrasena>(sql, new 
             {
                 correo = correo
             });
             Contrasena temp2 = temp;
+            Login resultlogin = new Login();
+            Singleton singleton = Singleton.Instance();
+            singleton.usuario = correo;
 
-            return temp2;
+            if (temp.contrasena == contrasena)
+            {
+                resultlogin.status = true;
+                singleton.usua_trab = true;
+            }
+            else
+            {
+                resultlogin.status = false;
+            }
+
+            return new List<Login>() { resultlogin };
 
          
         }

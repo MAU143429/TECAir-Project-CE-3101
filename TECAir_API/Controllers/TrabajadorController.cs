@@ -41,7 +41,7 @@ namespace TECAir_API.Controllers
         [HttpGet("{id}/{contrasena}")]
         public List<Login> Get(string id, string contrasena)
         {
-            trabajadores.Add(new TrabajadorWeb("admin", "admin"));
+            trabajadores.Add(new TrabajadorWeb("admin3", "admin3"));
             trabajadores.Add(new TrabajadorWeb("mrivera", "mrivera"));
             List<Login> resultado = new List<Login>();
 

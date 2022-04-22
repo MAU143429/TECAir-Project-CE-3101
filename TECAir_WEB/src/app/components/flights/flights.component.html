@@ -163,7 +163,7 @@
                         <td>{{data.origen}}</td>
                         <td>{{data.destino}}</td>
                         <td>{{data.abordaje}}</td>
-                        <td><button class="actionsbtn">{{btnstatus}}</button></td>
+                        <td><button class="actionsbtn" (click)="newAddUpdateFlight(newUpdateFlight,this.data)">{{btnstatus}}</button></td>
     
                       </tr>
                     </table>

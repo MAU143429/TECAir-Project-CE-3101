@@ -77,7 +77,7 @@ namespace TECAir_API.Database.Repository
             var db = dbConnection();
 
             var sql = @"
-                        SELECT reservacion.no_vuelo, p_nombre, vuelo.origen, vuelo.destino, tiquete.abordaje, tiquete.no_transaccion
+                        SELECT reservacion.no_vuelo, p_nombre,p_apellido1,p_apellido2, vuelo.origen, vuelo.destino, tiquete.abordaje, tiquete.no_transaccion
                         FROM (public.tiquete 
 	                            JOIN public.pasajero ON tiquete.no_transaccion = pasajero.no_transaccion
 	                            JOIN public.reservacion ON tiquete.no_reservacion = reservacion.no_reservacion) 
@@ -85,7 +85,7 @@ namespace TECAir_API.Database.Repository
                         WHERE tiquete.no_transaccion = @notransaccion
                         ";
 
-            return await db.QueryFirstOrDefaultAsync<VueloAbiertoOutput>(sql, new
+            return await db.QueryFirstOrDefaultAsync <VueloAbiertoOutput>(sql, new
             {
                 NoTransaccion = no_transaccion
             });

@@ -26,11 +26,22 @@ export class FlightsService {
     }
 
     /** POST PARA CONSULTA APERTURA DE VUELO
-   *  Este post permite enviar la informacion para consultar un apertura de vuelo por usuario.
-   */
+    *  Este post permite enviar la informacion para consultar un apertura de vuelo por usuario.
+    */
      newOpen(openFlight:any):Observable<any>{
-      return this.httpclient.post(this.url+'/VueloAbierto', openFlight) 
+      return this.httpclient.get(this.url+'/VueloAbierto/Get/' + openFlight.no_transaccion) 
     }
+
+
+    /** PUT  APERTURA DE VUELO
+    *  Este put permite modificar el valor del booleano que indica si el pasajero abordara.
+    */
+     updateOpen(updateFlight:any):Observable<any>{
+      console.log(updateFlight)
+      return this.httpclient.put(this.url+'/VueloAbierto/updateAbordaje', updateFlight) 
+    }
+
+
 
     /** POST PARA CONSULTA CIERRE DE VUELO
    *  Este post permite enviar la informacion para el cierre de un vuelo.

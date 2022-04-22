@@ -20,8 +20,10 @@ namespace TECAir_API.Controllers
         }
 
         [HttpGet("{correo}/{contrasena}")]
-        public async Task<List<Login>> GetAsync(string correo, string contrasena)
+        public async Task<IActionResult> GetContrasena(string correo, string contrasena)
         {
+
+            //Bug del correo (corrector)
             List<string> listaC = correo.Split("%40").ToList();
             for (int i = listaC.Count-1; i >= 0; i--)
             {
@@ -32,21 +34,8 @@ namespace TECAir_API.Controllers
                 }  
             }
             correo = listaC.ToString();
-
-            Contrasena temp = await _automationRepository.LoginUser(correo, contrasena);
-            Login resultlogin = new Login();
-
-
-            if (temp.contrasena == contrasena)
-                resultlogin.status = true;
-            else
-                resultlogin.status = false;
-
-            Singleton singleton = Singleton.Instance();
-            singleton.usuario = correo;
-            singleton.usua_trab = true;
-
-            return new List<Login>() { resultlogin };
+                
+            return Ok( await _automationRepository.LoginUser(correo, contrasena));
         }
     }
 }

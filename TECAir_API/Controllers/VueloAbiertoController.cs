@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TECAir_API.Database.Interface;
 using TECAir_API.Models;
+using TECAir_API.Models.WebOutput;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace TECAir_API.Controllers
@@ -27,9 +28,15 @@ namespace TECAir_API.Controllers
         /// <param name="no_transaccion"> numero de transaccion para busqueda</param>
         /// <returns>Vuelo abierto con todos los datos necesarios para mostrar en la Web</returns>
         [HttpGet("Get/{no_transaccion}")]
-        public async Task<IActionResult> GetInfoVueloAbierto(int no_transaccion)
+        public async Task<List<VueloAbiertoOutput>> GetInfoVueloAbierto(int no_transaccion)
         {
-            return Ok(await _vueloRepository.GetInfoVueloAbierto(no_transaccion));
+            List<VueloAbiertoOutput> resultado = new List<VueloAbiertoOutput>();
+            var temp = await _vueloRepository.GetInfoVueloAbierto(no_transaccion);
+            VueloAbiertoOutput temp2 = temp;
+            resultado.Add(temp2);
+
+            return resultado;
+            //return Ok(await _vueloRepository.GetInfoVueloAbierto(no_transaccion));
         }
 
         /// <summary>
