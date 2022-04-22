@@ -38,12 +38,5 @@ namespace TECAir_API.Controllers
 
             return Created("created", created);
         }
-
-        public int GenNoVuelo()
-        {
-            int vuelo = 0;
-
-            return vuelo;
-        }
     }
 }
