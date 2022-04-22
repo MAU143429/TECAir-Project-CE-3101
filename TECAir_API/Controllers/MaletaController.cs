@@ -2,6 +2,7 @@
 using TECAir_API.Models;
 using TECAir_API.Database;
 using TECAir_API.Database.Interface;
+using TECAir_API.Models.Automation;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -12,17 +13,20 @@ namespace TECAir_API.Controllers
     public class MaletaController : ControllerBase
     {
         private readonly IMaletum _maletumRepository;
+        private readonly IAutomation _automationRepository;
 
-        public MaletaController(IMaletum maletumRepository)
+        public MaletaController(IMaletum maletumRepository, IAutomation automationRepository)
         {
             _maletumRepository = maletumRepository;
+            _automationRepository = automationRepository;
         }
 
 
         [HttpPost("Add")]
         public async Task<IActionResult> crearMaleta(MaletaWeb nuevaMaleta)
         {
-            Maletum maleta = new Maletum(111111, nuevaMaleta.color,nuevaMaleta.peso,nuevaMaleta.dni,nuevaMaleta.no_vuelo);
+            MaletasTotales maletas = await _automationRepository.GetTotalMaletas();
+            Maletum maleta = new Maletum(maletas.total_maletas + 1, nuevaMaleta.color,nuevaMaleta.peso,nuevaMaleta.dni,nuevaMaleta.no_vuelo);
             if (maleta == null)
 
                 return BadRequest();

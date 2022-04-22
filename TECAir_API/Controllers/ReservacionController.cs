@@ -12,26 +12,12 @@ namespace TECAir_API.Controllers
     public class ReservacionController : ControllerBase
     {
         private readonly IReservacion reservacionRepository;
-        public List<ReservacionWeb> reservaciones = new List<ReservacionWeb>();
+        private readonly IAutomation _automationRepository;
 
-        public ReservacionController(IReservacion reservacionRepository)
+        public ReservacionController(IReservacion reservacionRepository, IAutomation automationRepository)
         {
-            this.reservacionRepository = reservacionRepository;
-        }
-
-        // POST api/Reservacion/Add
-        [HttpPost("Add")]
-        public List<ReservacionWeb> Post(ReservacionWEB value)
-        {
-            if (Singleton.Instance().usua_trab)
-            {
-                reservaciones.Add(new ReservacionWeb(1, value.no_vuelo, Singleton.Instance().usuario, "", false));
-            }
-            else
-            {
-                reservaciones.Add(new ReservacionWeb(1, value.no_vuelo, "", Singleton.Instance().usuario, false));
-            }
-            return reservaciones;
+            reservacionRepository = reservacionRepository;
+            _automationRepository = automationRepository;
         }
 
         // GET api/Reservacion/Get
