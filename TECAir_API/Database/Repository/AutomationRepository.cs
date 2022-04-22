@@ -88,6 +88,21 @@ namespace TECAir_API.Database.Repository
             return tiquetesTotales;
 
         }
+        public async Task<CantEscalas> GetEscalas(int no_vuelo)
+        {
+            var db = dbConnection();
+
+            var sql = @"
+                        SELECT COUNT (*)
+                        FROM public.escala
+                        WHERE no_vuelo = @novuelo
+                        ";
+            var test = await db.QueryAsync<Tiquete>(sql, new { });
+            var total = Enumerable.Count(test);
+            CantEscalas escalas = new CantEscalas(total);
+            return escalas;
+
+        }
 
     }
 }

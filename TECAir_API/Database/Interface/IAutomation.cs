@@ -9,5 +9,6 @@ namespace TECAir_API.Database.Interface
         Task<PromocionesTotales> GetTotalPromociones();
         Task<MaletasTotales> GetTotalMaletas();
         Task<TiquetesTotales> GetTotalTiquetes();
+        Task<TiquetesTotales> GetEscalas(int no_vuelo);
     }
 }
