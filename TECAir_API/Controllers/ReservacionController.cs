@@ -33,9 +33,10 @@ namespace TECAir_API.Controllers
             return Ok(await _reservacionRepository.GetReservacionId());
         }
 
-        [HttpPost("Add")]
+        [HttpPost("NewAdd")]
         public async Task<IActionResult> reservarVuelo(ReservacionWEB reserva)
         {
+            Console.WriteLine(reserva);
             ReservacionesTotales reservaciones = await _automationRepository.GetTotalReservaciones();
             Singleton s = Singleton.Instance();
             IdUsuario idUsuario = await _automationRepository.GetUsuario(s.usuario);

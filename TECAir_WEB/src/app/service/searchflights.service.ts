@@ -23,7 +23,8 @@ export class SearchflightsService {
    * @returns retorna la lista de reservas
    */
   newBooking(booking:any):Observable<any>{  
-    return this.httpclient.post(this.url+'/Reservacion/Add', booking) 
+    console.log(booking)
+    return this.httpclient.post(this.url+'/Reservacion/NewAdd', booking) 
   }
 
   /** POST PARA REALIZAR RESERVACIONES

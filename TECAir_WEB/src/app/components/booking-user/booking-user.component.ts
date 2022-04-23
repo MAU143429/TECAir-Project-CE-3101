@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { BookingData } from 'src/app/interface/booking-data';
+import { BookingsService } from 'src/app/service/bookings.service';
 
 @Component({
   selector: 'app-booking-user',
@@ -7,24 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookingUserComponent implements OnInit {
 
-  bookingdata = [
-    {
-      "no_vuelo" : "XMF-675",
-      "no_reservacion" : "#99999",
-      "origen" : "SJO Costa Rica Aeropuerto Internacional Juan Santamaria",
-      "destino": "MXN Mexico Aeropuerto Benito Juarez",
-      "fecha": "22/04/2022",
-      "h_salida": "1:50 PM",
-    },
-    {
-      "no_vuelo" : "MGFR-737",
-      "no_reservacion" : "#99999",
-      "origen" : "PAN Panama Aeropuerto Internacional de Tocumen",
-      "destino": "LAX Estados Unidos Aeropuerto LAX",
-      "fecha": "19/04/2022",
-      "h_salida": "2:00 AM",
-    }
-]
+  bookingdata:BookingData[] | undefined;
 
   ticketsdata = [
     {
@@ -38,12 +24,13 @@ export class BookingUserComponent implements OnInit {
       "no_transaccion" : "#24545767",
       "fecha": "19/04/2022",
       "h_salida": "2:00 AM",
-    }
+    } 
 ]
 
-  constructor() { }
+  constructor(private service:BookingsService, private router:Router) { }
 
   ngOnInit(): void {
+    this.service.getBookings().subscribe( booking => (this.bookingdata = booking));
   }
 
 }

@@ -104,7 +104,7 @@ export class SearchUserComponent implements OnInit {
    * @param data posee los datos del vuelo que se desea reservar 
    */
   createBooking(newBooking:BookingFlight, data:any){
-    newBooking.no_vuelo = data.no_vuelo
+    newBooking.no_vuelo = parseInt(data.no_vuelo)
     this.service.newBooking(newBooking);
   }
 }
