@@ -209,7 +209,7 @@ namespace TECAir_API.Database.Repository
             var db = dbConnection();
 
             var sql = @"
-                        SELECT no_vuelo,dni,peso,color
+                        SELECT no_maleta,dni,peso,color
                         FROM public.maleta
                         WHERE maleta.no_vuelo = @noVuelo
                         ";
