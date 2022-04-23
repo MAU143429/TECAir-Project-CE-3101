@@ -139,7 +139,9 @@ namespace TECAir_API.Database.Repository
                 Correo = correo
             });
 
-            Contrasena temp2 = temp;
+            if (temp.u_contrasena == null)
+                temp = new Contrasena("");
+
             Login resultlogin = new Login();
             Singleton singleton = Singleton.Instance();
             singleton.usuario = correo;
@@ -174,7 +176,9 @@ namespace TECAir_API.Database.Repository
                 IdTrabajador = id_trabajador
             });
 
-            ContrasenaTrab temp2 = temp;
+            if (temp.t_contrasena == null)
+                temp = new ContrasenaTrab("");
+
             Login resultlogin = new Login();
             Singleton singleton = Singleton.Instance();
             singleton.usuario = id_trabajador;

@@ -24,7 +24,6 @@ namespace TECAir_API.Controllers
         [HttpGet("{correo}/{contrasena}")]
         public async Task<IActionResult> GetContrasena(string correo, string contrasena)
         {
-
             //Bug del correo (corrector)
             string nCorreo = correo.Replace("%40", "@");
             return Ok( await _automationRepository.LoginUser(nCorreo, contrasena));
