@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BookingData } from 'src/app/interface/booking-data';
+import { TicketData } from 'src/app/interface/ticket-data';
 import { BookingsService } from 'src/app/service/bookings.service';
+import { ReservationDetails } from 'src/app/model/reservation-details';
 
 @Component({
   selector: 'app-booking-user',
@@ -11,27 +13,27 @@ import { BookingsService } from 'src/app/service/bookings.service';
 export class BookingUserComponent implements OnInit {
 
   bookingdata:BookingData[] | undefined;
-
-  ticketsdata = [
-    {
-      "no_vuelo" : "XMF-675",
-      "no_transaccion" : "#19834783",
-      "fecha": "22/04/2022",
-      "h_salida": "1:50 PM",
-    },
-    {
-      "no_vuelo" : "MGFR-737",
-      "no_transaccion" : "#24545767",
-      "fecha": "19/04/2022",
-      "h_salida": "2:00 AM",
-    } 
-]
+  ticketsdata: TicketData[]| undefined;
+  newReservationDetails:ReservationDetails = new ReservationDetails
 
   constructor(private service:BookingsService, private router:Router) { }
 
   ngOnInit(): void {
     this.service.getBookings().subscribe( booking => (this.bookingdata = booking));
+    this.service.getTickets().subscribe( tickets => (this.ticketsdata = tickets));
   }
+
+   /** 
+   * Este metodo permite realizar el set de los valores para el objeto que se
+   * enviara con el numero de vuelo para realizar la reserva
+   * @param newBooking es el objeto que almacenara el numero de vuelo a reservar
+   * @param data posee los datos del vuelo que se desea reservar 
+   */
+    createBilling(newReservationDetails:ReservationDetails, data:any){
+      newReservationDetails.no_vuelo = parseInt(data.no_vuelo)
+      newReservationDetails.no_reservacion = parseInt(data.no_reservacion)
+      this.service.newBilling(newReservationDetails);
+    }
 
 }
  

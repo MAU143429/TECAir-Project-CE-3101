@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> 
     <!---Referencia al archivo css que contiene el estilo--->
     <link rel="stylesheet" href="booking-employee.component.css">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,7 +34,7 @@
                     <td>{{data.no_reservacion}}</td>
                     <td>{{data.origen}}</td>
                     <td>{{data.destino}}</td>
-                    <td>{{data.fecha}}</td>
+                    <td>{{data.v_dia}}-{{data.v_mes}}-{{data.v_ano}}</td>
                     <td>{{data.h_salida}}</td>
                     <td><button class="bookingbtn" routerLink="/billingEmployee">Pagar</button>></td>
                 </tr>
@@ -62,7 +62,7 @@
                   <tr *ngFor="let data of ticketsdata">
                     <th>{{data.no_vuelo}}</th>
                     <td>{{data.no_transaccion}}</td>
-                    <td>{{data.fecha}}</td>
+                    <td>{{data.t_dia}}-{{data.t_mes}}-{{data.t_ano}}</td>
                     <td>{{data.h_salida}}</td>
                     <td><button class="ticketbtn" routerLink="/paymentEmployee">Ver detalles</button>></td>
 

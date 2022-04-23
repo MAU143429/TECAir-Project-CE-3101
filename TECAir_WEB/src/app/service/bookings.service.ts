@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { TicketPayment } from '../model/ticket-payment';
 import { BookingData } from 'src/app/interface/booking-data';
+import { TicketData } from 'src/app/interface/ticket-data';
 
 @Injectable({
   providedIn: 'root'
@@ -22,13 +23,26 @@ export class BookingsService {
       return this.httpclient.post(this.url+'/Pasajero/Add', ticket) 
     }
 
-    /** GET DE BUSQUEDA
-  * Este metodo permite enviar los valores para realizar una busqueda de vuelo.
-  * @param search este objeto contiene las caracteristicas de la busqueda, origen, destino y fecha
-  * @returns la lista vuelos que cumplan con las caracteristicas requeridas
-  */
-  getBookings():Observable<BookingData[]>{
-    //Se realiza la solicitud GET en un endpoint GetVuelos para obtener la informacion de los aeropuertos disponibles
-   return this.httpclient.get<BookingData[]>(this.url+'/Reservacion/Get')
- }
+    /** POST PARA ENVIAR DATOS DE LA RESERVACION Y TRAER EL DETALLE PARA EL PAGO
+    *  Este post permite enviar la informacion para traer el detalle del tiquete
+    */
+     newBilling(billing:any):Observable<any>{
+      return this.httpclient.post(this.url+'/Reservacion/', billing) 
+    }
+
+    /** GET DE RESERVACIONES
+    * Este metodo permite recibir las reservaciones de un usuario.
+    * @returns la lista reservaciones que cumplan con las caracteristicas requeridas
+    */
+    getBookings():Observable<BookingData[]>{
+    return this.httpclient.get<BookingData[]>(this.url+'/Reservacion/Get')
+  }
+
+     /** GET DE TIQUETES
+    * Este metodo permite recibir las tiquetes de un usuario.
+    * @returns la lista tiquetes que cumplan con las caracteristicas requeridas
+    */
+    getTickets():Observable<TicketData[]>{
+      return this.httpclient.get<TicketData[]>(this.url+'/Tiquete/Get')
+    }
 }

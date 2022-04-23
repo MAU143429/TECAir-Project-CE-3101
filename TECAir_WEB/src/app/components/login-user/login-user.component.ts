@@ -19,8 +19,6 @@ export class LoginUserComponent implements OnInit {
 
   ngOnInit(): void {
 
-
-
   }
 
   async delay(ms: number) {

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { BookingData } from 'src/app/interface/booking-data';
+import { BookingsService } from 'src/app/service/bookings.service';
+import { TicketData } from 'src/app/interface/ticket-data';
 
 @Component({
   selector: 'app-booking-employee',
@@ -7,43 +11,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookingEmployeeComponent implements OnInit {
 
-  bookingdata = [
-    {
-      "no_vuelo" : "XMF-675",
-      "no_reservacion" : "#99999",
-      "origen" : "SJO Costa Rica Aeropuerto Internacional Juan Santamaria",
-      "destino": "MXN Mexico Aeropuerto Benito Juarez",
-      "fecha": "22/04/2022",
-      "h_salida": "1:50 PM",
-    },
-    {
-      "no_vuelo" : "MGFR-737",
-      "no_reservacion" : "#99999",
-      "origen" : "PAN Panama Aeropuerto Internacional de Tocumen",
-      "destino": "LAX Estados Unidos Aeropuerto LAX",
-      "fecha": "19/04/2022",
-      "h_salida": "2:00 AM",
-    }
-]
+  bookingdata:BookingData[] | undefined;
 
-  ticketsdata = [
-    {
-      "no_vuelo" : "XMF-675",
-      "no_transaccion" : "#19834783",
-      "fecha": "22/04/2022",
-      "h_salida": "1:50 PM",
-    },
-    {
-      "no_vuelo" : "MGFR-737",
-      "no_transaccion" : "#24545767",
-      "fecha": "19/04/2022",
-      "h_salida": "2:00 AM",
-    }
-]
+  ticketsdata: TicketData[]| undefined;
 
-  constructor() { }
+  constructor(private service:BookingsService, private router:Router) { }
 
   ngOnInit(): void {
+    this.service.getBookings().subscribe( booking => (this.bookingdata = booking));
+    this.service.getTickets().subscribe( tickets => (this.ticketsdata = tickets));
   }
 
 }
