@@ -29,5 +29,11 @@ namespace TECAir_API.Models
         {
             return Ok(await tiqueteRepository.GetTiqueteId());
         }
+
+        [HttpGet("GetT/{no_transaccion}")]
+        public async Task<IActionResult> GetTiqueteByNoT(int no_transaccion)
+        {
+
+        }
     }
 }
