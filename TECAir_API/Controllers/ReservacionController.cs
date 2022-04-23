@@ -39,7 +39,8 @@ namespace TECAir_API.Controllers
             ReservacionesTotales reservaciones = await _automationRepository.GetTotalReservaciones();
             Singleton s = Singleton.Instance();
             IdUsuario idUsuario = await _automationRepository.GetUsuario(s.usuario);
-            Reservacion reservacion = new Reservacion(reservaciones.total_reservaciones+1, false, reserva.no_vuelo, idUsuario.id_usuario, null);
+            Reservacion reservacion = new Reservacion(reservaciones.total_reservaciones + 1, false, reserva.no_vuelo, idUsuario.id_usuario, s.usuario);
+                
             if (reservacion == null)
                 return BadRequest();
             if (!ModelState.IsValid)
