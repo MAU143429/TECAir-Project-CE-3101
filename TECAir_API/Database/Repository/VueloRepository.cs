@@ -178,5 +178,30 @@ namespace TECAir_API.Database.Repository
             VueloCompleto vuelo = new VueloCompleto(no_vuelo, no_reservacion, temp.origen, origenC, temp.destino, destinoC, temp.matricula, temp.prt_abordaje, temp.v_dia, temp.v_mes, temp.v_ano, temp.h_llegada, escalas);
             return new List<VueloCompleto>() { vuelo };
         }
+
+        public async Task<IEnumerable<PasajeroWeb>> GetPasajeros(int no_vuelo)
+        {
+            var db = dbConnection();
+
+            var sql = @"
+                        SELECT tiquete.no_transaccion, pasajero.p_nombre, pasajero.p_apellido1, pasajero.p_apellido2, pasajero.dni, pasajero.cant_maletas
+                        FROM (public.pasajero JOIN public.tiquete ON pasajero.no_transaccion = tiquete.no_transaccion) JOIN public.asiento ON tiquete.no_asiento = asiento.no_asiento
+                        WHERE asiento.no_vuelo = @noVuelo AND pasajero.chequeado = true 
+                        ";
+
+            var temp = await db.QueryAsync<List<PasajeroWEB>>(sql, new
+            {
+                NoVuelo = no_vuelo
+            });
+            List<PasajeroWEB> temp2 = (List<PasajeroWEB>)temp;
+            List<PasajeroWeb> result = new List<PasajeroWeb>();
+
+            for (int i = 0; i < temp2.Count; i++)
+            {
+                result.Add(new PasajeroWeb(temp2[i].no_transaccion, temp2[i].p_nombre, temp2[i].p_apellido1, temp2[i].p_apellido2, temp2[i].dni, temp2[i].cant_maletas));
+            }
+
+            return result;
+        }
     }
 }

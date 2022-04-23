@@ -2,23 +2,23 @@
 {
     public class PasajeroWeb
     {
+        public int no_transaccion { get; set; }
+        public string nombre { get; set; }
         public int dni { get; set; }
-        public string p_nombre { get; set; }
-        public string p_apellido1 { get; set; }
-        public string p_apellido2 { get; set; }
-        public int no_reservacion { get; set; }
+        public int cant_maletas { get; set; }
+        public int coste_maletas { get; set; }
 
         public PasajeroWeb()
         {
         }
 
-        public PasajeroWeb(int dni, string nombre, string apellido1, string apellido2, int reservacion)
+        public PasajeroWeb(int no_transaccion, string p_nombre, string p_apellido1, string p_apellido2, int dni, int cant_maletas)
         {
+            this.no_transaccion = no_transaccion;
+            this.nombre = p_nombre + " " + p_apellido1 + " " + p_apellido2;
             this.dni = dni;
-            this.p_nombre = nombre;
-            this.p_apellido1 = apellido1;
-            this.p_apellido2 = apellido2;
-            this.no_reservacion = reservacion;
+            this.cant_maletas = cant_maletas;
+            this.coste_maletas = cant_maletas * 300;
         }
     }
 }
