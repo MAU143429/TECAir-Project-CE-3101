@@ -73,7 +73,7 @@ namespace TECAir_API.Database.Repository
             {
                 sql = @"
                         INSERT INTO reservacion (no_reservacion, cancelado, no_vuelo, id_usuario, id_trabajador)
-                        VALUES (@noReservacion, @cancelado, @noVuelo, @idUsuario, @idTrabajador);
+                        VALUES (@noReservacion, @cancelado, @noVuelo, @idUsuario, NULL);
                         ";
             } else
             {
