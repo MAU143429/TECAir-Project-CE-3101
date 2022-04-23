@@ -55,16 +55,16 @@ namespace TECAir_API.Database.Repository
             }
         }
 
-        Task<Transaccion> GetTiqueteNoT(int no_transaccion)
+        public async Task<IEnumerable<Transaccion>> GetTiqueteNoT(int no_transaccion)
         {
             var db = dbConnection();
 
             var sql = @"
-                        SELECT vuelo.no_vuelo,p_nombre,p_apellido1,p_apellido2,h_salida
+                        SELECT tiquete.no_transaccion,vuelo.no_vuelo,p_nombre,p_apellido1,p_apellido2,h_salida
                         FROM ((public.tiquete JOIN public.pasajero ON pasajero.no_transaccion = tiquete.no_transaccion) JOIN public.asiento ON tiquete.no_asiento = asiento.no_asiento) JOIN public.vuelo ON vuelo.no_vuelo = asiento.no_vuelo
                         WHERE tiquete.no_transaccion = @noTransaccion AND pasajero.chequeado = false 
                         ";
-            return await db.QueryFirstOrDefaultAsync<Transaccion>(sql, new
+            return await db.QueryAsync<Transaccion>(sql, new
             {
                 NoTransaccion = no_transaccion
             });

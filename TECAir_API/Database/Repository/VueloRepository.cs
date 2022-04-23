@@ -137,7 +137,7 @@ namespace TECAir_API.Database.Repository
             }) ;
         }
 
-        public async Task<VueloCompleto> GetVueloR(int no_vuelo, int no_reservacion, int escalas)
+        public async Task<IEnumeable<VueloCompleto>> GetVueloR(int no_vuelo, int no_reservacion, int escalas)
         {
             var db = dbConnection();
 
@@ -176,7 +176,7 @@ namespace TECAir_API.Database.Repository
             if (temp == null)
                 temp = new BusquedaVuelo();
             VueloCompleto vuelo = new VueloCompleto(no_vuelo, no_reservacion, temp.origen, origenC, temp.destino, destinoC, temp.matricula, temp.prt_abordaje, temp.v_dia, temp.v_mes, temp.v_ano, temp.h_llegada, escalas);
-            return vuelo;
+            return new List<VueloCompleto>() { vuelo };
         }
     }
 }

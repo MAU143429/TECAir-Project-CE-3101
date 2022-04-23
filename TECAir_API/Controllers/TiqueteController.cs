@@ -33,7 +33,7 @@ namespace TECAir_API.Models
         [HttpGet("GetT/{no_transaccion}")]
         public async Task<IActionResult> GetTiqueteByNoT(int no_transaccion)
         {
-
+            return Ok(await tiqueteRepository.GetTiqueteNoT(no_transaccion));
         }
     }
 }
