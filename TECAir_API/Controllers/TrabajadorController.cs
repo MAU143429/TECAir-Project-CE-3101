@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using TECAir_API.Database.Interface;
 using TECAir_API.Models;
 using TECAir_API.Models.WEB;
 
@@ -10,66 +11,18 @@ namespace TECAir_API.Controllers
     [ApiController]
     public class TrabajadorController : ControllerBase
     {
-        List<TrabajadorWeb> trabajadores = new List<TrabajadorWeb>();
+        private readonly IAutomation _automationRepository;
+
+        public TrabajadorController(IAutomation automationRepository)
+        {
+            _automationRepository = automationRepository;
+        }
 
         // GET: api/<TrabajadorController>
-        [HttpGet]
-        public List<TrabajadorWeb> Get()
+        [HttpGet("{id_trabajador}/{contrasena}")]
+        public async Task<IActionResult> GetContrasena(string id_trabajador, string contrasena)
         {
-            trabajadores.Add(new TrabajadorWeb("admin", "admin"));
-            trabajadores.Add(new TrabajadorWeb("mrivera", "mrivera"));
-
-            return trabajadores;
-        }
-
-        // GET api/<TrabajadorController>/5
-        [HttpGet("{id}")]
-        public List<TrabajadorWeb> Get(string id)
-        {
-            trabajadores.Add(new TrabajadorWeb("admin", "admin"));
-            trabajadores.Add(new TrabajadorWeb("mrivera", "mrivera"));
-            List<TrabajadorWeb> resultado = new List<TrabajadorWeb>();
-
-            for (int i = 0; i < trabajadores.Count; i++)
-            {
-                if (trabajadores[i].id_trabajador == id)
-                    resultado.Add(trabajadores[i]);
-            }
-            return resultado;
-        }
-
-        [HttpGet("{id}/{contrasena}")]
-        public List<Login> Get(string id, string contrasena)
-        {
-            trabajadores.Add(new TrabajadorWeb("admin3", "admin3"));
-            trabajadores.Add(new TrabajadorWeb("mrivera", "mrivera"));
-            List<Login> resultado = new List<Login>();
-
-            for (int i = 0; i < trabajadores.Count; i++)
-            {
-                if (trabajadores[i].id_trabajador == id && trabajadores[i].t_contrasena == contrasena)
-                {
-                    Singleton singleton = Singleton.Instance();
-                    singleton.usuario = id;
-                    singleton.usua_trab = false;
-                    resultado.Add(new Login(true));
-                    break;
-                }
-            }
-            if (resultado.Count == 0)
-            {
-                resultado.Add(new Login(false));
-            }
-
-            return resultado;
-        }
-
-        // POST api/<TrabajadorController>
-        [HttpPost]
-        public List<TrabajadorWeb> Post([FromBody] TrabajadorWeb value)
-        {
-            trabajadores.Add(value);
-            return trabajadores;
+            return Ok(await _automationRepository.LoginUser(id_trabajador, contrasena));
         }
     }
 }

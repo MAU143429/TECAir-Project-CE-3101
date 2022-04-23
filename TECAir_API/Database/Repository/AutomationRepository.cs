@@ -134,11 +134,11 @@ namespace TECAir_API.Database.Repository
                         WHERE correo = @correo
                         ";
 
-            var temp = await db.QueryFirstOrDefaultAsync<Contrasena>(sql, new 
+            var temp = await db.QueryFirstOrDefaultAsync<Contrasena>(sql, new
             {
                 Correo = correo
             });
-            
+
             Contrasena temp2 = temp;
             Login resultlogin = new Login();
             Singleton singleton = Singleton.Instance();
@@ -156,8 +156,40 @@ namespace TECAir_API.Database.Repository
 
             return new List<Login>() { resultlogin };
 
-         
+
         }
 
+        public async Task<IEnumerable<Login>> LoginTrabajador(string id_trabajador, string contrasena)
+        {
+            var db = dbConnection();
+
+            var sql = @"
+                        SELECT  t_contrasena
+                        FROM public.trabajador 
+                        WHERE id_trabajador = @idTrabajador
+                        ";
+
+            var temp = await db.QueryFirstOrDefaultAsync<ContrasenaTrab>(sql, new
+            {
+                IdTrabajador = id_trabajador
+            });
+
+            ContrasenaTrab temp2 = temp;
+            Login resultlogin = new Login();
+            Singleton singleton = Singleton.Instance();
+            singleton.usuario = id_trabajador;
+
+            if (temp.t_contrasena == contrasena)
+            {
+                resultlogin.status = true;
+                singleton.usua_trab = false;
+            }
+            else
+            {
+                resultlogin.status = false;
+            }
+
+            return new List<Login>() { resultlogin };
+        }
     }
 }
