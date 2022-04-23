@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using Newtonsoft.Json;
 using Npgsql;
 using System;
 using System.Collections.Generic;
@@ -136,7 +137,7 @@ namespace TECAir_API.Database.Repository
             }) ;
         }
 
-        public async Task<VueloCompleto> GetVueloR(int no_vuelo, int no_reservacion)
+        public async Task<VueloCompleto> GetVueloR(int no_vuelo, int no_reservacion, int escalas)
         {
             var db = dbConnection();
 
@@ -150,9 +151,31 @@ namespace TECAir_API.Database.Repository
             {
                 NoVuelo = no_vuelo
             });
+
+            string origenC = "";
+            string destinoC = "";
+
+            List<AeropuertoWeb> aeropuertos;
+            using (StreamReader r = new StreamReader("Assets/airports.json"))
+            {
+                string json = r.ReadToEnd();
+                aeropuertos = JsonConvert.DeserializeObject<List<AeropuertoWeb>>(json);
+            }
+            for (int i = 0; i < aeropuertos.Count; i++)
+            {
+                if (aeropuertos[i].nombre == temp.origen)
+                {
+                    origenC = aeropuertos[i].ciudad;
+                }
+                if (aeropuertos[i].nombre == temp.destino)
+                {
+                    destinoC = aeropuertos[i].ciudad;
+                }
+            }
+
             if (temp == null)
                 temp = new BusquedaVuelo();
-            VueloCompleto vuelo = new VueloCompleto(no_vuelo, no_reservacion, temp.origen, temp.origen, temp.destino, temp.destino, temp.matricula, temp.prt_abordaje, temp.v_dia, temp.v_mes, temp.v_ano, temp.h_llegada, 0);
+            VueloCompleto vuelo = new VueloCompleto(no_vuelo, no_reservacion, temp.origen, origenC, temp.destino, destinoC, temp.matricula, temp.prt_abordaje, temp.v_dia, temp.v_mes, temp.v_ano, temp.h_llegada, escalas);
             return vuelo;
         }
     }
