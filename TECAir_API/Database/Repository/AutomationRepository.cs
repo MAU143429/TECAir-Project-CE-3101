@@ -195,5 +195,24 @@ namespace TECAir_API.Database.Repository
 
             return new List<Login>() { resultlogin };
         }
+
+        public async Task<IdUsuario> GetUsuario(string correo)
+        {
+            var db = dbConnection();
+
+            var sql = @"
+                        SELECT  id_usuario
+                        FROM public.usuario 
+                        WHERE correo = @correo
+                        ";
+            var temp = await db.QueryFirstOrDefaultAsync<IdUsuario>(sql, new
+            {
+                Correo = correo
+            });
+
+            if (temp == null)
+                temp = new IdUsuario(0);
+            return temp;
+        }
     }
 }

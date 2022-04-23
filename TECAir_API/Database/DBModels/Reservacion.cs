@@ -20,5 +20,14 @@ namespace TECAir_API
         public virtual Usuario? IdUsuarioNavigation { get; set; }
         public virtual Vuelo NoVueloNavigation { get; set; } = null!;
         public virtual ICollection<Tiquete> Tiquetes { get; set; }
+
+        public Reservacion(decimal noReservacion, bool cancelado, decimal noVuelo, decimal idUsuario, string idTrabajador)
+        {
+            NoReservacion = noReservacion;
+            Cancelado = cancelado;
+            NoVuelo = noVuelo;
+            IdUsuario = idUsuario;
+            IdTrabajador = idTrabajador;
+        }
     }
 }

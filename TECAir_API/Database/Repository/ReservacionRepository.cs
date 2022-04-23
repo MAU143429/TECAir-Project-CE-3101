@@ -62,5 +62,26 @@ namespace TECAir_API.Database.Repository
             }
 
         }
+
+        public async Task<bool> ingresarRepository(Reservacion reservacion)
+        {
+            var db = dbConnection();
+
+            var sql = @"
+                        INSERT INTO reservacion (no_reservacion, cancelado, no_vuelo, id_usuario, id_trabajador)
+                        VALUES (@noReservesacion, @cancelado, @noVuelo, @idUsuario, @idTrabajador);
+                        ";
+
+            var result = await db.ExecuteAsync(sql, new
+            {
+                reservacion.NoReservacion,
+                reservacion.Cancelado,
+                reservacion.NoVuelo,
+                reservacion.IdUsuario,
+                reservacion.IdTrabajador,
+            });
+
+            return result > 0;
+        }
     }
 }

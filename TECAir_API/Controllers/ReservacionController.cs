@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TECAir_API.Database.Interface;
 using TECAir_API.Models;
+using TECAir_API.Models.Automation;
 using TECAir_API.Models.WEB;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -30,6 +31,23 @@ namespace TECAir_API.Controllers
         public async Task<IActionResult> GetReservacionById()
         {
             return Ok(await _reservacionRepository.GetReservacionId());
+        }
+
+        [HttpPost("Add")]
+        public async Task<IActionResult> reservarVuelo(ReservacionWEB reserva)
+        {
+            ReservacionesTotales reservaciones = await _automationRepository.GetTotalReservaciones();
+            Singleton s = Singleton.Instance();
+            IdUsuario idUsuario = await _automationRepository.GetUsuario(s.usuario);
+            Reservacion reservacion = new Reservacion(reservaciones.total_reservaciones+1, false, reserva.no_vuelo, idUsuario.id_usuario, null);
+            if (reservacion == null)
+                return BadRequest();
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var created = await _reservacionRepository.ingresarVuelo(reservacion);
+
+            return Created("created", created);
         }
 
     }
