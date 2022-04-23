@@ -137,7 +137,7 @@ namespace TECAir_API.Database.Repository
             }) ;
         }
 
-        public async Task<IEnumeable<VueloCompleto>> GetVueloR(int no_vuelo, int no_reservacion, int escalas)
+        public async Task<IEnumerable<VueloCompleto>> GetVueloR(int no_vuelo, int no_reservacion, int escalas)
         {
             var db = dbConnection();
 
