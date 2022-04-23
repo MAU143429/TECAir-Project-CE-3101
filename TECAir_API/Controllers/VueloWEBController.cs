@@ -64,5 +64,11 @@ namespace TECAir_API.Controllers
         {
             return Ok(await _vueloRepository.GetPasajeros(vuelo));
         }
+
+        [HttpGet("GetMaletas/{vuelo}")]
+        public async Task<IActionResult> GetMaletas(int vuelo)
+        {
+            return Ok(await _vueloRepository.GetMaletas(vuelo));
+        }
     }
 }
