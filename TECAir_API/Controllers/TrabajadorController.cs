@@ -22,7 +22,7 @@ namespace TECAir_API.Controllers
         [HttpGet("{id_trabajador}/{contrasena}")]
         public async Task<IActionResult> GetContrasena(string id_trabajador, string contrasena)
         {
-            return Ok(await _automationRepository.LoginUser(id_trabajador, contrasena));
+            return Ok(await _automationRepository.LoginTrabajador(id_trabajador, contrasena));
         }
     }
 }
