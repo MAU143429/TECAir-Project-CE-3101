@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using TECAir_API.Database.Interface;
 using TECAir_API.Models;
+using TECAir_API.Models.WEB;
 using TECAir_API.Models.WebOutput;
 
 namespace TECAir_API.Database.Repository
@@ -135,5 +136,24 @@ namespace TECAir_API.Database.Repository
             }) ;
         }
 
+        public async Task<VueloCompleto> GetVueloR(int no_vuelo, int no_reservacion)
+        {
+            var db = dbConnection();
+
+            var sql = @"
+                        SELECT origen, destino,h_salida,h_llegada,v_dia,v_mes,v_ano,matricula,prt_abordaje
+                        FROM public.vuelo
+                        WHERE vuelo.no_vuelo = @noVuelo 
+                        ";
+
+            var temp = await db.QueryFirstOrDefaultAsync<BusquedaVuelo>(sql, new
+            {
+                NoVuelo = no_vuelo
+            });
+            if (temp == null)
+                temp = new BusquedaVuelo();
+            VueloCompleto vuelo = new VueloCompleto(no_vuelo, no_reservacion, temp.origen, temp.origen, temp.destino, temp.destino, temp.matricula, temp.prt_abordaje, temp.v_dia, temp.v_mes, temp.v_ano, temp.h_llegada, 0);
+            return vuelo;
+        }
     }
 }

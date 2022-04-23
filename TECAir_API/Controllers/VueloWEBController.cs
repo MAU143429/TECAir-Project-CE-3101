@@ -51,5 +51,11 @@ namespace TECAir_API.Controllers
             VueloBusquedaWeb nuevaBusqueda = new VueloBusquedaWeb(origen, destino, fecha);
             return Ok(await _vueloRepository.GetVuelos(nuevaBusqueda.origen, nuevaBusqueda.destino, nuevaBusqueda.getDia(), nuevaBusqueda.getMes(), nuevaBusqueda.getAno()));
         }
+
+        [HttpGet("Get/{ReservacionWEB}")]
+        public async Task<IActionResult> GetVuelo(VueloReserva vueloReserva)
+        {
+
+        }
     }
 }

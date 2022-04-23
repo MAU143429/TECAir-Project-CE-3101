@@ -19,7 +19,7 @@ namespace TECAir_API.Database.Repository
             return new NpgsqlConnection(_connectionString.ConnectionString);
         }
 
-        public async Task<TiqueteOutput> GetReservacionId()
+        public async Task<IEnumerable<TiqueteOutput>> GetTiqueteId()
         {
             var db = dbConnection();
             Singleton s = Singleton.Instance();
@@ -36,7 +36,7 @@ namespace TECAir_API.Database.Repository
                         WHERE correo = @idUsuario AND cancelado = true 
                         ";
 
-                return await db.QueryFirstOrDefaultAsync<TiqueteOutput>(sql, new
+                return await db.QueryAsync<TiqueteOutput>(sql, new
                 {
                     IdUsuario = IdUsuario
                 });
@@ -47,7 +47,7 @@ namespace TECAir_API.Database.Repository
                         FROM (public.reservacion JOIN public.tiquete ON reservacion.no_reservacion = tiquete.no_reservacion) JOIN public.vuelo ON reservacion.no_vuelo = vuelo.no_vuelo 
                         WHERE id_trabajador = @idTrabajador AND cancelado = true
                         ";
-                return await db.QueryFirstOrDefaultAsync<TiqueteOutput>(sql, new
+                return await db.QueryAsync<TiqueteOutput>(sql, new
                 {
                     IdTrabajador = IdTrabajador
                 });

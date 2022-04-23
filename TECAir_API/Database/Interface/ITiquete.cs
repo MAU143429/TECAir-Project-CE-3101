@@ -4,6 +4,6 @@ namespace TECAir_API.Database.Interface
 {
     public interface ITiquete
     {
-        Task<TiqueteOutput> GetReservacionId();
+        Task<IEnumerable<TiqueteOutput>> GetTiqueteId();
     }
 }

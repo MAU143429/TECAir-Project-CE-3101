@@ -25,9 +25,9 @@ namespace TECAir_API.Models
         /// <param name="id"> id de usuario o de trabajador para busqueda en la tabla</param>
         /// <returns>reservacion con todos los datos necesarios para mostrar en la Web</returns>
         [HttpGet("Get")]
-        public async Task<IActionResult> GetReservacionById()
+        public async Task<IActionResult> GetTiqueteById()
         {
-            return Ok(await tiqueteRepository.GetReservacionId());
+            return Ok(await tiqueteRepository.GetTiqueteId());
         }
     }
 }
