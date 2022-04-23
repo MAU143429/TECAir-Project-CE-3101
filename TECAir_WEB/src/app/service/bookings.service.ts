@@ -27,7 +27,8 @@ export class BookingsService {
     *  Este post permite enviar la informacion para traer el detalle del tiquete
     */
      newBilling(billing:any):Observable<any>{
-      return this.httpclient.post(this.url+'/Reservacion/', billing) 
+       console.log(billing)
+      return this.httpclient.get(this.url+'/VueloWEB/Get/' + billing.no_vuelo +"/"+ billing.no_reservacion, billing) 
     }
 
     /** GET DE RESERVACIONES

@@ -26,7 +26,7 @@ namespace TECAir_API.Controllers
         public async Task<IActionResult> crearMaleta(MaletaWeb nuevaMaleta)
         {
             MaletasTotales maletas = await _automationRepository.GetTotalMaletas();
-            Maletum maleta = new Maletum(maletas.total_maletas + 1, nuevaMaleta.color,nuevaMaleta.peso,nuevaMaleta.dni,nuevaMaleta.no_vuelo);
+            Maletum maleta = new Maletum(maletas.total_maletas + 1, nuevaMaleta.color,nuevaMaleta.peso,nuevaMaleta.dni,nuevaMaleta.no_maleta);
             if (maleta == null)
 
                 return BadRequest();

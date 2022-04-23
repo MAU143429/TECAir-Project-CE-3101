@@ -36,7 +36,7 @@
                     <td>{{data.destino}}</td>
                     <td>{{data.v_dia}}-{{data.v_mes}}-{{data.v_ano}}</td>
                     <td>{{data.h_salida}}</td>
-                    <td><button class="bookingbtn" (click)="createBilling(newReservationDetails,this.data)"routerLink="/billing">Pagar</button>></td>
+                    <td><button class="bookingbtn" (click)="createBilling(this.data)"routerLink="/billing">Pagar</button>></td>
                 </tr>
                 </table>
               </div>
@@ -64,7 +64,7 @@
                     <td>{{data.no_transaccion}}</td>
                     <td>{{data.t_dia}}-{{data.t_mes}}-{{data.t_ano}}</td>
                     <td>{{data.h_salida}}</td>
-                    <td><button class="ticketbtn" routerLink="/paymentUser">Ver detalles</button>></td>
+                    <td><button class="ticketbtn" (click)="paymentDetails(this.data)" routerLink="/paymentUser">Ver detalles</button>></td>
 
                   </tr>
                 </table> 
