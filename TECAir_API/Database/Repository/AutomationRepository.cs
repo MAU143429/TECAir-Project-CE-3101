@@ -139,7 +139,7 @@ namespace TECAir_API.Database.Repository
                 Correo = correo
             });
 
-            if (temp.u_contrasena == null)
+            if (temp == null)
                 temp = new Contrasena("");
 
             Login resultlogin = new Login();
@@ -176,7 +176,7 @@ namespace TECAir_API.Database.Repository
                 IdTrabajador = id_trabajador
             });
 
-            if (temp.t_contrasena == null)
+            if (temp == null)
                 temp = new ContrasenaTrab("");
 
             Login resultlogin = new Login();
