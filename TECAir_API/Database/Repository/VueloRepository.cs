@@ -209,8 +209,8 @@ namespace TECAir_API.Database.Repository
             var db = dbConnection();
 
             var sql = @"
-                        SELECT no_maleta,p_nombre,p_apellido1,p_apellido2,color,peso
-                        FROM public.maleta JOIN public.pasajero ON maleta.dni = pasajero.dni
+                        SELECT no_vuelo,dni,peso,color
+                        FROM public.maleta
                         WHERE maleta.no_vuelo = @noVuelo
                         ";
             return await db.QueryAsync<MaletaWeb>(sql, new
