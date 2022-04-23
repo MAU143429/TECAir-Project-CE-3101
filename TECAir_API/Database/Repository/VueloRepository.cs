@@ -142,8 +142,8 @@ namespace TECAir_API.Database.Repository
             var db = dbConnection();
 
             var sql = @"
-                        SELECT origen, destino,h_salida,h_llegada,v_dia,v_mes,v_ano,matricula,prt_abordaje
-                        FROM public.vuelo
+                        SELECT origen, destino,h_salida,h_llegada,v_dia,v_mes,v_ano,av_nombre,prt_abordaje
+                        FROM public.vuelo JOIN public.avion ON vuelo.matricula = avion.matricula
                         WHERE no_vuelo = @noVuelo
                         ";
 
@@ -175,7 +175,7 @@ namespace TECAir_API.Database.Repository
 
             if (temp == null)
                 temp = new BusquedaVuelo();
-            VueloCompleto vuelo = new VueloCompleto(no_vuelo, no_reservacion, temp.origen, origenC, temp.destino, destinoC, temp.matricula, temp.prt_abordaje, temp.v_dia, temp.v_mes, temp.v_ano, temp.h_llegada, escalas);
+            VueloCompleto vuelo = new VueloCompleto(no_vuelo, no_reservacion, temp.origen, origenC, temp.destino, destinoC, temp.matricula, temp.prt_abordaje, temp.v_dia, temp.v_mes, temp.v_ano, temp.h_salida, temp.h_llegada, escalas);
             return new List<VueloCompleto>() { vuelo };
         }
 
