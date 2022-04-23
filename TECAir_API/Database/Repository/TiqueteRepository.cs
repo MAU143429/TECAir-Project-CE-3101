@@ -32,8 +32,8 @@ namespace TECAir_API.Database.Repository
             {
                 sql = @"
                         SELECT reservacion.no_vuelo, no_transaccion,h_salida,t_dia,t_mes,t_ano
-                        FROM (public.reservacion JOIN public.tiquete ON reservacion.no_reservacion = tiquete.no_reservacion) JOIN public.vuelo ON reservacion.no_vuelo = vuelo.no_vuelo 
-                        WHERE id_usuario = @idUsuario AND cancelado = true  
+                        FROM ((public.reservacion JOIN public.tiquete ON reservacion.no_reservacion = tiquete.no_reservacion) JOIN public.vuelo ON reservacion.no_vuelo = vuelo.no_vuelo) JOIN public.usuario ON reservacion.id_usuario = usuario.id_usuario
+                        WHERE correo = @idUsuario AND cancelado = true 
                         ";
 
                 return await db.QueryFirstOrDefaultAsync<TiqueteOutput>(sql, new
@@ -45,7 +45,7 @@ namespace TECAir_API.Database.Repository
                 sql = @"
                         SELECT reservacion.no_vuelo, no_transaccion,h_salida,t_dia,t_mes,t_ano
                         FROM (public.reservacion JOIN public.tiquete ON reservacion.no_reservacion = tiquete.no_reservacion) JOIN public.vuelo ON reservacion.no_vuelo = vuelo.no_vuelo 
-                        WHERE id_usuario = @idTrabajador AND cancelado = true  
+                        WHERE id_trabajador = @idTrabajador AND cancelado = true
                         ";
                 return await db.QueryFirstOrDefaultAsync<TiqueteOutput>(sql, new
                 {
