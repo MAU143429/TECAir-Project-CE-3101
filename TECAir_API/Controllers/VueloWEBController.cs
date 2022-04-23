@@ -52,7 +52,7 @@ namespace TECAir_API.Controllers
             return Ok(await _vueloRepository.GetVuelos(nuevaBusqueda.origen, nuevaBusqueda.destino, nuevaBusqueda.getDia(), nuevaBusqueda.getMes(), nuevaBusqueda.getAno()));
         }
 
-        [HttpGet("Get/{ReservacionWEB}")]
+        [HttpGet("Get/{vueloReserva}")]
         public async Task<IActionResult> GetVuelo(VueloReserva vueloReserva)
         {
             return Ok(await _vueloRepository.GetVueloR(vueloReserva.no_vuelo, vueloReserva.no_reservacion));
