@@ -63,13 +63,13 @@ namespace TECAir_API.Database.Repository
 
         }
 
-        public async Task<bool> ingresarRepository(Reservacion reservacion)
+        public async Task<bool> ingresarReservacion(Reservacion reservacion)
         {
             var db = dbConnection();
 
             var sql = @"
                         INSERT INTO reservacion (no_reservacion, cancelado, no_vuelo, id_usuario, id_trabajador)
-                        VALUES (@noReservesacion, @cancelado, @noVuelo, @idUsuario, @idTrabajador);
+                        VALUES (@noReservacion, @cancelado, @noVuelo, @idUsuario, @idTrabajador);
                         ";
 
             var result = await db.ExecuteAsync(sql, new

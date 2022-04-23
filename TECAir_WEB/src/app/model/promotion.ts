@@ -5,6 +5,5 @@ export class Promotion {
     periodo:number = 0
     url:string = ''
     fecha:string = ''
-
 }
   

@@ -45,7 +45,7 @@ namespace TECAir_API.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var created = await _reservacionRepository.ingresarVuelo(reservacion);
+            var created = await _reservacionRepository.ingresarReservacion(reservacion);
 
             return Created("created", created);
         }

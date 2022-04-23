@@ -5,7 +5,7 @@
     <!---Referencia al archivo css que contiene el estilo---> 
     <link rel="stylesheet" href= "promotions.component.css">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     
+      
   </head>
     <body>
         <!---Navbar--->
@@ -63,7 +63,7 @@
                     <span class="details">Salida:{{promotionsdata[0].fecha}}</span>
                     <span class="details">{{promotionsdata[0].porcentaje}}% Off</span>
                     <span class="prices">USD${{promotionsdata[0].precio}}*</span>
-                    <button class="bookingbtn" type="submit" (click)="open(content)"> ¡Reservar ya!</button>
+                    <button class="bookingbtn" type="submit" (click)="open(content) ; createPromotionBooking(newPromotionBooking,this.promotionsdata[0].no_promocion)"> ¡Reservar ya!</button>
                   </div>
                 </ng-template>  
         
@@ -74,7 +74,7 @@
                     <span class="details">Salida:{{promotionsdata[1].fecha}}</span>
                     <span class="details">{{promotionsdata[1].porcentaje}}% Off</span>
                     <span class="prices">USD${{promotionsdata[1].precio}}*</span>
-                    <button class="bookingbtn" type="submit" (click)="open(content)"> ¡Reservar ya!</button>
+                    <button class="bookingbtn" type="submit" (click)="open(content) ; createPromotionBooking(newPromotionBooking,this.promotionsdata[1].no_promocion)"> ¡Reservar ya!</button>
                   </div>
                 </ng-template>  
         
@@ -85,7 +85,7 @@
                     <span class="details">Salida:{{promotionsdata[2].fecha}}</span>
                     <span class="details">{{promotionsdata[2].porcentaje}}% Off</span>
                     <span class="prices">USD${{promotionsdata[2].precio}}*</span>
-                    <button class="bookingbtn" type="submit" (click)="open(content)"> ¡Reservar ya!</button>
+                    <button class="bookingbtn" type="submit" (click)="open(content) ; createPromotionBooking(newPromotionBooking,this.promotionsdata[2].no_promocion)"> ¡Reservar ya!</button>
                   </div>
                 </ng-template>  
         
@@ -96,7 +96,7 @@
                     <span class="details">Salida:{{promotionsdata[3].fecha}}</span>
                     <span class="details">{{promotionsdata[3].porcentaje}}% Off</span>
                     <span class="prices">USD${{promotionsdata[3].precio}}*</span>
-                    <button class="bookingbtn" type="submit" (click)="open(content)"> ¡Reservar ya!</button>
+                    <button class="bookingbtn" type="submit" (click)="open(content) ; createPromotionBooking(newPromotionBooking,this.promotionsdata[3].no_promocion)"> ¡Reservar ya!</button>
                   </div>
                 </ng-template>  
         
@@ -107,7 +107,7 @@
                     <span class="details">Salida:{{promotionsdata[4].fecha}}</span>
                     <span class="details">{{promotionsdata[4].porcentaje}}% Off</span>
                     <span class="prices">USD${{promotionsdata[4].precio}}*</span>
-                    <button class="bookingbtn" type="submit" (click)="open(content)"> ¡Reservar ya!</button>
+                    <button class="bookingbtn" type="submit" (click)="open(content) ; createPromotionBooking(newPromotionBooking,this.promotionsdata[4].no_promocion)"> ¡Reservar ya!</button>
                   </div>
                 </ng-template>  
         
@@ -118,7 +118,7 @@
                     <span class="details">Salida:{{promotionsdata[5].fecha}}</span>
                     <span class="details">{{promotionsdata[5].porcentaje}}% Off</span>
                     <span class="prices">USD${{promotionsdata[5].precio}}*</span>
-                    <button class="bookingbtn" type="submit" (click)="open(content)"> ¡Reservar ya!</button>
+                    <button class="bookingbtn" type="submit" (click)="open(content) ; createPromotionBooking(newPromotionBooking,this.promotionsdata[5].no_promocion)"> ¡Reservar ya!</button>
                   </div>
                 </ng-template>
         
@@ -129,7 +129,7 @@
                     <span class="details">Salida:{{promotionsdata[6].fecha}}</span>
                     <span class="details">{{promotionsdata[6].porcentaje}}% Off</span>
                     <span class="prices">USD${{promotionsdata[6].precio}}*</span>
-                    <button class="bookingbtn" type="submit" (click)="open(content)"> ¡Reservar ya!</button>
+                    <button class="bookingbtn" type="submit" (click)="open(content) ; createPromotionBooking(newPromotionBooking,this.promotionsdata[6].no_promocion)"> ¡Reservar ya!</button>
                   </div>
                 </ng-template>  
         
@@ -140,7 +140,7 @@
                     <span class="details">Salida:{{promotionsdata[7].fecha}}</span>
                     <span class="details">{{promotionsdata[7].porcentaje}}% Off</span>
                     <span class="prices">USD${{promotionsdata[7].precio}}*</span>
-                    <button class="bookingbtn" type="submit" (click)="open(content)"> ¡Reservar ya!</button>
+                    <button class="bookingbtn" type="submit" (click)="open(content) ; createPromotionBooking(newPromotionBooking,this.promotionsdata[7].no_promocion)"> ¡Reservar ya!</button>
         
                   </div>
                 </ng-template>

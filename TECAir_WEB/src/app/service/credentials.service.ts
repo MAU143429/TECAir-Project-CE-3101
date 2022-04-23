@@ -17,6 +17,7 @@ export class CredentialsService {
  *  Este post permite enviar la informacion para crear un usuario.
  */
     addRegister(register:any):Observable<any>{
+      console.log(register)
     return this.httpclient.post(this.url+'/Usuario/Add', register) 
   }
   
