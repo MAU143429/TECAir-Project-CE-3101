@@ -189,11 +189,11 @@ namespace TECAir_API.Database.Repository
                         WHERE asiento.no_vuelo = @noVuelo AND pasajero.chequeado = true 
                         ";
 
-            var temp = await db.QueryAsync<List<PasajeroWEB>>(sql, new
+            var temp = await db.QueryAsync<PasajeroWEB>(sql, new
             {
                 NoVuelo = no_vuelo
             });
-            List<PasajeroWEB> temp2 = (List<PasajeroWEB>)temp;
+            List<PasajeroWEB> temp2 = (List<PasajeroWEB>) temp;
             List<PasajeroWeb> result = new List<PasajeroWeb>();
 
             for (int i = 0; i < temp2.Count; i++)
@@ -202,6 +202,21 @@ namespace TECAir_API.Database.Repository
             }
 
             return result;
+        }
+
+        public async Task<IEnumerable<MaletaWeb>> GetMaletas(int no_vuelo)
+        {
+            var db = dbConnection();
+
+            var sql = @"
+                        SELECT no_maleta,p_nombre,p_apellido1,p_apellido2,color,peso
+                        FROM public.maleta JOIN public.pasajero ON maleta.dni = pasajero.dni
+                        WHERE maleta.no_vuelo = @noVuelo
+                        ";
+            return await db.QueryAsync<MaletaWeb>(sql, new
+            {
+                NoVuelo = no_vuelo
+            });
         }
     }
 }
