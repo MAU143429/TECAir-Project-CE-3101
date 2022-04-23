@@ -9,14 +9,14 @@
         public string v_dia { get; set; }
         public string v_mes { get; set; }
         public string v_ano { get; set; }
-        public string matricula { get; set; }
+        public string av_nombre { get; set; }
         public string prt_abordaje { get; set; }
 
         public BusquedaVuelo()
         {
         }
 
-        public BusquedaVuelo(string origen, string destino, string h_salida, string h_llegada, string v_dia, string v_mes, string v_ano, string matricula, string prt_abordaje)
+        public BusquedaVuelo(string origen, string destino, string h_salida, string h_llegada, string v_dia, string v_mes, string v_ano, string av_nombre, string prt_abordaje)
         {
             this.origen = origen;
             this.destino = destino;
@@ -25,7 +25,7 @@
             this.v_dia = v_dia;
             this.v_mes = v_mes;
             this.v_ano = v_ano;
-            this.matricula = matricula;
+            this.av_nombre = av_nombre;
             this.prt_abordaje = prt_abordaje;
         }
     }

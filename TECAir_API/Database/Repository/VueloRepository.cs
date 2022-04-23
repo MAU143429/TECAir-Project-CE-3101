@@ -175,7 +175,7 @@ namespace TECAir_API.Database.Repository
 
             if (temp == null)
                 temp = new BusquedaVuelo();
-            VueloCompleto vuelo = new VueloCompleto(no_vuelo, no_reservacion, temp.origen, origenC, temp.destino, destinoC, temp.matricula, temp.prt_abordaje, temp.v_dia, temp.v_mes, temp.v_ano, temp.h_salida, temp.h_llegada, escalas);
+            VueloCompleto vuelo = new VueloCompleto(no_vuelo, no_reservacion, temp.origen, origenC, temp.destino, destinoC, temp.av_nombre, temp.prt_abordaje, temp.v_dia, temp.v_mes, temp.v_ano, temp.h_salida, temp.h_llegada, escalas);
             return new List<VueloCompleto>() { vuelo };
         }
 
