@@ -21,5 +21,16 @@ namespace TECAir_API
         public virtual Asiento NoAsientoNavigation { get; set; } = null!;
         public virtual Reservacion NoReservacionNavigation { get; set; } = null!;
         public virtual ICollection<Pasajero> Pasajeros { get; set; }
+
+        public Tiquete(decimal noTransaccion, string tDia, string tMes, string tAno, bool abordaje, decimal noReservacion, decimal noAsiento)
+        {
+            NoTransaccion = noTransaccion;
+            TDia = tDia;
+            TMes = tMes;
+            TAno = tAno;
+            Abordaje = abordaje;
+            NoReservacion = noReservacion;
+            NoAsiento = noAsiento;
+        }
     }
 }

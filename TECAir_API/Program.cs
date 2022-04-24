@@ -36,6 +36,7 @@ builder.Services.AddScoped<IReservacion, ReservacionRepository>();
 builder.Services.AddScoped<ITiquete, TiqueteRepository>();
 builder.Services.AddScoped<IAutomation, AutomationRepository>();
 builder.Services.AddScoped<IUsuario, UsuarioRepository>();
+builder.Services.AddScoped<IPasajero, PasajeroRepository>();
 
 //configuracion del context en el programa
 builder.Services.AddDbContext<TECAirContext>(

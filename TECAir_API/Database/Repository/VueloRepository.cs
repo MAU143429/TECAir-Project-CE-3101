@@ -54,7 +54,7 @@ namespace TECAir_API.Database.Repository
             return result > 0;
         }
 
-        public async Task<VueloCerradoOutput> GetInfoVueloCerrado(int no_vuelo)
+        public async Task<IEnumerable<VueloCerradoOutput>> GetInfoVueloCerrado(int no_vuelo)
         {
             var db = dbConnection();
 
@@ -64,10 +64,12 @@ namespace TECAir_API.Database.Repository
                         WHERE no_vuelo = @novuelo
                         ";
 
-            return await db.QueryFirstOrDefaultAsync<VueloCerradoOutput>(sql, new
+            var temp = await db.QueryFirstOrDefaultAsync<VueloCerradoOutput>(sql, new
             {
                 NoVuelo = no_vuelo
             });
+            List<VueloCerradoOutput> result = new List<VueloCerradoOutput>() { temp };
+            return result;
         }
         /// <summary>
         /// Metodo Get
