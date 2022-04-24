@@ -54,7 +54,7 @@ namespace TECAir_API.Database.Repository
             var db = dbConnection();
 
             var sql = @"
-                        SELECT no_promocion, porcentaje, periodo, url, p_dia, p_mes, p_ano, no_vuelo, origen, destino, coste_vuelo
+                        SELECT no_promocion, porcentaje, periodo, url, p_dia, p_mes, p_ano, vuelo.no_vuelo, origen, destino, coste_vuelo
                         FROM public.promocion JOIN public.vuelo ON vuelo.no_vuelo = promocion.no_vuelo
                         ";
 
