@@ -1,14 +1,17 @@
 export interface ReservationData {
-    no_transaccion:string;
-    no_vuelo:string;
+    no_vuelo:number;
+    no_reservacion:number;
     origen:string;
-    destino:string;
     ciudad_origen:string;
+    destino:string;
     ciudad_destino:string;
     av_nombre:string;
     prt_abordaje:string;
-    fecha:string;
+    v_dia:string;
+    v_mes:string;
+    v_ano:string;
     h_salida:string;
     h_llegada:string;
     cant_escalas:number;
 }
+

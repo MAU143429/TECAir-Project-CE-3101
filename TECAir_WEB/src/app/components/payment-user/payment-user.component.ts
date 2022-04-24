@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { jsPDF } from "jspdf";
 import html2canvas from 'html2canvas';
+import { ReservationData } from 'src/app/interface/reservation-data';
+import { ReservationDetails } from 'src/app/model/reservation-details';
+import { ConnectionService } from 'src/app/service/connection-service';
+import { Router } from '@angular/router';
+import { BookingsService } from 'src/app/service/bookings.service';
 
 @Component({
   selector: 'app-payment-user',
@@ -9,24 +14,12 @@ import html2canvas from 'html2canvas';
 })
 export class PaymentUserComponent implements OnInit {
 
-  ticketinfo = [
-    {
-      "no_vuelo" : "#9999999",
-      "no_transaccion" : "#111111111",
-      "origen" : "Aeropuerto Internacional Juan Santamaria",
-      "destino": "MXN Mexico Aeropuerto Benito Juarez",
-      "ciudad_origen" : "San Jose",
-      "ciudad_destino" :"Ciudad de Mexico",
-      "avion": "Airbus 737",
-      "ptr_abordaje" : "G31",
-      "fecha": "22/04/2022",
-      "h_salida": "1:50 PM",
-      "h_llegada": "10:50 PM",
-      "duracion" : "8 h 31 mins",
-      "cant_escalas" : "2"
-    },
+  ticketinfo:ReservationData[] | any;
+  newReservationDetails:ReservationDetails = new ReservationDetails
 
-  ]
+  async delay(ms: number) {
+    await new Promise<void>(resolve => setTimeout(()=>resolve(), ms)).then(()=>console.log("fired"));
+  }
 
 // metodo que realiza la descarga del archivo del reporte de conciliacion de maletas
 public downloadGeneralReport(){
@@ -56,9 +49,24 @@ public downloadGeneralReport(){
   });
 }
 
-  constructor() { }
+  constructor(private service:BookingsService,private connectionService:ConnectionService, private router:Router) { }
 
   ngOnInit(): void {
+    this.delay(100).then(()=>{
+      this.createTicketPayment(this.newReservationDetails,this.connectionService.getNoVueloEvent(),this.connectionService.getNoTransaccionEvent())
+    });
+  }
+
+  /** 
+ * Este metodo permite realizar la peticion de un detalle para una reservacion en particular
+ * @param newReservationDetails es el objeto que almacenara los detalles de numero de vuelo y reserva
+ * @param data1 numero de vuelo
+ * @param data2 numero de reserva
+ */
+   createTicketPayment(newReservationDetails:ReservationDetails, data1:any,data2:any){
+    newReservationDetails.no_vuelo = data1
+    newReservationDetails.no_reservacion = data2
+    this.service.newBilling(newReservationDetails).subscribe(ticket => (this.ticketinfo = ticket));
   }
 
 }
