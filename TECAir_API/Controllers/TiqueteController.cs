@@ -50,7 +50,7 @@ namespace TECAir_API.Models
         public async Task<IActionResult> ingresarPasajero([FromBody] GenerarTiquete gTiquete)
         {
             TiquetesTotales tiquetes = await _automationRepository.GetTotalTiquetes();
-            var created = await _tiqueteRepository.ingresarTiquete(gTiquete, tiquetes.total_tiquetes);
+            var created = await _tiqueteRepository.ingresarTiquete(gTiquete, tiquetes.total_tiquetes +1);
 
             return Created("created", created);
         }
