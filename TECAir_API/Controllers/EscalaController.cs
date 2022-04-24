@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using TECAir_API.Database.Interface;
 using TECAir_API.Database.Repository;
 using TECAir_API.Models;
 using TECAir_API.Models.Automation;
@@ -11,10 +12,10 @@ namespace TECAir_API.Controllers
     [ApiController]
     public class EscalaController : ControllerBase
     {
-        public AutomationRepository _automationRepository;
-        public EscalaRepository _escalaRepository;
+        private readonly IEscala _escalaRepository;
+        private readonly IAutomation _automationRepository;
 
-        public EscalaController(AutomationRepository automationRepository, EscalaRepository escalaRepository)
+        public EscalaController(IAutomation automationRepository, IEscala escalaRepository)
         {
             _automationRepository = automationRepository;
             _escalaRepository = escalaRepository;

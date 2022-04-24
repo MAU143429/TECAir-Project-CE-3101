@@ -5,6 +5,7 @@ import { Flight } from 'src/app/model/flight';
 import { OpenFlight } from 'src/app/model/open-flight';
 import { CloseFlight } from 'src/app/model/close-flight';
 import { UpdateFlight } from 'src/app/model/update-flight';
+import { Scale } from 'src/app/model/scale';
 import { FlightsService } from 'src/app/service/flights.service';
 import { SearchflightsService } from 'src/app/service/searchflights.service';
 import { startWith, debounceTime, distinctUntilChanged, switchMap, map } from 'rxjs/operators';
@@ -38,6 +39,10 @@ export class FlightsComponent implements OnInit {
   newOpenFlight:OpenFlight = new OpenFlight
   newCloseFlight:CloseFlight = new CloseFlight
   newUpdateFlight:UpdateFlight = new UpdateFlight
+  scale1:Scale = new Scale
+  scale2:Scale = new Scale
+  scale3:Scale = new Scale
+
   
 
   /**
@@ -146,19 +151,35 @@ export class FlightsComponent implements OnInit {
    */
   addNewFlight(newFlight:Flight){
     this.service.addFlight(newFlight).subscribe(flight=> console.log(flight));
+    if(newFlight.escala1 != ''){
+      this.scale1.escala = newFlight.escala1
+      this.scale1.orden = 1
+      this.service.addScale(this.scale1).subscribe(scale1=> console.log(scale1));
+    }
+    if(newFlight.escala2 != ''){
+      this.scale1.escala = newFlight.escala2
+      this.scale1.orden = 2
+      this.service.addScale(this.scale2).subscribe(scale2=> console.log(scale2));
+    }
+    if(newFlight.escala2 != ''){
+      this.scale1.escala = newFlight.escala3
+      this.scale1.orden = 2
+      this.service.addScale(this.scale3).subscribe(scale3=> console.log(scale3));
+    }
+    
   }
 
   /**
    * Permite enviar la solicitud para chequear si un pasajero ya fue 
    * aprobado de abordar o por el contrario no a confirmado aun
-   * @param newOpenFlight Datos para consulta de un vuelo abierto
+   * @param newOpenFlight Datos para consulta de un vuelo abierto 
    */
   newAddOpenFlight(newOpenFlight:OpenFlight){
     this.service.newOpen(newOpenFlight).subscribe(open=> (this.passangerdata = open));
     
   }
 
-  /**
+  /** 
    * Este metodo realiza la consulta de si un vuelo esta listo para 
    * ser cerrado
    * @param newCloseFlight Datos para consulta de un vuelo cerrado

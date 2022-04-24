@@ -23,7 +23,7 @@ namespace TECAir_API.Database.Repository
 
             var sql = @"
                         INSERT INTO escala(no_escala, escala, orden, no_vuelo) 
-                        VALUES(@noEscala, @escala1, @orden, @noVuelo);
+                        VALUES(@NoEscala, @Escala1, @Orden, @NoVuelo);
                         ";
 
             var result = await db.ExecuteAsync(sql, new

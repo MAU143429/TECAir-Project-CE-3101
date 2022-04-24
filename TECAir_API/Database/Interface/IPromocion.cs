@@ -1,9 +1,11 @@
-﻿namespace TECAir_API.Database
+﻿using TECAir_API.Models.WebOutput;
+
+namespace TECAir_API.Database
 {
     public interface IPromocion
     {
-        Task<bool> ingresarPromocion(PromocionOutput promocion);
-        Task<IEnumerable<PromocionOutput>> GetPromociones();
+        Task<bool> ingresarPromocion(Promocion promocion);
+        Task<IEnumerable<PromotionOutput>> GetPromociones();
 
     }
 }

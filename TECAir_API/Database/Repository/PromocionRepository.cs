@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TECAir_API.Models.WebOutput;
 
 namespace TECAir_API.Database.Repository
 {
@@ -21,7 +22,7 @@ namespace TECAir_API.Database.Repository
             return new NpgsqlConnection(_connectionString.ConnectionString);
         }
         
-        public async Task<bool> ingresarPromocion(PromocionOutput promocion)
+        public async Task<bool> ingresarPromocion(Promocion promocion)
         {
             var db = dbConnection();
 
@@ -45,16 +46,16 @@ namespace TECAir_API.Database.Repository
             return result > 0;
         }
 
-        public async Task<IEnumerable<PromocionOutput>> GetPromociones()
+        public async Task<IEnumerable<PromotionOutput>> GetPromociones()
         {
             var db = dbConnection();
 
             var sql = @"
                         SELECT no_promocion, porcentaje, periodo, url, p_dia, p_mes, p_ano, no_vuelo
-                        FROM public.promociones
+                        FROM public.promocion
                         ";
 
-            return await db.QueryAsync<PromocionOutput>(sql, new { });
+            return await db.QueryAsync<PromotionOutput>(sql, new { });
         }
     }
 }

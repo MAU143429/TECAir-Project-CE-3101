@@ -25,6 +25,15 @@ export class FlightsService {
       return this.httpclient.post(this.url+'/VueloWEB/Add', flight) 
     }
 
+    /** POST PARA CREAR ESCALAS EN VUELOS
+   *  Este post permite enviar la informacion para registrar una nueva escala.
+   * @param flight ingresa un objeto de tipo vuelo con la informacion necesaria para el registro.
+   * @returns Retorna la aprobacion del post, si fue guardado con exito
+   */
+     addScale(scale:any):Observable<any>{
+      return this.httpclient.post(this.url+'/Escala/Add', scale) 
+    }
+
     /** GET PARA CONSULTA APERTURA DE VUELO
     *  Este get permite enviar la informacion para consultar un apertura de vuelo por usuario.
     */
