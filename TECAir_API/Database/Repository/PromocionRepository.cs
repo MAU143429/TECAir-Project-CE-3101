@@ -73,10 +73,10 @@ namespace TECAir_API.Database.Repository
             {
                 for (int j = 0; j < aeropuertos.Count; j++)
                 {
-                    if (output[i].Origen == aeropuertos[j].nombre)
-                        output[i].Origen = aeropuertos[j].ciudad;
-                    if (output[i].Destino == aeropuertos[j].nombre)
-                        output[i].Destino = aeropuertos[j].ciudad;
+                    if (output[i].origen == aeropuertos[j].nombre)
+                        output[i].origen = aeropuertos[j].ciudad;
+                    if (output[i].destino == aeropuertos[j].nombre)
+                        output[i].destino = aeropuertos[j].ciudad;
                 }
             }
 
@@ -84,7 +84,7 @@ namespace TECAir_API.Database.Repository
             while (result.Count < 8)
             {
                 int k = rng.Next(output.Count-1);
-                result.Add(new PromosRandom(output[k].NoVuelo, output[k].NoPromocion, output[k].Url, output[k].Origen, output[k].Destino, output[k].PDia, output[k].PMes, output[k].PAno, output[k].Porcentaje, output[k].CosteVuelo*(100- output[k].Porcentaje)/100));
+                result.Add(new PromosRandom(output[k].no_vuelo, output[k].no_promocion, output[k].url, output[k].origen, output[k].destino, output[k].p_dia, output[k].p_mes, output[k].p_ano, output[k].porcentaje, output[k].coste_vuelo*(100- output[k].porcentaje)/100));
                 output.Remove(output[k]);
             }
             return result;
