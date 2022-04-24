@@ -64,7 +64,7 @@ body{
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 20px 0 12px 0;
-  margin-left: 17%;
+  margin-left: 19%;
   
   
 }
@@ -147,8 +147,8 @@ form input{
 
 .popup{
   width: 500px;
-  height: 252px;
-  background-image: url("src\assets\images\popup.png");
+  height: 1220px;
+  background-image: url("src\assets\images\matriz.png");
   background-size:cover;
   background-position: center;
 }
@@ -197,6 +197,18 @@ form .button input:hover{
   }
 
   
-  .actionsbtn{
-    color: white;
-  }
+.actionsbtn{
+  color: white;
+}
+
+.seats{
+  color: transparent; 
+  width: 50%;
+  height: 30px;
+  background-image: url("https://cdn-icons-png.flaticon.com/512/1996/1996013.png");
+  background-size:cover;
+  background-position: center;
+  background-color: transparent;
+  font-size: 10px;
+  font-weight: 500;
+}

@@ -55,6 +55,7 @@
                             <th>Número de vuelo</th>
                             <th>Pasajero</th>
                             <th>Hora de salida</th>
+                            <th>Asiento <span class="seats" (click)="open(content)">aaa</span></th>
                             <th>Chequeo</th>
                             
                           </tr>
@@ -63,7 +64,8 @@
                             <td>{{data.no_vuelo}}</td>
                             <td>{{data.p_nombre}} {{data.p_apellido1}} {{data.p_apellido2}}</td>
                             <td>{{data.h_salida}}</td>
-                            <td><button class="actionsbtn" routerLink="/ticketView" (click)="addNewCheckIn(this.data)">Chequear pasajero</button></td>
+                            <td><input style="width: 50px;" No.Asiento></td>
+                            <td><button class="actionsbtn" routerLink="/ticketView" (click)="newCheckIn(this.data); TicketDetails(this.data)">Chequear pasajero</button></td>
         
                           </tr>
                         </table>
@@ -108,9 +110,14 @@
               
             </div>
 
-
-          
         </div>  
   </body>
+
+  <ng-template #content let-modal>
+    <div class="popup">
+      <button class="close cbtn" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+    </div>
+  </ng-template>
+
 </html>
  

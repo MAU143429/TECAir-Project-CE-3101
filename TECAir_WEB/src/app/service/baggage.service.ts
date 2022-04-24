@@ -32,4 +32,18 @@ export class BaggageService {
     return this.httpclient.get(this.url+'/Tiquete/GetT/' +  openFlight) 
   }
 
+  /** PUT PARA CHEQUEO
+  *  Este put actualiza el valor del pasajero a chequeadp
+  */
+   putCheckIn(openFlight:any):Observable<any>{
+    return this.httpclient.get(this.url+'/Tiquete/Put/' +  openFlight) 
+  }
+
+  /** PUT PARA CHEQUEO
+  *  Este put actualiza el valor del pasajero a chequeadp
+  */
+   getFullTicket(ticket:any):Observable<any>{
+    return this.httpclient.get(this.url+'/Tiquete/Get/' +  ticket.no_vuelo +"/"+ticket.no_transaccion) 
+  }
+
 }

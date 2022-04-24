@@ -11,6 +11,7 @@
         public string p_ano { get; set; }
         public int no_vuelo { get; set; }
 
+
         public PromotionOutput()
         {
         }

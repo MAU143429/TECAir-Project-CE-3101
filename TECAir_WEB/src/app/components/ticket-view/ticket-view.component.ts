@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { jsPDF } from "jspdf";
+import { TicketView } from 'src/app/interface/ticket-view'
 import html2canvas from 'html2canvas';
+import { ConnectionService } from 'src/app/service/connection-service';
+import { TicketRequest } from 'src/app/model/ticket-request';
+import { Router } from '@angular/router';
+import { BaggageService } from 'src/app/service/baggage.service';
 
 @Component({
   selector: 'app-ticket-view',
@@ -9,28 +14,8 @@ import html2canvas from 'html2canvas';
 })
 export class TicketViewComponent implements OnInit {
 
-  ticketinfo = [
-    {
-      "no_vuelo" : "#9999999",
-      "no_transaccion" : "#111111111",
-      "p_nombre" : "Mario",
-      "p_apellido1" : "Calderon",
-      "p_apellido2" : "Monestel",
-      "asiento" : "B14",
-      "origen" : "Aeropuerto Internacional Juan Santamaria",
-      "destino": "MXN Mexico Aeropuerto Benito Juarez",
-      "ciudad_origen" : "San Jose",
-      "ciudad_destino" :"Ciudad de Mexico",
-      "avion": "Airbus 737",
-      "ptr_abordaje" : "G31",
-      "fecha": "22/04/2022",
-      "h_salida": "1:50 PM",
-      "h_llegada": "10:50 PM",
-      "duracion" : "8 h 31 mins",
-      "cant_escalas" : "2"
-    },
-
-  ]
+  ticketinfo:TicketView[] | any;
+  newTicketRequest:TicketRequest = new TicketRequest
 
   // metodo que realiza la descarga del archivo del reporte de conciliacion de maletas
   public downloadTicket(){
@@ -60,9 +45,27 @@ export class TicketViewComponent implements OnInit {
     });
   }
 
-  constructor() { }
+  async delay(ms: number) {
+    await new Promise<void>(resolve => setTimeout(()=>resolve(), ms)).then(()=>console.log("fired"));
+  }
+
+  constructor(private service:BaggageService,private connectionService:ConnectionService, private router:Router) { }
 
   ngOnInit(): void {
+    this.delay(100).then(()=>{
+      this.createTicketView(this.connectionService.getNoVueloEvent(),this.connectionService.getNoTransaccionEvent())
+    });
+  }
+
+  /** 
+ * Este metodo permite realizar la peticion de un detalle para una reservacion en particular
+ * @param data1 numero de vuelo
+ * @param data2 numero de reserva
+ */
+   createTicketView(data1:any,data2:any){
+    this.newTicketRequest.no_vuelo = data1
+    this.newTicketRequest.no_transaccion = data2
+    this.service.getFullTicket(this.newTicketRequest).subscribe(ticket => (this.ticketinfo = ticket));
   }
 
 }

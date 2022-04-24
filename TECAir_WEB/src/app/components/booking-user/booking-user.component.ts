@@ -30,7 +30,6 @@ export class BookingUserComponent implements OnInit {
    /** 
    * Este metodo permite realizar el set de los valores para el objeto que se
    * enviara con el numero de vuelo para realizar la reserva
-   * @param newBooking es el objeto que almacenara el numero de vuelo a reservar
    * @param data posee los datos del vuelo que se desea reservar 
    */
     createBilling(data:any){
@@ -40,7 +39,6 @@ export class BookingUserComponent implements OnInit {
     /** 
    * Este metodo permite realizar el set de los valores para el objeto que se
    * enviara con el numero de vuelo para realizar la reserva
-   * @param newBooking es el objeto que almacenara el numero de vuelo a reservar
    * @param data posee los datos del vuelo que se desea reservar 
    */
      paymentDetails(data:any){

@@ -145,27 +145,35 @@ export class FlightsComponent implements OnInit {
     }*/
   }
 
+  async delay(ms: number) {
+    await new Promise<void>(resolve => setTimeout(()=>resolve(), ms)).then(()=>console.log("fired"));
+  }
+
   /**
    * Este metodo permite llamar al post con la informacion necesaria para registrar un vuelo
    * @param newFlight Los datos del vuelo a registrar
    */
   addNewFlight(newFlight:Flight){
     this.service.addFlight(newFlight).subscribe(flight=> console.log(flight));
-    if(newFlight.escala1 != ''){
-      this.scale1.escala = newFlight.escala1
-      this.scale1.orden = 1
-      this.service.addScale(this.scale1).subscribe(scale1=> console.log(scale1));
-    }
-    if(newFlight.escala2 != ''){
-      this.scale1.escala = newFlight.escala2
-      this.scale1.orden = 2
-      this.service.addScale(this.scale2).subscribe(scale2=> console.log(scale2));
-    }
-    if(newFlight.escala2 != ''){
-      this.scale1.escala = newFlight.escala3
-      this.scale1.orden = 2
-      this.service.addScale(this.scale3).subscribe(scale3=> console.log(scale3));
-    }
+    this.delay(500).then(()=>{
+      if(newFlight.escala1 != ''){
+        this.scale1.escala = newFlight.escala1
+        this.scale1.orden = 1
+        this.service.addScale(this.scale1).subscribe(scale1=> console.log(scale1));
+      }
+      if(newFlight.escala2 != ''){
+        this.scale2.escala = newFlight.escala2
+        this.scale2.orden = 2
+        this.service.addScale(this.scale2).subscribe(scale2=> console.log(scale2));
+      }
+      if(newFlight.escala3 != ''){
+        this.scale3.escala = newFlight.escala3
+        this.scale3.orden = 3
+        this.service.addScale(this.scale3).subscribe(scale3=> console.log(scale3));
+      }
+    });
+    
+    
     
   }
 
