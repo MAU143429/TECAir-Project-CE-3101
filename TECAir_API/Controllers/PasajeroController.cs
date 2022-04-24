@@ -23,19 +23,12 @@ namespace TECAir_API.Controllers
         }
 
         [HttpPost("Add")]
-        public async Task<IActionResult> Add(GenerarTiquete gTiquete)
+        public async Task<IActionResult> Add([FromBody] GenerarTiquete gTiquete)
         {
             TiquetesTotales tiquetes = await _automationRepository.GetTotalTiquetes();
             var created = await _pasajeroRepository.GenerarTiquete(gTiquete, tiquetes.total_tiquetes);
 
             return Created("created", created);
-        }
-
-        [HttpPut("CheckIn")]
-        public async Task<IActionResult> UpdateAbordaje([FromBody] VueloAbiertoWeb transaccion)
-        {
-            await _pasajeroRepository.Chequear(transaccion.no_transaccion);
-            return NoContent();
         }
     }
 }
