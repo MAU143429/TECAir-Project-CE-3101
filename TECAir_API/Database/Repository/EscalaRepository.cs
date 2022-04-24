@@ -2,7 +2,7 @@
 
 namespace TECAir_API.Database.Repository
 {
-    public class EscalaRepository
+    public class EscalaRepository : IEscala
     {
         private PostgreSQLConfiguration _connectionString;
 
