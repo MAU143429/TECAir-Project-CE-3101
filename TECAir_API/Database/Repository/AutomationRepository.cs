@@ -85,10 +85,9 @@ namespace TECAir_API.Database.Repository
                         FROM public.tiquete
                         ";
             var test = await db.QueryAsync<Tiquete>(sql, new { });
-            var total = Enumerable.Count(test);
-            TiquetesTotales tiquetesTotales = new TiquetesTotales(total);
+            List<Tiquete> tiquetes = (List<Tiquete>)test;
+            TiquetesTotales tiquetesTotales = new TiquetesTotales(tiquetes.Count);
             return tiquetesTotales;
-
         }
 
         public async Task<UsuariosTotales> GetTotalUsuarios()
