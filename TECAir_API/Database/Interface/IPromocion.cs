@@ -3,7 +3,7 @@
     public interface IPromocion
     {
         Task<bool> ingresarPromocion(Promocion promocion);
-        //Task<Promocion> GetPromocion(decimal noPromocion);
+        Task<List<Promocion>> GetPromociones();
 
     }
 }

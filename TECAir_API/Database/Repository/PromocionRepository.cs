@@ -44,5 +44,17 @@ namespace TECAir_API.Database.Repository
 
             return result > 0;
         }
+
+        public async Task<List<Promocion>> GetPromociones()
+        {
+            var db = dbConnection();
+
+            var sql = @"
+                        SELECT *
+                        FROM public.promociones
+                        ";
+
+            return (List<Promocion>) await db.QueryAsync<Promocion>(sql, new { });
+        }
     }
 }

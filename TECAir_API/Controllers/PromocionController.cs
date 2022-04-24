@@ -44,5 +44,28 @@ namespace TECAir_API.Controllers
             return Created("created", created);
         }
 
+        [HttpGet("GetAll")]
+        public async Task<List<Promocion>> getPromociones(Promocion promocion)
+        {
+            List<Promocion> promociones = await _promocionRepository.GetPromociones();
+
+            Random rng = new Random();
+            int c = promociones.Count;
+            while (c > 1)
+            {
+                c--;
+                int k = rng.Next(c + 1);
+                Promocion value = promociones[k];
+                promociones[k] = promociones[c];
+                promociones[c] = value;
+            }
+
+            while (promociones.Count > 8)
+            {
+                promociones.RemoveAt(0);
+            }
+
+            return promociones;
+        }
     }
 }
