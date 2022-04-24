@@ -36,7 +36,6 @@ namespace TECAir_API.Controllers
         {
             await _pasajeroRepository.Chequear(transaccion.no_transaccion);
             return NoContent();
-
         }
     }
 }

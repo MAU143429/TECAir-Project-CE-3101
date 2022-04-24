@@ -35,5 +35,12 @@ namespace TECAir_API.Models
         {
             return Ok(await tiqueteRepository.GetTiqueteNoT(no_transaccion));
         }
+
+        [HttpPut("CheckIn")]
+        public async Task<IActionResult> UpdateAbordaje([FromBody] VueloAbiertoWeb transaccion)
+        {
+            await tiqueteRepository.Chequear(transaccion.no_transaccion);
+            return NoContent();
+        }
     }
 }

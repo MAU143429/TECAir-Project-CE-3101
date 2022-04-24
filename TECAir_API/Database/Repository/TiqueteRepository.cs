@@ -69,5 +69,23 @@ namespace TECAir_API.Database.Repository
                 NoTransaccion = no_transaccion
             });
         }
+
+        public async Task<bool> Chequear(int no_transaccion)
+        {
+            var db = dbConnection();
+
+            var sql = @"
+                        UPDATE public.pasajero
+                        SET chequeado = true
+                        WHERE no_transaccion = @notransaccion
+                        ";
+
+            var result = await db.ExecuteAsync(sql, new
+            {
+                NoTransaccion = no_transaccion,
+            });
+
+            return result > 0;
+        }
     }
 }

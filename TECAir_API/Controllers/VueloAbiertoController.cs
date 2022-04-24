@@ -46,7 +46,6 @@ namespace TECAir_API.Controllers
         {
             await _vueloRepository.UpdateEstadoAbordaje(tiquete);
             return NoContent();
-
         }
 
     }

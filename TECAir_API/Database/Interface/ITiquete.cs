@@ -7,5 +7,6 @@ namespace TECAir_API.Database.Interface
     {
         Task<IEnumerable<TiqueteOutput>> GetTiqueteId();
         Task<IEnumerable<Transaccion>> GetTiqueteNoT(int no_transaccion);
+        Task<bool> Chequear(int no_transaccion);
     }
 }
