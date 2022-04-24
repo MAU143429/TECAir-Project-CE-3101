@@ -24,6 +24,10 @@ namespace TECAir_API.Database.Repository
             var sql = @"
                         INSERT INTO maleta (no_maleta, color, peso, dni, no_vuelo)
                         VALUES (@nomaleta,@color, @peso, @dni,@noVuelo);
+
+                        UPDATE public.pasajero
+                        SET cant_maletas = cant_maletas + 1
+                        WHERE dni = @dni;
                         ";
 
             var result = await db.ExecuteAsync(sql, new
