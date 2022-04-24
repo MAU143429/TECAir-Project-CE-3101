@@ -3,6 +3,7 @@ using TECAir_API.Models;
 using TECAir_API.Database;
 using TECAir_API.Database.Interface;
 using TECAir_API.Models.Automation;
+using TECAir_API.Models.WebOutput;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -45,7 +46,7 @@ namespace TECAir_API.Controllers
         }
 
         [HttpGet("GetAll")]
-        public async Task<IActionResult> getPromociones(PromocionOutput promocion)
+        public async Task<IActionResult> getPromociones(PromotionOutput promocion)
         {
             return Ok(await _promocionRepository.GetPromociones());
         }
