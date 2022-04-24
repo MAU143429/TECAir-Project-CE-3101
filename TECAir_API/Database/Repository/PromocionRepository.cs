@@ -54,7 +54,7 @@ namespace TECAir_API.Database.Repository
             var db = dbConnection();
 
             var sql = @"
-                        SELECT no_promocion, porcentaje, periodo, url, p_dia, p_mes, p_ano, vuelo.no_vuelo, origen, destino, coste_vuelo
+                        SELECT no_promocion, porcentaje, url, p_dia, p_mes, p_ano, vuelo.no_vuelo, origen, destino, coste_vuelo
                         FROM public.promocion JOIN public.vuelo ON vuelo.no_vuelo = promocion.no_vuelo
                         ";
 
@@ -83,8 +83,9 @@ namespace TECAir_API.Database.Repository
             Random rng = new Random();
             while (result.Count < 8)
             {
-                int k = rng.Next(output.Count-1);
-                result.Add(new PromosRandom(output[k].NoVuelo,output[k].NoPromocion, output[k].Url, output[k].Origen, output[k].Destino, output[k].PDia, output[k].PMes, output[k].PAno, output[k].Porcentaje, output[k].CosteVuelo*(100- output[k].Porcentaje)/100));
+                // int k = rng.Next(output.Count-1);
+                int k = 0;
+                result.Add(new PromosRandom(output[k].NoVuelo, output[k].NoPromocion, output[k].Url, output[k].Origen, output[k].Destino, output[k].PDia, output[k].PMes, output[k].PAno, output[k].Porcentaje, output[k].CosteVuelo*(100- output[k].Porcentaje)/100));
             }
             return result;
         }

@@ -4,7 +4,6 @@
     {
         public int NoPromocion { get; set; }
         public int Porcentaje { get; set; }
-        public int Periodo { get; set; }
         public string Url { get; set; }
         public string PDia { get; set; }
         public string PMes { get; set; }
@@ -18,11 +17,10 @@
         {
         }
 
-        public PromosOutput(int noPromocion, int porcentaje, int periodo, string url, string pDia, string pMes, string pAno, int noVuelo, string origen, string destino, int costeVuelo)
+        public PromosOutput(int noPromocion, int porcentaje, string url, string pDia, string pMes, string pAno, int noVuelo, string origen, string destino, int costeVuelo)
         {
             NoPromocion = noPromocion;
             Porcentaje = porcentaje;
-            Periodo = periodo;
             Url = url;
             PDia = pDia;
             PMes = pMes;
