@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TECAir_API.Database.Interface;
 using TECAir_API.Models;
+using TECAir_API.Models.Automation;
 using TECAir_API.Models.WEB;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -10,12 +11,14 @@ namespace TECAir_API.Models
     [ApiController]
     public class TiqueteController : ControllerBase
     {
-        private readonly ITiquete tiqueteRepository;
+        private readonly ITiquete _tiqueteRepository;
+        private readonly IAutomation _automationRepository;
         public List<TiqueteWeb> tiquetes = new List<TiqueteWeb>();
 
-        public TiqueteController(ITiquete tiqueteRepository)
+        public TiqueteController(ITiquete tiqueteRepository, IAutomation automationRepository)
         {
-            this.tiqueteRepository = tiqueteRepository;
+            _tiqueteRepository = tiqueteRepository;
+            _automationRepository = automationRepository;
         }
 
         // GET api/Tiquete/Get
@@ -27,20 +30,29 @@ namespace TECAir_API.Models
         [HttpGet("Get")]
         public async Task<IActionResult> GetTiqueteById()
         {
-            return Ok(await tiqueteRepository.GetTiqueteId());
+            return Ok(await _tiqueteRepository.GetTiqueteId());
         }
 
         [HttpGet("GetT/{no_transaccion}")]
         public async Task<IActionResult> GetTiqueteByNoT(int no_transaccion)
         {
-            return Ok(await tiqueteRepository.GetTiqueteNoT(no_transaccion));
+            return Ok(await _tiqueteRepository.GetTiqueteNoT(no_transaccion));
         }
 
         [HttpPut("CheckIn")]
         public async Task<IActionResult> UpdateAbordaje([FromBody] VueloAbiertoWeb transaccion)
         {
-            await tiqueteRepository.Chequear(transaccion.no_transaccion);
+            await _tiqueteRepository.Chequear(transaccion.no_transaccion);
             return NoContent();
+        }
+
+        [HttpPost("Add")]
+        public async Task<IActionResult> ingresarPasajero([FromBody] GenerarTiquete gTiquete)
+        {
+            TiquetesTotales tiquetes = await _automationRepository.GetTotalTiquetes();
+            var created = await _tiqueteRepository.ingresarTiquete(gTiquete, tiquetes.total_tiquetes);
+
+            return Created("created", created);
         }
     }
 }
