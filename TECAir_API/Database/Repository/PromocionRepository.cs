@@ -1,9 +1,12 @@
 ﻿using Dapper;
+using Newtonsoft.Json;
 using Npgsql;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TECAir_API.Models;
+using TECAir_API.Models.WEB;
 using TECAir_API.Models.WebOutput;
 
 namespace TECAir_API.Database.Repository
@@ -46,16 +49,44 @@ namespace TECAir_API.Database.Repository
             return result > 0;
         }
 
-        public async Task<IEnumerable<PromotionOutput>> GetPromociones()
+        public async Task<IEnumerable<PromosRandom>> GetPromociones()
         {
             var db = dbConnection();
 
             var sql = @"
-                        SELECT no_promocion, porcentaje, periodo, url, p_dia, p_mes, p_ano, no_vuelo
-                        FROM public.promocion
+                        SELECT no_promocion, porcentaje, periodo, url, p_dia, p_mes, p_ano, no_vuelo, origen, destino, coste_vuelo
+                        FROM public.promocion JOIN public.vuelo ON vuelo.no_vuelo = promocion.no_vuelo
                         ";
 
-            return await db.QueryAsync<PromotionOutput>(sql, new { });
+            var temp = await db.QueryAsync<PromotionOutput>(sql, new { });
+            List<PromosOutput> output = (List<PromosOutput>) temp;
+
+            List<PromosRandom> result = new List<PromosRandom>();
+            List<AeropuertoWeb> aeropuertos;
+            using (StreamReader r = new StreamReader("Assets/airports.json"))
+            {
+                string json = r.ReadToEnd();
+                aeropuertos = JsonConvert.DeserializeObject<List<AeropuertoWeb>>(json);
+            }
+
+            for (int i = 0; i < output.Count; i++)
+            {
+                for (int j = 0; j < aeropuertos.Count; j++)
+                {
+                    if (output[i].Origen == aeropuertos[j].nombre)
+                        output[i].Origen = aeropuertos[j].ciudad;
+                    if (output[i].Destino == aeropuertos[j].nombre)
+                        output[i].Destino = aeropuertos[j].ciudad;
+                }
+            }
+
+            Random rng = new Random();
+            while (result.Count < 8)
+            {
+                int k = rng.Next(output.Count-1);
+                result.Add(new PromosRandom(output[k].NoVuelo,output[k].NoPromocion, output[k].Url, output[k].Origen, output[k].Destino, output[k].PDia, output[k].PMes, output[k].PAno, output[k].Porcentaje, output[k].CosteVuelo*(100- output[k].Porcentaje)/100));
+            }
+            return result;
         }
     }
 }
