@@ -9,6 +9,7 @@ import { ReservationDetails } from 'src/app/model/reservation-details';
 
 
 
+
 @Component({
   selector: 'app-billing',
   templateUrl: './billing.component.html',
@@ -19,7 +20,7 @@ export class BillingComponent implements OnInit {
   newTicketPayment:TicketPayment = new TicketPayment
   reservationdata:ReservationData[] | any;
   newReservationDetails:ReservationDetails = new ReservationDetails
-
+ 
 
   async delay(ms: number) {
     await new Promise<void>(resolve => setTimeout(()=>resolve(), ms)).then(()=>console.log("fired"));
@@ -34,23 +35,37 @@ constructor(private service:BookingsService,private connectionService:Connection
   }
     
 
-  // Metodo para agregar un nuevo tiquete luego de que este fuera cancelado.
-  addNewTicketPayment(newTicketPayment:TicketPayment){
-    this.service.addTicketPayment(newTicketPayment).subscribe(ticket=> console.log(ticket));
-  }
+
 
 
   /** 
- * Este metodo permite realizar la peticion de un detalle para una reservacion en particular
- * @param newReservationDetails es el objeto que almacenara los detalles de numero de vuelo y reserva
- * @param data1 numero de vuelo
- * @param data2 numero de reserva
- */
+   * Este metodo permite realizar la peticion de un detalle para una reservacion en particular
+   * @param newReservationDetails es el objeto que almacenara los detalles de numero de vuelo y reserva
+   * @param data1 numero de vuelo
+   * @param data2 numero de reserva
+   */
     createBilling(newReservationDetails:ReservationDetails, data1:any,data2:any){
       newReservationDetails.no_vuelo = data1
       newReservationDetails.no_reservacion = data2
       this.service.newBilling(newReservationDetails).subscribe(book => (this.reservationdata = book));
     }
+
+
+  /** 
+ * Este metodo permite realizar el pago de la reservacion y generar el tiquete del vuelo
+ * @param newTicketPayment es el objeto que almacenara los detalles del pasajero
+ * @param data numero de reservacion
+ * 
+ */
+  addNewTicketPayment(newTicketPayment:TicketPayment){
+    newTicketPayment.no_reservacion = this.reservationdata[0].no_reservacion
+    newTicketPayment.v_dia = this.reservationdata[0].v_dia
+    newTicketPayment.v_mes = this.reservationdata[0].v_mes
+    newTicketPayment.v_ano = this.reservationdata[0].v_ano
+    console.log("SE ENVIARA")
+    console.log(newTicketPayment)
+    this.service.addTicketPayment(newTicketPayment).subscribe(ticket=> console.log(ticket));
+  }
 
 
 }

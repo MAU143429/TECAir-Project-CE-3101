@@ -211,7 +211,7 @@
                         <td>{{data.origen}}</td>
                         <td>{{data.destino}}</td>
                         <td>{{data.h_salida}}</td>
-                        <td><button class="actionsbtn" routerLink="/flightSummary">Cerrar Vuelo</button></td>
+                        <td><button class="actionsbtn" (click)="ReportDetails(this.data.no_vuelo)" routerLink="/flightSummary">Cerrar Vuelo</button></td>
   
                       </tr>
                     </table>

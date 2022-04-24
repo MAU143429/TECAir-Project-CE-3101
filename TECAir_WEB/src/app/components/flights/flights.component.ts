@@ -10,6 +10,7 @@ import { SearchflightsService } from 'src/app/service/searchflights.service';
 import { startWith, debounceTime, distinctUntilChanged, switchMap, map } from 'rxjs/operators';
 import { Passangerdata } from 'src/app/interface/passangerdata';
 import {FormControl} from '@angular/forms';
+import { ConnectionService } from 'src/app/service/connection-service';
 
 @Component({
   selector: 'app-flights',
@@ -38,13 +39,13 @@ export class FlightsComponent implements OnInit {
   
 
 
-    flightdata = [
-    {
-      "no_vuelo" : "MGFR-737",
-      "origen" : "San Jose, Costa Rica",
-      "destino": "Ciudad de Mexico, Mexico",
-      "h_salida": "2:00 AM",
-    }
+  flightdata = [
+  {
+    "no_vuelo" : "798562",
+    "origen" : "San Jose, Costa Rica",
+    "destino": "Ciudad de Mexico, Mexico",
+    "h_salida": "2:00 AM",
+  }
   ]
 
   /**
@@ -54,7 +55,7 @@ export class FlightsComponent implements OnInit {
    * @param service2 Permite crear una instancia del SearchflightsService
    * @param router Nos ayuda a realizar parte de las consultas
    */
-  constructor(private modalService: NgbModal, private service:FlightsService, private service2:SearchflightsService, private router:Router) {
+  constructor(private modalService: NgbModal, private service:FlightsService, private service2:SearchflightsService,private connectionService:ConnectionService, private router:Router) {
 
     // Nos permite filtrar informacion de aeropuertos
     this.filteredOptions = this.myControl.valueChanges.pipe(
@@ -183,6 +184,15 @@ export class FlightsComponent implements OnInit {
     this.service.updateOpen(newUpdateFlight).subscribe(close=> console.log(close));
     }
 
+    /** 
+   * Este metodo permite realizar el set de los valores para el objeto que se
+   * enviara con el numero de vuelo para realizar la reserva
+   * @param newBooking es el objeto que almacenara el numero de vuelo a reservar
+   * @param data posee los datos del vuelo que se desea reservar 
+   */
+    ReportDetails(data:any){
+      this.connectionService.sendClickEvent3(parseInt(data)); 
+    }
   
 
 }

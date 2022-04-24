@@ -20,6 +20,11 @@ sendClickEvent2(novuelo:any,notransaccion:any) {
   this.no_transaccion = notransaccion;
 }
 
+sendClickEvent3(novuelo:any) {
+  this.no_vuelo = novuelo;
+  
+}
+
 getNoVueloEvent(): Observable<any>{ 
   return this.no_vuelo;
 }

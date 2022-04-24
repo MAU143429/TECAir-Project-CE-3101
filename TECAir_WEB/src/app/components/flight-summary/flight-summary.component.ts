@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { jsPDF } from "jspdf";
 import html2canvas from 'html2canvas';
+import { BaggageReport } from 'src/app/interface/baggage-report';
+import { PassangersReport } from 'src/app/interface/passangers-report';
+import { FlightsService } from 'src/app/service/flights.service';
+import { ConnectionService } from 'src/app/service/connection-service';
+import { CloseFlight } from 'src/app/model/close-flight';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,85 +16,22 @@ import html2canvas from 'html2canvas';
 })
 export class FlightSummaryComponent implements OnInit {
 
-  passangerData = [
-    {
-      "no_transaccion" : "6567857",
-      "p_nombre" : "Juan",
-      "p_apellido1" : "Perez",
-      "p_apellido2" : "Chaverri",
-      "dni": "1:00 PM",
-      "cant_maletas": "1"
-    },
+  baggageData:BaggageReport[] | any;
 
-    {
-      "no_transaccion" : "5647867",
-      "p_nombre" : "Juan",
-      "p_apellido1" : "Perez",
-      "p_apellido2" : "Chaverri",
-      "dni": "1:00 PM",
-      "cant_maletas": "1"
+  passangerData:PassangersReport[]|any;
+ 
+  newBaggageReport:CloseFlight = new CloseFlight
 
-    },
+  constructor(private service:FlightsService,private connectionService:ConnectionService, private router:Router) { }
 
-    {
-      "no_transaccion" : "6757345",
-      "p_nombre" : "Juan",
-      "p_apellido1" : "Perez",
-      "p_apellido2" : "Chaverri",
-      "dni": "1:00 PM",
-      "cant_maletas": "1"
-    },
-
-    {
-      "no_transaccion" : "6767878",
-      "p_nombre" : "Juan",
-      "p_apellido1" : "Perez",
-      "p_apellido2" : "Chaverri",
-      "dni": "1:00 PM",
-      "cant_maletas": "1"
-    }
-]
-
-baggageData = [
-  {
-    "no_maleta" : "XMF-675",
-    "dni" : "1223365",
-    "peso" : "13 kg",
-    "color": "verde"
-  },
-
-  {
-    "no_maleta" : "XMF-675",
-    "dni" : "1223365",
-    "peso" : "13 kg",
-    "color": "verde"
-  },
-
-  {
-    "no_maleta" : "XMF-675",
-    "dni" : "1223365",
-    "peso" : "13 kg",
-    "color": "verde"
-  },
-
-  {
-    "no_maleta" : "XMF-675",
-    "dni" : "1223365",
-    "peso" : "13 kg",
-    "color": "verde"
-  },
-
-  {
-    "no_maleta" : "XMF-675",
-    "dni" : "1223365",
-    "peso" : "13 kg",
-    "color": "verde"
+  async delay(ms: number) {
+    await new Promise<void>(resolve => setTimeout(()=>resolve(), ms)).then(()=>console.log("fired"));
   }
-]
-
-  constructor() { }
 
   ngOnInit(): void {
+    this.delay(100).then(()=>{
+      this.createBaggageReport(this.newBaggageReport,this.connectionService.getNoVueloEvent())
+    });
   }
 
 
@@ -117,5 +60,15 @@ baggageData = [
       docResult.save(`${new Date().toISOString()}_reporte-conciliación.pdf`);
     });
   }
+
+    /** 
+    * Este metodo permite realizar la peticion de un detalle para un cierre de vuelo.
+    * @param newReservationDetails es el objeto que almacenara los detalles de numero de vuelo y reserva
+    * @param data1 numero de vuelo
+    */
+     createBaggageReport(newBaggageReport:CloseFlight, data1:any){
+      newBaggageReport.no_vuelo = data1
+      this.service.getBaggageReport(newBaggageReport).subscribe(ticket => (this.baggageData = ticket));
+    }
 
 }

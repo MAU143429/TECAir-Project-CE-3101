@@ -16,24 +16,7 @@ namespace TECAir_API.Controllers
             _vueloRepository = vueloRepository;
         }
 
-        // Lista de vuelos cerrados
-        List<VueloCerradoWeb> vuelosCerrados = new List<VueloCerradoWeb>
-        {
-            new VueloCerradoWeb(1455)
-        };
-        // GET: api/<VueloCerradoController>
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
 
-        // GET api/<VueloCerradoController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
         /// <summary>
         /// Metodo get para obtener los datos de cierre de vuelos buscado por numero de vuelo
         /// </summary>
@@ -45,18 +28,6 @@ namespace TECAir_API.Controllers
             return Ok(await _vueloRepository.GetInfoVueloCerrado(no_vuelo));
         }
 
-        /// <summary>
-        /// Metodo Post para agregar vuelos cerrados desde la Web
-        /// </summary>
-        /// <param name="nuevoVuelo"> Objeto VueloCerrado que obtiene el numero de vuelo que desea cerrar</param>
-        /// <returns></returns>
-        // POST api/<VueloAbiertoController>
-        [HttpPost]
-        public List<VueloCerradoWeb> Post(VueloCerradoWeb nuevoVuelo)
-        {
-            vuelosCerrados.Add(nuevoVuelo);
-            return vuelosCerrados;
-        }
 
         // PUT api/<VueloCerradoController>/5
         [HttpPut("{id}")]
@@ -64,10 +35,5 @@ namespace TECAir_API.Controllers
         {
         }
 
-        // DELETE api/<VueloCerradoController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }

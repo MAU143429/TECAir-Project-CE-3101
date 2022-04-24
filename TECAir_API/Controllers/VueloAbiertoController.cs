@@ -39,18 +39,6 @@ namespace TECAir_API.Controllers
             //return Ok(await _vueloRepository.GetInfoVueloAbierto(no_transaccion));
         }
 
-        /// <summary>
-        /// Metodo Post para agregar vuelos abiertos desde la Web
-        /// </summary>
-        /// <param name="nuevoVuelo"> Objeto VueloAbierto que obtiene el numero de transaccion asociado</param>
-        /// <returns></returns>
-        // POST api/<VueloAbiertoController>
-        [HttpPost]
-        public List<VueloAbiertoWeb> Post(VueloAbiertoWeb nuevoVuelo)
-        {
-            vuelosAbiertos.Add(nuevoVuelo);
-            return vuelosAbiertos;
-        }
 
         // PUT api/<VueloAbiertoController>/5
         [HttpPut("updateAbordaje")]

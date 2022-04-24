@@ -15,7 +15,7 @@ export class BookingsService {
 
   constructor(private httpclient:HttpClient) { }
 
-    /** POST PARA ENVIAR DATOS DE PASAJERO LUEGO DEL PAGO DEL TIQUETE
+  /** POST PARA ENVIAR DATOS DE PASAJERO LUEGO DEL PAGO DEL TIQUETE
    *  Este post permite enviar la informacion del pasajero luego de que este compro el tiquete 
    *  esto para que quede registrada.
    */
