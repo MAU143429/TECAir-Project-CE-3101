@@ -227,7 +227,7 @@ public class DBHelper extends SQLiteOpenHelper{
                 T_ANO + " TEXT NOT NULL, " +
                 ABORDAJE + " INTEGER NOT NULL, " +
                 T_NO_RESERVACION + " INTEGER REFERENCES " + TABLE_RESERVACION + "(" + NO_RESERVACION + "), " +
-                T_NO_ASIENTO + " TEXT REFERENCES " + TABLE_ASIENTO + "(" + NO_ASIENTO + "))");
+                T_NO_ASIENTO + " INTEGER REFERENCES " + TABLE_ASIENTO + "(" + NO_ASIENTO + "))");
 
         // tabla pasajero
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_PASAJERO + "(" +
@@ -237,7 +237,7 @@ public class DBHelper extends SQLiteOpenHelper{
                 P_APELLIDO2 + " TEXT NOT NULL, " +
                 CANT_MALETAS + " INTEGER NOT NULL, " +
                 CHEQUEADO + " INTEGER NOT NULL, " +
-                P_NO_TRANSACCION + " TEXT REFERENCES " + TABLE_TIQUETE + "(" + NO_TRANSACCION + "))");
+                P_NO_TRANSACCION + " INTEGER REFERENCES " + TABLE_TIQUETE + "(" + NO_TRANSACCION + "))");
 
         //Tabla maleta
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_MALETA + "(" +
@@ -245,7 +245,7 @@ public class DBHelper extends SQLiteOpenHelper{
                 COLOR + " TEXT NOT NULL, " +
                 PESO + " INTEGER NOT NULL, " +
                 M_DNI + " INTEGER REFERENCES " + TABLE_PASAJERO + "(" + DNI + "), " +
-                M_NO_VUELO + " TEXT REFERENCES " + TABLE_VUELO + "(" + NO_VUELO + "))");
+                M_NO_VUELO + " INTEGER REFERENCES " + TABLE_VUELO + "(" + NO_VUELO + "))");
     }
 
     @Override

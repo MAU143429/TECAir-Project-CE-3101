@@ -35,22 +35,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        Button createDB = (Button) findViewById(R.id.createDB);
-        createDB.setOnClickListener(new View.OnClickListener(){
-           @Override
-           public void onClick(View view){
-               DataBase dataBase = new DataBase(LoginActivity.this);
-               SQLiteDatabase db = dataBase.getWritableDatabase();
-               if(db != null){
-                   Toast.makeText(LoginActivity.this, "BASE DE DATOS CREADA", Toast.LENGTH_LONG).show();
-                   db.close();
-               } else{
-                   Toast.makeText(LoginActivity.this, "ERROR AL CREAR LA BASE DE DATOS", Toast.LENGTH_LONG).show();
-               }
-           }
-        });
-
-
         Button loginbtn = (Button) findViewById(R.id.loginbtn);
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,9 +55,9 @@ public class LoginActivity extends AppCompatActivity {
                 DBHelper dataBase = new DBHelper(LoginActivity.this);
                 SQLiteDatabase db = dataBase.getWritableDatabase();
                 if (db != null) {
-                    Toast.makeText(LoginActivity.this, "BASE DE DATOS CREADA", Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this, "Base de datos creada", Toast.LENGTH_LONG).show();
                 } else {
-                    Toast.makeText(LoginActivity.this, "ERROR AL CREAR BASE DE DATOS", Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this, "Error al crear base de datos", Toast.LENGTH_LONG).show();
                 }
             }
         });
