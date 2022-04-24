@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using TECAir_API.Database.Interface;
 
 namespace TECAir_API.Database.Repository
 {
