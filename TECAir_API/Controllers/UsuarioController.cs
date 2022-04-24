@@ -33,7 +33,7 @@ namespace TECAir_API.Controllers
         public async Task<IActionResult> crearUsuario(UsuarioWeb nuevousuario)
         {
             UsuariosTotales users = await _automationRepository.GetTotalUsuarios();
-            Usuario user = new Usuario(users.total_usuarios, nuevousuario.u_nombre,nuevousuario.u_apellido1,nuevousuario.u_apellido2,nuevousuario.correo,nuevousuario.u_contrasena,nuevousuario.telefono);
+            Usuario user = new Usuario(users.total_usuarios + 1, nuevousuario.u_nombre,nuevousuario.u_apellido1,nuevousuario.u_apellido2,nuevousuario.correo,nuevousuario.u_contrasena,nuevousuario.telefono);
 
             if (nuevousuario.carne == 0 || nuevousuario.universidad == "null") {
                 Estudiante student = new Estudiante(nuevousuario.carne, nuevousuario.universidad, users.total_usuarios);
