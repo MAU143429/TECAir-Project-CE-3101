@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TECAir_API.Database.Interface;
 using TECAir_API.Database.Repository;
+using TECAir_API.Models;
 using TECAir_API.Models.Automation;
 using TECAir_API.Models.WEB;
 
@@ -28,6 +29,14 @@ namespace TECAir_API.Controllers
             var created = await _pasajeroRepository.GenerarTiquete(gTiquete, tiquetes.total_tiquetes);
 
             return Created("created", created);
+        }
+
+        [HttpPut("CreckIn")]
+        public async Task<IActionResult> UpdateAbordaje([FromBody] VueloAbiertoWeb transaccion)
+        {
+            await _pasajeroRepository.Chequear(transaccion.no_transaccion);
+            return NoContent();
+
         }
     }
 }
