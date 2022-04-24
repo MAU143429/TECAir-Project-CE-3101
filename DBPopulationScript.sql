@@ -1,32 +1,58 @@
--- INSERT INTO
-
--- Insertar usuarios en tabla Usuario
+-- Usuarios
 INSERT INTO usuario(id_usuario, u_nombre, u_apellido1, u_apellido2, correo, u_contrasena, telefono) 
-VALUES(1487418, 'Jose', 'Campos', 'Gutierrez', 'jcampos@gmail.com', 'contrasena1', '89803806');
+VALUES(1, 'Jose', 'Campos', 'Gutierrez', 'jcampos@gmail.com', 'contrasena1', '89803806');
 
 INSERT INTO usuario(id_usuario, u_nombre, u_apellido1, u_apellido2, correo, u_contrasena, telefono) 
-VALUES(2597413, 'Cinthya', 'Gutierrez', 'Vargas', 'cinthya@yahoo.com', 'contrasena2', '83983371');
+VALUES(2, 'Cinthya', 'Gutierrez', 'Vargas', 'cinthya@yahoo.com', 'contrasena2', '83983371');
 
 INSERT INTO usuario(id_usuario, u_nombre, u_apellido1, u_apellido2, correo, u_contrasena, telefono) 
-VALUES(1376556, 'Ingrid', 'Ruiz', 'Madrigal', 'ingrid@gmail.com', 'contrasena3', '87090199');
+VALUES(3, 'Ingrid', 'Ruiz', 'Madrigal', 'ingrid@gmail.com', 'contrasena3', '87090199');
 
 INSERT INTO usuario(id_usuario, u_nombre, u_apellido1, u_apellido2, correo, u_contrasena, telefono) 
-VALUES(2486520, 'Gabriel', 'Vargas', 'Lopez', 'gabo@gmail.com', 'contrasena4', '85962556');
+VALUES(4, 'Gabriel', 'Vargas', 'Lopez', 'gabo@gmail.com', 'contrasena4', '85962556');
 
 INSERT INTO usuario(id_usuario, u_nombre, u_apellido1, u_apellido2, correo, u_contrasena, telefono) 
-VALUES(1897025, 'Mauricio', 'Calderon', 'Chavarria', 'mau@gmail.com', 'contrasena5', '88770380');
+VALUES(5, 'Mauricio', 'Calderon', 'Chavarria', 'mau@gmail.com', 'contrasena5', '88770380');
 
--- Insertar usuarios que son estudiantes en tabla Estudiante
+INSERT INTO usuario(id_usuario, u_nombre, u_apellido1, u_apellido2, correo, u_contrasena, telefono) 
+VALUES(6, 'Mario', 'Solano', 'Salazar', 'msolano@gmail.com', 'contrasena6', '86304896');
+
+INSERT INTO usuario(id_usuario, u_nombre, u_apellido1, u_apellido2, correo, u_contrasena, telefono) 
+VALUES(7, 'Alexandra', 'Lopez', 'Segura', 'alelopez@yahoo.com', 'contrasena7', '88029355');
+
+INSERT INTO usuario(id_usuario, u_nombre, u_apellido1, u_apellido2, correo, u_contrasena, telefono) 
+VALUES(8, 'Natalia', 'Cruz', 'Ruiz', 'natycr@gmail.com', 'contrasena8', '60168842');
+
+
+
+-- Estudiantes
 INSERT INTO estudiante(carne, universidad, id_usuario) 
-VALUES(60136, 'Universidad de Costa Rica', 1376556);
+VALUES(1, 'TEC', 1);
 
 INSERT INTO estudiante(carne, universidad, id_usuario) 
-VALUES(2017000000, 'Tecnologico de Costa Rica', 2486520);
+VALUES(2, 'UCR', 2);
 
-INSERT INTO estudiante(carne, universidad, id_usuario)
-VALUES(2019000000, 'Tecnologico de Costa Rica', 1897025);
+INSERT INTO estudiante(carne, universidad, id_usuario) 
+VALUES(3, 'UTN', 5);
 
--- Insertar aviones
+INSERT INTO estudiante(carne, universidad, id_usuario) 
+VALUES(4, 'UNA', 8);
+
+
+
+-- Trabajadores
+INSERT INTO trabajador(id_trabajador, t_contrasena)
+VALUES('admin','admin');
+
+INSERT INTO trabajador(id_trabajador, t_contrasena)
+VALUES('mrivera','mrivera');
+
+INSERT INTO trabajador(id_trabajador, t_contrasena)
+VALUES('trabajador','contrasena');
+
+
+
+-- Aviones
 INSERT INTO avion(matricula, av_nombre, capacidad) 
 VALUES('737-300', 'Boeing 737', 140);
 
@@ -54,158 +80,153 @@ VALUES('787-987', 'Boeing 787-9 Dreamliner', 300);
 INSERT INTO avion(matricula, av_nombre, capacidad) 
 VALUES('350-1000', 'Airbus A350', 356);
 
--- Insertar vuelos
-INSERT INTO vuelo(no_vuelo, origen, destino, prt_abordaje, h_salida, h_llegada, v_dia, v_mes, v_ano, coste_vuelo, matricula)
-VALUES(13568999, 'San José', 'Ciudad de México', 'G7', '11:50', '16:10', '30', '04', '2022', 1400,'737-100');
 
-INSERT INTO vuelo(no_vuelo, origen, destino, prt_abordaje, h_salida, h_llegada, v_dia, v_mes, v_ano, coste_vuelo, matricula)
-VALUES(298519, 'San José', 'Bogotá', 'G1', '14:45', '16:00', '05', '05', '2022', 213,'318-256');
 
+-- Vuelos
 INSERT INTO vuelo(no_vuelo, origen, destino, prt_abordaje, h_salida, h_llegada, v_dia, v_mes, v_ano, coste_vuelo, matricula)
-VALUES(568999, 'San José', 'Rio de Janeiro', 'G9', '16:55', '06:15', '10', '08', '2022', 222,'737-800');
+VALUES(1, 'Juan Santamaria Intl', 'Licenciado Benito Juarez Intl', 'G7', '11:50', '16:10', '30', '04', '2022', 1400,'737-100');
 
 INSERT INTO vuelo(no_vuelo, origen, destino, prt_abordaje, h_salida, h_llegada, v_dia, v_mes, v_ano, coste_vuelo, matricula)
-VALUES(85279, 'San José', 'Medellin', 'G5', '08:42', '01:01', '12', '07', '2022', 274,'737-100');
+VALUES(2, 'Juan Santamaria Intl', 'Eldorado Intl', 'G1', '14:45', '16:00', '05', '05', '2022', 213,'318-256');
 
 INSERT INTO vuelo(no_vuelo, origen, destino, prt_abordaje, h_salida, h_llegada, v_dia, v_mes, v_ano, coste_vuelo, matricula)
-VALUES(21479, 'San José', 'Cairo', 'G19', '13:40', '18:40', '23', '11', '2022', 1687,'350-1000');
+VALUES(3, 'Juan Santamaria Intl', 'Galeao Antonio Carlos Jobim', 'G9', '16:55', '06:15', '10', '08', '2022', 222,'737-800');
 
 INSERT INTO vuelo(no_vuelo, origen, destino, prt_abordaje, h_salida, h_llegada, v_dia, v_mes, v_ano, coste_vuelo, matricula)
-VALUES(798562, 'San José', 'Los Ángeles', 'G19', '01:00', '06:05', '01', '07', '2022', 714,'737-800');
+VALUES(4, 'Juan Santamaria Intl', 'John F Kennedy Intl', 'G5', '08:42', '01:01', '12', '07', '2022', 274,'737-100');
 
 INSERT INTO vuelo(no_vuelo, origen, destino, prt_abordaje, h_salida, h_llegada, v_dia, v_mes, v_ano, coste_vuelo, matricula)
-VALUES(996479, 'Sao Paulo', 'New York', 'G19', '07:00', '21:23', '11', '11', '2022', 952,'319-444');
+VALUES(5, 'Juan Santamaria Intl', 'Franz Josef Strauss', 'G19', '13:40', '18:40', '23', '11', '2022', 500,'350-1000');
 
 INSERT INTO vuelo(no_vuelo, origen, destino, prt_abordaje, h_salida, h_llegada, v_dia, v_mes, v_ano, coste_vuelo, matricula)
-VALUES(569246, 'Madrid', 'Praga', 'G3', '15:15', '17:23', '08', '06', '2022', 150,'737-300');
+VALUES(6, 'Juan Santamaria Intl', 'Mc Carran Intl', 'G19', '01:00', '06:05', '01', '07', '2022', 714,'737-800');
 
 INSERT INTO vuelo(no_vuelo, origen, destino, prt_abordaje, h_salida, h_llegada, v_dia, v_mes, v_ano, coste_vuelo, matricula)
-VALUES(75803, 'Londres', 'Las Vegas', 'G15', '11:00', '15:20', '05', '07', '2022', 894,'319-444');
+VALUES(7, 'Congonhas', 'Brussels Natl', 'G19', '07:00', '21:23', '11', '11', '2022', 952,'319-444');
 
 INSERT INTO vuelo(no_vuelo, origen, destino, prt_abordaje, h_salida, h_llegada, v_dia, v_mes, v_ano, coste_vuelo, matricula)
-VALUES(8215896, 'Bruselas', 'Lisboa', 'G17', '16:00', '17:50', '13', '09', '2022', 99,'717-200');
+VALUES(8, 'Barajas', 'Ruzyne', 'G3', '15:15', '17:23', '08', '06', '2022', 150,'737-300');
 
 INSERT INTO vuelo(no_vuelo, origen, destino, prt_abordaje, h_salida, h_llegada, v_dia, v_mes, v_ano, coste_vuelo, matricula)
-VALUES(135214756, 'New York', 'Paris', 'G14', '21:00', '05:20', '06', '07', '2022', 916,'321-997');
+VALUES(9, 'Gatwick', 'Mc Carran Intl', 'G15', '11:00', '15:20', '05', '07', '2022', 894,'319-444');
 
--- Insertar Asiento
-INSERT INTO asiento(no_asiento, ubicacion, no_vuelo)
-VALUES(5, 'B5', 135214756);
+INSERT INTO vuelo(no_vuelo, origen, destino, prt_abordaje, h_salida, h_llegada, v_dia, v_mes, v_ano, coste_vuelo, matricula)
+VALUES(10, 'Brussels Natl', 'Lisboa', 'G17', '16:00', '17:50', '13', '09', '2022', 99,'717-200');
 
-INSERT INTO asiento(no_asiento, ubicacion, no_vuelo)
-VALUES(7, 'C7', 85279);
+INSERT INTO vuelo(no_vuelo, origen, destino, prt_abordaje, h_salida, h_llegada, v_dia, v_mes, v_ano, coste_vuelo, matricula)
+VALUES(11, 'John F Kennedy Intl', 'Charles De Gaulle', 'G14', '21:00', '05:20', '06', '07', '2022', 916,'321-997');
 
-INSERT INTO asiento(no_asiento, ubicacion, no_vuelo)
-VALUES(10, 'C10', 568999);
+INSERT INTO vuelo(no_vuelo, origen, destino, prt_abordaje, h_salida, h_llegada, v_dia, v_mes, v_ano, coste_vuelo, matricula)
+VALUES(12, 'Miami Intl', 'Juan Santamaria Intl', 'A3', '06:20', '08:50', '23', '04', '2022', 700,'321-997');
 
-INSERT INTO asiento(no_asiento, ubicacion, no_vuelo)
-VALUES(25, 'F25', 798562);
 
--- Insertar Promocion
+
+-- Promociones
 INSERT INTO promocion(no_promocion, porcentaje, periodo, url, p_dia, p_mes, p_ano, no_vuelo)
-VALUES(1, 30, 20, 'url', 22, 04, 2022, 85279);
+VALUES(1, 30, 14, 'https://elviajista.com/wp-content/uploads/2021/04/alojarseenpraga-730x487.jpg', '08', '06', '2022', 8);
 
 INSERT INTO promocion(no_promocion, porcentaje, periodo, url, p_dia, p_mes, p_ano, no_vuelo)
-VALUES(2, 15, 30, 'url', 30, 05, 2022, 21479);
+VALUES(2, 10, 7, 'https://estaticos.muyinteresante.es/uploads/images/test/60b4a8d15cafe819e843397a/empire-state-redes.jpg', '12', '07', '2022', 4);
 
 INSERT INTO promocion(no_promocion, porcentaje, periodo, url, p_dia, p_mes, p_ano, no_vuelo)
-VALUES(3, 25, 35, 'url', 22, 04, 2022, 798562);
+VALUES(3, 15, 14, 'https://rvca738f6h5tbwmj3mxylox3-wpengine.netdna-ssl.com/es/wp-content/uploads/sites/2/2021/11/Mexico-City-GI-1064279806.jpg', '30', '04', '2022', 1);
 
 INSERT INTO promocion(no_promocion, porcentaje, periodo, url, p_dia, p_mes, p_ano, no_vuelo)
-VALUES(4, 30, 15, 'url', 22, 04, 2022, 996479);
+VALUES(4, 20, 7, 'https://cdn.getyourguide.com/img/location/5e6a1a4570c88.jpeg/99.jpg', '23', '04', '2022', 12);
 
 INSERT INTO promocion(no_promocion, porcentaje, periodo, url, p_dia, p_mes, p_ano, no_vuelo)
-VALUES(5, 50, 20, 'url', 22, 04, 2022, 569246);
+VALUES(5, 25, 14, 'https://la.network/wp-content/uploads/2021/07/Emprendimientos-en-Bogota%CC%81.jpg', '05', '05', '2022', 2);
 
 INSERT INTO promocion(no_promocion, porcentaje, periodo, url, p_dia, p_mes, p_ano, no_vuelo)
-VALUES(6, 35, 25, 'url', 22, 04, 2022, 75803);
+VALUES(6, 10, 7, 'https://www.avianca.com/content/dam/avianca_new/destinos/semana/gig/1-porque-visitarla/destino-rio-de-janeiro-brazil-para-conocer-el-cerro-del-corcovado.jpg', '10', '08', '2022', 3);
 
 INSERT INTO promocion(no_promocion, porcentaje, periodo, url, p_dia, p_mes, p_ano, no_vuelo)
-VALUES(7, 20, 25, 'url', 22, 04, 2022, 8215896);
+VALUES(7, 30, 14, 'https://cdn2.civitatis.com/portugal/lisboa/guia/lisboa-card-m.jpg', '13', '09', '2022', 10);
 
--- Insertar Trabajadores
-INSERT INTO trabajador(id_trabajador, t_contrasena)
-VALUES('admin','admin');
+INSERT INTO promocion(no_promocion, porcentaje, periodo, url, p_dia, p_mes, p_ano, no_vuelo)
+VALUES(8, 10, 7, 'https://www.eluniversal.com.mx/sites/default/files/2019/10/11/bruselas-grand-place_22.jpg', '11', '11', '2022', 7);
 
-INSERT INTO trabajador(id_trabajador, t_contrasena)
-VALUES('admin2','admin2');
 
-INSERT INTO trabajador(id_trabajador, t_contrasena)
-VALUES('admin3','admin3');
 
--- Insertar Reservacion:
+-- Escalas
+INSERT INTO escala(no_escala, escala, orden, no_vuelo) 
+VALUES(1, 'Tocumen Intl', 1, 1);
+
+INSERT INTO escala(no_escala, escala, orden, no_vuelo) 
+VALUES(2, 'Tocumen Intl', 1, 2);
+
+INSERT INTO escala(no_escala, escala, orden, no_vuelo) 
+VALUES(3, 'Licenciado Benito Juarez Intl', 2, 2);
+
+INSERT INTO escala(no_escala, escala, orden, no_vuelo) 
+VALUES(4, 'Jose Maria Cordova', 3, 2);
+
+INSERT INTO escala(no_escala, escala, orden, no_vuelo) 
+VALUES(5, 'Jose Maria Cordova', 1, 12);
+
+
+
+-- Reservaciones
+INSERT INTO reservacion(no_reservacion, cancelado, no_vuelo, id_usuario, id_trabajador)
+VALUES(1, false, 2, 1, NULL);
 
 INSERT INTO reservacion(no_reservacion, cancelado, no_vuelo, id_usuario, id_trabajador)
-VALUES(17759, true, 85279, 1487418, NULL);
+VALUES(2, true, 11, 1, NULL);
 
 INSERT INTO reservacion(no_reservacion, cancelado, no_vuelo, id_usuario, id_trabajador)
-VALUES(74859, false, 13568999, 2597413, NULL);
+VALUES(3, false, 6, NULL, 'admin');
 
 INSERT INTO reservacion(no_reservacion, cancelado, no_vuelo, id_usuario, id_trabajador)
-VALUES(32584, true, 135214756, 1376556, NULL);
+VALUES(4, true, 7, NULL, 'mrivera');
 
 INSERT INTO reservacion(no_reservacion, cancelado, no_vuelo, id_usuario, id_trabajador)
-VALUES(22568, true, 568999, 2486520, NULL);
+VALUES(5, false, 12, 2, NULL);
 
 INSERT INTO reservacion(no_reservacion, cancelado, no_vuelo, id_usuario, id_trabajador)
-VALUES(23563, true, 798562, 1897025, NULL);
+VALUES(6, true, 8, 5, NULL);
 
 INSERT INTO reservacion(no_reservacion, cancelado, no_vuelo, id_usuario, id_trabajador)
-VALUES(34344, true, 798562, NULL, 'admin');
+VALUES(7, false, 1, NULL, 'trabajador');
 
 INSERT INTO reservacion(no_reservacion, cancelado, no_vuelo, id_usuario, id_trabajador)
-VALUES(65657, true, 798562, NULL, 'admin2');
+VALUES(8, false, 2, NULL, 'mrivera');
 
-INSERT INTO reservacion(no_reservacion, cancelado, no_vuelo, id_usuario, id_trabajador)
-VALUES(67787, false, 798562, NULL, 'admin3');
 
--- Insertar Tiquete
+-- Tiquete
 INSERT INTO tiquete(no_transaccion, t_dia, t_mes, t_ano, abordaje, no_reservacion, no_asiento)
-VALUES(278788, 20, 11, 2021, false, 32584, 5);
-
-INSERT INTO tiquete(no_transaccion, t_dia, t_mes, t_ano, abordaje, no_reservacion, no_asiento)
-VALUES(758866, 22, 01, 2022, false, 22568, 10);
-
-INSERT INTO tiquete(no_transaccion, t_dia, t_mes, t_ano, abordaje, no_reservacion, no_asiento)
-VALUES(325568, 10, 02, 2022, false, 23563, 25);
-
-INSERT INTO tiquete(no_transaccion, t_dia, t_mes, t_ano, abordaje, no_reservacion, no_asiento)
-VALUES(201458, 25, 12, 2021, false, 17759, 7);
+VALUES(1, '06', '07', '2022', false, 2, NULL);
 
 INSERT INTO tiquete(no_transaccion, t_dia, t_mes, t_ano, abordaje, no_reservacion, no_asiento)
-VALUES(45456, 25, 12, 2021, false, 67787, 7);
+VALUES(2, '12', '07', '2022', false, 4, NULL);
 
 INSERT INTO tiquete(no_transaccion, t_dia, t_mes, t_ano, abordaje, no_reservacion, no_asiento)
-VALUES(678677, 25, 12, 2021, false, 65657, 7);
+VALUES(3, '01', '07', '2022', false, 6, NULL);
 
--- Insertar Pasajero
+
+
+-- Pasajeros
 INSERT INTO pasajero(dni, p_nombre, p_apellido1, p_apellido2, cant_maletas, chequeado, no_transaccion)
-VALUES(116558830, 'Ingrid', 'Ruiz', 'Madrigal', 2, DEFAULT, 278788);
-
-INSERT INTO pasajero(dni, p_nombre, p_apellido1, p_apellido2, cant_maletas, chequeado, no_transaccion)
-VALUES(117486602, 'Gabriel', 'Vargas', 'Lopez', 1, DEFAULT, 758866);
+VALUES(116558830, 'Ingrid', 'Ruiz', 'Madrigal', 2, false, 1);
 
 INSERT INTO pasajero(dni, p_nombre, p_apellido1, p_apellido2, cant_maletas, chequeado, no_transaccion)
-VALUES(105690475, 'Mauricio', 'Calderon', 'Chavarria', 2, DEFAULT, 325568);
+VALUES(117486602, 'Gabriel', 'Vargas', 'Lopez', 1, false, 2);
 
 INSERT INTO pasajero(dni, p_nombre, p_apellido1, p_apellido2, cant_maletas, chequeado, no_transaccion)
-VALUES(102350478, 'Jose', 'Campos', 'Gutierrez', 1, DEFAULT, 201458);
+VALUES(105690475, 'Mauricio', 'Calderon', 'Chavarria', 2, false, 3);
 
--- Insertar Maleta
-INSERT INTO maleta(no_maleta, color, peso, dni, no_vuelo)
-VALUES(12486, 'negro', 20, 116558830, 135214756);
 
+-- Maletas
 INSERT INTO maleta(no_maleta, color, peso, dni, no_vuelo)
-VALUES(23569, 'gris', 13, 116558830, 135214756);
+VALUES(1, 'negro', 20, 116558830, 11);
 
 INSERT INTO maleta(no_maleta, color, peso, dni, no_vuelo)
-VALUES(58676, 'azul', 18, 117486602, 568999);
+VALUES(2, 'rosado', 12, 116558830, 11);
 
 INSERT INTO maleta(no_maleta, color, peso, dni, no_vuelo)
-VALUES(48546, 'negro', 20, 105690475, 798562);
+VALUES(3, 'verde', 16, 117486602, 7);
 
 INSERT INTO maleta(no_maleta, color, peso, dni, no_vuelo)
-VALUES(25789, 'rojo', 17, 105690475, 798562);
+VALUES(4, 'azul', 22, 105690475, 8);
 
 INSERT INTO maleta(no_maleta, color, peso, dni, no_vuelo)
-VALUES(12153, 'morado', 14, 102350478, 85279);
+VALUES(5, 'verde', 10, 105690475, 8);
