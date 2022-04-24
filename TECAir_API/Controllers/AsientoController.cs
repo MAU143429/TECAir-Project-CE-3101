@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using TECAir_API.Database.Interface;
 using TECAir_API.Models;
+using TECAir_API.Models.Automation;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -10,49 +12,28 @@ namespace TECAir_API.Controllers
     
     public class AsientoController : ControllerBase
     {
-        List<AsientoWeb> asientos = new List<AsientoWeb>();
-        
+        private readonly IAsiento _asientoRepository;
+        private readonly IAutomation _automationRepository;
 
-        // GET: api/<AsientoController>
-        [HttpGet]
-        public List<AsientoWeb> Get()
+        public AsientoController(IAsiento asientoRepository, IAutomation automationRepository)
         {
-            asientos.Add(new AsientoWeb(1, 1, "5F"));
-            asientos.Add(new AsientoWeb(2, 1, "3G"));
-            asientos.Add(new AsientoWeb(3, 1, "8K"));
-            asientos.Add(new AsientoWeb(1, 2, "2A"));
-            asientos.Add(new AsientoWeb(2, 2, "5D"));
-
-            return asientos;
+            _asientoRepository = asientoRepository;
+            _automationRepository = automationRepository;
         }
-
-        // GET api/<AsientoController>/5
-        [HttpGet("{id}")]
-        public List<AsientoWeb> Get(int id)
-        {
-            asientos.Add(new AsientoWeb(1, 1, "5F"));
-            asientos.Add(new AsientoWeb(2, 1, "3G"));
-            asientos.Add(new AsientoWeb(3, 1, "8K"));
-            asientos.Add(new AsientoWeb(4, 2, "2A"));
-            asientos.Add(new AsientoWeb(5, 2, "5D"));
-            List<AsientoWeb> resultado = new List<AsientoWeb>();
-
-            for (int i = 0; i < asientos.Count; i++)
-            {
-                if (asientos[i].no_asiento == id)
-                {
-                    resultado.Add(asientos[i]);
-                }
-            }
-            return resultado;
-        }
-
         // POST api/<AsientoController>
-        [HttpPost]
-        public List<AsientoWeb> Post([FromBody] AsientoWeb value)
+        [HttpPost("Add")]
+        public async Task<IActionResult> IngresarAsiento([FromBody] AsientoWeb asientoWeb)
         {
-            asientos.Add(value);
-            return asientos;
+            AsientosTotales asientos = await _automationRepository.GetTotalAsientos();
+            Asiento asiento = new Asiento(asientos.asientos, asientoWeb.ubicacion, asientoWeb.no_vuelo);
+            if (asiento == null)
+                return BadRequest();
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var created = await _asientoRepository.ingresarAsiento(asiento);
+
+            return Created("created", created);
         }
     }
 }

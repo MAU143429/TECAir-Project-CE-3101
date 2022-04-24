@@ -38,6 +38,7 @@ builder.Services.AddScoped<IAutomation, AutomationRepository>();
 builder.Services.AddScoped<IUsuario, UsuarioRepository>();
 builder.Services.AddScoped<IPasajero, PasajeroRepository>();
 builder.Services.AddScoped<IEscala, EscalaRepository>();
+builder.Services.AddScoped<IAsiento, AsientoRepository>();
 
 //configuracion del context en el programa
 builder.Services.AddDbContext<TECAirContext>(

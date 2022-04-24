@@ -34,6 +34,20 @@ namespace TECAir_API.Database.Repository
             return vuelosTotales;
 
         }
+        public async Task<AsientosTotales> GetTotalAsientos()
+        {
+            var db = dbConnection();
+
+            var sql = @"
+                        SELECT *
+                        FROM public.asiento
+                        ";
+            var test = await db.QueryAsync<Asiento>(sql, new { });
+            var total = Enumerable.Count(test);
+            AsientosTotales asientosTotales = new AsientosTotales(total);
+            return asientosTotales;
+
+        }
         public async Task<ReservacionesTotales> GetTotalReservaciones()
         {
             var db = dbConnection();

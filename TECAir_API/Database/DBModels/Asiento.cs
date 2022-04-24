@@ -16,5 +16,12 @@ namespace TECAir_API
 
         public virtual Vuelo NoVueloNavigation { get; set; } = null!;
         public virtual ICollection<Tiquete> Tiquetes { get; set; }
+
+        public Asiento(decimal noAsiento, string ubicacion, decimal noVuelo)
+        {
+            NoAsiento = noAsiento;
+            Ubicacion = ubicacion;
+            NoVuelo = noVuelo;
+        }
     }
 }

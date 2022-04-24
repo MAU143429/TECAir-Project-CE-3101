@@ -6,6 +6,7 @@ namespace TECAir_API.Database.Interface
     public interface IAutomation
     {
         Task<VuelosTotales> GetTotalVuelos();
+        Task<AsientosTotales> GetTotalAsientos();
         Task<ReservacionesTotales> GetTotalReservaciones();
         Task<PromocionesTotales> GetTotalPromociones();
         Task<MaletasTotales> GetTotalMaletas();
