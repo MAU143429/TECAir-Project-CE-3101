@@ -2,6 +2,6 @@
 {
     public interface IAsiento
     {
-        Task<bool> ingresarAsiento(Asiento asiento);
+        Task<bool> ingresarAsiento(Asiento asiento, int no_transaccion);
     }
 }

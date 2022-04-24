@@ -31,7 +31,7 @@ namespace TECAir_API.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var created = await _asientoRepository.ingresarAsiento(asiento);
+            var created = await _asientoRepository.ingresarAsiento(asiento, asientoWeb.no_transaccion);
 
             return Created("created", created);
         }
