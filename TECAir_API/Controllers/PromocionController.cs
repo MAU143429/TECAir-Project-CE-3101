@@ -32,7 +32,7 @@ namespace TECAir_API.Controllers
         public async Task<IActionResult> crearPromocion(PromocionWeb nuevaPromocion)
         {
             PromocionesTotales promos = await _automationRepository.GetTotalPromociones();
-            Promocion promocion = new Promocion(promos.total_promociones + 1, nuevaPromocion.porcentaje, nuevaPromocion.periodo, nuevaPromocion.url, nuevaPromocion.getDia(), nuevaPromocion.getMes(), nuevaPromocion.getAno(), nuevaPromocion.no_vuelo);
+            PromocionOutput promocion = new PromocionOutput(promos.total_promociones + 1, nuevaPromocion.porcentaje, nuevaPromocion.periodo, nuevaPromocion.url, nuevaPromocion.getDia(), nuevaPromocion.getMes(), nuevaPromocion.getAno(), nuevaPromocion.no_vuelo);
             if (promocion == null)
 
                 return BadRequest();
@@ -45,27 +45,9 @@ namespace TECAir_API.Controllers
         }
 
         [HttpGet("GetAll")]
-        public async Task<List<Promocion>> getPromociones(Promocion promocion)
+        public async Task<IActionResult> getPromociones(PromocionOutput promocion)
         {
-            List<Promocion> promociones = await _promocionRepository.GetPromociones();
-
-            Random rng = new Random();
-            int c = promociones.Count;
-            while (c > 1)
-            {
-                c--;
-                int k = rng.Next(c + 1);
-                Promocion value = promociones[k];
-                promociones[k] = promociones[c];
-                promociones[c] = value;
-            }
-
-            while (promociones.Count > 8)
-            {
-                promociones.RemoveAt(0);
-            }
-
-            return promociones;
+            return Ok(await _promocionRepository.GetPromociones());
         }
     }
 }

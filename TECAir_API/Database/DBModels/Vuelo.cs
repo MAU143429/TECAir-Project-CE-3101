@@ -10,7 +10,7 @@ namespace TECAir_API
             Asientos = new HashSet<Asiento>();
             Escalas = new HashSet<Escala>();
             Maleta = new HashSet<Maletum>();
-            Promocions = new HashSet<Promocion>();
+            Promocions = new HashSet<PromocionOutput>();
             Reservacions = new HashSet<Reservacion>();
         }
 
@@ -47,7 +47,7 @@ namespace TECAir_API
         public virtual ICollection<Asiento> Asientos { get; set; }
         public virtual ICollection<Escala> Escalas { get; set; }
         public virtual ICollection<Maletum> Maleta { get; set; }
-        public virtual ICollection<Promocion> Promocions { get; set; }
+        public virtual ICollection<PromocionOutput> Promocions { get; set; }
         public virtual ICollection<Reservacion> Reservacions { get; set; }
     }
 }

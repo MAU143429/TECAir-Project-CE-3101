@@ -2,8 +2,8 @@
 {
     public interface IPromocion
     {
-        Task<bool> ingresarPromocion(Promocion promocion);
-        Task<List<Promocion>> GetPromociones();
+        Task<bool> ingresarPromocion(PromocionOutput promocion);
+        Task<IEnumerable<PromocionOutput>> GetPromociones();
 
     }
 }

@@ -56,7 +56,7 @@ namespace TECAir_API.Database.Repository
                         SELECT *
                         FROM public.promocion
                         ";
-            var test = await db.QueryAsync<Promocion>(sql, new { });
+            var test = await db.QueryAsync<PromocionOutput>(sql, new { });
             var total = Enumerable.Count(test);
             PromocionesTotales promocionesTotales = new PromocionesTotales(total);
             return promocionesTotales;

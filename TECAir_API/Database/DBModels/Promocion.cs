@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace TECAir_API
 {
-    public partial class Promocion
+    public partial class PromocionOutput
     {
         [Key]  
         public decimal NoPromocion { get; set; }
@@ -18,11 +18,11 @@ namespace TECAir_API
 
         public virtual Vuelo NoVueloNavigation { get; set; } = null!;
 
-        public Promocion()
+        public PromocionOutput()
         {
         }
 
-        public Promocion(decimal noPromocion, decimal porcentaje, decimal periodo, string url, string pDia, string pMes, string pAno, decimal noVuelo)
+        public PromocionOutput(decimal noPromocion, decimal porcentaje, decimal periodo, string url, string pDia, string pMes, string pAno, decimal noVuelo)
         {
             NoPromocion = noPromocion;
             Porcentaje = porcentaje;

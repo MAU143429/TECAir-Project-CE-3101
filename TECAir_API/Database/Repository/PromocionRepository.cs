@@ -21,7 +21,7 @@ namespace TECAir_API.Database.Repository
             return new NpgsqlConnection(_connectionString.ConnectionString);
         }
         
-        public async Task<bool> ingresarPromocion(Promocion promocion)
+        public async Task<bool> ingresarPromocion(PromocionOutput promocion)
         {
             var db = dbConnection();
 
@@ -45,16 +45,16 @@ namespace TECAir_API.Database.Repository
             return result > 0;
         }
 
-        public async Task<List<Promocion>> GetPromociones()
+        public async Task<IEnumerable<PromocionOutput>> GetPromociones()
         {
             var db = dbConnection();
 
             var sql = @"
-                        SELECT *
+                        SELECT no_promocion, porcentaje, periodo, url, p_dia, p_mes, p_ano, no_vuelo
                         FROM public.promociones
                         ";
 
-            return (List<Promocion>) await db.QueryAsync<Promocion>(sql, new { });
+            return await db.QueryAsync<PromocionOutput>(sql, new { });
         }
     }
 }
