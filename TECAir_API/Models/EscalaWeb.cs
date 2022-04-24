@@ -9,7 +9,7 @@
         {
         }
 
-        public EscalaWeb(int no_escala, string escala, int orden)
+        public EscalaWeb(string escala, int orden)
         {
             this.escala = escala;
             this.orden = orden;
