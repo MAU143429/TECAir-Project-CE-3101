@@ -20,5 +20,16 @@ namespace TECAir_API
 
         public virtual Tiquete NoTransaccionNavigation { get; set; } = null!;
         public virtual ICollection<Maletum> Maleta { get; set; }
+
+        public Pasajero(decimal dni, string pNombre, string pApellido1, string pApellido2, decimal cantMaletas, bool chequeado, decimal noTransaccion)
+        {
+            Dni = dni;
+            PNombre = pNombre;
+            PApellido1 = pApellido1;
+            PApellido2 = pApellido2;
+            CantMaletas = cantMaletas;
+            Chequeado = chequeado;
+            NoTransaccion = noTransaccion;
+        }
     }
 }
