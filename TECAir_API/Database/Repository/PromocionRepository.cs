@@ -58,7 +58,7 @@ namespace TECAir_API.Database.Repository
                         FROM public.promocion JOIN public.vuelo ON vuelo.no_vuelo = promocion.no_vuelo
                         ";
 
-            var temp = await db.QueryAsync<PromotionOutput>(sql, new { });
+            var temp = await db.QueryAsync<PromosOutput>(sql, new { });
             List<PromosOutput> output = (List<PromosOutput>) temp;
 
             List<PromosRandom> result = new List<PromosRandom>();
