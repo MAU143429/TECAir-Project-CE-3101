@@ -63,7 +63,7 @@
                             <td>{{data.no_vuelo}}</td>
                             <td>{{data.p_nombre}} {{data.p_apellido1}} {{data.p_apellido2}}</td>
                             <td>{{data.h_salida}}</td>
-                            <td><button class="actionsbtn">Chequear pasajero</button></td>
+                            <td><button class="actionsbtn" routerLink="/ticketView" (click)="addNewCheckIn(this.data)">Chequear pasajero</button></td>
         
                           </tr>
                         </table>
@@ -72,7 +72,7 @@
                   </div> 
                 </div>
               </div>
-            </div> 
+            </div>  
 
 
 

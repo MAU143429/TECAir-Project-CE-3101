@@ -42,12 +42,11 @@ export class FlightsService {
     }
 
 
-
-    /** POST PARA CONSULTA CIERRE DE VUELO
-   *  Este post permite enviar la informacion para el cierre de un vuelo.
-   */
+    /** GET PARA CONSULTA CIERRE DE VUELO
+    *  Este post permite enviar la informacion para el cierre de un vuelo.
+    */
      newClose(closeFlight:any):Observable<any>{
-      return this.httpclient.post(this.url+'/VueloCerrado', closeFlight) 
+      return this.httpclient.get(this.url+'/VueloCerrado/Get/' +  closeFlight.no_vuelo) 
     }
 
     /** POST PARA CONSULTA APERTURA DE VUELO

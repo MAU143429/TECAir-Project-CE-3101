@@ -14,7 +14,7 @@ export class BaggageComponent implements OnInit {
 
   newBaggage:Baggage = new Baggage
   newCheckin:CheckIn = new CheckIn
-  checkdata: CheckData[] | undefined;
+  checkdata: CheckData[] | undefined; 
 
 
   constructor(private service:BaggageService, private router:Router) { }
@@ -33,8 +33,10 @@ export class BaggageComponent implements OnInit {
    * Este metodo permite verificar si un pasajero ya fue chequeado.
    * @param newCheckin Objeto que contiene la informacion de un pasajero para que este pueda ser chequeado
    */
-  addNewCheckIn(newCheckin:CheckIn){
-    this.service.newCheckin(newCheckin).subscribe(checkin=> console.log(checkin));
+  addNewCheckIn(data:any){
+    this.newCheckin = data.no_transaccion
+    this.service.getCheckData(this.newCheckin).subscribe(checkin=> (this.checkdata = checkin));
+    
   }
 
 }

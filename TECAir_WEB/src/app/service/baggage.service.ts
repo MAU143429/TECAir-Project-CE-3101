@@ -19,10 +19,17 @@ export class BaggageService {
   }
 
   /** POST HACER CHECK-IN
-   *  Este post permite enviar la informacion de una promocion para que esta sea registrada.
+   *  Este post permite enviar la informacion de un pasajero para que este sea chequeado
    */
    newCheckin(checkin:any):Observable<any>{
-    return this.httpclient.post(this.url+'/Chequeo/New', checkin) 
+    return this.httpclient.post(this.url+'Pasajero/Chequeo', checkin) 
+  }
+
+  /** GET PARA CHEQUEO
+  *  Este get permite solicitar la informacion de un pasajero
+  */
+    getCheckData(openFlight:any):Observable<any>{
+    return this.httpclient.get(this.url+'/Tiquete/GetT/' +  openFlight) 
   }
 
 }

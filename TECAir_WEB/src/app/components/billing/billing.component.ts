@@ -62,8 +62,6 @@ constructor(private service:BookingsService,private connectionService:Connection
     newTicketPayment.v_dia = this.reservationdata[0].v_dia
     newTicketPayment.v_mes = this.reservationdata[0].v_mes
     newTicketPayment.v_ano = this.reservationdata[0].v_ano
-    console.log("SE ENVIARA")
-    console.log(newTicketPayment)
     this.service.addTicketPayment(newTicketPayment).subscribe(ticket=> console.log(ticket));
   }
 

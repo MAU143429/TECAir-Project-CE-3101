@@ -55,7 +55,7 @@ namespace TECAir_API.Controllers
         [HttpGet("Get/{vuelo}/{reservacion}")]
         public async Task<IActionResult> GetVuelo(int vuelo, int reservacion)
         {
-            CantEscalas escalas = await _automationRepository.GetEscalas(vuelo);
+            CantEscalas escalas = await _automationRepository.GetEscalas();
             return Ok(await _vueloRepository.GetVueloR(vuelo, reservacion, escalas.cant_escalas));
         }
 

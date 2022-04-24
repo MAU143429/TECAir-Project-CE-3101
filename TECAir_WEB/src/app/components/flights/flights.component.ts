@@ -9,6 +9,7 @@ import { FlightsService } from 'src/app/service/flights.service';
 import { SearchflightsService } from 'src/app/service/searchflights.service';
 import { startWith, debounceTime, distinctUntilChanged, switchMap, map } from 'rxjs/operators';
 import { Passangerdata } from 'src/app/interface/passangerdata';
+import { Flightdata } from 'src/app/interface/flightdata';
 import {FormControl} from '@angular/forms';
 import { ConnectionService } from 'src/app/service/connection-service';
 
@@ -32,21 +33,12 @@ export class FlightsComponent implements OnInit {
   myControl = new FormControl();
   myControlModel = new FormControl();
   passangerdata:Passangerdata[] | undefined;
+  flightdata:Flightdata[] | undefined;
   newFlight:Flight = new Flight
   newOpenFlight:OpenFlight = new OpenFlight
   newCloseFlight:CloseFlight = new CloseFlight
   newUpdateFlight:UpdateFlight = new UpdateFlight
   
-
-
-  flightdata = [
-  {
-    "no_vuelo" : "798562",
-    "origen" : "San Jose, Costa Rica",
-    "destino": "Ciudad de Mexico, Mexico",
-    "h_salida": "2:00 AM",
-  }
-  ]
 
   /**
    * Constructor de la clase Flights
@@ -172,7 +164,7 @@ export class FlightsComponent implements OnInit {
    * @param newCloseFlight Datos para consulta de un vuelo cerrado
    */
   newAddCloseFlight(newCloseFlight:CloseFlight){
-  this.service.newClose(newCloseFlight).subscribe(close=> console.log(close));
+  this.service.newClose(newCloseFlight).subscribe(open=> (this.flightdata = open));
   }
 
   /**
@@ -185,9 +177,7 @@ export class FlightsComponent implements OnInit {
     }
 
     /** 
-   * Este metodo permite realizar el set de los valores para el objeto que se
-   * enviara con el numero de vuelo para realizar la reserva
-   * @param newBooking es el objeto que almacenara el numero de vuelo a reservar
+   * Este metodo permite enviar la descripcion del cierre del vuelo para poder generar el reporte
    * @param data posee los datos del vuelo que se desea reservar 
    */
     ReportDetails(data:any){
