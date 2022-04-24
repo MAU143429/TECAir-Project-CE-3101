@@ -192,6 +192,13 @@ INSERT INTO reservacion(no_reservacion, cancelado, no_vuelo, id_usuario, id_trab
 VALUES(8, false, 2, NULL, 'mrivera');
 
 
+
+-- Asientos
+INSERT INTO public.asiento(no_asiento, no_vuelo, ubicacion)
+VALUES(0, 11, 'F5')
+
+
+
 -- Tiquete
 INSERT INTO tiquete(no_transaccion, t_dia, t_mes, t_ano, abordaje, no_reservacion, no_asiento)
 VALUES(1, '06', '07', '2022', false, 2, 0);
@@ -230,9 +237,3 @@ VALUES(4, 'azul', 22, 105690475, 8);
 
 INSERT INTO maleta(no_maleta, color, peso, dni, no_vuelo)
 VALUES(5, 'verde', 10, 105690475, 8);
-
-
-
--- Asientos
-INSERT INTO public.asiento(no_asiento, no_vuelo, ubicacion)
-VALUES(0, 11, 'F5')
