@@ -132,7 +132,7 @@ namespace TECAir_API.Database.Repository
             var db = dbConnection();
             var sql = @"
                         SELECT vuelo.no_vuelo, reservacion.no_reservacion, p_nombre, p_apellido1, p_apellido2, ubicacion, origen, origen, destino, destino, prt_abordaje, v_dia, v_mes, v_ano, h_salida, h_llegada
-                        FROM )((public.tiquete JOIN public.reservacion ON tiquete.no_reservacion = reservacion.no_reservacion)
+                        FROM (((public.tiquete JOIN public.reservacion ON tiquete.no_reservacion = reservacion.no_reservacion)
                         JOIN public.pasajero ON tiquete.dni = pasajero.dni)
                         JOIN public.asiento ON tiquete.no_asiento = asiento.no_asiento)
                         JOIN public.vuelo ON tiquete.no_vuelo = vuelo.no_vuelo
