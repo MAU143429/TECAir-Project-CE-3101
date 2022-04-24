@@ -135,8 +135,8 @@ namespace TECAir_API.Database.Repository
                         FROM (((public.tiquete JOIN public.reservacion ON tiquete.no_reservacion = reservacion.no_reservacion)
                         JOIN public.pasajero ON tiquete.no_transaccion = pasajero.no_transaccion)
                         JOIN public.asiento ON tiquete.no_asiento = asiento.no_asiento)
-                        JOIN public.vuelo ON tiquete.no_vuelo = vuelo.no_vuelo
-                        WHERE tiquete.no_tiquete = @noTransaccion
+                        JOIN public.vuelo ON reservacion.no_vuelo = vuelo.no_vuelo
+                        WHERE tiquete.no_transaccion = @noTransaccion
                         ";
 
             return await db.QueryAsync<TiqueteVuelo>(sql, new
