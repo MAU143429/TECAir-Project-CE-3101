@@ -230,3 +230,9 @@ VALUES(4, 'azul', 22, 105690475, 8);
 
 INSERT INTO maleta(no_maleta, color, peso, dni, no_vuelo)
 VALUES(5, 'verde', 10, 105690475, 8);
+
+
+
+-- Asientos
+INSERT INTO public.asiento(no_asiento, no_vuelo, ubicacion)
+VALUES(0, 11, 'F5')
