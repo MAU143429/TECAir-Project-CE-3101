@@ -54,5 +54,13 @@ namespace TECAir_API.Models
 
             return Created("created", created);
         }
+
+
+
+        [HttpGet("{no_transaccion}")]
+        public async Task<IActionResult> GetTiqueteVuelo(int no_transaccion)
+        {
+            return Ok(await _tiqueteRepository.GenerarTiquete(no_transaccion));
+        }
     }
 }
