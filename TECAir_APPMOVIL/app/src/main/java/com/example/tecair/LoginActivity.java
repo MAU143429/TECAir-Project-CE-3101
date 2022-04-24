@@ -35,6 +35,22 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        Button createDB = (Button) findViewById(R.id.createDB);
+        createDB.setOnClickListener(new View.OnClickListener(){
+           @Override
+           public void onClick(View view){
+               DataBase dataBase = new DataBase(LoginActivity.this);
+               SQLiteDatabase db = dataBase.getWritableDatabase();
+               if(db != null){
+                   Toast.makeText(LoginActivity.this, "BASE DE DATOS CREADA", Toast.LENGTH_LONG).show();
+                   db.close();
+               } else{
+                   Toast.makeText(LoginActivity.this, "ERROR AL CREAR LA BASE DE DATOS", Toast.LENGTH_LONG).show();
+               }
+           }
+        });
+
+
         Button loginbtn = (Button) findViewById(R.id.loginbtn);
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
