@@ -24,51 +24,37 @@ namespace TECAir_API.Database.Repository
             var db = dbConnection();
 
             Tiquete tiquete = new Tiquete(no_transaccion, gTiquete.v_dia, gTiquete.v_mes, gTiquete.v_ano, false, gTiquete.no_reservacion, 0);
+            Pasajero pasajero = new Pasajero(gTiquete.dni, gTiquete.p_nombre, gTiquete.p_apellido1, gTiquete.p_apellido2, 0, false, no_transaccion);
             var sql1 = @"
                         INSERT INTO tiquete(no_transaccion, no_reservacion, no_asiento, t_dia, t_mes, t_ano, abordaje)
                         VALUES (@notransaccion, @noreservacion, @noasiento, @tdia, @tmes, @tano, @abordaje);
-                        ";
 
-            var result1 = await db.ExecuteAsync(sql1, new
-            {
-                tiquete.NoTransaccion,
-                tiquete.NoReservacion,
-                tiquete.NoAsiento,
-                tiquete.TDia,
-                tiquete.TMes,
-                tiquete.TAno,
-                tiquete.Abordaje
-            });
-
-            var sql2 = @"
                         UPDATE public.reservacion
                         SET cancelado = true
-                        WHERE no_reservacion = @noreservacion 
-                        ";
+                        WHERE no_reservacion = @noreservacion;
 
-            var resultado2 = await db.ExecuteAsync(sql2, new
-            {
-                NoReservacion = gTiquete.no_reservacion
-            });
-
-            Pasajero pasajero = new Pasajero(gTiquete.dni, gTiquete.p_nombre, gTiquete.p_apellido1, gTiquete.p_apellido2, 0, false, no_transaccion);
-            var sql3 = @"
                         INSERT INTO pasajero(dni, no_transaccion, p_nombre, p_apellido1, p_apellido2, cant_maletas, chequeado)
                         VALUES (@dni, @noTransaccion, @pNombre, @pApellido1, @pApellido2, 0, false);
                         ";
 
-            var result3 = await db.ExecuteAsync(sql3, new
+            var result1 = await db.ExecuteAsync(sql1, new
             {
-                pasajero.Dni,
-                pasajero.NoTransaccion,
-                pasajero.PNombre,
-                pasajero.PApellido1,
-                pasajero.PApellido2,
-                pasajero.CantMaletas,
-                pasajero.Chequeado
+                NoTransaccion = tiquete.NoTransaccion,
+                NoReservacion = tiquete.NoReservacion,
+                NoAsiento = tiquete.NoAsiento,
+                TDia = tiquete.TDia,
+                TMes = tiquete.TMes,
+                TAno = tiquete.TAno,
+                Abordaje = tiquete.Abordaje,
+                Dni = pasajero.Dni,
+                PNombre = pasajero.PNombre,
+                PApellido1 = pasajero.PApellido1,
+                PApellido2 = pasajero.PApellido2,
+                CantMaletas = pasajero.CantMaletas,
+                Chequeado = pasajero.Chequeado
             });
 
-            return result3 > 0;
+            return result1 > 0;
         }
     }
 }

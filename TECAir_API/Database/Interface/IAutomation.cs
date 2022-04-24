@@ -11,7 +11,7 @@ namespace TECAir_API.Database.Interface
         Task<MaletasTotales> GetTotalMaletas();
         Task<UsuariosTotales> GetTotalUsuarios();
         Task<TiquetesTotales> GetTotalTiquetes();
-        Task<CantEscalas> GetEscalas(int no_vuelo);
+        Task<CantEscalas> GetEscalas();
         Task<IEnumerable<Login>> LoginUser(string correo, string contrasena);
         Task<IEnumerable<Login>> LoginTrabajador(string id_trabajador, string contrasena);
         Task<IdUsuario> GetUsuario(string correo);

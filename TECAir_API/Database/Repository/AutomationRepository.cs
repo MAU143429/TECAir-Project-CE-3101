@@ -111,9 +111,8 @@ namespace TECAir_API.Database.Repository
             var db = dbConnection();
 
             var sql = @"
-                        SELECT COUNT (*)
+                        SELECT *
                         FROM public.escala
-                        WHERE escala.no_vuelo = @no_vuelo
                         ";
             var test = await db.QueryAsync<Tiquete>(sql, new { });
             var total = Enumerable.Count(test);
