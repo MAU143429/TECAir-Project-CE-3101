@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using TECAir_API.Database.Interface;
 using TECAir_API.Models;
 using TECAir_API.Models.Automation;
@@ -58,9 +59,25 @@ namespace TECAir_API.Models
 
 
         [HttpGet("GetTVuelo/{no_transaccion}")]
-        public async Task<IActionResult> GetTiqueteVuelo(int no_transaccion)
+        public async Task<List<TiqueteVuelo>> GetTiqueteVuelo(int no_transaccion)
         {
-            return Ok(await _tiqueteRepository.GenerarTiquete(no_transaccion));
+            TiqueteVuelo tiquete = await _tiqueteRepository.GenerarTiquete(no_transaccion);
+            List<AeropuertoWeb> aeropuertos;
+            using (StreamReader r = new StreamReader("Assets/airports.json"))
+            {
+                string json = r.ReadToEnd();
+                aeropuertos = JsonConvert.DeserializeObject<List<AeropuertoWeb>>(json);
+            }
+
+            for (int i = 0; i < aeropuertos.Count; i++)
+            {
+                if (tiquete.origen == aeropuertos[i].nombre)
+                    tiquete.ciudad_origen = aeropuertos[i].ciudad;
+                if (tiquete.destino == aeropuertos[i].nombre)
+                    tiquete.ciudad_destino = aeropuertos[i].ciudad;
+            }
+
+            return new List<TiqueteVuelo>() { tiquete };
         }
     }
 }
