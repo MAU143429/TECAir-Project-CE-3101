@@ -23,7 +23,8 @@ namespace TECAir_API.Controllers
         [HttpPost("Add")]
         public async Task<IActionResult> Add(GenerarTiquete gTiquete)
         {
-            var created = await _pasajeroRepository.GenerarTiquete(gTiquete, 35);
+            TiquetesTotales tiquetes = await _automationRepository.GetTotalTiquetes();
+            var created = await _pasajeroRepository.GenerarTiquete(gTiquete, tiquetes.total_tiquetes);
 
             return Created("created", created);
         }

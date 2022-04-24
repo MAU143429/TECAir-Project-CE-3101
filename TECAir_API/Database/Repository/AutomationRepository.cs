@@ -106,7 +106,7 @@ namespace TECAir_API.Database.Repository
         }
 
 
-        public async Task<CantEscalas> GetEscalas(int no_vuelo)
+        public async Task<CantEscalas> GetEscalas()
         {
             var db = dbConnection();
 
