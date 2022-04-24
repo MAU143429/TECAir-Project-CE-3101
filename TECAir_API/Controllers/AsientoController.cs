@@ -22,7 +22,7 @@ namespace TECAir_API.Controllers
         }
         // POST api/<AsientoController>
         [HttpPost("Add")]
-        public async Task<IActionResult> IngresarAsiento([FromBody] AsientoWeb asientoWeb)
+        public async Task<IActionResult> IngresarAsiento(AsientoWeb asientoWeb)
         {
             AsientosTotales asientos = await _automationRepository.GetTotalAsientos();
             Asiento asiento = new Asiento(asientos.asientos, asientoWeb.ubicacion, asientoWeb.no_vuelo);
