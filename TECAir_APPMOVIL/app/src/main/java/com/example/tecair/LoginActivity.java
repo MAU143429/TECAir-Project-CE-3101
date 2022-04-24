@@ -8,10 +8,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.tecair.db.DataBase;
+import com.example.tecair.db.DBHelper;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -41,9 +42,22 @@ public class LoginActivity extends AppCompatActivity {
                 if (userEditText.getText().toString().equals("admin") && passwordEditText.getText().toString().equals("test")) {
                     user = userEditText.getText().toString();
                     login();
-                    createDatabase();
                 } else {
                     Toast.makeText(LoginActivity.this, "Fallo de inicio de sesión", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        ImageView logo = (ImageView) findViewById(R.id.logo);
+        logo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DBHelper dataBase = new DBHelper(LoginActivity.this);
+                SQLiteDatabase db = dataBase.getWritableDatabase();
+                if (db != null) {
+                    Toast.makeText(LoginActivity.this, "BASE DE DATOS CREADA", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(LoginActivity.this, "ERROR AL CREAR BASE DE DATOS", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -58,11 +72,6 @@ public class LoginActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         intent.putExtra("user", user);
         startActivity(intent);
-    }
-
-    public void createDatabase() {
-        DataBase dataBase = new DataBase(LoginActivity.this);
-        SQLiteDatabase db = dataBase.getWritableDatabase();
     }
 
 }
