@@ -24,7 +24,8 @@ namespace TECAir_API.Controllers
         public async Task<IActionResult> crearEscala(EscalaWeb nuevaEscala)
         {
             CantEscalas escalas = await _automationRepository.GetEscalas();
-            Escala escala = new Escala(escalas.cant_escalas, nuevaEscala.escala, nuevaEscala.orden, nuevaEscala.no_vuelo);
+            VuelosTotales vuelos = await _automationRepository.GetTotalVuelos();
+            Escala escala = new Escala(escalas.cant_escalas, nuevaEscala.escala, nuevaEscala.orden, vuelos.total_vuelos);
             if (escala == null)
 
                 return BadRequest();
