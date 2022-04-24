@@ -57,7 +57,7 @@ namespace TECAir_API.Models
 
 
 
-        [HttpGet("{no_transaccion}")]
+        [HttpGet("GetTVuelo/{no_transaccion}")]
         public async Task<IActionResult> GetTiqueteVuelo(int no_transaccion)
         {
             return Ok(await _tiqueteRepository.GenerarTiquete(no_transaccion));
