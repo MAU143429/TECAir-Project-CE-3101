@@ -31,7 +31,7 @@ namespace TECAir_API.Controllers
             return Created("created", created);
         }
 
-        [HttpPut("CreckIn")]
+        [HttpPut("CheckIn")]
         public async Task<IActionResult> UpdateAbordaje([FromBody] VueloAbiertoWeb transaccion)
         {
             await _pasajeroRepository.Chequear(transaccion.no_transaccion);
