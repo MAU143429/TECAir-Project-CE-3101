@@ -194,13 +194,13 @@ VALUES(8, false, 2, NULL, 'mrivera');
 
 -- Tiquete
 INSERT INTO tiquete(no_transaccion, t_dia, t_mes, t_ano, abordaje, no_reservacion, no_asiento)
-VALUES(1, '06', '07', '2022', false, 2, NULL);
+VALUES(1, '06', '07', '2022', false, 2, 0);
 
 INSERT INTO tiquete(no_transaccion, t_dia, t_mes, t_ano, abordaje, no_reservacion, no_asiento)
-VALUES(2, '12', '07', '2022', false, 4, NULL);
+VALUES(2, '12', '07', '2022', false, 4, 0);
 
 INSERT INTO tiquete(no_transaccion, t_dia, t_mes, t_ano, abordaje, no_reservacion, no_asiento)
-VALUES(3, '01', '07', '2022', false, 6, NULL);
+VALUES(3, '01', '07', '2022', false, 6, 0);
 
 
 
