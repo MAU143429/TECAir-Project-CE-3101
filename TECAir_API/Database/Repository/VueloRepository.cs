@@ -220,5 +220,22 @@ namespace TECAir_API.Database.Repository
                 NoVuelo = no_vuelo
             });
         }
+
+        public async Task<IEnumerable<Pasajero>> GetReportePasajeros(int no_vuelo)
+        {
+            var db = dbConnection();
+
+            var sql = @"
+                        SELECT pasajero.no_transaccion, p_nombre, p_apellido1, p_apellido2, dni
+                        FROM (public.pasajero JOIN public.tiquete ON pasajero.no_transaccion = tiquete.no_transaccion)
+                        JOIN public.reservacion ON tiquete.no_reservacion = reservacion.no_reservacion
+                        WHERE reservacion.no_vuelo = @noVuelo
+                        ";
+
+            return await db.QueryAsync<Pasajero>(sql, new
+            {
+                NoVuelo = no_vuelo
+            });
+        }
     }
 }

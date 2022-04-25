@@ -10,6 +10,7 @@ namespace TECAir_API.Database.Interface
         Task<ReservacionesTotales> GetTotalReservaciones();
         Task<PromocionesTotales> GetTotalPromociones();
         Task<MaletasTotales> GetTotalMaletas();
+        Task<MaletasTotales> GetMaletas(int dni);
         Task<UsuariosTotales> GetTotalUsuarios();
         Task<TiquetesTotales> GetTotalTiquetes();
         Task<CantEscalas> GetEscalas();

@@ -14,5 +14,6 @@ namespace TECAir_API.Database.Interface
         Task<IEnumerable<VueloCompleto>> GetVueloR(int no_vuelo, int no_reservacion, int escalas);
         Task<IEnumerable<PasajeroWeb>> GetPasajeros(int no_vuelo);
         Task<IEnumerable<MaletaWeb>> GetMaletas(int no_vuelo);
+        Task<IEnumerable<Pasajero>> GetReportePasajeros(int no_vuelo);
     }
 }

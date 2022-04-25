@@ -90,6 +90,22 @@ namespace TECAir_API.Database.Repository
             return maletasTotales;
 
         }
+
+        public async Task<MaletasTotales> GetMaletas(int dni)
+        {
+            var db = dbConnection();
+
+            var sql = @"
+                        SELECT *
+                        FROM public.maleta
+                        WHERE dni = @dni
+                        ";
+            var test = await db.QueryAsync<Maletum>(sql, new { Dni = dni });
+            var total = Enumerable.Count(test);
+            MaletasTotales maletasTotales = new MaletasTotales(total);
+            return maletasTotales;
+        }
+
         public async Task<TiquetesTotales> GetTotalTiquetes()
         {
             var db = dbConnection();

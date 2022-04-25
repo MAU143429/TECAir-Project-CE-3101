@@ -4,6 +4,7 @@ using TECAir_API.Database;
 using TECAir_API.Database.Interface;
 using TECAir_API.Models;
 using TECAir_API.Models.Automation;
+using TECAir_API.Models.WebOutput;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -69,6 +70,34 @@ namespace TECAir_API.Controllers
         public async Task<IActionResult> GetMaletas(int vuelo)
         {
             return Ok(await _vueloRepository.GetMaletas(vuelo));
+        }
+
+        [HttpGet("GetReportePasajeros/{vuelo}")]
+        public async Task<List<ReportePasajero>> GetReportePasajeros(int vuelo)
+        {
+            var temp = await _vueloRepository.GetReportePasajeros(vuelo);
+            List<Pasajero> pasajeros = (List<Pasajero>) temp;
+            List<ReportePasajero> reporte = new List<ReportePasajero>();
+
+            for (int i = 0; i < pasajeros.Count; i++)
+            {
+                MaletasTotales maletas = await _automationRepository.GetMaletas((int)pasajeros[i].Dni);
+                int coste_maleta;
+                if (maletas.total_maletas <= 1)
+                {
+                    coste_maleta = 0;
+                } else if (maletas.total_maletas == 2)
+                {
+                    coste_maleta = 50;
+                } else
+                {
+                    coste_maleta = 50 + (maletas.total_maletas-2)*75;
+                }
+                ReportePasajero r = new ReportePasajero((int)pasajeros[i].NoTransaccion, pasajeros[i].PNombre, pasajeros[i].PApellido1, pasajeros[i].PApellido2, (int)pasajeros[i].Dni, maletas.total_maletas, coste_maleta);
+                reporte.Add(r);
+            }
+
+            return reporte;
         }
     }
 }
