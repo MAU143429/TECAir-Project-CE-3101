@@ -73,9 +73,8 @@ namespace TECAir_API.Controllers
         }
 
         [HttpGet("GetReportePasajeros/{vuelo}")]
-        public async Task<IActionResult> GetReportePasajeros(int vuelo)
+        public async Task<List<ReportePasajero>> GetReportePasajeros(int vuelo)
         {
-            /*
             var temp = await _vueloRepository.GetReportePasajeros(vuelo);
             List<Pasajero> pasajeros = (List<Pasajero>) temp;
             List<ReportePasajero> reporte = new List<ReportePasajero>();
@@ -98,8 +97,7 @@ namespace TECAir_API.Controllers
                 reporte.Add(r);
             }
 
-            return reporte;*/
-            return Ok(await _vueloRepository.GetReportePasajeros(vuelo));
+            return reporte;
         }
     }
 }
