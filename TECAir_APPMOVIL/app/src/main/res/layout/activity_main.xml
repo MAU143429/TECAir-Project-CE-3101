@@ -35,20 +35,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="40dp"
-            android:text="@string/bookbtn" />
+            android:text="@string/bookbtn"
+            android:backgroundTint="#ED6E10"/>
 
         <Button
             android:id="@+id/promomenubtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/promobtn" />
+            android:text="@string/promobtn"
+            android:backgroundTint="#ED6E10"/>
 
         <Button
             android:id="@+id/cartmenubtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:text="@string/cartbtn" />
+            android:text="@string/cartbtn"
+            android:backgroundTint="#ED6E10"/>
 
     </LinearLayout>
 
