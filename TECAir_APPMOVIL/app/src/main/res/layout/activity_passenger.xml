@@ -43,49 +43,127 @@
                 app:layout_constraintTop_toTopOf="parent" />
         </FrameLayout>
 
-        <EditText
-            android:id="@+id/editTextTextPersonName3"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/name"
-            android:inputType="textPersonName" />
+            android:layout_height="match_parent">
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="27dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
 
-        <EditText
-            android:id="@+id/editTextTextPersonName4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/lastname1"
-            android:inputType="textPersonName" />
+                <EditText
+                    android:id="@+id/editTextTextPersonName3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/name"
+                    android:inputType="textPersonName" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="27dp" />
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp" />
 
-        <EditText
-            android:id="@+id/editTextTextPersonName2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/lastname2"
-            android:inputType="textPersonName" />
+                <EditText
+                    android:id="@+id/editTextTextPersonName4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/lastname1"
+                    android:inputType="textPersonName" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="27dp" />
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp" />
 
-        <EditText
-            android:id="@+id/editTextNumber2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/passengerid"
-            android:inputType="number" />
+                <EditText
+                    android:id="@+id/editTextTextPersonName2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/lastname2"
+                    android:inputType="textPersonName" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp" />
+
+                <EditText
+                    android:id="@+id/editTextNumber2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/passengerid"
+                    android:inputType="number" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp" />
+
+                <TextView
+                    android:id="@+id/welcome_home2"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="@string/pay"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toTopOf="@+id/autoCompleteTextView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/editTextTextPersonName5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/payname"
+                    android:inputType="textPersonName" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp" />
+
+                <EditText
+                    android:id="@+id/editTextNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/paynum"
+                    android:inputType="number" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/editTextDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/paydate"
+                        android:inputType="date" />
+
+                    <EditText
+                        android:id="@+id/editTextNumber3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="@string/paycvc"
+                        android:inputType="number" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
 
     </LinearLayout>
 

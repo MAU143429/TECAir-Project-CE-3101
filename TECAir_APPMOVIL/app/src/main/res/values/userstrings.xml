@@ -10,4 +10,9 @@
     <string name="college">Universidad</string>
     <string name="studentid">Carnet</string>
     <string name="passengerid">Cédula/Pasaporte</string>
+    <string name="pay">Datos de pago</string>
+    <string name="payname">Nombre en la tarjeta</string>
+    <string name="paynum">Número de la tarjeta</string>
+    <string name="paydate">Fecha vencimiento</string>
+    <string name="paycvc">CVC</string>
 </resources>

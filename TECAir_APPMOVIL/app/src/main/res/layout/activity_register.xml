@@ -11,7 +11,7 @@
         android:layout_height="729dp"
         android:orientation="vertical"
         android:paddingLeft="35dp"
-        android:paddingRight="35dp"
+        android:paddingRight="55dp"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp">
 
@@ -19,7 +19,6 @@
             android:id="@+id/frameLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="35dp"
             android:paddingTop="35dp"
             android:paddingBottom="35dp"
             app:layout_constraintTop_toTopOf="parent"
@@ -40,105 +39,113 @@
                 app:layout_constraintTop_toTopOf="parent" />
         </FrameLayout>
 
-        <EditText
-            android:id="@+id/editTextTextPersonName3"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/name"
-            android:inputType="textPersonName" />
+            android:layout_height="509dp">
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="27dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/editTextTextPersonName4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/lastname1"
-            android:inputType="textPersonName" />
+                <EditText
+                    android:id="@+id/editTextTextPersonName3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/name"
+                    android:inputType="textPersonName" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="27dp" />
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp" />
 
-        <EditText
-            android:id="@+id/editTextTextPersonName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/lastname2"
-            android:inputType="textPersonName" />
+                <EditText
+                    android:id="@+id/editTextTextPersonName4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/lastname1"
+                    android:inputType="textPersonName" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="27dp" />
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp" />
 
-        <EditText
-            android:id="@+id/editTextPhone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/phone"
-            android:inputType="phone" />
+                <EditText
+                    android:id="@+id/editTextTextPersonName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/lastname2"
+                    android:inputType="textPersonName" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="27dp" />
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp" />
 
-        <EditText
-            android:id="@+id/editTextTextEmailAddress"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/email"
-            android:inputType="textEmailAddress" />
+                <EditText
+                    android:id="@+id/editTextPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/phone"
+                    android:inputType="phone" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="27dp" />
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp" />
 
-        <CheckBox
-            android:id="@+id/studentCheckBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:checked="false"
-            android:fontFamily="@font/poppins"
-            android:text="@string/student"
-            android:textColor="@color/blue" />
+                <EditText
+                    android:id="@+id/editTextTextEmailAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/email"
+                    android:inputType="textEmailAddress" />
 
-        <EditText
-            android:id="@+id/uniEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/college"
-            android:inputType="textPersonName"
-            android:visibility="invisible" />
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="27dp" />
+                <CheckBox
+                    android:id="@+id/studentCheckBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:fontFamily="@font/poppins"
+                    android:text="@string/student"
+                    android:textColor="@color/blue" />
 
-        <EditText
-            android:id="@+id/idUniEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/studentid"
-            android:inputType="textPersonName"
-            android:visibility="invisible" />
+                <EditText
+                    android:id="@+id/uniEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/college"
+                    android:inputType="textPersonName"
+                    android:visibility="invisible" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="27dp" />
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="27dp" />
+
+                <EditText
+                    android:id="@+id/idUniEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/studentid"
+                    android:inputType="textPersonName"
+                    android:visibility="invisible" />
+            </LinearLayout>
+        </ScrollView>
 
         <Button
             android:id="@+id/returnbtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="#ED6E10"
             android:text="@string/register" />
 
     </LinearLayout>
