@@ -64,8 +64,8 @@
                             <td>{{data.no_vuelo}}</td>
                             <td>{{data.p_nombre}} {{data.p_apellido1}} {{data.p_apellido2}}</td>
                             <td>{{data.h_salida}}</td>
-                            <td><input style="width: 50px;" No.Asiento></td>
-                            <td><button class="actionsbtn" routerLink="/ticketView" (click)="newCheckIn(this.data); TicketDetails(this.data)">Chequear pasajero</button></td>
+                            <td><input style="width: 50px;" [(ngModel)]="newSeat.ubicacion"></td>
+                            <td><button class="actionsbtn" routerLink="/ticketView" (click)="newCheckIn(this.data); TicketDetails(this.data); addSeat(this.data) ">Chequear pasajero</button></td>
         
                           </tr>
                         </table>

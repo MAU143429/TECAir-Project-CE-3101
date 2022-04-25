@@ -91,7 +91,7 @@ export class SearchEmployeeComponent implements OnInit {
    */
   createBooking(newBooking:BookingFlight, data:any){
     newBooking.no_vuelo = data.no_vuelo
-    this.service.newBooking(newBooking);
+    this.service.newBooking(newBooking).subscribe(booking=> console.log(booking));;
   }
   
 }

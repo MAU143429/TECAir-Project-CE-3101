@@ -82,7 +82,7 @@ export class SearchUserComponent implements OnInit {
       return  `with: ${reason}`;
     }
   }
-
+ 
 
   ngOnInit(): void {
     this.service.getAirports().subscribe( data => (this.Airports = data));
@@ -103,8 +103,11 @@ export class SearchUserComponent implements OnInit {
    * @param newBooking es el objeto que almacenara el numero de vuelo a reservar
    * @param data posee los datos del vuelo que se desea reservar 
    */
-  createBooking(newBooking:BookingFlight, data:any){
-    newBooking.no_vuelo = parseInt(data.no_vuelo)
-    this.service.newBooking(newBooking);
+  createBooking(data:any){
+    this.newBooking.no_vuelo = data.no_vuelo
+    console.log("ESTOY EN CREATE Y SOY BOOKING.NO_VUELO")
+    console.log(this.newBooking.no_vuelo)
+    console.log(this.newBooking.no_vuelo)
+    this.service.newBooking(this.newBooking).subscribe(booking=> console.log(booking));
   }
 }

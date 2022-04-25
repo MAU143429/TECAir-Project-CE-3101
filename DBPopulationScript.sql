@@ -195,7 +195,7 @@ VALUES(8, false, 2, NULL, 'mrivera');
 
 -- Asientos
 INSERT INTO public.asiento(no_asiento, no_vuelo, ubicacion)
-VALUES(0, 11, 'F5')
+VALUES(0, 11, 'F5');
 
 
 

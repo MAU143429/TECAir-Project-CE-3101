@@ -42,18 +42,18 @@ export class BillingEmployeeComponent implements OnInit {
       this.service.newBilling(newReservationDetails).subscribe(book => (this.reservationdata = book));
     }
 
-      /** 
-     * Este metodo permite realizar el pago de la reservacion y generar el tiquete del vuelo
-     * @param newTicketPayment es el objeto que almacenara los detalles del pasajero
-     * @param data numero de reservacion
-     * 
-     */
-      addNewTicketPayment(newTicketPayment:TicketPayment){
-        newTicketPayment.no_reservacion = this.reservationdata[0].no_reservacion
-        newTicketPayment.v_dia = this.reservationdata[0].v_dia
-        newTicketPayment.v_mes = this.reservationdata[0].v_mes
-        newTicketPayment.v_ano = this.reservationdata[0].v_ano
-        this.service.addTicketPayment(newTicketPayment).subscribe(ticket=> console.log(ticket));
-      }
+  /** 
+ * Este metodo permite realizar el pago de la reservacion y generar el tiquete del vuelo
+ * @param newTicketPayment es el objeto que almacenara los detalles del pasajero
+ * @param data numero de reservacion
+ * 
+ */
+  addNewTicketPayment(newTicketPayment:TicketPayment){
+    newTicketPayment.no_reservacion = this.reservationdata[0].no_reservacion
+    newTicketPayment.v_dia = this.reservationdata[0].v_dia
+    newTicketPayment.v_mes = this.reservationdata[0].v_mes
+    newTicketPayment.v_ano = this.reservationdata[0].v_ano
+    this.service.addTicketPayment(newTicketPayment).subscribe(ticket=> console.log(ticket));
+  }
 
 }

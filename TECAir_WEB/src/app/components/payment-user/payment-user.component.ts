@@ -58,7 +58,7 @@ public downloadGeneralReport(){
   }
 
   /** 
- * Este metodo permite realizar la peticion de un detalle para una reservacion en particular
+ * Este metodo permite realizar la peticion de un detalle para un tiquete en particular
  * @param newReservationDetails es el objeto que almacenara los detalles de numero de vuelo y reserva
  * @param data1 numero de vuelo
  * @param data2 numero de reserva

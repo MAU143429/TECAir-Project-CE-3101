@@ -15,8 +15,8 @@
         <ng-template carouselSlide>
           <div class="card">
             <img class="resource" src={{promotionsdata[0].url}}>
-            <span class="places">{{promotionsdata[0].lugares}}</span>
-            <span class="details">Salida:{{promotionsdata[0].fecha}}</span>
+            <span class="places">{{promotionsdata[0].ciudad_origen}}-{{promotionsdata[0].ciudad_destino}}</span>
+            <span class="details">Salida:{{promotionsdata[0].p_dia}}-{{promotionsdata[0].p_mes}}-{{promotionsdata[0].p_ano}}</span>
             <span class="details">{{promotionsdata[0].porcentaje}}% Off</span>
             <span class="prices">USD${{promotionsdata[0].precio}}*</span>
             <button class="bookingbtn" type="submit" (click)="open(content) ; createPromotionBooking(newPromotionBooking,this.promotionsdata[0].no_promocion)"> ¡Reservar ya!</button>
@@ -26,8 +26,8 @@
         <ng-template carouselSlide>
           <div class="card">
             <img class="resource" src={{promotionsdata[1].url}}>
-            <span class="places">{{promotionsdata[1].lugares}}</span>
-            <span class="details">Salida:{{promotionsdata[1].fecha}}</span>
+            <span class="places">{{promotionsdata[1].ciudad_origen}}-{{promotionsdata[1].ciudad_destino}}</span>
+            <span class="details">Salida:{{promotionsdata[1].p_dia}}-{{promotionsdata[1].p_mes}}-{{promotionsdata[1].p_ano}}</span>
             <span class="details">{{promotionsdata[1].porcentaje}}% Off</span>
             <span class="prices">USD${{promotionsdata[1].precio}}*</span>
             <button class="bookingbtn" type="submit" (click)="open(content)  ; createPromotionBooking(newPromotionBooking,this.promotionsdata[1].no_promocion)"> ¡Reservar ya!</button>
@@ -37,8 +37,8 @@
         <ng-template carouselSlide>
           <div class="card">
             <img class="resource" src={{promotionsdata[2].url}}>
-            <span class="places">{{promotionsdata[2].lugares}}</span>
-            <span class="details">Salida:{{promotionsdata[2].fecha}}</span>
+            <span class="places">{{promotionsdata[2].ciudad_origen}}-{{promotionsdata[2].ciudad_destino}}</span>
+            <span class="details">Salida:{{promotionsdata[2].p_dia}}-{{promotionsdata[2].p_mes}}-{{promotionsdata[2].p_ano}}</span>
             <span class="details">{{promotionsdata[2].porcentaje}}% Off</span>
             <span class="prices">USD${{promotionsdata[2].precio}}*</span>
             <button class="bookingbtn" type="submit" (click)="open(content) ; createPromotionBooking(newPromotionBooking,this.promotionsdata[2].no_promocion)"> ¡Reservar ya!</button>
@@ -48,8 +48,8 @@
         <ng-template carouselSlide>
           <div class="card">
             <img class="resource" src={{promotionsdata[3].url}}>
-            <span class="places">{{promotionsdata[3].lugares}}</span>
-            <span class="details">Salida:{{promotionsdata[3].fecha}}</span>
+            <span class="places">{{promotionsdata[3].ciudad_origen}}-{{promotionsdata[3].ciudad_destino}}</span>
+            <span class="details">Salida:{{promotionsdata[3].p_dia}}-{{promotionsdata[3].p_mes}}-{{promotionsdata[3].p_ano}}</span>
             <span class="details">{{promotionsdata[3].porcentaje}}% Off</span>
             <span class="prices">USD${{promotionsdata[3].precio}}*</span>
             <button class="bookingbtn" type="submit" (click)="open(content) ; createPromotionBooking(newPromotionBooking,this.promotionsdata[3].no_promocion)"> ¡Reservar ya!</button>
@@ -59,8 +59,8 @@
         <ng-template carouselSlide>
           <div class="card">
             <img class="resource" src={{promotionsdata[4].url}}>
-            <span class="places">{{promotionsdata[4].lugares}}</span>
-            <span class="details">Salida:{{promotionsdata[4].fecha}}</span>
+            <span class="places">{{promotionsdata[4].ciudad_origen}}-{{promotionsdata[4].ciudad_destino}}</span>
+            <span class="details">Salida:{{promotionsdata[4].p_dia}}-{{promotionsdata[4].p_mes}}-{{promotionsdata[4].p_ano}}</span>
             <span class="details">{{promotionsdata[4].porcentaje}}% Off</span>
             <span class="prices">USD${{promotionsdata[4].precio}}*</span>
             <button class="bookingbtn" type="submit" (click)="open(content) ; createPromotionBooking(newPromotionBooking,this.promotionsdata[4].no_promocion)"> ¡Reservar ya!</button>
@@ -70,8 +70,8 @@
         <ng-template carouselSlide>
           <div class="card">
             <img class="resource" src={{promotionsdata[5].url}}>
-            <span class="places">{{promotionsdata[5].lugares}}</span>
-            <span class="details">Salida:{{promotionsdata[5].fecha}}</span>
+            <span class="places">{{promotionsdata[5].ciudad_origen}}-{{promotionsdata[5].ciudad_destino}}</span>
+            <span class="details">Salida:{{promotionsdata[5].p_dia}}-{{promotionsdata[5].p_mes}}-{{promotionsdata[5].p_ano}}</span>
             <span class="details">{{promotionsdata[5].porcentaje}}% Off</span>
             <span class="prices">USD${{promotionsdata[5].precio}}*</span>
             <button class="bookingbtn" type="submit" (click)="open(content) ; createPromotionBooking(newPromotionBooking,this.promotionsdata[5].no_promocion)"> ¡Reservar ya!</button>
@@ -81,8 +81,8 @@
         <ng-template carouselSlide>
           <div class="card">
             <img class="resource" src={{promotionsdata[6].url}}>
-            <span class="places">{{promotionsdata[6].lugares}}</span>
-            <span class="details">Salida:{{promotionsdata[6].fecha}}</span>
+            <span class="places">{{promotionsdata[6].ciudad_origen}}-{{promotionsdata[6].ciudad_destino}}</span>
+            <span class="details">Salida:{{promotionsdata[6].p_dia}}-{{promotionsdata[6].p_mes}}-{{promotionsdata[6].p_ano}}</span>
             <span class="details">{{promotionsdata[6].porcentaje}}% Off</span>
             <span class="prices">USD${{promotionsdata[6].precio}}*</span>
             <button class="bookingbtn" type="submit" (click)="open(content) ; createPromotionBooking(newPromotionBooking,this.promotionsdata[6].no_promocion)"> ¡Reservar ya!</button>
@@ -92,8 +92,8 @@
         <ng-template carouselSlide>
           <div class="card">
             <img class="resource" src={{promotionsdata[7].url}}>
-            <span class="places">{{promotionsdata[7].lugares}}</span>
-            <span class="details">Salida:{{promotionsdata[7].fecha}}</span>
+            <span class="places">{{promotionsdata[7].ciudad_origen}}-{{promotionsdata[7].ciudad_destino}}</span>
+            <span class="details">Salida:{{promotionsdata[7].p_dia}}-{{promotionsdata[7].p_mes}}-{{promotionsdata[7].p_ano}}</span>
             <span class="details">{{promotionsdata[7].porcentaje}}% Off</span>
             <span class="prices">USD${{promotionsdata[7].precio}}*</span>
             <button class="bookingbtn" type="submit" (click)="open(content) ; createPromotionBooking(newPromotionBooking,this.promotionsdata[7].no_promocion)"> ¡Reservar ya!</button>

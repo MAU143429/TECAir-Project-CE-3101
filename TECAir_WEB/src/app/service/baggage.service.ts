@@ -18,11 +18,14 @@ export class BaggageService {
     return this.httpclient.post(this.url+'/Maleta/Add', baggage) 
   }
 
-  /** POST HACER CHECK-IN
-   *  Este post permite enviar la informacion de un pasajero para que este sea chequeado
+
+  /** POST PARA CREAR ASIENTO
+   *  Este post permite enviar la informacion del asiento de un pasajero
    */
-   newCheckin(checkin:any):Observable<any>{
-    return this.httpclient.post(this.url+'Pasajero/Chequeo', checkin) 
+   newSeat(seat:any):Observable<any>{
+     console.log("Se agrega el asiento")
+     console.log(seat)
+    return this.httpclient.post(this.url+'/Asiento/Add', seat) 
   }
 
   /** GET PARA CHEQUEO
@@ -36,14 +39,14 @@ export class BaggageService {
   *  Este put actualiza el valor del pasajero a chequeadp
   */
    putCheckIn(openFlight:any):Observable<any>{
-    return this.httpclient.get(this.url+'/Tiquete/Put/' +  openFlight) 
+     console.log("SE ENVIAR PARA CHEQUEAR AL PASAJERO CON NUMERO DE TRANSACCION")
+     console.log(openFlight)
+    return this.httpclient.put(this.url+'/Tiquete/CheckIn/', openFlight) 
   }
 
-  /** PUT PARA CHEQUEO
-  *  Este put actualiza el valor del pasajero a chequeadp
-  */
+ 
    getFullTicket(ticket:any):Observable<any>{
-    return this.httpclient.get(this.url+'/Tiquete/Get/' +  ticket.no_vuelo +"/"+ticket.no_transaccion) 
+    return this.httpclient.get(this.url+'/Tiquete/GetTVuelo/' +ticket.no_transaccion) 
   }
 
 }

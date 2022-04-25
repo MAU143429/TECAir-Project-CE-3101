@@ -24,7 +24,7 @@ export class SearchflightsService {
    */
   newBooking(booking:any):Observable<any>{  
     console.log(booking)
-    return this.httpclient.post(this.url+'/Reservacion/NewAdd', booking) 
+    return this.httpclient.post(this.url+'/Reservacion/NewAdd', booking)
   }
 
   /** POST PARA REALIZAR RESERVACIONES
@@ -32,8 +32,8 @@ export class SearchflightsService {
    * @param booking contiene el numero de vuelo que se desea reservar
    * @returns retorna la lista de reservas
    */
-   newPromotionBooking(booking:any):Observable<any>{  
-    return this.httpclient.post(this.url+'/Reservacion/Promotion/Add', booking) 
+   newPromotionBooking(newbooking:any):Observable<any>{  
+    return this.httpclient.post(this.url+'/Reservacion/Promotion/Add', newbooking) 
   }
 
   /** GET DE AEROPUERTOS

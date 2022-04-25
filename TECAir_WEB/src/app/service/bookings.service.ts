@@ -20,7 +20,7 @@ export class BookingsService {
    *  esto para que quede registrada.
    */
      addTicketPayment(ticket:any):Observable<any>{
-      return this.httpclient.post(this.url+'/Pasajero/Add', ticket) 
+      return this.httpclient.post(this.url+'/Tiquete/Add', ticket) 
     }
 
     /** POST PARA ENVIAR DATOS DE LA RESERVACION Y TRAER EL DETALLE PARA EL PAGO

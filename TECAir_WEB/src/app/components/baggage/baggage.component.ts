@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Baggage } from 'src/app/model/baggage';
+import { Seat } from 'src/app/model/seat';
 import { CheckIn } from 'src/app/model/check-in';
 import { CheckData } from 'src/app/interface/check-data';
 import { BaggageService } from 'src/app/service/baggage.service';
@@ -14,6 +15,7 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 export class BaggageComponent implements OnInit {
 
   newBaggage:Baggage = new Baggage
+  newSeat:Seat = new Seat
   newCheckin:CheckIn = new CheckIn
   checkdata: CheckData[] | undefined; 
   closeResult = '';
@@ -58,23 +60,28 @@ export class BaggageComponent implements OnInit {
     this.service.addBaggage(newBaggage).subscribe(baggage=> console.log(baggage));
   }
 
+  addSeat(data:any){
+    this.newSeat.no_vuelo = data.no_vuelo
+    this.newSeat.no_transaccion = data.no_transaccion
+    this.service.newSeat(this.newSeat).subscribe(seat=> console.log(seat));
+  }
+
   /**
-   * Este metodo permite verificar si un pasajero ya fue chequeado.
-   * @param newCheckin Objeto que contiene la informacion de un pasajero para que este pueda ser chequeado
+   * Este metodo trae la informacion de un pasajero que va a ser chequeado
+   * @param data no_transaccion del pasajero a buscar
    */
   addNewCheckIn(data:any){
-    this.newCheckin = data.no_transaccion
-    this.service.getCheckData(this.newCheckin).subscribe(checkin=> (this.checkdata = checkin));
+    this.service.getCheckData(data.no_transaccion).subscribe(checkin=> (this.checkdata = checkin));
     
   }
 
   /**
-   * Este metodo permite verificar si un pasajero ya fue chequeado.
-   * @param newCheckin Objeto que contiene la informacion de un pasajero para que este pueda ser chequeado
+   * Este metodo permite confirmar el chequeo de un pasajero
+   * @param data informacion del numero de tiquete al que se le va a confirmar el chequep
    */
-   newCheckIn(data:any){
-    this.newCheckin = data.no_transaccion
-    this.service.putCheckIn(this.newCheckin).subscribe(checkin=> (this.checkdata = checkin));
+  newCheckIn(data:any){
+  this.newCheckin.no_transaccion = data.no_transaccion
+  this.service.putCheckIn(this.newCheckin).subscribe(checkin=> console.log(checkin));
     
   }
 

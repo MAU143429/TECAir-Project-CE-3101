@@ -21,7 +21,7 @@
                 <br>
                 <span class="details" style="margin-left: 40%;">Número de transacción:</span>
                 <br>
-                <span class="details" style="margin-left: 44%;">{{ticketinfo[0].no_transaccion}}</span>
+                <span class="details" style="margin-left: 44%;">{{ticketinfo[0].no_reservacion}}</span>
                 <br>
                 <br>
                 <span class="instructions">Esta página no es válida como tiquete para abordar el avion, solamente es un comprobante
@@ -39,7 +39,7 @@
                             <br>
                             <span class="info">Lugares:</span><span class="info" style="margin-left: 22%;">{{ticketinfo[0].ciudad_origen}} - {{ticketinfo[0].ciudad_destino}}</span>
                             <br>
-                            <span class="info" >Hora y Fecha:</span><span class="info" style="margin-left: 14.2%;">{{ticketinfo[0].fecha}} - {{ticketinfo[0].h_salida}}</span>
+                            <span class="info" >Hora y Fecha:</span><span class="info" style="margin-left: 14.2%;">{{ticketinfo[0].v_dia}}/{{ticketinfo[0].v_mes}}/{{ticketinfo[0].v_ano}} - {{ticketinfo[0].h_salida}}</span>
                             <br>
                             <span class="info" >Aeropuerto de salida:</span><span class="info" style="margin-left: 2%;">{{ticketinfo[0].origen}}</span>
                             <br>
@@ -54,11 +54,11 @@
                             <br>
                             <span class="info">Escalas:</span><span class="info" style="margin-left: 24%;">{{ticketinfo[0].cant_escalas}}</span>
                             <br>
-                            <span class="info" >Duracion:</span><span class="info" style="margin-left: 21%;">{{ticketinfo[0].duracion}}</span>
+                            <span class="info" >Hora de llegada:</span><span class="info" style="margin-left: 21%;">{{ticketinfo[0].h_llegada}}</span>
                             <br>
                             <span class="info" >Aeropuerto de llegada:</span><span class="info" style="margin-left: 1%;">{{ticketinfo[0].destino}}</span>
                             <br>
-                            <span class="info" > Modelo de Avion:</span><span class="info" style="margin-left: 9%;">{{ticketinfo[0].avion}} </span>
+                            <span class="info" > Modelo de Avion:</span><span class="info" style="margin-left: 9%;">{{ticketinfo[0].av_nombre}} </span>
                             <br>
                             <br>
                          </div>

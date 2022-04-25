@@ -59,7 +59,7 @@
                   <td>{{data.h_salida}}</td>
                   <td>{{data.h_llegada}}</td>
                   <td>{{data.coste_vuelo}}</td>
-                  <td><button class = "bookingbtn" value={{data.no_vuelo}} type="submit"  (click)="open(content); createBooking(newBooking, this.data)" >Reservar Ahora!</button></td>
+                  <td><button class = "bookingbtn" value={{data.no_vuelo}} type="submit"  (click)="open(content); createBooking(this.data)">Reservar Ahora!</button></td>
               </tr>
             </table>
           </div>

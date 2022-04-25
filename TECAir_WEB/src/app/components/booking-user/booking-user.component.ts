@@ -4,7 +4,7 @@ import { BookingData } from 'src/app/interface/booking-data';
 import { TicketData } from 'src/app/interface/ticket-data';
 import { BookingsService } from 'src/app/service/bookings.service';
 import { ConnectionService } from 'src/app/service/connection-service';
-import { ReservationDetails } from 'src/app/model/reservation-details';
+
 
 @Component({
   selector: 'app-booking-user',
@@ -15,7 +15,7 @@ export class BookingUserComponent implements OnInit {
 
   bookingdata:BookingData[] | undefined;
   ticketsdata: TicketData[]| undefined;
-  temp:any;
+  
   
 
   constructor(private service:BookingsService,private connectionService:ConnectionService,private router:Router) { }
@@ -24,22 +24,21 @@ export class BookingUserComponent implements OnInit {
     this.service.getBookings().subscribe( booking => (this.bookingdata = booking));
     this.service.getTickets().subscribe( tickets => (this.ticketsdata = tickets));
   }
+ 
 
 
-
-   /** 
-   * Este metodo permite realizar el set de los valores para el objeto que se
-   * enviara con el numero de vuelo para realizar la reserva
-   * @param data posee los datos del vuelo que se desea reservar 
+  /** 
+   * Este metodo permite realizar el set de los valores de la reservacion para que el 
+   * usuario pueda realizar el pago de su reserva.
+   * @param data posee los datos del vuelo pagar
    */
     createBilling(data:any){
       this.connectionService.sendClickEvent(parseInt(data.no_vuelo),parseInt(data.no_reservacion));
     }
 
-    /** 
-   * Este metodo permite realizar el set de los valores para el objeto que se
-   * enviara con el numero de vuelo para realizar la reserva
-   * @param data posee los datos del vuelo que se desea reservar 
+   /** 
+   * Este metodo permite realizar el set de los valores del tiquete para que se genere el comprobante de pago
+   * @param data posee los datos del tiquete a facturar
    */
      paymentDetails(data:any){
       this.connectionService.sendClickEvent2(parseInt(data.no_vuelo),parseInt(data.no_transaccion));
