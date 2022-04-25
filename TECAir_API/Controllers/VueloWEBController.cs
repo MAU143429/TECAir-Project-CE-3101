@@ -76,12 +76,12 @@ namespace TECAir_API.Controllers
         public async Task<List<ReportePasajero>> GetReportePasajeros(int vuelo)
         {
             var temp = await _vueloRepository.GetReportePasajeros(vuelo);
-            List<Pasajero> pasajeros = (List<Pasajero>) temp;
+            List<ReportePasajero> pasajeros = (List<ReportePasajero>) temp;
             List<ReportePasajero> reporte = new List<ReportePasajero>();
 
             for (int i = 0; i < pasajeros.Count; i++)
             {
-                MaletasTotales maletas = await _automationRepository.GetMaletas((int)pasajeros[i].Dni);
+                MaletasTotales maletas = await _automationRepository.GetMaletas((int)pasajeros[i].dni);
                 int coste_maleta;
                 if (maletas.total_maletas <= 1)
                 {
@@ -93,7 +93,7 @@ namespace TECAir_API.Controllers
                 {
                     coste_maleta = 50 + (maletas.total_maletas-2)*75;
                 }
-                ReportePasajero r = new ReportePasajero((int)pasajeros[i].NoTransaccion, pasajeros[i].PNombre, pasajeros[i].PApellido1, pasajeros[i].PApellido2, (int)pasajeros[i].Dni, maletas.total_maletas, coste_maleta);
+                ReportePasajero r = new ReportePasajero((int)pasajeros[i].no_transaccion, pasajeros[i].p_nombre, pasajeros[i].p_apellido1, pasajeros[i].p_apellido2, (int)pasajeros[i].dni, maletas.total_maletas, coste_maleta);
                 reporte.Add(r);
             }
 

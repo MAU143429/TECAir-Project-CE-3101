@@ -221,7 +221,7 @@ namespace TECAir_API.Database.Repository
             });
         }
 
-        public async Task<IEnumerable<Pasajero>> GetReportePasajeros(int no_vuelo)
+        public async Task<IEnumerable<ReportePasajero>> GetReportePasajeros(int no_vuelo)
         {
             var db = dbConnection();
 
@@ -232,7 +232,7 @@ namespace TECAir_API.Database.Repository
                         WHERE reservacion.no_vuelo = @noVuelo
                         ";
 
-            return await db.QueryAsync<Pasajero>(sql, new
+            return await db.QueryAsync<ReportePasajero>(sql, new
             {
                 NoVuelo = no_vuelo
             });
