@@ -15,4 +15,5 @@
     <string name="paynum">Número de la tarjeta</string>
     <string name="paydate">Fecha vencimiento</string>
     <string name="paycvc">CVC</string>
+    <string name="paybtn">Comprar</string>
 </resources>
