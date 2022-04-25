@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
 
         Button bookmenubtn = (Button) findViewById(R.id.bookmenubtn);
         Button promomenubtn = (Button) findViewById(R.id.promomenubtn);
-        Button cartmenubtn = (Button) findViewById(R.id.cartmenubtn);
 
         bookmenubtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,14 +30,6 @@ public class MainActivity extends AppCompatActivity {
                 openPromoMenu();
             }
         });
-
-        cartmenubtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openCartMenu();
-            }
-        });
-
     }
 
     public void openBookMenu() {
@@ -48,11 +39,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void openPromoMenu() {
         Intent intent = new Intent(this, PromoActivity.class);
-        startActivity(intent);
-    }
-
-    public void openCartMenu() {
-        Intent intent = new Intent(this, CartActivity.class);
         startActivity(intent);
     }
 }

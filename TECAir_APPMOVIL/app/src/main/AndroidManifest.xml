@@ -28,9 +28,6 @@
             android:name=".PromoActivity"
             android:exported="false" />
         <activity
-            android:name=".CartActivity"
-            android:exported="false" />
-        <activity
             android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
