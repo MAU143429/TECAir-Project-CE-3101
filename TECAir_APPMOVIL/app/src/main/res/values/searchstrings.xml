@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="booktitle">"Reserve su vuelo"</string>
+    <string name="from">Origen</string>
+    <string name="to">Destino</string>
+    <string name="searchbutton">Buscar</string>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="choose">Elija un vuelo</string>
+    <string name="book">Reservar</string>
+    <string name="promo">Promociones disponibles:</string>
+</resources>
