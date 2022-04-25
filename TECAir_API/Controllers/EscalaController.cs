@@ -26,7 +26,7 @@ namespace TECAir_API.Controllers
         {
             CantEscalas escalas = await _automationRepository.GetEscalas();
             VuelosTotales vuelos = await _automationRepository.GetTotalVuelos();
-            Escala escala = new Escala(escalas.cant_escalas, nuevaEscala.escala, nuevaEscala.orden, vuelos.total_vuelos);
+            Escala escala = new Escala(escalas.cant_escalas +1, nuevaEscala.escala, nuevaEscala.orden, vuelos.total_vuelos);
             if (escala == null)
 
                 return BadRequest();
