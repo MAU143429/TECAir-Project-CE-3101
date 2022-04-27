@@ -34,8 +34,8 @@ public class DBRequest extends DBHelper{
         //----Consulta a la base de datos---//
         // Columnas que se van a seleccionar
         String fromColumns[] = {CORREO, U_CONTRASENA};
-        cursorUsuario = db.rawQuery("SELECT " + fromColumns + " FROM " + TABLE_USUARIO
-                + " WHERE correo = " + uCorreo + " AND contrasena = " + uContrasena, null);
+        cursorUsuario = db.rawQuery("SELECT * FROM " + TABLE_USUARIO
+                + " WHERE correo = '" + uCorreo + "' AND u_contrasena = '" + uContrasena + "' ", null);
         if(cursorUsuario != null){
             return true;
         }

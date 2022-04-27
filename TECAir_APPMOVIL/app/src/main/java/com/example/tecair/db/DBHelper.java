@@ -131,20 +131,6 @@ public class DBHelper extends SQLiteOpenHelper{
      */
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        /* ORDEN PARA CREAR LAS TABLAS
-    -Usuario
-    -Estudiante
-    -Trabajador
-    -Avion
-    -Vuelo
-    -Escala
-    -Asiento
-    -Promocion
-    -Reservacion
-    -Tiquete
-    Pasajero
-    Maleta
-     */
         //Tabla Usuario
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_USUARIO + "(" +
                 ID_USUARIO + " INTEGER PRIMARY KEY NOT NULL, " +
@@ -265,5 +251,4 @@ public class DBHelper extends SQLiteOpenHelper{
         onCreate(sqLiteDatabase);
     }
 
-    //Solicitudes a la base de datos
 }

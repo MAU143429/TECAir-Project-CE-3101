@@ -13,11 +13,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.tecair.db.DBHelper;
+import com.example.tecair.db.DBRequest;
 
 public class LoginActivity extends AppCompatActivity {
 
     private static final String TAG = "LoginActivity";
     private String user;
+    private DBRequest dbRequest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,11 +41,21 @@ public class LoginActivity extends AppCompatActivity {
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                dbRequest = new DBRequest(LoginActivity.this);
+                String usuario = userEditText.getText().toString();
+                String password = passwordEditText.getText().toString();
                 if (userEditText.getText().toString().equals("admin") && passwordEditText.getText().toString().equals("test")) {
                     user = userEditText.getText().toString();
                     login();
-                } else {
-                    Toast.makeText(LoginActivity.this, "Fallo de inicio de sesión", Toast.LENGTH_SHORT).show();
+                }
+                else if(dbRequest.verificarUsuario(usuario,password)){
+                    user = userEditText.getText().toString();
+                    login();
+                }
+                else if(userEditText.getText ().toString().equals ("") ||  passwordEditText.getText().toString().equals ("")) {
+                    Toast.makeText(LoginActivity.this, "Debe ingresar ambos datos", Toast.LENGTH_SHORT).show();
+                }else {
+                    Toast.makeText(LoginActivity.this, "Fallo de inicio de sesión, verifique los datos", Toast.LENGTH_SHORT).show();
                 }
             }
         });
