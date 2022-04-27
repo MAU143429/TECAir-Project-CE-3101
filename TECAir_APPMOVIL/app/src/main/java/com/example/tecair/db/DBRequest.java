@@ -7,6 +7,8 @@ import android.database.sqlite.SQLiteDatabase;
 
 import androidx.annotation.Nullable;
 
+import com.example.tecair.db.entities.Usuario;
+
 public class DBRequest extends DBHelper{
     Context context;
 
@@ -15,9 +17,38 @@ public class DBRequest extends DBHelper{
         this.context = context;
     }
 
+    /**
+     * Obtiene un usuario de la tabla, seleccionando por el correo
+     * @return true o false, dependiendo de si coincide la contrasena y correo del usuario
+     */
+    public boolean verificarUsuario(String uCorreo, String uContrasena){
+        // Se lee la base de datos
+        DBHelper dbHelper = new DBHelper(context);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        // Se crea una instancia del modelo de Usuario
+        Usuario usuario = new Usuario();
+        // Se crea una instancia de cursor, ya que es lo que devuelve la consulta a la base
+        Cursor cursorUsuario = null;
+
+        //----Consulta a la base de datos---//
+        // Columnas que se van a seleccionar
+        String fromColumns[] = {CORREO, U_CONTRASENA};
+        cursorUsuario = db.rawQuery("SELECT " + fromColumns + " FROM " + TABLE_USUARIO
+                + " WHERE correo = " + uCorreo + " AND contrasena = " + uContrasena, null);
+        if(cursorUsuario != null){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
     //bases de datos movil:
     // tabla usuario:
         // insertar usuario
+        // buscar usuario por correo
+        // buscar usuario por contrasena
         // enviar datos del registro a tabla de usuario, cuando me hagan un registro
         // tengo que generar un id_usuario automatico
 

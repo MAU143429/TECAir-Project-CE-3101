@@ -153,7 +153,7 @@ public class DBHelper extends SQLiteOpenHelper{
                 U_APELLIDO2 + " TEXT NOT NULL, " +
                 CORREO + " TEXT NOT NULL, " +
                 U_CONTRASENA + " TEXT NOT NULL, " +
-                TELEFONO + " TEXT NOT NULL)");
+                TELEFONO + " INTEGER NOT NULL)");
 
         //Tabla Estudiante
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_ESTUDIANTE + "(" +
@@ -184,7 +184,7 @@ public class DBHelper extends SQLiteOpenHelper{
                 V_MES + " TEXT NOT NULL, " +
                 V_ANO + " TEXT NOT NULL, " +
                 COSTE_VUELO + " INTEGER NOT NULL, " +
-                CERRADO + " INTEGER NOT NULL, " +
+                CERRADO + " INTEGER, " +
                 V_MATRICULA + " TEXT REFERENCES " + TABLE_AVION + "(" + MATRICULA + "))");
 
         //Tabla escala
