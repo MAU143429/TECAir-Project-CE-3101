@@ -3,7 +3,7 @@ export interface PassangersReport {
     p_nombre:string;
     p_apellido1:string;
     p_apellido2:string;
-    dni:string;
-    cant_maletas:string;
-    coste_maletas:string;
+    dni:number;
+    cant_maletas:number;
+    coste_maletas:number;
 }

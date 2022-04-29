@@ -58,11 +58,18 @@ export class FlightsService {
       return this.httpclient.get(this.url+'/VueloCerrado/Get/' +  closeFlight.no_vuelo) 
     }
 
-    /** POST PARA CONSULTA APERTURA DE VUELO
-    *  Este post permite enviar la informacion para consultar un apertura de vuelo por usuario.
+    /** GET PARA CONSULTA CIERRE DE VUELO
+    *  Este get permite traer la informacion del reporte de maletas
     */
      getBaggageReport(info:any):Observable<any>{
       return this.httpclient.get(this.url+'/VueloWEB/GetMaletas/' + info.no_vuelo) 
+    }
+
+    /** GET PARA CONSULTA DE CIERRE DE VUELO.
+    *  Este post permite enviar la informacion para consultar un apertura de vuelo por usuario.
+    */
+     getPassangerReport(info:any):Observable<any>{
+      return this.httpclient.get(this.url+'/VueloWEB/GetReportePasajeros/' + info.no_vuelo) 
     }
 
 }
