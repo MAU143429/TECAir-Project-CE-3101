@@ -9,18 +9,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class PromoActivity extends AppCompatActivity {
 
+    Button promobtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_promo);
 
-        Button promobtn = (Button) findViewById(R.id.promobtn);
-        promobtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                bookTicket();
-            }
-        });
+        promobtn = findViewById(R.id.promobtn);
+        promobtn.setOnClickListener(view -> bookTicket());
     }
     public void bookTicket() {
         Intent intent = new Intent(this, PassengerActivity.class);

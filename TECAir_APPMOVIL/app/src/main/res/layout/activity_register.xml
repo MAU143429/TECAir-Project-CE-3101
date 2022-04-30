@@ -41,7 +41,7 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="509dp">
+            android:layout_height="478dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -49,7 +49,7 @@
                 android:orientation="vertical">
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName3"
+                    android:id="@+id/registrarNombre"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -61,7 +61,7 @@
                     android:layout_height="27dp" />
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName4"
+                    android:id="@+id/registrarApellido1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -73,7 +73,7 @@
                     android:layout_height="27dp" />
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName"
+                    android:id="@+id/registrarApellido2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -85,7 +85,7 @@
                     android:layout_height="27dp" />
 
                 <EditText
-                    android:id="@+id/editTextPhone"
+                    android:id="@+id/registrarTelefono"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -97,7 +97,7 @@
                     android:layout_height="27dp" />
 
                 <EditText
-                    android:id="@+id/editTextTextEmailAddress"
+                    android:id="@+id/registrarCorreo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -107,6 +107,23 @@
                 <Space
                     android:layout_width="match_parent"
                     android:layout_height="27dp" />
+
+                <EditText
+                    android:id="@+id/registrarContrasena"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/password"
+                    android:inputType="textPassword" />
+
+                <CheckBox
+                    android:id="@+id/passwordCheckBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:fontFamily="@font/poppins"
+                    android:text="@string/showpassword"
+                    android:textColor="@color/blue" />
 
                 <CheckBox
                     android:id="@+id/studentCheckBox"
@@ -142,11 +159,11 @@
         </ScrollView>
 
         <Button
-            android:id="@+id/returnbtn"
+            android:id="@+id/registrarbtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="#ED6E10"
-            android:text="@string/paybtn" />
+            android:text="@string/register" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,7 @@
     <string name="lastname2">Segundo Apellido</string>
     <string name="phone">Teléfono</string>
     <string name="email">E-mail</string>
+    <string name="showpassword">Mostrar Contraseña</string>
     <string name="data">Ingrese sus datos</string>
     <string name="student">Eres estudiante?</string>
     <string name="college">Universidad</string>

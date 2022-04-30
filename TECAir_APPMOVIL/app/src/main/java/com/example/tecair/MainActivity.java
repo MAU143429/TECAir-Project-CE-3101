@@ -9,31 +9,23 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
+    Button bookmenubtn, promomenubtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button bookmenubtn = (Button) findViewById(R.id.bookmenubtn);
-        Button promomenubtn = (Button) findViewById(R.id.promomenubtn);
+        bookmenubtn = findViewById(R.id.bookmenubtn);
+        promomenubtn = findViewById(R.id.promomenubtn);
 
-        bookmenubtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openBookMenu();
-            }
-        });
+        bookmenubtn.setOnClickListener(view -> openBookMenu());
 
-        promomenubtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openPromoMenu();
-            }
-        });
+        promomenubtn.setOnClickListener(view -> openPromoMenu());
     }
 
     public void openBookMenu() {
-        Intent intent = new Intent(this, BookTicketActivity.class);
+        Intent intent = new Intent(this, SearchTicketActivity.class);
         startActivity(intent);
     }
 

@@ -20,22 +20,21 @@ public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
     private String user;
     private DBRequest dbRequest;
+    EditText userEditText, passwordEditText;
+    TextView registerTextView;
+    Button loginbtn;
+    ImageView logo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        EditText userEditText = (EditText) findViewById(R.id.userEditText);
-        EditText passwordEditText = (EditText) findViewById(R.id.passwordEditText);
+        userEditText = findViewById(R.id.userEditText);
+        passwordEditText = findViewById(R.id.passwordEditText);
 
-        TextView registerTextView = findViewById(R.id.registerTextView);
-        registerTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                register();
-            }
-        });
+        registerTextView = findViewById(R.id.registerTextView);
+        registerTextView.setOnClickListener(view -> register());
 
         Button loginbtn = (Button) findViewById(R.id.loginbtn);
         loginbtn.setOnClickListener(new View.OnClickListener() {
@@ -60,17 +59,14 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        ImageView logo = (ImageView) findViewById(R.id.logo);
-        logo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                DBHelper dataBase = new DBHelper(LoginActivity.this);
-                SQLiteDatabase db = dataBase.getWritableDatabase();
-                if (db != null) {
-                    Toast.makeText(LoginActivity.this, "Base de datos creada", Toast.LENGTH_LONG).show();
-                } else {
-                    Toast.makeText(LoginActivity.this, "Error al crear base de datos", Toast.LENGTH_LONG).show();
-                }
+        logo = findViewById(R.id.logo);
+        logo.setOnClickListener(view -> {
+            DBHelper dataBase = new DBHelper(LoginActivity.this);
+            SQLiteDatabase db = dataBase.getWritableDatabase();
+            if (db != null) {
+                Toast.makeText(LoginActivity.this, "Base de datos creada", Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(LoginActivity.this, "Error al crear base de datos", Toast.LENGTH_LONG).show();
             }
         });
     }

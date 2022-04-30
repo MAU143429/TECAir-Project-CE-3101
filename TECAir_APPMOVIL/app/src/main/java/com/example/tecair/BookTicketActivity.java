@@ -9,18 +9,15 @@ import android.widget.Button;
 
 public class BookTicketActivity extends AppCompatActivity {
 
+    Button bookingbtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_ticket);
 
-        Button bookingbtn = (Button) findViewById(R.id.promobtn);
-        bookingbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                bookTicket();
-            }
-        });
+        bookingbtn = findViewById(R.id.promobtn);
+        bookingbtn.setOnClickListener(view -> bookTicket());
     }
     public void bookTicket() {
         Intent intent = new Intent(this, PassengerActivity.class);

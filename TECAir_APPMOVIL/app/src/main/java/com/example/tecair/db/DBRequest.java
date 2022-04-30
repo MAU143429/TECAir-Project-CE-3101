@@ -12,6 +12,8 @@ import com.example.tecair.db.entities.Usuario;
 public class DBRequest extends DBHelper{
     Context context;
 
+    int idUsuario = 0;
+
     public DBRequest(@Nullable Context context) {
         super(context);
         this.context = context;
@@ -53,6 +55,34 @@ public class DBRequest extends DBHelper{
         // tengo que generar un id_usuario automatico
 
         // obtener datos de un usuario para el login
+
+    public long insertarUsuario(String nombre, String apellido1, String apellido2, String correo, String contrasena, int telefono) {
+
+        long id = 0;
+
+        try {
+            DBHelper dbHelper = new DBHelper(context);
+            SQLiteDatabase db = dbHelper.getWritableDatabase();
+            Cursor cursorid = null;
+
+            ContentValues values = new ContentValues();
+            //cursorid = db.rawQuery("SELECT COUNT (id_usuario) FROM usuario", null);
+            // SELECT COUNT (id_usuario) from usuario
+            values.put("id_usuario", idUsuario);
+            values.put("u_nombre", nombre);
+            values.put("u_apellido1", apellido1);
+            values.put("u_apellido2", apellido2);
+            values.put("correo", correo);
+            values.put("u_contrasena", contrasena);
+            values.put("telefono", telefono);
+
+            id = db.insert(TABLE_USUARIO, null, values);
+        } catch (Exception ex) {
+            ex.toString();
+        }
+
+        return id;
+    }
 
     // tabla vuelo:
         // insertar vuelo
