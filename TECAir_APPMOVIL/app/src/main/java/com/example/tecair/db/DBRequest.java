@@ -8,6 +8,9 @@ import android.database.sqlite.SQLiteDatabase;
 import androidx.annotation.Nullable;
 
 import com.example.tecair.db.entities.Usuario;
+import com.example.tecair.db.entities.Vuelo;
+
+import java.util.ArrayList;
 
 public class DBRequest extends DBHelper{
     Context context;
@@ -28,15 +31,13 @@ public class DBRequest extends DBHelper{
         DBHelper dbHelper = new DBHelper(context);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
-        // Se crea una instancia del modelo de Usuario
-        Usuario usuario = new Usuario();
         // Se crea una instancia de cursor, ya que es lo que devuelve la consulta a la base
         Cursor cursorUsuario = null;
 
         //----Consulta a la base de datos---//
         // Columnas que se van a seleccionar
         String fromColumns[] = {CORREO, U_CONTRASENA};
-        cursorUsuario = db.rawQuery("SELECT * FROM " + TABLE_USUARIO
+        cursorUsuario = db.rawQuery("SELECT correo AND u_contrasena " + "FROM " + TABLE_USUARIO
                 + " WHERE correo = '" + uCorreo + "' AND u_contrasena = '" + uContrasena + "' ", null);
         if(cursorUsuario != null){
             return true;
@@ -46,14 +47,52 @@ public class DBRequest extends DBHelper{
         }
     }
 
+    /**
+     * Obtener un vuelo para mostrarlo en la lista de vuelos disponibles
+     * @return Lista de vuelos de la base de datos
+     */
+    public ArrayList<Vuelo> getVuelos(){
+        // Se lee la base de datos
+        DBHelper dbHelper = new DBHelper(context);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        ArrayList<Vuelo> listaVuelos = new ArrayList<>();
+        Vuelo vuelo;
+        Cursor cursorVuelos;
+
+        // consulta a la base de datos
+        cursorVuelos = db.rawQuery("SELECT no_vuelo, origen, destino, prt_abordaje, " +
+                 "h_salida, h_llegada, v_dia, v_mes, v_ano, coste_vuelo, matricula " + "FROM " +
+                 TABLE_VUELO, null);
+
+        if (cursorVuelos.moveToFirst()) {
+            do {
+                vuelo = new Vuelo();
+                vuelo.setNo_vuelo(cursorVuelos.getInt(0));
+                vuelo.setDestino(cursorVuelos.getInt(1));
+                vuelo.setOrigen(cursorVuelos.getInt(2));
+                vuelo.setPrt_abordaje(cursorVuelos.getInt(3));
+                vuelo.setH_salida(cursorVuelos.getInt(4));
+                vuelo.setH_llegada(cursorVuelos.getInt(5));
+                vuelo.setV_dia(cursorVuelos.getInt(6));
+                vuelo.setV_mes(cursorVuelos.getInt(7));
+                vuelo.setV_ano(cursorVuelos.getInt(8));
+                vuelo.setCoste_vuelo(cursorVuelos.getInt(9));
+                vuelo.setMatricula(cursorVuelos.getInt(10));
+                listaVuelos.add(vuelo);
+            } while (cursorVuelos.moveToNext());
+        }
+
+        cursorVuelos.close();
+
+        return listaVuelos;
+    }
     //bases de datos movil:
     // tabla usuario:
         // insertar usuario
-        // buscar usuario por correo
-        // buscar usuario por contrasena
+        // (LISTO)buscar usuario por correo y contrasena
         // enviar datos del registro a tabla de usuario, cuando me hagan un registro
         // tengo que generar un id_usuario automatico
-
         // obtener datos de un usuario para el login
 
     public long insertarUsuario(String nombre, String apellido1, String apellido2, String correo, String contrasena, int telefono) {
@@ -66,8 +105,16 @@ public class DBRequest extends DBHelper{
             Cursor cursorid = null;
 
             ContentValues values = new ContentValues();
-            //cursorid = db.rawQuery("SELECT COUNT (id_usuario) FROM usuario", null);
-            // SELECT COUNT (id_usuario) from usuario
+            cursorid = db.rawQuery("SELECT COUNT (id_usuario) FROM usuario", null);
+            idUsuario = cursorid.getCount();
+            if(cursorid != null)
+                if(cursorid.getCount() > 0){
+                    cursorid.moveToFirst();
+                    idUsuario = cursorid.getInt(0);
+                }
+            cursorid.close();
+
+            idUsuario++;
             values.put("id_usuario", idUsuario);
             values.put("u_nombre", nombre);
             values.put("u_apellido1", apellido1);

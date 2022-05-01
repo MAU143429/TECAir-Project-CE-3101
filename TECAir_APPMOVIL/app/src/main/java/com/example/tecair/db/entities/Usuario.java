@@ -2,11 +2,11 @@ package com.example.tecair.db.entities;
 
 public class Usuario {
     private int id_usuario;
-    private int u_nombre;
-    private int u_apellido1;
-    private int u_apellido2;
-    private int correo;
-    private int u_contrasena;
+    private String u_nombre;
+    private String u_apellido1;
+    private String u_apellido2;
+    private String correo;
+    private String u_contrasena;
     private int telefono;
 
     public int getId_usuario() {
@@ -17,43 +17,43 @@ public class Usuario {
         this.id_usuario = id_usuario;
     }
 
-    public int getU_nombre() {
+    public String getU_nombre() {
         return u_nombre;
     }
 
-    public void setU_nombre(int u_nombre) {
+    public void setU_nombre(String u_nombre) {
         this.u_nombre = u_nombre;
     }
 
-    public int getU_apellido1() {
+    public String getU_apellido1() {
         return u_apellido1;
     }
 
-    public void setU_apellido1(int u_apellido1) {
+    public void setU_apellido1(String u_apellido1) {
         this.u_apellido1 = u_apellido1;
     }
 
-    public int getU_apellido2() {
+    public String getU_apellido2() {
         return u_apellido2;
     }
 
-    public void setU_apellido2(int u_apellido2) {
+    public void setU_apellido2(String u_apellido2) {
         this.u_apellido2 = u_apellido2;
     }
 
-    public int getCorreo() {
+    public String getCorreo() {
         return correo;
     }
 
-    public void setCorreo(int correo) {
+    public void setCorreo(String correo) {
         this.correo = correo;
     }
 
-    public int getU_contrasena() {
+    public String getU_contrasena() {
         return u_contrasena;
     }
 
-    public void setU_contrasena(int u_contrasena) {
+    public void setU_contrasena(String u_contrasena) {
         this.u_contrasena = u_contrasena;
     }
 
