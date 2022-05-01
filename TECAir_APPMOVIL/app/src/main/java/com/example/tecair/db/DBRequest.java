@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class DBRequest extends DBHelper{
     Context context;
 
-    int idUsuario = 0;
+    int idUsuario;
 
     public DBRequest(@Nullable Context context) {
         super(context);
@@ -32,7 +32,7 @@ public class DBRequest extends DBHelper{
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         // Se crea una instancia de cursor, ya que es lo que devuelve la consulta a la base
-        Cursor cursorUsuario = null;
+        Cursor cursorUsuario;
 
         //----Consulta a la base de datos---//
         // Columnas que se van a seleccionar
@@ -102,16 +102,12 @@ public class DBRequest extends DBHelper{
         try {
             DBHelper dbHelper = new DBHelper(context);
             SQLiteDatabase db = dbHelper.getWritableDatabase();
-            Cursor cursorid = null;
+            Cursor cursorid;
 
             ContentValues values = new ContentValues();
             cursorid = db.rawQuery("SELECT COUNT (id_usuario) FROM usuario", null);
-            idUsuario = cursorid.getCount();
-            if(cursorid != null)
-                if(cursorid.getCount() > 0){
-                    cursorid.moveToFirst();
-                    idUsuario = cursorid.getInt(0);
-                }
+            cursorid.moveToFirst();
+            idUsuario = cursorid.getInt(0);
             cursorid.close();
 
             idUsuario++;
