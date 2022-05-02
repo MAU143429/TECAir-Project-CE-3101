@@ -53,7 +53,7 @@
                 android:orientation="vertical" >
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName3"
+                    android:id="@+id/registrarNombre"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -65,7 +65,7 @@
                     android:layout_height="27dp" />
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName4"
+                    android:id="@+id/registrarApellido1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -168,7 +168,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/returnbtn"
+        android:id="@+id/registrarbtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"

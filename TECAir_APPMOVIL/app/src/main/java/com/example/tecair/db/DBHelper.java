@@ -131,20 +131,6 @@ public class DBHelper extends SQLiteOpenHelper{
      */
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        /* ORDEN PARA CREAR LAS TABLAS
-    -Usuario
-    -Estudiante
-    -Trabajador
-    -Avion
-    -Vuelo
-    -Escala
-    -Asiento
-    -Promocion
-    -Reservacion
-    -Tiquete
-    Pasajero
-    Maleta
-     */
         //Tabla Usuario
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_USUARIO + "(" +
                 ID_USUARIO + " INTEGER PRIMARY KEY NOT NULL, " +
@@ -153,7 +139,7 @@ public class DBHelper extends SQLiteOpenHelper{
                 U_APELLIDO2 + " TEXT NOT NULL, " +
                 CORREO + " TEXT NOT NULL, " +
                 U_CONTRASENA + " TEXT NOT NULL, " +
-                TELEFONO + " TEXT NOT NULL)");
+                TELEFONO + " INTEGER NOT NULL)");
 
         //Tabla Estudiante
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_ESTUDIANTE + "(" +
@@ -184,7 +170,7 @@ public class DBHelper extends SQLiteOpenHelper{
                 V_MES + " TEXT NOT NULL, " +
                 V_ANO + " TEXT NOT NULL, " +
                 COSTE_VUELO + " INTEGER NOT NULL, " +
-                CERRADO + " INTEGER NOT NULL, " +
+                CERRADO + " INTEGER, " +
                 V_MATRICULA + " TEXT REFERENCES " + TABLE_AVION + "(" + MATRICULA + "))");
 
         //Tabla escala
@@ -265,5 +251,4 @@ public class DBHelper extends SQLiteOpenHelper{
         onCreate(sqLiteDatabase);
     }
 
-    //Solicitudes a la base de datos
 }

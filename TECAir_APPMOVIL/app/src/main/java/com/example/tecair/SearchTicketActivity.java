@@ -12,23 +12,20 @@ import android.widget.Toast;
 public class SearchTicketActivity extends AppCompatActivity {
 
     private static final String TAG = "BookTicketActivity";
+    CalendarView calendarView;
+    Button searchbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_ticket);
 
-        CalendarView calendarView = findViewById(R.id.calendarView);
+        calendarView = findViewById(R.id.calendarView);
         calendarView.setMinDate(System.currentTimeMillis());
 
-        Button searchbtn = (Button) findViewById(R.id.searchbtn);
+        searchbtn = findViewById(R.id.searchbtn);
 
-        searchbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                searchTicket();
-            }
-        });
+        searchbtn.setOnClickListener(view -> searchTicket());
     }
 
     public void searchTicket() {
