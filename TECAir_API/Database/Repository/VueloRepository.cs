@@ -206,7 +206,7 @@ namespace TECAir_API.Database.Repository
             return result;
         }
 
-        public async Task<IEnumerable<MaletaWeb>> GetMaletas(int no_vuelo)
+        public async Task<IEnumerable<MaletaOutput>> GetMaletas(int no_vuelo)
         {
             var db = dbConnection();
 
@@ -215,7 +215,7 @@ namespace TECAir_API.Database.Repository
                         FROM public.maleta
                         WHERE maleta.no_vuelo = @noVuelo
                         ";
-            return await db.QueryAsync<MaletaWeb>(sql, new
+            return await db.QueryAsync<MaletaOutput>(sql, new
             {
                 NoVuelo = no_vuelo
             });

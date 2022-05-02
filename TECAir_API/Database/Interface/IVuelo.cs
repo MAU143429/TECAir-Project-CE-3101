@@ -13,7 +13,7 @@ namespace TECAir_API.Database.Interface
         Task<bool> UpdateEstadoAbordaje(TiqueteWeb tiquete);
         Task<IEnumerable<VueloCompleto>> GetVueloR(int no_vuelo, int no_reservacion, int escalas);
         Task<IEnumerable<PasajeroWeb>> GetPasajeros(int no_vuelo);
-        Task<IEnumerable<MaletaWeb>> GetMaletas(int no_vuelo);
+        Task<IEnumerable<MaletaOutput>> GetMaletas(int no_vuelo);
         Task<IEnumerable<ReportePasajero>> GetReportePasajeros(int no_vuelo);
     }
 }
