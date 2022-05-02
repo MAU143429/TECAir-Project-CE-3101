@@ -11,7 +11,7 @@ import { CloseFlight } from '../model/close-flight';
 })
 export class FlightsService {
 
-  url = 'https://localhost:7038/api'
+  url = 'http://localhost:7038/api'
 
   constructor(private httpclient:HttpClient) { }
 
@@ -56,6 +56,12 @@ export class FlightsService {
     */
      newClose(closeFlight:any):Observable<any>{
       return this.httpclient.get(this.url+'/VueloCerrado/Get/' +  closeFlight.no_vuelo) 
+    }
+
+    /** PUT CIERRE DE VUELO
+    */
+     closeFlight(closeFlight:any):Observable<any>{
+      return this.httpclient.put(this.url+'/VueloCerrado/updateVueloCerrado/', closeFlight) 
     }
 
     /** GET PARA CONSULTA CIERRE DE VUELO

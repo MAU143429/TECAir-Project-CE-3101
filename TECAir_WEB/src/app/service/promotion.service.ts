@@ -9,7 +9,7 @@ import { PromotionsData } from '../interface/promotions-data'
 })
 export class PromotionService {
 
-  url = 'https://localhost:7038/api' 
+  url = 'http://localhost:7038/api' 
 
 
 

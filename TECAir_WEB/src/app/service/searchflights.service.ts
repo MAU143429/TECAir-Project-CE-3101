@@ -13,7 +13,7 @@ import { Searchresults } from '../interface/searchresults'
 })
 export class SearchflightsService {
 
-  url = 'https://localhost:7038/api'
+  url = 'http://localhost:7038/api'
 
   constructor(private httpclient:HttpClient) { }
 

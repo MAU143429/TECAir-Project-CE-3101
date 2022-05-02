@@ -11,7 +11,7 @@ import { TicketData } from 'src/app/interface/ticket-data';
 export class BookingsService {
 
 
-  url = 'https://localhost:7038/api'
+  url = 'http://localhost:7038/api'
 
   constructor(private httpclient:HttpClient) { }
 

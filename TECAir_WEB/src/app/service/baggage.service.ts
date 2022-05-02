@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class BaggageService {
 
-  url = 'https://localhost:7038/api'
+  url = 'http://localhost:7038/api'
 
   constructor(private httpclient:HttpClient) { }
 
