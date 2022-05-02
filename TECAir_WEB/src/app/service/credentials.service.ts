@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class CredentialsService {
 
-  url = 'https://localhost:7038/api'
+  url = 'http://localhost:7038/api'
 
   constructor(private httpclient:HttpClient) { }
 

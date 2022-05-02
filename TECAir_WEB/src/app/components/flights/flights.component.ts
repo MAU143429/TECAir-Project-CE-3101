@@ -161,16 +161,21 @@ export class FlightsComponent implements OnInit {
         this.scale1.orden = 1
         this.service.addScale(this.scale1).subscribe(scale1=> console.log(scale1));
       }
-      if(newFlight.escala2 != ''){
-        this.scale2.escala = newFlight.escala2
-        this.scale2.orden = 2
-        this.service.addScale(this.scale2).subscribe(scale2=> console.log(scale2));
-      }
-      if(newFlight.escala3 != ''){
-        this.scale3.escala = newFlight.escala3
-        this.scale3.orden = 3
-        this.service.addScale(this.scale3).subscribe(scale3=> console.log(scale3));
-      }
+      this.delay(100).then(()=>{
+        if(newFlight.escala2 != ''){
+          this.scale2.escala = newFlight.escala2
+          this.scale2.orden = 2
+          this.service.addScale(this.scale2).subscribe(scale2=> console.log(scale2));
+        }
+        this.delay(100).then(()=>{
+          if(newFlight.escala3 != ''){
+          this.scale3.escala = newFlight.escala3
+          this.scale3.orden = 3
+          this.service.addScale(this.scale3).subscribe(scale3=> console.log(scale3));
+        }});
+      });
+      
+      
     });
     
     
@@ -194,6 +199,11 @@ export class FlightsComponent implements OnInit {
    */
   newAddCloseFlight(newCloseFlight:CloseFlight){
   this.service.newClose(newCloseFlight).subscribe(open=> (this.flightdata = open));
+  }
+
+  CloseFlight(data1:any){
+  this.newCloseFlight.no_vuelo = data1
+  this.service.closeFlight(this.newCloseFlight).subscribe(close=> console.log(close));
   }
 
   /**

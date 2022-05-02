@@ -83,7 +83,7 @@ namespace TECAir_API.Database.Repository
             Random rng = new Random();
             while (result.Count < 8)
             {
-                int k = rng.Next(output.Count-1);
+                int k = rng.Next(output.Count);
                 result.Add(new PromosRandom(output[k].no_vuelo, output[k].no_promocion, output[k].url, output[k].origen, output[k].destino, output[k].p_dia, output[k].p_mes, output[k].p_ano, output[k].porcentaje, output[k].coste_vuelo*(100- output[k].porcentaje)/100));
                 output.Remove(output[k]);
             }

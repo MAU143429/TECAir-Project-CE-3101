@@ -47,12 +47,12 @@ export class TicketViewComponent implements OnInit {
 
   async delay(ms: number) {
     await new Promise<void>(resolve => setTimeout(()=>resolve(), ms)).then(()=>console.log("fired"));
-  }
+  } 
 
   constructor(private service:BaggageService,private connectionService:ConnectionService, private router:Router) { }
 
   ngOnInit(): void {
-    this.delay(100).then(()=>{
+    this.delay(500).then(()=>{
       this.createTicketView(this.connectionService.getNoVueloEvent(),this.connectionService.getNoTransaccionEvent())
     });
   }
