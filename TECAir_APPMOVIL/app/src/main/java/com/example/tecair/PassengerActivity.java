@@ -15,12 +15,7 @@ public class PassengerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_passenger);
 
         Button returnbtn = (Button) findViewById(R.id.registrarbtn);
-        returnbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                returnMenu();
-            }
-        });
+        returnbtn.setOnClickListener(view -> returnMenu());
     }
 
     public void returnMenu() {

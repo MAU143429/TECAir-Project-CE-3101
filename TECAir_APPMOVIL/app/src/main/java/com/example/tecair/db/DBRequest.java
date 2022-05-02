@@ -69,16 +69,16 @@ public class DBRequest extends DBHelper{
             do {
                 vuelo = new Vuelo();
                 vuelo.setNo_vuelo(cursorVuelos.getInt(0));
-                vuelo.setDestino(cursorVuelos.getInt(1));
-                vuelo.setOrigen(cursorVuelos.getInt(2));
-                vuelo.setPrt_abordaje(cursorVuelos.getInt(3));
-                vuelo.setH_salida(cursorVuelos.getInt(4));
-                vuelo.setH_llegada(cursorVuelos.getInt(5));
-                vuelo.setV_dia(cursorVuelos.getInt(6));
-                vuelo.setV_mes(cursorVuelos.getInt(7));
-                vuelo.setV_ano(cursorVuelos.getInt(8));
+                vuelo.setOrigen(cursorVuelos.getString(1));
+                vuelo.setDestino(cursorVuelos.getString(2));
+                vuelo.setPrt_abordaje(cursorVuelos.getString(3));
+                vuelo.setH_salida(cursorVuelos.getString(4));
+                vuelo.setH_llegada(cursorVuelos.getString(5));
+                vuelo.setV_dia(cursorVuelos.getString(6));
+                vuelo.setV_mes(cursorVuelos.getString(7));
+                vuelo.setV_ano(cursorVuelos.getString(8));
                 vuelo.setCoste_vuelo(cursorVuelos.getInt(9));
-                vuelo.setMatricula(cursorVuelos.getInt(10));
+                vuelo.setMatricula(cursorVuelos.getInt(11));
                 listaVuelos.add(vuelo);
             } while (cursorVuelos.moveToNext());
         }

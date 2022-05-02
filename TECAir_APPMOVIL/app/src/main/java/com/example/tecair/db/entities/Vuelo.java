@@ -5,14 +5,14 @@ package com.example.tecair.db.entities;
  */
 public class Vuelo {
     private int no_vuelo;
-    private int origen;
-    private int destino;
-    private int prt_abordaje;
-    private int h_salida;
-    private int h_llegada;
-    private int v_dia;
-    private int v_mes;
-    private int v_ano;
+    private String origen;
+    private String destino;
+    private String prt_abordaje;
+    private String h_salida;
+    private String h_llegada;
+    private String v_dia;
+    private String v_mes;
+    private String v_ano;
     private int coste_vuelo;
     private int matricula;
 
@@ -24,67 +24,67 @@ public class Vuelo {
         this.no_vuelo = no_vuelo;
     }
 
-    public int getOrigen() {
+    public String getOrigen() {
         return origen;
     }
 
-    public void setOrigen(int origen) {
+    public void setOrigen(String origen) {
         this.origen = origen;
     }
 
-    public int getDestino() {
+    public String getDestino() {
         return destino;
     }
 
-    public void setDestino(int destino) {
+    public void setDestino(String destino) {
         this.destino = destino;
     }
 
-    public int getPrt_abordaje() {
+    public String getPrt_abordaje() {
         return prt_abordaje;
     }
 
-    public void setPrt_abordaje(int prt_abordaje) {
+    public void setPrt_abordaje(String prt_abordaje) {
         this.prt_abordaje = prt_abordaje;
     }
 
-    public int getH_salida() {
+    public String getH_salida() {
         return h_salida;
     }
 
-    public void setH_salida(int h_salida) {
+    public void setH_salida(String h_salida) {
         this.h_salida = h_salida;
     }
 
-    public int getH_llegada() {
+    public String getH_llegada() {
         return h_llegada;
     }
 
-    public void setH_llegada(int h_llegada) {
+    public void setH_llegada(String h_llegada) {
         this.h_llegada = h_llegada;
     }
 
-    public int getV_dia() {
+    public String getV_dia() {
         return v_dia;
     }
 
-    public void setV_dia(int v_dia) {
+    public void setV_dia(String v_dia) {
         this.v_dia = v_dia;
     }
 
-    public int getV_mes() {
+    public String getV_mes() {
         return v_mes;
     }
 
-    public void setV_mes(int v_mes) {
+    public void setV_mes(String v_mes) {
         this.v_mes = v_mes;
     }
 
-    public int getV_ano() {
+    public String getV_ano() {
         return v_ano;
     }
 
-    public void setV_ano(int v_ano) {
+    public void setV_ano(String v_ano) {
         this.v_ano = v_ano;
     }
 
